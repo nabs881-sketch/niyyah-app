@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_501",
+    "question": "Quelle sourate répète quatre fois le même refrain : « Nous avons certes facilité le Coran pour qu'il serve de rappel ; y a-t-il quelqu'un pour se rappeler ? » ?",
+    "choix": ["A. Al-Qamar", "B. Ar-Rahmân uniquement", "C. Al-Wâqi'a uniquement", "D. Al-Hâqqa uniquement"],
+    "reponse": "A",
+    "explication": "Al-Qamar (54:17, 22, 32, 40) répète ce refrain après chaque récit de peuple châtié (Nûh, 'Âd, Thamûd, le peuple de Lût), insistant sur l'accessibilité du message coranique à quiconque veut sincèrement s'en souvenir et en tirer leçon, sans nécessiter un savoir savant complexe.",
+    "theme": "coran",
+    "source": "Coran 54:17, 22, 32, 40 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 176
+  },
+  {
+    "id": "quiz_502",
+    "question": "Quel verset coranique affirme qu'Allah Se porte garant Lui-même de la préservation intégrale du Coran contre toute altération ?",
+    "choix": ["A. Al-Hijr 15:9", "B. Al-Baqara 2:23", "C. An-Nisâ' 4:82", "D. Yûnus 10:37"],
+    "reponse": "A",
+    "explication": "Al-Hijr (15:9) déclare : « C'est Nous qui avons fait descendre le Rappel [le Coran], et c'est Nous qui en sommes gardien. » Contrairement aux Écritures antérieures, dont la préservation fut confiée aux communautés humaines elles-mêmes, le Coran bénéficie d'une garantie divine directe et explicite de préservation intégrale.",
+    "theme": "coran",
+    "source": "Coran 15:9 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 176
+  },
+  {
+    "id": "quiz_503",
+    "question": "Comment Yûsuf répond-il à ses frères lorsqu'ils se présentent devant lui, effrayés, après avoir découvert son identité de ministre d'Égypte ?",
+    "choix": ["A. « Nul reproche contre vous aujourd'hui ; qu'Allah vous pardonne »", "B. Il les fit emprisonner en représailles", "C. Il refusa de les revoir", "D. Il exigea des excuses publiques avant tout pardon"],
+    "reponse": "A",
+    "explication": "Yûsuf (12:92) rapporte la réponse magnanime de Yûsuf : « Nul reproche contre vous aujourd'hui ! Qu'Allah vous pardonne. Il est le plus Miséricordieux des miséricordieux. » Un modèle de pardon total malgré des décennies de trahison et de souffrance subies, sans conditions ni rancune résiduelle.",
+    "theme": "coran",
+    "source": "Coran 12:92 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 176
+  },
+  {
+    "id": "quiz_504",
+    "question": "Selon un hadith, à quel moment le Witr doit-il idéalement être prié pour celui qui a l'habitude de se lever pour la prière de nuit (tahajjud) ?",
+    "choix": ["A. En dernière prière de la nuit, après le tahajjud", "B. Obligatoirement avant 'Ishâ'", "C. Uniquement à l'aube", "D. Le moment n'a aucune importance"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « Faites du Witr votre dernière prière de la nuit. » Pour celui qui prévoit de se lever pour le tahajjud, il est ainsi recommandé de retarder le Witr après ces prières surérogatoires plutôt que de le prier immédiatement après 'Ishâ', afin qu'il clôture véritablement l'ensemble des prières nocturnes.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°998 ; Sahîh Muslim n°751",
+    "difficulte": "intermédiaire",
+    "jour": 177
+  },
+  {
+    "id": "quiz_505",
+    "question": "Selon la majorité des écoles, une femme peut-elle diriger la prière pour une congrégation exclusivement féminine ?",
+    "choix": ["A. Non, jamais, sous aucune condition", "B. Oui, la majorité l'autorise, l'imama se plaçant alors au sein du premier rang plutôt que devant, contrairement à la position habituelle de l'imam", "C. Uniquement pour la prière du vendredi", "D. Uniquement en cas d'absence totale d'hommes dans la ville entière"],
+    "reponse": "B",
+    "explication": "La majorité des écoles autorise une femme à diriger la prière pour une assemblée exclusivement féminine, la position retenue plaçant généralement l'imama au centre du premier rang plutôt qu'en avant seule, une différence notable par rapport à la position frontale habituelle de l'imam masculin.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de la direction de la prière",
+    "difficulte": "avancé",
+    "jour": 177
+  },
+  {
+    "id": "quiz_506",
+    "question": "Selon la majorité des écoles, la validité du tayammum (ablution sèche) est-elle soumise aux mêmes causes d'annulation que le wudû' habituel, en plus de la disponibilité retrouvée de l'eau ?",
+    "choix": ["A. Oui, les mêmes nullifiants s'appliquent, avec en plus la disponibilité de l'eau qui annule le tayammum même sans autre cause", "B. Non, le tayammum ne peut jamais être annulé une fois effectué", "C. Le tayammum reste valable même après avoir uriné, contrairement au wudû'", "D. Aucune règle n'existe concernant sa durée de validité"],
+    "reponse": "A",
+    "explication": "Le tayammum est soumis aux mêmes causes d'annulation que les ablutions ordinaires (sommeil profond, contact intime, etc.), avec une cause supplémentaire spécifique : la disponibilité retrouvée de l'eau annule automatiquement le tayammum, celui-ci n'étant qu'une facilité temporaire liée à l'absence d'eau ou à l'incapacité de l'utiliser.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de la purification par tayammum",
+    "difficulte": "intermédiaire",
+    "jour": 177
+  },
+  {
+    "id": "quiz_507",
+    "question": "Quelle fille du Prophète ﷺ fut violemment attaquée durant son voyage de Hijra vers Médine, provoquant une fausse couche des suites de ses blessures ?",
+    "choix": ["A. Zaynab bint Muhammad", "B. Fâtima bint Muhammad", "C. Ruqayya bint Muhammad", "D. Umm Kulthûm bint Muhammad"],
+    "reponse": "A",
+    "explication": "Zaynab, restée un temps à la Mecque après le mariage de ses sœurs à des Compagnons ayant émigré, fut violemment interceptée durant son propre voyage vers Médine par des Qurayshites cherchant à l'empêcher de rejoindre son père. Blessée dans cette agression, elle fit une fausse couche, séquelle dont certains rapportent qu'elle contribua à sa santé fragile jusqu'à sa mort prématurée.",
+    "theme": "sira",
+    "source": "Ibn Sa'd, at-Tabaqât al-Kubrâ",
+    "difficulte": "avancé",
+    "jour": 178
+  },
+  {
+    "id": "quiz_508",
+    "question": "Qui redécouvrit et fit rejaillir le puits de Zamzam, resté enfoui et oublié pendant des générations avant la naissance du Prophète ﷺ ?",
+    "choix": ["A. 'Abd al-Muttalib, son grand-père", "B. Abû Tâlib, son oncle", "C. Le Prophète ﷺ lui-même durant son enfance", "D. Waraqa ibn Nawfal"],
+    "reponse": "A",
+    "explication": "'Abd al-Muttalib, guidé selon la tradition par un songe répété, redécouvrit l'emplacement exact du puits de Zamzam, enfoui depuis des générations suite à des conflits tribaux anciens. Cette découverte renforça considérablement le prestige de son clan hâshimite au sein de Quraysh, en tant que gardiens de cette ressource précieuse pour les pèlerins.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 178
+  },
+  {
+    "id": "quiz_509",
+    "question": "Quel négociateur qurayshite, farouche opposant du traité de Hudaybiyya insistant pour retirer la formule « Messager d'Allah » du texte, se convertit sincèrement plus tard et devint un prédicateur respecté ?",
+    "choix": ["A. Suhayl ibn 'Amr", "B. Abû Sufyân ibn Harb", "C. 'Ikrima ibn Abî Jahl", "D. Safwân ibn Umayya"],
+    "reponse": "A",
+    "explication": "Suhayl ibn 'Amr négocia fermement au nom de Quraysh à Hudaybiyya, exigeant plusieurs concessions difficiles pour les musulmans. Il se convertit sincèrement après la conquête de la Mecque et devint, selon plusieurs récits, un prédicateur zélé encourageant la résistance après la mort du Prophète ﷺ durant les guerres de Ridda, démontrant une transformation personnelle notable.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "avancé",
+    "jour": 178
+  },
+  {
+    "id": "quiz_510",
+    "question": "Selon un hadith, quelle est la différence entre le compte facile (hisâb yasîr) réservé à certains croyants et l'examen détaillé de tous les actes ?",
+    "choix": ["A. Le compte facile consiste en une simple présentation des œuvres sans interrogatoire ni discussion approfondie, tandis qu'être soumis à un examen détaillé de chaque acte est présenté comme risquant de mener au châtiment", "B. Les deux termes désignent exactement la même chose", "C. Le compte facile concerne uniquement les prophètes", "D. Aucune distinction de ce type n'existe dans la Sunna"],
+    "reponse": "A",
+    "explication": "'Â'isha, ayant entendu le verset sur le compte facile, s'inquiéta en pensant que tout compte impliquait un interrogatoire strict. Le Prophète ﷺ la rassura en précisant qu'il s'agissait d'une simple présentation des œuvres sans discussion approfondie, ajoutant : « Quiconque est soumis à un examen minutieux de chaque détail sera certainement châtié. »",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°4939 ; Coran 84:7-8",
+    "difficulte": "avancé",
+    "jour": 179
+  },
+  {
+    "id": "quiz_511",
+    "question": "Le Coran mentionne-t-il un attribut divin désigné comme « le Visage d'Allah » (Wajh Allâh), affirmé par Ahl as-Sunna sans en préciser la modalité ?",
+    "choix": ["A. Oui, mentionné dans plusieurs versets, notamment sur la permanence du Visage d'Allah face à la disparition de toute chose", "B. Non, cette expression n'existe nulle part dans le Coran", "C. Elle est mentionnée uniquement dans des hadiths faibles, jamais dans le Coran", "D. Elle concerne exclusivement les prophètes, non Allah"],
+    "reponse": "A",
+    "explication": "Ar-Rahmân (55:26-27) déclare : « Tout ce qui est sur elle [la terre] disparaîtra, [seule] subsistera la Face de ton Seigneur. » Ahl as-Sunna affirme cet attribut tel que mentionné, sans en préciser le comment (bilâ kayf) ni le comparer aux visages des créatures, selon la méthode athârite déjà appliquée à d'autres attributs divins.",
+    "theme": "aqida",
+    "source": "Coran 55:26-27 ; Al-'Aqîda al-Wâsitiyya",
+    "difficulte": "avancé",
+    "jour": 179
+  },
+  {
+    "id": "quiz_512",
+    "question": "Quelle sourate contient l'invocation des croyants demandant qu'Allah ne place aucune rancune dans leur cœur envers ceux qui les ont précédés dans la foi ?",
+    "choix": ["A. Al-Hashr", "B. Al-Mumtahana uniquement", "C. As-Saff uniquement", "D. Al-Jumu'a uniquement"],
+    "reponse": "A",
+    "explication": "Al-Hashr (59:10) rapporte cette invocation exemplaire : « Notre Seigneur, pardonne-nous ainsi qu'à nos frères qui nous ont précédés dans la foi, et ne mets dans nos cœurs aucune rancune envers ceux qui ont cru. » Un modèle de fraternité intergénérationnelle et de préservation active de l'unité communautaire.",
+    "theme": "coran",
+    "source": "Coran 59:10 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 179
+  },
+  {
+    "id": "quiz_513",
+    "question": "Selon un hadith, un homme entrant dans la mosquée pendant le sermon du vendredi (khutba) doit-il s'asseoir immédiatement sans prier, par respect pour le silence requis ?",
+    "choix": ["A. Non, il doit prier brièvement deux rak'ât légères (tahiyyat al-masjid) avant de s'asseoir, même pendant le sermon", "B. Il doit attendre la fin complète du sermon avant toute prière", "C. Il lui est interdit d'entrer tant que le sermon n'est pas terminé", "D. Il doit prier quatre rak'ât complètes"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ, voyant un homme (Sulayk al-Ghatafânî) s'asseoir directement pendant son sermon, lui demanda : « As-tu prié deux rak'ât ? » Sur réponse négative, il lui ordonna de se lever et de les accomplir brièvement, établissant que la salutation de la mosquée reste due même durant le sermon, contrairement à l'obligation générale de silence.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°875",
+    "difficulte": "avancé",
+    "jour": 180
+  },
+  {
+    "id": "quiz_514",
+    "question": "Comment le Prophète ﷺ décrivit-il Umm Ayman, esclave affranchie ayant participé à son éducation dès l'enfance, à ses Compagnons ?",
+    "choix": ["A. « Quiconque veut épouser une femme du Paradis, qu'il épouse Umm Ayman »", "B. Il ne mentionna jamais son statut particulier", "C. Il la considéra comme une simple domestique sans distinction", "D. Il l'exclut de toute reconnaissance après sa mort"],
+    "reponse": "A",
+    "explication": "Umm Ayman, affranchie éthiopienne ayant pris soin du Prophète ﷺ dès l'enfance après la mort de sa mère, bénéficia d'une reconnaissance exceptionnelle : le Prophète ﷺ la présenta comme une femme du Paradis, l'appelant parfois « ma mère après ma mère », un honneur rare accordé à une ancienne esclave.",
+    "theme": "sira",
+    "source": "Sunan at-Tirmidhî n°3891",
+    "difficulte": "avancé",
+    "jour": 180
+  },
+  {
+    "id": "quiz_515",
+    "question": "Les savants contemporains sont-ils unanimes sur la méthode dite de « l'i'jâz 'ilmî » (miracle scientifique du Coran), consistant à identifier des découvertes scientifiques modernes annoncées dans le texte coranique ?",
+    "choix": ["A. Non ; si beaucoup y voient un signe fort de l'origine divine du Coran, d'autres savants mettent en garde contre le risque d'interprétations forcées ou de liaison hâtive à des théories scientifiques elles-mêmes évolutives", "B. Oui, un consensus total existe sur chaque exemple avancé", "C. Cette approche est unanimement rejetée par tous les savants sans exception", "D. Le sujet n'a jamais suscité de débat méthodologique"],
+    "reponse": "A",
+    "explication": "Si de nombreux prédicateurs contemporains valorisent l'i'jâz 'ilmî comme argument de conviction, plusieurs savants et spécialistes du Tafsîr appellent à la prudence méthodologique, redoutant que des interprétations forcées, liées à des théories scientifiques elles-mêmes susceptibles d'évoluer ou d'être révisées, ne fragilisent paradoxalement l'argumentation plutôt que de la renforcer.",
+    "theme": "aqida",
+    "source": "Débats méthodologiques contemporains en 'ulûm al-Qur'ân",
+    "difficulte": "avancé",
+    "jour": 180
+  },
+  {
+    "id": "quiz_516",
+    "question": "Dans le verset sur la pudeur du regard, à qui le Coran s'adresse-t-il en premier, avant de s'adresser aux femmes ?",
+    "choix": ["A. Aux hommes croyants, invités à baisser leur regard et à préserver leur chasteté", "B. Uniquement aux femmes, les hommes n'étant jamais mentionnés", "C. Uniquement aux enfants", "D. Uniquement aux personnes âgées"],
+    "reponse": "A",
+    "explication": "An-Nûr (24:30) s'adresse d'abord aux hommes croyants : « Dis aux croyants de baisser leur regard et de préserver leur chasteté. » Ce n'est qu'au verset suivant (24:31) que la même exigence est adressée aux femmes croyantes, établissant une responsabilité de pudeur partagée et non exclusivement féminine.",
+    "theme": "coran",
+    "source": "Coran 24:30-31 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 181
+  },
+  {
+    "id": "quiz_517",
+    "question": "Les quatre écoles juridiques sont-elles unanimes sur le caractère obligatoire du niqâb (voile couvrant le visage) ?",
+    "choix": ["A. Non ; la majorité des savants des quatre écoles considère le visage et les mains hors obligation de couverture, tandis qu'une partie de savants, notamment hanbalites, penche pour son caractère recommandé voire obligatoire selon le contexte — une question qui reste débattue", "B. Oui, un consensus total et unanime existe sur son obligation stricte", "C. Toutes les écoles s'accordent au contraire sur son interdiction totale", "D. La question n'a jamais été discutée en fiqh"],
+    "reponse": "A",
+    "explication": "Cette question fait l'objet d'une divergence savante réelle et ancienne : la majorité, au sein même de chaque école, considère le visage et les mains hors de l'obligation de couverture (bien que le port du niqâb reste permis et peut être recommandé), tandis qu'une partie de savants, notamment dans la tradition hanbalite, penche pour un caractère plus contraignant. Aucune des deux positions n'est unanimement rejetée par les autres.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de la pudeur féminine ; débats classiques et contemporains",
+    "difficulte": "avancé",
+    "jour": 181
+  },
+  {
+    "id": "quiz_518",
+    "question": "Quel vœu fit 'Abd al-Muttalib, redécouvreur du puits de Zamzam, avant la naissance de son fils 'Abdullâh (futur père du Prophète ﷺ), impliquant un sacrifice finalement racheté par cent chameaux ?",
+    "choix": ["A. Il avait juré de sacrifier l'un de ses fils s'il en avait dix pour l'aider à défendre le puits ; le sort désigna 'Abdullâh, finalement racheté", "B. Il avait juré de construire un second puits", "C. Il avait fait vœu de silence perpétuel", "D. Aucun vœu de ce type n'est rapporté dans la Sîra"],
+    "reponse": "A",
+    "explication": "'Abd al-Muttalib, n'ayant qu'un seul fils au moment de redécouvrir Zamzam, jura d'en sacrifier un s'il en avait dix pour l'aider à défendre le puits. Le tirage au sort désigna 'Abdullâh, le plus aimé ; consultée, une devineresse conseilla de comparer sa vie à des chameaux, jusqu'à ce que le tirage cesse de le désigner à cent chameaux, prix finalement payé pour épargner celui qui deviendrait le père du Prophète ﷺ.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 181
+  },
+  {
+    "id": "quiz_519",
+    "question": "Comment le Coran qualifie-t-il la communauté musulmane par rapport aux autres nations, en usant du terme « ummatan wasatan » ?",
+    "choix": ["A. Une communauté du juste milieu, modérée, appelée à témoigner devant l'humanité comme le Prophète ﷺ témoigne pour elle", "B. Une communauté destinée à disparaître rapidement", "C. Une communauté supérieure par la race", "D. Ce terme ne concerne pas la communauté musulmane"],
+    "reponse": "A",
+    "explication": "Al-Baqara (2:143) déclare : « Nous avons fait de vous une communauté du juste milieu (ummatan wasatan), afin que vous soyez témoins envers les gens, et que le Messager soit témoin envers vous. » Ce statut de modération équilibrée, entre excès et négligence, fonde une part importante de l'identité collective musulmane classique.",
+    "theme": "aqida",
+    "source": "Coran 2:143 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 182
+  },
+  {
+    "id": "quiz_520",
+    "question": "Quel verset, concluant la sourate Al-Baqara, est une invocation implorant qu'Allah n'impose pas au croyant une charge supérieure à ses capacités ?",
+    "choix": ["A. Al-Baqara 2:286", "B. Al-Baqara 2:255", "C. Al-Baqara 2:1", "D. Al-Baqara 2:143"],
+    "reponse": "A",
+    "explication": "Al-Baqara (2:286) conclut la plus longue sourate du Coran par cette invocation apaisante : « Notre Seigneur, ne nous charge pas d'un fardeau que nous ne saurions supporter... » Un rappel puissant que la miséricorde divine encadre toujours l'exigence religieuse, jamais conçue comme un poids insurmontable pour le croyant sincère.",
+    "theme": "coran",
+    "source": "Coran 2:286 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 182
+  }
+]
