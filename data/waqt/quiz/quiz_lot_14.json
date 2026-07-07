@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_261",
+    "question": "Quelle sourate relate le récit de Dhû al-Qarnayn, voyageur puissant parcourant la terre d'est en ouest sous la protection d'Allah ?",
+    "choix": ["A. Al-Kahf", "B. Al-Anbiyâ'", "C. Sabâ'", "D. Ar-Rûm"],
+    "reponse": "A",
+    "explication": "Al-Kahf (18:83-98) relate trois expéditions de Dhû al-Qarnayn : vers l'occident, vers l'orient, puis vers un peuple menacé par Gog et Magog, pour lequel il construisit la fameuse digue. Son identité historique précise reste débattue parmi les commentateurs, sans consensus définitif.",
+    "theme": "coran",
+    "source": "Coran 18:83-98 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 92
+  },
+  {
+    "id": "quiz_262",
+    "question": "Selon la majorité des commentateurs, Dhû al-Qarnayn était-il un prophète ou un roi juste non-prophète ?",
+    "choix": ["A. Un consensus total affirme qu'il était prophète", "B. La majorité penche pour un roi ou dirigeant juste, non prophète, bien que la question reste discutée sans certitude absolue", "C. Le Coran affirme explicitement qu'il n'était pas croyant", "D. Il s'agit d'un personnage purement mythologique selon tous les exégètes"],
+    "reponse": "B",
+    "explication": "La majorité des commentateurs classiques penche pour un dirigeant juste et pieux, sans nécessairement lui attribuer le statut de prophète, faute d'indication coranique explicite en ce sens. Son identification historique précise (souvent proposée avec Cyrus le Grand ou Alexandre) reste également débattue et non tranchée définitivement.",
+    "theme": "coran",
+    "source": "Tafsîr Ibn Kathîr, 18:83 ; débats exégétiques classiques",
+    "difficulte": "avancé",
+    "jour": 92
+  },
+  {
+    "id": "quiz_263",
+    "question": "Quelle sourate rapporte le dialogue entre Mûsâ et un homme pieux et savant (souvent identifié à al-Khidr), dont la sagesse dépassait la compréhension immédiate de Mûsâ ?",
+    "choix": ["A. Al-Kahf", "B. Tâ-Hâ", "C. Al-Qasas", "D. Ash-Shu'arâ'"],
+    "reponse": "A",
+    "explication": "Al-Kahf (18:60-82) relate la rencontre de Mûsâ avec cet homme, dont les actes en apparence injustes (percer un bateau, tuer un jeune garçon, redresser un mur sans rétribution) recelaient une sagesse cachée que Mûsâ ne put comprendre qu'après explication finale, illustrant les limites du savoir humain face à la connaissance divine.",
+    "theme": "coran",
+    "source": "Coran 18:60-82 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 92
+  },
+  {
+    "id": "quiz_264",
+    "question": "Selon la majorité des écoles, un homme et une femme non-mahram peuvent-ils rester seuls dans un lieu clos (khalwa), même sans intention coupable ?",
+    "choix": ["A. Oui, cela reste permis tant qu'il n'y a pas d'intention", "B. Non, cela est interdit par principe, indépendamment de l'intention, en raison du risque et de l'apparence", "C. Cela dépend uniquement du lieu géographique", "D. Seulement interdit la nuit"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Qu'aucun homme ne reste seul avec une femme, car le troisième est le Shaytân. » L'interdiction de la khalwa vise à prévenir le risque et à préserver les apparences, indépendamment de la bonne intention initiale des deux personnes concernées.",
+    "theme": "fiqh",
+    "source": "Sunan at-Tirmidhî n°2165",
+    "difficulte": "intermédiaire",
+    "jour": 93
+  },
+  {
+    "id": "quiz_265",
+    "question": "Selon la majorité des écoles, une femme peut-elle voyager pour le Hajj sans mahram si elle est accompagnée d'un groupe de femmes de confiance ?",
+    "choix": ["A. Toutes les écoles l'autorisent sans réserve", "B. La question fait l'objet de divergences ; certains savants contemporains l'autorisent en cas de sécurité du trajet et de groupe fiable, d'autres maintiennent la condition stricte du mahram", "C. Aucune école n'a jamais discuté cette question", "D. Elle est unanimement interdite dans tous les cas"],
+    "reponse": "B",
+    "explication": "La condition du mahram pour le voyage de la femme fait l'objet de nuances selon le contexte de sécurité du trajet, certains savants contemporains autorisant l'accompagnement par un groupe de femmes fiables si les conditions de sécurité modernes (transport encadré, absence de risque réel) sont réunies, tandis que d'autres maintiennent l'exigence classique stricte.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif du voyage et du Hajj ; discussions contemporaines",
+    "difficulte": "avancé",
+    "jour": 93
+  },
+  {
+    "id": "quiz_266",
+    "question": "Combien de temps dure, selon la majorité des écoles, la période de viduité ('idda) d'une veuve après le décès de son époux, hors grossesse ?",
+    "choix": ["A. Un mois", "B. Quatre mois et dix jours", "C. Un an complet", "D. Trois cycles menstruels"],
+    "reponse": "B",
+    "explication": "Al-Baqara (2:234) fixe la période de viduité de la veuve à quatre mois et dix jours, durant lesquels elle ne peut se remarier ni recevoir de demande en mariage explicite, une période distincte de celle du divorce (trois cycles menstruels) ou de la grossesse (jusqu'à l'accouchement).",
+    "theme": "fiqh",
+    "source": "Coran 2:234 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 93
+  },
+  {
+    "id": "quiz_267",
+    "question": "Quel Compagnon est traditionnellement désigné comme le tout premier martyr de l'expédition de Mu'ta, tombé en menant l'armée musulmane ?",
+    "choix": ["A. Zayd ibn Hâritha", "B. Ja'far ibn Abî Tâlib", "C. 'Abdullâh ibn Rawâha", "D. Khâlid ibn al-Walîd"],
+    "reponse": "A",
+    "explication": "Zayd ibn Hâritha, premier des trois commandants désignés par le Prophète ﷺ pour cette expédition, tomba en premier au combat. Ja'far ibn Abî Tâlib prit alors le commandement et tomba à son tour, suivi d''Abdullâh ibn Rawâha, avant que Khâlid ibn al-Walîd ne prenne la tête et organise la retraite.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4261 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 94
+  },
+  {
+    "id": "quiz_268",
+    "question": "Que fit le Prophète ﷺ, alors à Médine, au moment même où se déroulait la bataille de Mu'ta, à plusieurs semaines de marche de distance ?",
+    "choix": ["A. Il ignora totalement l'événement jusqu'au retour des troupes", "B. Il décrivit à ses Compagnons le déroulement de la bataille en temps réel, comme s'il la voyait, un épisode rapporté comme un signe prophétique", "C. Il se rendit personnellement sur place instantanément", "D. Il annula l'expédition en plein combat"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ décrivit à ses Compagnons réunis à Médine le déroulement précis de la bataille de Mu'ta — la chute successive de Zayd, Ja'far puis 'Abdullâh ibn Rawâha, et la prise de commandement par Khâlid — alors que l'information ne parvint officiellement à Médine que des jours plus tard, un épisode rapporté comme signe prophétique.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4262",
+    "difficulte": "avancé",
+    "jour": 94
+  },
+  {
+    "id": "quiz_269",
+    "question": "Quel Compagnon perdit un bras lors de la bataille de Mu'ta en portant vaillamment l'étendard des musulmans après la mort des trois commandants ?",
+    "choix": ["A. Khâlid ibn al-Walîd", "B. Thâbit ibn Arqam, qui remit ensuite l'étendard à Khâlid", "C. Sa'd ibn Abî Waqqâs", "D. Aucun Compagnon ne fut blessé ainsi"],
+    "reponse": "B",
+    "explication": "Après la mort des trois commandants désignés, un Compagnon (rapporté sous le nom de Thâbit ibn Arqam selon certaines versions) saisit l'étendard tombé avant de le remettre à Khâlid ibn al-Walîd, reconnu pour son sens tactique, qui organisa alors la retraite ordonnée de l'armée musulmane.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°4261 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 94
+  },
+  {
+    "id": "quiz_270",
+    "question": "Comment appelle-t-on, en 'aqîda, le principe selon lequel Allah crée les actes des serviteurs, tout en leur laissant un choix et une capacité réels d'agir (kasb) ?",
+    "choix": ["A. Al-Jabr (déterminisme total sans choix réel)", "B. Al-Kasb (l'acquisition), position d'Ahl as-Sunna conciliant création divine des actes et responsabilité humaine réelle", "C. At-Tafwîd al-Mahd (autonomie totale de l'homme sans intervention divine)", "D. Aucune position n'a jamais été formulée sur ce sujet"],
+    "reponse": "B",
+    "explication": "Contrairement aux Jabrites, qui nient toute capacité réelle d'action de l'homme, et à certains Mu'tazilites, qui accordent à l'homme une création autonome de ses actes, Ahl as-Sunna retient le concept d'al-kasb : Allah crée l'acte, mais le serviteur possède une volonté et une capacité réelles qui fondent sa responsabilité, sans en être le créateur ultime.",
+    "theme": "aqida",
+    "source": "Al-'Aqîda at-Tahâwiyya ; théologie classique du Qadar",
+    "difficulte": "avancé",
+    "jour": 95
+  },
+  {
+    "id": "quiz_271",
+    "question": "Selon Ahl as-Sunna, la connaissance préalable d'Allah sur les actes futurs d'une personne constitue-t-elle une contrainte (jabr) sur cette personne ?",
+    "choix": ["A. Oui, la connaissance divine contraint nécessairement l'action humaine", "B. Non ; la science d'Allah embrasse ce que la personne choisira librement, sans que cette connaissance ne soit la cause contraignante de son choix", "C. La question n'a jamais été posée par les théologiens", "D. Seuls les prophètes échappent à cette contrainte"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna distingue la science divine (qui embrasse par avance ce qui adviendra) de la contrainte causale : Allah sait ce que chacun choisira librement, mais cette connaissance ne force pas le choix, de même qu'un professeur connaissant à l'avance qu'un élève réussira son examen ne le force pas à réussir — l'analogie restant imparfaite mais pédagogiquement utile.",
+    "theme": "aqida",
+    "source": "Ibn al-Qayyim, Shifâ' al-'Alîl ; théologie classique du Qadar",
+    "difficulte": "avancé",
+    "jour": 95
+  },
+  {
+    "id": "quiz_272",
+    "question": "Quelle sourate évoque la création de l'homme « dans la forme la plus harmonieuse » (ahsani taqwîm) avant d'évoquer sa possible déchéance ?",
+    "choix": ["A. At-Tîn", "B. Al-Insân", "C. 'Abasa", "D. Al-Balad"],
+    "reponse": "A",
+    "explication": "At-Tîn (95:4-5) déclare : « Nous avons certes créé l'homme dans la forme la plus harmonieuse, puis Nous l'avons réduit au plus bas des degrés » — sauf ceux qui croient et accomplissent de bonnes œuvres, dont la récompense ne connaît pas d'interruption.",
+    "theme": "coran",
+    "source": "Coran 95:4-6 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 95
+  },
+  {
+    "id": "quiz_273",
+    "question": "Quel Compagnon composa des poèmes de défense de l'Islam si mordants que le Prophète ﷺ affirmait qu'ils blessaient Quraysh plus profondément que des flèches ?",
+    "choix": ["A. Hassân ibn Thâbit", "B. Ka'b ibn Zuhayr", "C. Ka'b ibn Mâlik", "D. Labîd ibn Rabî'a"],
+    "reponse": "A",
+    "explication": "Hassân ibn Thâbit, poète officiel de la défense de l'Islam à Médine, composait des vers si acérés contre Quraysh que le Prophète ﷺ l'encourageait en disant : « Réponds-leur en vers, et Jibrîl est avec toi. » Il lui aurait même dressé un minbar dans la mosquée pour réciter ses poèmes.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°453 ; Sahîh Muslim n°2490",
+    "difficulte": "intermédiaire",
+    "jour": 96
+  },
+  {
+    "id": "quiz_274",
+    "question": "Quel poète mecquois, initialement hostile et menacé de mort après sa conversion tardive, composa un poème d'éloge si sublime au Prophète ﷺ qu'il reçut en retour le manteau (burda) du Prophète lui-même ?",
+    "choix": ["A. Ka'b ibn Zuhayr", "B. Hassân ibn Thâbit", "C. An-Nâbigha al-Ja'dî", "D. 'Abdullâh ibn Rawâha"],
+    "reponse": "A",
+    "explication": "Ka'b ibn Zuhayr, initialement menacé de mort pour avoir composé des vers hostiles à l'Islam, se présenta finalement devant le Prophète ﷺ après sa conversion et récita un poème d'éloge célèbre (Bânat Su'âd). Touché, le Prophète ﷺ lui offrit son propre manteau en signe d'honneur et de pardon.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "avancé",
+    "jour": 96
+  },
+  {
+    "id": "quiz_275",
+    "question": "Quel Compagnon fut surnommé « le poète des deux ailes » (dhu al-jinâhayn) après avoir perdu ses deux bras au combat de Mu'ta ?",
+    "choix": ["A. Ja'far ibn Abî Tâlib", "B. Zayd ibn Hâritha", "C. 'Abdullâh ibn Rawâha", "D. Khâlid ibn al-Walîd"],
+    "reponse": "A",
+    "explication": "Ja'far ibn Abî Tâlib, ayant perdu ses deux bras en portant l'étendard après la mort de Zayd, continua selon la tradition à le tenir avec les moignons de ses bras jusqu'à sa propre mort. Le Prophète ﷺ annonça qu'Allah lui avait donné en échange deux ailes pour voler au Paradis, d'où son surnom de Dhû al-Janâhayn (celui aux deux ailes).",
+    "theme": "sira",
+    "source": "Sunan at-Tirmidhî n°3763",
+    "difficulte": "intermédiaire",
+    "jour": 96
+  },
+  {
+    "id": "quiz_276",
+    "question": "Selon Ahl as-Sunna, les miracles accordés aux saints (karâmât al-awliyâ') après l'ère prophétique sont-ils reconnus comme possibles ?",
+    "choix": ["A. Non, tout miracle a cessé définitivement avec la mort du dernier prophète", "B. Oui, Ahl as-Sunna reconnaît la possibilité de karâmât pour des serviteurs pieux, sans que cela ne leur confère un statut prophétique", "C. Seuls les Compagnons du Prophète ﷺ pouvaient en bénéficier", "D. Le sujet est unanimement rejeté par tous les théologiens sunnites"],
+    "reponse": "B",
+    "explication": "Ahl as-Sunna reconnaît la possibilité de karâmât (faveurs extraordinaires) accordées à des serviteurs pieux après l'ère prophétique, sans que cela leur confère un statut prophétique ni ne constitue une nouvelle source législative, distinguant nettement ces faveurs des mu'jizât (miracles) réservés aux prophètes comme preuve de leur mission.",
+    "theme": "aqida",
+    "source": "Al-'Aqîda at-Tahâwiyya ; Ibn Taymiyya, al-Furqân bayna Awliyâ' ar-Rahmân",
+    "difficulte": "avancé",
+    "jour": 97
+  },
+  {
+    "id": "quiz_277",
+    "question": "Comment Ahl as-Sunna distingue-t-elle une karâma authentique d'un phénomène trompeur d'origine diabolique (istidrâj) ?",
+    "choix": ["A. Il n'existe aucun critère de distinction possible", "B. La conformité de la personne à la Sharî'a et son attachement à l'obéissance sont des critères essentiels ; un phénomène extraordinaire accompagnant la désobéissance manifeste est suspect", "C. Seule la popularité de la personne suffit à valider le phénomène", "D. Tout phénomène extraordinaire est automatiquement authentique"],
+    "reponse": "B",
+    "explication": "Les savants insistent sur le fait qu'une karâma authentique s'accompagne d'un attachement réel à la Sharî'a et à l'obéissance religieuse, tandis qu'un phénomène extraordinaire chez une personne manifestement désobéissante ou hors des prescriptions religieuses relève davantage de l'istidrâj, une épreuve ou une ruse plutôt qu'une faveur authentique.",
+    "theme": "aqida",
+    "source": "Ibn Taymiyya, al-Furqân bayna Awliyâ' ar-Rahmân wa Awliyâ' ash-Shaytân",
+    "difficulte": "avancé",
+    "jour": 97
+  },
+  {
+    "id": "quiz_278",
+    "question": "Quelle sourate mecquoise met en scène le dialogue entre Ibrâhîm et le roi Nimrod (non nommé explicitement) sur la puissance de donner la vie et la mort ?",
+    "choix": ["A. Al-Baqara", "B. Al-An'âm", "C. Maryam", "D. Al-Anbiyâ'"],
+    "reponse": "A",
+    "explication": "Al-Baqara (2:258) relate le débat entre Ibrâhîm et un roi arrogant (traditionnellement identifié à Nimrod, sans que son nom soit mentionné explicitement dans le Coran) qui prétendait donner la vie et la mort. Ibrâhîm le confondit en lui demandant de faire lever le soleil à l'ouest, laissant le roi sans réponse.",
+    "theme": "coran",
+    "source": "Coran 2:258 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 98
+  },
+  {
+    "id": "quiz_279",
+    "question": "Le nom « Nimrod », traditionnellement associé au roi ayant défié Ibrâhîm, figure-t-il explicitement dans le texte coranique ?",
+    "choix": ["A. Oui, il est cité nommément en Al-Baqara", "B. Non, le Coran ne le nomme pas explicitement ; ce nom provient de la tradition exégétique post-coranique", "C. Il est mentionné dans une autre sourate uniquement", "D. Le Coran mentionne plusieurs noms différents pour ce roi"],
+    "reponse": "B",
+    "explication": "Le nom Nimrod n'apparaît nulle part explicitement dans le Coran ; il provient de la tradition exégétique et des récits post-coraniques (isrâ'îliyyât notamment), largement reprise par les commentateurs, sans que le texte scripturaire lui-même ne fournisse cette identification nominale précise.",
+    "theme": "coran",
+    "source": "Tafsîr at-Tabarî et Ibn Kathîr, 2:258 ; discussion des isrâ'îliyyât",
+    "difficulte": "avancé",
+    "jour": 98
+  },
+  {
+    "id": "quiz_280",
+    "question": "Comment Ibrâhîm fut-il sauvé, selon le Coran, après avoir été jeté dans un immense brasier par son peuple ?",
+    "choix": ["A. Il s'échappa par ses propres moyens avant d'être jeté", "B. Allah ordonna au feu d'être fraîcheur et paix pour lui, le préservant miraculeusement de toute brûlure", "C. Un ange le porta hors du feu avant qu'il n'y touche", "D. Le peuple renonça à son projet au dernier moment"],
+    "reponse": "B",
+    "explication": "Al-Anbiyâ' (21:69) rapporte l'ordre divin : « Ô feu, sois fraîcheur et paix sur Ibrâhîm ! » Le feu perdit ainsi sa nature brûlante tout en conservant son apparence, un miracle qui laissa Ibrâhîm indemne devant un peuple stupéfait de son échec à le faire périr.",
+    "theme": "coran",
+    "source": "Coran 21:68-70 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 98
+  }
+]
