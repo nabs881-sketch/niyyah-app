@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_581",
+    "question": "Quelle sourate relate le miracle de la fente de la lune (inshiqâq al-qamar), signe demandé par les polythéistes mecquois au Prophète ﷺ ?",
+    "choix": ["A. Al-Qamar", "B. Ash-Shams uniquement", "C. Al-Layl uniquement", "D. At-Târiq uniquement"],
+    "reponse": "A",
+    "explication": "Al-Qamar (54:1) s'ouvre par : « L'Heure approche et la lune s'est fendue. » Les commentateurs classiques et plusieurs hadiths rapportent ce miracle survenu à la Mecque, observé par des Compagnons, comme signe accordé en réponse au défi lancé par les polythéistes au Prophète ﷺ.",
+    "theme": "coran",
+    "source": "Coran 54:1-2 ; Sahîh al-Bukhârî n°3868",
+    "difficulte": "intermédiaire",
+    "jour": 204
+  },
+  {
+    "id": "quiz_582",
+    "question": "Comment réagirent les polythéistes mecquois, selon le Coran, face à ce signe pourtant extraordinaire de la lune fendue ?",
+    "choix": ["A. Ils le rejetèrent en le qualifiant de magie continue, refusant d'y voir un signe authentique malgré son évidence", "B. Ils se convertirent tous immédiatement", "C. Ils n'en eurent jamais connaissance", "D. Ils reconnurent immédiatement leur erreur"],
+    "reponse": "A",
+    "explication": "Al-Qamar (54:2) poursuit : « Et s'ils voient un prodige, ils s'en détournent et disent : 'Une magie persistante !' » Cette réaction illustre un principe récurrent dans le Coran : un signe miraculeux, aussi frappant soit-il, ne suffit pas à convaincre un cœur déterminé à refuser la vérité par orgueil ou intérêt.",
+    "theme": "coran",
+    "source": "Coran 54:2 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 204
+  },
+  {
+    "id": "quiz_583",
+    "question": "Quel Compagnon rapporte avoir personnellement été témoin oculaire du miracle de la lune fendue en deux parties distinctes ?",
+    "choix": ["A. 'Abdullâh ibn Mas'ûd", "B. Aucun Compagnon n'en fut témoin direct", "C. Uniquement des non-musulmans en furent témoins", "D. Le Prophète ﷺ fut le seul témoin"],
+    "reponse": "A",
+    "explication": "'Abdullâh ibn Mas'ûd rapporte avoir vu la lune se fendre en deux, une moitié apparaissant au-dessus d'une montagne, précisant même avoir entendu le Prophète ﷺ dire aux témoins : « Soyez témoins. » Ce témoignage direct d'un Compagnon renforce la solidité du récit rapporté dans les collections authentiques de hadiths.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3869 ; Sahîh Muslim n°2800",
+    "difficulte": "avancé",
+    "jour": 204
+  },
+  {
+    "id": "quiz_584",
+    "question": "Selon la majorité des écoles, un musulman voyageant pour affaires commerciales bénéficie-t-il des mêmes facilités de raccourcissement de la prière qu'un voyageur pour un autre motif (pèlerinage, visite familiale) ?",
+    "choix": ["A. Oui, la majorité ne conditionne pas la facilité du voyage à un motif religieux spécifique, le simple fait de voyager sur la distance requise suffisant", "B. Non, seul le voyage pour le Hajj donne droit au raccourcissement", "C. Le commerce annule totalement le droit au raccourcissement", "D. Cela dépend uniquement du montant gagné durant le voyage"],
+    "reponse": "A",
+    "explication": "La majorité des savants ne conditionne pas les facilités du voyage (qasr, jam', rupture du jeûne) à un motif religieux ou pieux particulier : voyage commercial, familial, touristique ou autre, tant que la distance requise et l'intention réelle de voyage sont réunies, la facilité s'applique de manière équivalente.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif du voyage",
+    "difficulte": "intermédiaire",
+    "jour": 205
+  },
+  {
+    "id": "quiz_585",
+    "question": "Selon la majorité des écoles, un voyage entrepris dans un but explicitement illicite (pour commettre un péché) donne-t-il droit aux mêmes facilités que le voyage licite ?",
+    "choix": ["A. Non, la majorité des savants exclut le voyageur pécheur (musâfir bi ma'siya) de ces facilités, le voyage devant être entrepris à des fins licites pour en bénéficier", "B. Oui, sans aucune distinction possible sur le motif du voyage", "C. La question n'a jamais été posée par les savants classiques", "D. Cela concerne uniquement les femmes voyageant seules"],
+    "reponse": "A",
+    "explication": "La majorité, notamment shâfi'ite, exclut de ces facilités celui dont le voyage est entrepris dans le but explicite de commettre un péché (vol organisé, fuite après un crime, etc.), considérant qu'accorder une facilité religieuse à un acte de désobéissance serait contradictoire avec l'esprit même de la législation.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif du voyage ; Al-Majmû', an-Nawawî",
+    "difficulte": "avancé",
+    "jour": 205
+  },
+  {
+    "id": "quiz_586",
+    "question": "Selon la majorité des écoles, à partir de quel moment précis un voyageur retrouve-t-il le statut de résident, perdant ainsi le droit aux facilités du voyage ?",
+    "choix": ["A. Dès son retour dans sa ville de résidence habituelle, ou dès son intention de s'établir durablement dans un nouveau lieu au-delà d'une certaine durée", "B. Uniquement après un an complet écoulé", "C. Il conserve indéfiniment le statut de voyageur une fois parti", "D. Aucune règle précise n'existe sur ce sujet"],
+    "reponse": "A",
+    "explication": "Le statut de voyageur cesse dès le retour dans la ville de résidence habituelle. En cas de séjour prolongé ailleurs, les écoles divergent sur la durée précise à partir de laquelle le statut de résident est retrouvé (variant de quatre jours pour certains à une durée indéterminée pour d'autres, selon l'intention de séjour établie dès l'arrivée).",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif du voyage ; consensus et divergences classiques",
+    "difficulte": "avancé",
+    "jour": 205
+  },
+  {
+    "id": "quiz_587",
+    "question": "Quel Compagnon fut envoyé comme premier gouverneur musulman de Basra, ville nouvellement fondée comme garnison lors des conquêtes en Irak ?",
+    "choix": ["A. 'Utba ibn Ghazwân", "B. Sa'd ibn Abî Waqqâs uniquement", "C. Al-Mughîra ibn Shu'ba uniquement", "D. Aucun gouverneur ne fut nommé avant plusieurs décennies"],
+    "reponse": "A",
+    "explication": "'Utba ibn Ghazwân fut chargé par 'Umar de fonder et gouverner Basra comme nouvelle ville-garnison stratégique en Irak méridional, complément à Kûfa dans l'organisation administrative des territoires nouvellement conquis, posant les bases d'une cité appelée à devenir un grand centre intellectuel et commercial.",
+    "theme": "sira",
+    "source": "at-Tabarî, Târîkh ar-Rusul wa'l-Mulûk",
+    "difficulte": "avancé",
+    "jour": 206
+  },
+  {
+    "id": "quiz_588",
+    "question": "Quel Compagnon célèbre pour sa piété et son ascétisme refusa systématiquement toute fonction de pouvoir ou de gouvernorat proposée par les califes successifs ?",
+    "choix": ["A. Abû Dharr al-Ghifârî", "B. 'Amr ibn al-'Âs", "C. Al-Mughîra ibn Shu'ba", "D. Khâlid ibn al-Walîd"],
+    "reponse": "A",
+    "explication": "Abû Dharr al-Ghifârî, connu pour son ascétisme rigoureux et sa critique constante de l'accumulation de richesses, refusa toute fonction de pouvoir, y compris lorsque le Prophète ﷺ lui-même déconseilla de lui confier un poste de commandement, le jugeant lui-même trop faible face aux responsabilités et aux tentations du pouvoir malgré sa piété exemplaire.",
+    "theme": "sira",
+    "source": "Sahîh Muslim n°1826",
+    "difficulte": "avancé",
+    "jour": 206
+  },
+  {
+    "id": "quiz_589",
+    "question": "Comment appelle-t-on, en 'aqîda, la croyance selon laquelle les prophètes sont les meilleures créatures d'Allah, suivis en rang par les anges puis les hommes pieux ordinaires selon la majorité des savants ?",
+    "choix": ["A. Tafdîl al-Anbiyâ' (la préférence accordée aux prophètes)", "B. Al-'Ismah uniquement", "C. Al-Wahy uniquement", "D. Aucune hiérarchie de ce type n'est reconnue en 'aqîda"],
+    "reponse": "A",
+    "explication": "La majorité des savants sunnites affirme la supériorité des prophètes sur l'ensemble de la création, y compris sur les anges selon l'opinion la plus répandue, en raison de leur mission unique de transmission de la révélation et de leur endurance exceptionnelle face aux épreuves rencontrées dans l'accomplissement de cette charge.",
+    "theme": "aqida",
+    "source": "Théologie classique sur le statut des prophètes",
+    "difficulte": "avancé",
+    "jour": 206
+  },
+  {
+    "id": "quiz_590",
+    "question": "Selon un hadith, quel prophète le Prophète ﷺ désigne-t-il comme le plus proche de lui parmi tous les prophètes précédents, en termes de ressemblance de mission et d'épreuves traversées ?",
+    "choix": ["A. 'Îsâ (Jésus)", "B. Mûsâ (Moïse)", "C. Ibrâhîm (Abraham)", "D. Aucune comparaison de ce type n'est rapportée"],
+    "reponse": "B",
+    "explication": "Plusieurs hadiths soulignent la proximité particulière entre Mûsâ et Muhammad ﷺ, tant par les parallèles de leurs missions (confrontation à un pouvoir oppresseur, législation détaillée, épreuves d'un peuple récalcitrant) que par des détails rituels partagés (comme le jeûne de 'Âshûrâ', observé par Mûsâ en remerciement de la délivrance de son peuple, et repris par le Prophète ﷺ).",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3397 ; Sahîh Muslim n°1130",
+    "difficulte": "avancé",
+    "jour": 207
+  },
+  {
+    "id": "quiz_591",
+    "question": "Pourquoi le Prophète ﷺ institua-t-il le jeûne du jour de 'Âshûrâ' (10 Muharram), avant même l'institution du jeûne obligatoire de Ramadan ?",
+    "choix": ["A. En apprenant que les juifs de Médine jeûnaient ce jour en commémoration de la délivrance de Mûsâ face à Pharaon, il déclara avoir plus de droit que quiconque à honorer Mûsâ, et jeûna lui-même ce jour, encourageant ses Compagnons à faire de même", "B. Ce jeûne fut institué sans lien avec aucun événement historique particulier", "C. Il s'agit d'une pratique purement arabe préislamique sans rapport avec Mûsâ", "D. Cette pratique concerne exclusivement les convertis d'origine juive"],
+    "reponse": "A",
+    "explication": "À son arrivée à Médine, le Prophète ﷺ observa que les juifs locaux jeûnaient le jour de 'Âshûrâ' en mémoire de la délivrance de Mûsâ. Il déclara alors : « Nous avons plus de droit que vous sur Mûsâ », instituant lui-même ce jeûne pour la communauté musulmane, devenu ensuite surérogatoire (recommandé mais non obligatoire) après l'institution du jeûne de Ramadan.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°2004 ; Sahîh Muslim n°1130",
+    "difficulte": "intermédiaire",
+    "jour": 207
+  },
+  {
+    "id": "quiz_592",
+    "question": "Selon la majorité des écoles, le jeûne du jour de 'Âshûrâ' est-il aujourd'hui obligatoire ou surérogatoire ?",
+    "choix": ["A. Surérogatoire (sunna), fortement recommandé mais non obligatoire depuis l'institution du jeûne de Ramadan", "B. Toujours obligatoire comme à l'origine", "C. Totalement interdit depuis l'institution du Ramadan", "D. Obligatoire uniquement pour les convertis récents"],
+    "reponse": "A",
+    "explication": "Après l'institution du jeûne obligatoire de Ramadan, celui de 'Âshûrâ' devint définitivement surérogatoire, fortement recommandé en raison de son mérite important (effacement des péchés d'une année selon un hadith), mais sans caractère obligatoire, contrairement à son statut initial avant Ramadan.",
+    "theme": "fiqh",
+    "source": "Sahîh Muslim n°1162 ; Fiqh classique du jeûne",
+    "difficulte": "intermédiaire",
+    "jour": 207
+  },
+  {
+    "id": "quiz_593",
+    "question": "Quelle sourate évoque le pacte solennel (mîthâq) qu'Allah aurait pris de tous les prophètes, incluant Muhammad ﷺ, pour se soutenir mutuellement si leurs missions se croisaient ?",
+    "choix": ["A. Âl 'Imrân", "B. Al-Ahzâb uniquement", "C. Al-Mâ'ida uniquement", "D. An-Nisâ' uniquement"],
+    "reponse": "A",
+    "explication": "Âl 'Imrân (3:81) rapporte ce pacte : « Allah prit l'engagement des prophètes : chaque fois que Je vous accorderai un Livre et une sagesse, puis qu'un messager confirmant ce que vous avez viendra, vous devrez croire en lui et l'assister. » Un engagement théologique unique associant l'ensemble des prophètes envers la mission finale annoncée.",
+    "theme": "coran",
+    "source": "Coran 3:81 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 208
+  },
+  {
+    "id": "quiz_594",
+    "question": "Selon la majorité des commentateurs, ce verset du pacte des prophètes signifie-t-il que chaque prophète antérieur, s'il avait vécu jusqu'à l'époque de Muhammad ﷺ, aurait été tenu de le suivre ?",
+    "choix": ["A. Oui, c'est l'interprétation majoritaire, chaque prophète étant engagé à reconnaître et suivre le Sceau des prophètes si leur mission avait coïncidé temporellement", "B. Non, ce verset ne concerne aucunement Muhammad ﷺ", "C. Il concerne exclusivement 'Îsâ, aucun autre prophète", "D. L'interprétation majoritaire rejette totalement cette lecture"],
+    "reponse": "A",
+    "explication": "La majorité des commentateurs, dont Ibn Kathîr, comprend ce verset comme établissant que même les prophètes antérieurs, en tant que serviteurs soumis au même Allah unique, auraient été tenus de suivre Muhammad ﷺ s'ils avaient vécu à son époque, soulignant l'unité fondamentale du message prophétique malgré la diversité des lois particulières (sharâ'i') accordées à chacun.",
+    "theme": "aqida",
+    "source": "Tafsîr Ibn Kathîr, 3:81",
+    "difficulte": "avancé",
+    "jour": 208
+  },
+  {
+    "id": "quiz_595",
+    "question": "Comment appelle-t-on, en 'aqîda, le principe selon lequel chaque nation prophétique reçut une loi particulière (sharî'a) adaptée à son contexte, tout en partageant le même Tawhîd fondamental transmis par tous les prophètes ?",
+    "choix": ["A. Wahdat ad-Dîn wa Ta'addud ash-Sharâ'i' (unité de la religion, pluralité des lois)", "B. At-Tahrîf uniquement", "C. An-Naskh al-Kullî", "D. Ce principe n'existe pas en théologie islamique"],
+    "reponse": "A",
+    "explication": "Les savants distinguent la religion fondamentale (ad-dîn), le Tawhîd unique transmis identiquement par tous les prophètes, des lois particulières (sharâ'i') adaptées à chaque peuple et époque, variant sur des points pratiques secondaires sans jamais diverger sur les fondements de la croyance au Dieu unique.",
+    "theme": "aqida",
+    "source": "Coran 5:48 ; théologie classique de la prophétie",
+    "difficulte": "avancé",
+    "jour": 208
+  },
+  {
+    "id": "quiz_596",
+    "question": "Selon la majorité des écoles, un musulman ayant volontairement rompu son jeûne de Ramadan sans excuse valable doit-il, en plus du rattrapage, manifester un repentir sincère ?",
+    "choix": ["A. Oui, le rattrapage seul ne suffit pas sans un repentir sincère (tawba) accompagnant la reconnaissance de la gravité de l'acte", "B. Non, le simple rattrapage efface automatiquement toute trace de péché sans nécessiter de repentir", "C. Aucun rattrapage n'est requis dans ce cas précis", "D. Le repentir seul suffit sans rattrapage nécessaire"],
+    "reponse": "A",
+    "explication": "Au-delà de l'obligation juridique de rattrapage (et d'expiation selon les cas), les savants insistent sur la nécessité d'un repentir sincère (tawba) reconnaissant la gravité de la rupture délibérée d'une obligation aussi fondamentale que le jeûne de Ramadan, le simple accomplissement formel du rattrapage ne suffisant pas à lui seul sur le plan spirituel.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif du jeûne ; principes de la tawba",
+    "difficulte": "intermédiaire",
+    "jour": 209
+  },
+  {
+    "id": "quiz_597",
+    "question": "Quelle sourate mecquoise décrit le repentir comme porte toujours ouverte, indépendamment de l'ampleur des péchés accumulés par le pécheur ?",
+    "choix": ["A. Az-Zumar", "B. Al-Furqân uniquement", "C. An-Nisâ' uniquement", "D. Al-Mâ'ida uniquement"],
+    "reponse": "A",
+    "explication": "Az-Zumar (39:53) déjà cité précédemment déclare qu'Allah pardonne tous les péchés sans exception à qui se repent sincèrement, un principe théologique fondamental encourageant à ne jamais désespérer de la miséricorde divine, quelle que soit l'ampleur des fautes accumulées au fil d'une vie.",
+    "theme": "coran",
+    "source": "Coran 39:53 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 209
+  },
+  {
+    "id": "quiz_598",
+    "question": "Selon un hadith, comment Allah accueille-t-Il le repentir sincère d'un serviteur, en termes de joie divine décrite métaphoriquement ?",
+    "choix": ["A. Plus grande que la joie d'un voyageur retrouvant sa monture perdue avec toutes ses provisions dans un désert désolé", "B. Aucune image de ce type n'est utilisée dans la Sunna", "C. Allah reste indifférent au repentir des serviteurs", "D. Cette image concerne uniquement les prophètes"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « Allah se réjouit davantage du repentir de Son serviteur que l'un d'entre vous ne se réjouirait de retrouver sa monture perdue avec toutes ses provisions, après l'avoir cherchée désespérément dans le désert. » Une image puissante illustrant l'intensité de la joie divine face au retour sincère d'un cœur égaré.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2747",
+    "difficulte": "intermédiaire",
+    "jour": 209
+  },
+  {
+    "id": "quiz_599",
+    "question": "Selon un hadith, la porte du repentir reste-t-elle ouverte indéfiniment, ou existe-t-il un moment précis où elle se fermera définitivement pour l'humanité ?",
+    "choix": ["A. Elle restera ouverte jusqu'à ce que le soleil se lève depuis l'ouest, signe majeur annonçant la fin des temps, après lequel le repentir ne sera plus accepté", "B. Elle reste ouverte éternellement sans aucune limite temporelle", "C. Elle se ferme dès l'âge de quarante ans pour chaque individu", "D. Aucun hadith n'aborde cette question"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit qu'Allah accepte le repentir de Son serviteur tant que le soleil ne s'est pas levé de l'ouest — l'un des grands signes de la fin des temps — après quoi la porte du repentir se refermera définitivement, la foi ou le repentir manifesté après ce signe irréfutable ne bénéficiant plus de la même valeur qu'un choix libre et sincère.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°2759",
+    "difficulte": "avancé",
+    "jour": 210
+  },
+  {
+    "id": "quiz_600",
+    "question": "Comment le Coran qualifie-t-Il Allah, dans un verset souvent cité en clôture d'invocations, par rapport à l'acceptation du repentir de Ses serviteurs ?",
+    "choix": ["A. « At-Tawwâb ar-Rahîm » (Celui qui accueille sans cesse le repentir, le Très Miséricordieux)", "B. Uniquement comme un juge sévère sans mention de miséricorde", "C. Le Coran ne mentionne jamais cet attribut", "D. Cet attribut concerne uniquement les prophètes, non les gens ordinaires"],
+    "reponse": "A",
+    "explication": "Plusieurs versets, dont Al-Baqara (2:37, 2:160), qualifient Allah d'At-Tawwâb (Celui qui accueille sans cesse et à répétition le repentir sincère) associé à ar-Rahîm (le Très Miséricordieux), une double désignation rappelant que la porte du retour vers Allah reste ouverte à chaque nouvelle chute, sans lassitude divine face à la fragilité humaine récurrente.",
+    "theme": "coran",
+    "source": "Coran 2:37, 2:160 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 210
+  }
+]
