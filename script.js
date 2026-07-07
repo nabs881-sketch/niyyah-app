@@ -13051,7 +13051,9 @@ function closeTawhid() {
     }
     _markTawhidDone();
     _knowledgeReturn('tawhid_jour');
+    return;
   }
+  _restoreScroll();
 }
 window.openTawhid = openTawhid;
 window.closeTawhid = closeTawhid;
@@ -13127,7 +13129,8 @@ function closeQuiz() {
   window._quizFromPratique = false;
   window._quizFromFil = false;
   _quizSession = null;
-  if (typeof openVueAuFilDuJour === 'function') openVueAuFilDuJour();
+  if (typeof openVueAuFilDuJour === 'function') { openVueAuFilDuJour(); return; }
+  _restoreScroll();
 }
 
 function _quizChoiceTap(btn, choix, reponse) {
@@ -19417,6 +19420,7 @@ function openVueRituel(prayer) {
   const v = document.getElementById('vue-rituel');
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_vuedujour') !== '1') return _niyyahIntro('vuedujour', function(){ openVueRituel(prayer); });
+  _saveScroll();
   _rituelOriginTab = (document.querySelector('.v2-tab.active') || {}).id || 'v2nav-sanctuaire';
   v.querySelector('.rituel-titre').textContent = 'APRÈS ' + prayer.toUpperCase();
   const next = { fajr:'Dhuhr', dhuhr:'Asr', asr:'Maghrib', maghrib:'Isha', isha:'Fajr' };
@@ -19631,6 +19635,7 @@ function openVueAuFilDuJour() {
   const v = document.getElementById('vue-rituel');
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_aufildujour') !== '1') return _niyyahIntro('aufildujour', openVueAuFilDuJour);
+  _saveScroll();
   _rituelOriginTab = (document.querySelector('.v2-tab.active') || {}).id || 'v2nav-sanctuaire';
   window._rituelFromFil = true;
   v.querySelector('.rituel-titre').textContent = 'AU FIL DU JOUR';
