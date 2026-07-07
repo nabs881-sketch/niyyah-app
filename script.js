@@ -12996,6 +12996,8 @@ function _renderTawhidOverlay() {
   document.body.insertAdjacentHTML('beforeend', html);
   var _ov = document.getElementById('tawhid-overlay');
   _ov.classList.add('tawhid-visible');
+  _ov.ontouchstart = function(e) { _swipeCloseStartX = e.touches[0].clientX; };
+  _ov.ontouchend = function(e) { if (e.changedTouches[0].clientX - _swipeCloseStartX > 100) closeTawhid(); };
   if (window._tawhidFromFil) {
     _ov.addEventListener('scroll', function _tawhidScroll() {
       if (_ov.scrollTop + _ov.clientHeight >= _ov.scrollHeight - 60) {
@@ -13058,6 +13060,7 @@ window._openTawhidJour = _openTawhidJour;
 
 // ── QUIZ DU JOUR ──
 var _quizSession = null;
+var _swipeCloseStartX = 0;
 
 function _openQuizJour() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
@@ -13105,7 +13108,11 @@ function _renderQuizOverlay() {
   document.body.insertAdjacentHTML('beforeend', html);
   requestAnimationFrame(function() {
     var ov = document.getElementById('quiz-overlay');
-    if (ov) ov.classList.add('quiz-visible');
+    if (ov) {
+      ov.classList.add('quiz-visible');
+      ov.ontouchstart = function(e) { _swipeCloseStartX = e.touches[0].clientX; };
+      ov.ontouchend = function(e) { if (e.changedTouches[0].clientX - _swipeCloseStartX > 100) closeQuiz(); };
+    }
   });
 }
 
@@ -20916,6 +20923,8 @@ const SIRA = {
       ov.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#2C2E32;color:#FAF7EE;overflow:auto;opacity:0;transition:opacity 400ms ease;';
       document.body.appendChild(ov);
       setTimeout(function() { ov.style.opacity = '1'; }, 10);
+      ov.ontouchstart = function(e) { _swipeCloseStartX = e.touches[0].clientX; };
+      ov.ontouchend = function(e) { if (e.changedTouches[0].clientX - _swipeCloseStartX > 100) { _siraStopAudio(); document.getElementById('sira-overlay').remove(); _restoreScroll(); a11yOnOverlayClose(); } };
     }
     return ov;
   },
