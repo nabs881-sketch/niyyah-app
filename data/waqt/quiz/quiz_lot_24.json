@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_461",
+    "question": "Quelle sourate relate un groupe de djinns écoutant secrètement la récitation du Coran et croyant instantanément en son message ?",
+    "choix": ["A. Al-Ahqâf", "B. Al-Jinn uniquement", "C. Ar-Rahmân uniquement", "D. Al-Kahf uniquement"],
+    "reponse": "A",
+    "explication": "Al-Ahqâf (46:29-32) relate qu'un groupe de djinns, ayant écouté la récitation du Prophète ﷺ, retournèrent avertir leur peuple : « Ô notre peuple, nous avons entendu un Livre descendu après Mûsâ... appelant vers la vérité et vers un chemin droit. » Un épisode confirmant que le message coranique s'adresse aussi aux djinns.",
+    "theme": "coran",
+    "source": "Coran 46:29-32 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 162
+  },
+  {
+    "id": "quiz_462",
+    "question": "Quelle sourate décrit le vent soumis au prophète Sulaymân, parcourant en une matinée l'équivalent d'un mois de marche ?",
+    "choix": ["A. Sabâ'", "B. An-Naml uniquement", "C. Al-Anbiyâ' uniquement", "D. Ash-Shu'arâ' uniquement"],
+    "reponse": "A",
+    "explication": "Sabâ' (34:12) déclare : « Et à Sulaymân [Nous avons soumis] le vent, dont le parcours d'un mois se fait le matin, et le parcours d'un mois se fait le soir. » Une faveur exceptionnelle témoignant de l'étendue du pouvoir accordé à ce prophète-roi.",
+    "theme": "coran",
+    "source": "Coran 34:12 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 162
+  },
+  {
+    "id": "quiz_463",
+    "question": "Quelle sourate décrit le fer ramolli entre les mains du prophète Dâwûd, lui permettant de façonner des cottes de mailles ?",
+    "choix": ["A. Al-Anbiyâ'", "B. Sabâ' uniquement", "C. Al-Hadîd uniquement", "D. Sâd uniquement"],
+    "reponse": "A",
+    "explication": "Al-Anbiyâ' (21:80) déclare : « Nous lui avons enseigné la fabrication de cottes de mailles pour vous protéger de votre propre violence. » Un miracle distinct de la simple mention du fer en Al-Hadîd (57:25), le fer se ramollissant directement entre les mains de Dâwûd.",
+    "theme": "coran",
+    "source": "Coran 21:80, 34:10-11 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 162
+  },
+  {
+    "id": "quiz_464",
+    "question": "Selon la majorité des écoles, un voyageur peut-il choisir librement entre avancer (taqdîm) ou retarder (ta'khîr) le regroupement de ses prières, selon ce qui lui convient le mieux ?",
+    "choix": ["A. Non, il doit toujours avancer, jamais retarder", "B. Oui, la majorité laisse ce choix au voyageur selon sa situation pratique du moment", "C. Le choix dépend uniquement de l'heure de la journée", "D. Seul le retard est autorisé, jamais l'avance"],
+    "reponse": "B",
+    "explication": "La majorité des savants accorde au voyageur la liberté de choisir la formule la plus pratique selon sa situation concrète du moment : avancer 'Asr avec Dhuhr avant de reprendre la route, ou retarder Dhuhr pour la regrouper avec 'Asr à l'arrivée, cette souplesse étant elle-même une facilité voulue par la législation du voyage.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif du voyage ; consensus classique",
+    "difficulte": "intermédiaire",
+    "jour": 163
+  },
+  {
+    "id": "quiz_465",
+    "question": "Quel est le nisâb classique de l'argent à partir duquel la zakât devient obligatoire ?",
+    "choix": ["A. Environ 200 dirhams, soit environ 595 grammes selon l'équivalence retenue", "B. Environ 85 grammes, comme pour l'or", "C. Il n'existe pas de nisâb spécifique pour l'argent", "D. Environ 1 kilogramme"],
+    "reponse": "A",
+    "explication": "Le nisâb de l'argent est fixé à 200 dirhams, équivalant à environ 595 grammes selon les conversions les plus courantes retenues par les savants contemporains, un seuil distinct de celui de l'or, reflétant les valeurs relatives historiques des deux métaux.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1447 ; Fiqh az-Zakât classique",
+    "difficulte": "intermédiaire",
+    "jour": 163
+  },
+  {
+    "id": "quiz_466",
+    "question": "Selon les écoles classiques, tailler la barbe pour l'entretenir est-il permis, ou seul le rasage complet est-il discuté ?",
+    "choix": ["A. La majorité interdit le rasage complet ; sur la taille/l'entretien, des nuances existent, certaines permettant de raccourcir l'excédent au-delà d'une poignée", "B. Aucune position n'existe sur ce sujet en fiqh classique", "C. Toutes les écoles interdisent absolument toute forme de taille", "D. Toutes les écoles autorisent le rasage complet sans réserve"],
+    "reponse": "A",
+    "explication": "La majorité des savants classiques, s'appuyant sur des hadiths ordonnant de laisser pousser la barbe, interdisent le rasage complet. Sur la taille d'entretien, Ibn 'Umar rapporté par al-Bukhârî coupait l'excédent dépassant une poignée fermée, une pratique reprise par plusieurs écoles comme forme d'entretien licite.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°5892 ; Fiqh comparatif de l'apparence",
+    "difficulte": "avancé",
+    "jour": 163
+  },
+  {
+    "id": "quiz_467",
+    "question": "Selon un hadith, comment le Prophète ﷺ décrivit-il l'émotion cosmique provoquée par la mort de Sa'd ibn Mu'âdh, chef des Aws ?",
+    "choix": ["A. « Le Trône du Tout Miséricordieux a tremblé pour la mort de Sa'd ibn Mu'âdh »", "B. Aucune parole particulière n'est rapportée à ce sujet", "C. Le Prophète ﷺ ne se rendit pas à ses funérailles", "D. Il critiqua Sa'd pour son jugement contre les Banû Qurayza"],
+    "reponse": "A",
+    "explication": "Après la mort de Sa'd ibn Mu'âdh, dont les blessures reçues durant la bataille du Fossé finirent par l'emporter, le Prophète ﷺ déclara : « Le Trône du Tout Miséricordieux a tremblé pour la mort de Sa'd ibn Mu'âdh. » Un honneur suprême rendu à ce Compagnon.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3803 ; Sahîh Muslim n°2466",
+    "difficulte": "avancé",
+    "jour": 164
+  },
+  {
+    "id": "quiz_468",
+    "question": "Chez quel Compagnon le Prophète ﷺ logea-t-il à son arrivée à Médine, la maison ayant été désignée par l'endroit où sa chamelle s'agenouilla spontanément ?",
+    "choix": ["A. Abû Ayyûb al-Ansârî", "B. Sa'd ibn 'Ubâda", "C. Mus'ab ibn 'Umayr", "D. As'ad ibn Zurâra"],
+    "reponse": "A",
+    "explication": "Lorsque la chamelle du Prophète ﷺ s'agenouilla d'elle-même sur un terrain appartenant à deux jeunes orphelins, celui-ci déclara vouloir laisser l'animal choisir son chemin « guidée par Allah ». La maison la plus proche de cet emplacement était celle d'Abû Ayyûb al-Ansârî, qui eut l'honneur d'héberger le Prophète ﷺ durant les premiers mois suivant la Hijra.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3906 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "intermédiaire",
+    "jour": 164
+  },
+  {
+    "id": "quiz_469",
+    "question": "Après la conquête de la Mecque, quelle réaction certains anciens notables qurayshites eurent-ils en voyant Bilâl, ancien esclave affranchi, appeler à la prière au sommet de la Ka'ba ?",
+    "choix": ["A. Certains exprimèrent un mépris tribal à voir cet honneur revenir à un ancien esclave, réaction rapportée comme corrigée par la révélation sur l'égalité fondée sur la piété", "B. Tous l'acceptèrent avec joie sans réserve immédiatement", "C. Bilâl refusa lui-même cette responsabilité", "D. Cet épisode n'est mentionné dans aucune source"],
+    "reponse": "A",
+    "explication": "Des récits rapportent que certains anciens notables mecquois, encore marqués par les hiérarchies tribales antérieures, s'étonnèrent de voir un ancien esclave abyssin honoré de cette place symbolique au sommet de la Ka'ba — un contraste frappant avec le principe d'égalité par la piété qu'Al-Hujurât (49:13) viendra affirmer avec force.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2 ; Tafsîr 49:13",
+    "difficulte": "avancé",
+    "jour": 164
+  },
+  {
+    "id": "quiz_470",
+    "question": "Comment appelle-t-on, en 'aqîda, la distinction entre la révélation récitée (le Coran, wahy matlû) et la révélation non récitée (la Sunna authentique, wahy ghayr matlû) ?",
+    "choix": ["A. Wahy Matlû et Wahy Ghayr Matlû", "B. Hadîth Sahîh et Hadîth Da'îf uniquement", "C. Makkî et Madanî", "D. Cette distinction n'existe pas en 'aqîda"],
+    "reponse": "A",
+    "explication": "Ahl as-Sunna considère que le Prophète ﷺ recevait deux formes de révélation : le Coran, révélé mot pour mot et récité rituellement (wahy matlû), et la Sunna authentique, inspirée dans son sens mais formulée par les propres mots du Prophète ﷺ (wahy ghayr matlû) — les deux formant ensemble une source normative divine.",
+    "theme": "aqida",
+    "source": "An-Najm 53:3-4 ; 'Ulûm al-Hadîth classiques",
+    "difficulte": "avancé",
+    "jour": 165
+  },
+  {
+    "id": "quiz_471",
+    "question": "Quelle différence les savants établissent-ils entre wahy (révélation prophétique) et ilhâm (inspiration) ?",
+    "choix": ["A. Le wahy est une communication divine certaine, réservée aux prophètes ; l'ilhâm est une inspiration possible pour tout croyant pieux, mais sans valeur législative", "B. Les deux termes sont strictement identiques", "C. L'ilhâm est réservé uniquement aux prophètes", "D. Le wahy peut être reçu par n'importe quel croyant ordinaire"],
+    "reponse": "A",
+    "explication": "Le wahy constitue une communication divine certaine et infaillible, réservée exclusivement aux prophètes et servant de fondement à la législation religieuse. L'ilhâm, inspiration pieuse pouvant survenir chez tout croyant sincère, n'a en revanche aucune valeur législative ni garantie de certitude absolue.",
+    "theme": "aqida",
+    "source": "Théologie classique de la révélation prophétique",
+    "difficulte": "avancé",
+    "jour": 165
+  },
+  {
+    "id": "quiz_472",
+    "question": "Selon le Coran, Allah s'est-Il adressé directement à un prophète par la parole, sans intermédiaire angélique, comme cas exceptionnel explicitement mentionné ?",
+    "choix": ["A. Oui, Mûsâ, à qui « Allah parla réellement » (kallama Allâhu Mûsâ taklîmâ)", "B. Non, aucun prophète n'a jamais reçu la parole divine directement", "C. Seul Muhammad ﷺ reçut ce privilège", "D. Ce cas concerne uniquement Ibrâhîm"],
+    "reponse": "A",
+    "explication": "An-Nisâ' (4:164) déclare explicitement : « Et Allah a parlé à Mûsâ de vive voix. » Cette formulation renforcée fonde l'attribut divin de la Parole (Kalâm), affirmé par Ahl as-Sunna comme un attribut réel, sans en préciser la modalité exacte.",
+    "theme": "coran",
+    "source": "Coran 4:164 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 165
+  },
+  {
+    "id": "quiz_473",
+    "question": "Quelle sourate décrit les qualités des « Serviteurs du Tout Miséricordieux » ('Ibâd ar-Rahmân), notamment leur humilité en marchant et leur réponse pacifique à l'ignorance ?",
+    "choix": ["A. Al-Furqân", "B. Al-Mu'minûn uniquement", "C. Al-Ahzâb uniquement", "D. Al-Hujurât uniquement"],
+    "reponse": "A",
+    "explication": "Al-Furqân (25:63) décrit : « Les serviteurs du Tout Miséricordieux sont ceux qui marchent humblement sur terre, et qui, lorsque les ignorants s'adressent à eux, disent des paroles de paix. » Un portrait éthique du croyant idéal, alliant humilité personnelle et retenue face à la provocation.",
+    "theme": "coran",
+    "source": "Coran 25:63 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 166
+  },
+  {
+    "id": "quiz_474",
+    "question": "Certaines écoles autorisent-elles la femme à essuyer (mash) son foulard (khimâr) noué sous le menton, plutôt que de laver directement les cheveux à chaque ablution ?",
+    "choix": ["A. Non, aucune école ne le permet", "B. Oui, certains savants hanbalites l'autorisent sous conditions précises, par analogie avec le mash sur turban", "C. Toutes les écoles l'imposent systématiquement", "D. Cela concerne uniquement les hommes"],
+    "reponse": "B",
+    "explication": "Par analogie avec le mash autorisé sur le turban masculin sous certaines conditions, quelques savants hanbalites étendent cette facilité au foulard féminin noué solidement sous le menton, une position minoritaire mais reconnue dans la littérature fiqh comparée, sans faire l'unanimité des quatre écoles.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de la purification, école hanbalite",
+    "difficulte": "avancé",
+    "jour": 166
+  },
+  {
+    "id": "quiz_475",
+    "question": "Avant la bataille d'Uhud, le Prophète ﷺ consulta ses Compagnons sur la stratégie à adopter. Quelle position la majorité des jeunes Compagnons défendit-elle, contrairement à sa préférence initiale ?",
+    "choix": ["A. Sortir de Médine pour affronter l'ennemi en terrain ouvert, plutôt que de rester en défense retranchée dans la ville", "B. Négocier immédiatement la paix avec Quraysh", "C. Fuir totalement Médine", "D. Attendre passivement sans aucune décision"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ penchait initialement pour une défense retranchée à l'intérieur de Médine, mais la majorité des jeunes Compagnons, désireux d'affronter directement l'ennemi après avoir manqué Badr, insista pour sortir en terrain ouvert. Le Prophète ﷺ, fidèle au principe de la shûrâ, se rangea à leur avis malgré sa préférence initiale différente.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.2",
+    "difficulte": "intermédiaire",
+    "jour": 166
+  },
+  {
+    "id": "quiz_476",
+    "question": "Selon un hadith, comment le Prophète ﷺ qualifie-t-il l'invocation (du'a) par rapport à l'ensemble de l'adoration islamique ?",
+    "choix": ["A. « L'invocation est l'essence même de l'adoration (al-du'â' huwa al-'ibâda) »", "B. Il la considère comme secondaire par rapport aux autres actes cultuels", "C. Il ne mentionne jamais son importance", "D. Il la réserve uniquement aux moments de détresse"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit : « L'invocation, c'est l'adoration (elle-même) », soulignant que se tourner vers Allah pour demander constitue le cœur même de la relation d'adoration, non un simple complément facultatif aux piliers formels de l'Islam.",
+    "theme": "aqida",
+    "source": "Sunan at-Tirmidhî n°3247 ; Sunan Abî Dâwûd n°1479",
+    "difficulte": "intermédiaire",
+    "jour": 167
+  },
+  {
+    "id": "quiz_477",
+    "question": "Quelle sourate interdit explicitement de tuer ses enfants par crainte de la pauvreté, promettant la subsistance à la fois pour eux et pour les parents ?",
+    "choix": ["A. Al-Isrâ'", "B. Al-An'âm uniquement", "C. Luqmân uniquement", "D. At-Tawba uniquement"],
+    "reponse": "A",
+    "explication": "Al-Isrâ' (17:31) déclare : « Et ne tuez pas vos enfants par crainte de pauvreté ; c'est Nous qui pourvoyons à leur subsistance, ainsi qu'à la vôtre. » Un verset condamnant une pratique préislamique documentée, affirmant la confiance en la providence divine plutôt que la peur comme fondement des choix familiaux.",
+    "theme": "coran",
+    "source": "Coran 17:31 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 167
+  },
+  {
+    "id": "quiz_478",
+    "question": "Selon le Coran, l'adoption au sens de changement de filiation est-elle autorisée en Islam ?",
+    "choix": ["A. Oui, sans aucune restriction", "B. Non, elle fut explicitement abolie ; les enfants adoptés conservent le nom de leur père biologique connu, bien que prendre soin des orphelins (kafâla) reste fortement encouragé", "C. Elle est obligatoire pour tout couple sans enfants", "D. Elle concerne uniquement les filles"],
+    "reponse": "B",
+    "explication": "Al-Ahzâb (33:4-5) abolit l'adoption filiative telle que pratiquée avant l'Islam, suite à l'exemple de Zayd ibn Hâritha adopté puis renommé « fils de Muhammad » avant la révélation. La prise en charge matérielle et affective des orphelins reste néanmoins un acte hautement méritoire, sans confusion de filiation biologique.",
+    "theme": "fiqh",
+    "source": "Coran 33:4-5, 33:37 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 167
+  },
+  {
+    "id": "quiz_479",
+    "question": "Qui était Julaybib, Compagnon peu séduisant et sans lignée connue, pour qui le Prophète ﷺ arrangea personnellement un mariage malgré les réticences initiales de la famille sollicitée ?",
+    "choix": ["A. Un Compagnon pauvre et physiquement disgracieux, dont le Prophète ﷺ déclara après son martyre : « Il est de moi et je suis de lui »", "B. Un riche marchand mecquois", "C. Un poète célèbre de Médine", "D. Un gouverneur de province"],
+    "reponse": "A",
+    "explication": "Julaybib se vit proposer un mariage par le Prophète ﷺ lui-même auprès d'une famille ansârite d'abord réticente, avant qu'ils n'acceptent avec joie en apprenant l'intervention personnelle du Prophète ﷺ. Tombé en martyr peu après, le Prophète ﷺ déclara devant sa dépouille : « Il est de moi et je suis de lui », traduisant l'égalité de valeur devant Allah, indépendamment de l'apparence ou du statut social.",
+    "theme": "sira",
+    "source": "Sahîh Muslim n°2472",
+    "difficulte": "avancé",
+    "jour": 168
+  },
+  {
+    "id": "quiz_480",
+    "question": "Selon les savants du Tazkiya (purification de l'âme), quel sentiment doit fondamentalement accompagner une adoration sincère, au-delà de la seule crainte du châtiment ?",
+    "choix": ["A. Al-Mahabba (l'amour d'Allah), équilibré avec la crainte (khawf) et l'espoir (rajâ')", "B. La peur seule, sans aucun autre sentiment associé", "C. L'indifférence émotionnelle totale", "D. La fierté personnelle des accomplissements"],
+    "reponse": "A",
+    "explication": "Les savants du tazkiya insistent sur l'équilibre entre trois dimensions du cœur croyant : l'amour d'Allah (mahabba), la crainte de Sa colère (khawf), et l'espoir en Sa miséricorde (rajâ'). Une adoration fondée uniquement sur la peur, sans amour sincère, risque de tomber dans une pratique mécanique vidée de sa substance spirituelle véritable.",
+    "theme": "aqida",
+    "source": "Ibn al-Qayyim, Madârij as-Sâlikîn",
+    "difficulte": "avancé",
+    "jour": 168
+  }
+]
