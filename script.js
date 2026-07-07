@@ -8844,8 +8844,8 @@ var MEDIT_PHRASES_AR = [
 ];
 window.QUIZ_DB = [];
 (function _loadQuizDB() {
-  var _lots = ['quiz_lot_01','quiz_lot_02','quiz_lot_03','quiz_lot_04','quiz_lot_05',
-               'quiz_lot_06','quiz_lot_07','quiz_lot_08','quiz_lot_09','quiz_lot_10'];
+  var _lots = [];
+  for (var i = 1; i <= 20; i++) { _lots.push('quiz_lot_' + String(i).padStart(2, '0')); }
   _lots.forEach(function(lot) {
     fetch('./data/waqt/quiz/' + lot + '.json')
       .then(function(r) { return r.ok ? r.json() : null; })
