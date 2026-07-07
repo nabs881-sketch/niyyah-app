@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_101",
+    "question": "À quelle occasion, selon une interprétation classique rapportée par plusieurs exégètes, la sourate Al-Insân (76) aurait-elle été révélée ?",
+    "choix": ["A. La victoire de Badr", "B. Le don de nourriture de la famille du Prophète ﷺ à un pauvre, un orphelin et un captif malgré leur propre jeûne", "C. La naissance de Fâtima", "D. Le Traité de Hudaybiyya"],
+    "reponse": "B",
+    "explication": "Plusieurs commentateurs classiques rapportent que ces versets (76:8-9) descendirent en lien avec un acte de générosité de la famille du Prophète ﷺ, ayant donné leur propre nourriture trois jours de suite à un pauvre, un orphelin et un captif. Certains muhaddithûn discutent la solidité de la chaîne de cet épisode précis, sans remettre en cause le sens général du verset sur la générosité désintéressée.",
+    "theme": "coran",
+    "source": "Tafsîr at-Tabarî et Ibn Kathîr, 76:8-9",
+    "difficulte": "avancé",
+    "jour": 36
+  },
+  {
+    "id": "quiz_102",
+    "question": "Quelle sourate est surnommée « al-Munjiya » (la Salvatrice) car elle protégerait celui qui la récite du châtiment de la tombe ?",
+    "choix": ["A. Yâ-Sîn", "B. Al-Mulk", "C. Al-Wâqi'a", "D. Ar-Rahmân"],
+    "reponse": "B",
+    "explication": "Un hadith rapporte que le Prophète ﷺ recommandait la récitation régulière d'Al-Mulk (67), affirmant qu'elle intercéderait pour son lecteur et le protégerait du châtiment de la tombe. Elle est traditionnellement récitée chaque soir avant de dormir.",
+    "theme": "coran",
+    "source": "Sunan at-Tirmidhî n°2891 (hasan) ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 36
+  },
+  {
+    "id": "quiz_103",
+    "question": "Comment appelle-t-on la classification traditionnelle regroupant les sept plus longues sourates du Coran (Al-Baqara, Âl 'Imrân, An-Nisâ', etc.) ?",
+    "choix": ["A. Al-Mathânî", "B. As-Sab' at-Tiwal (les sept longues)", "C. Al-Mufassal", "D. Al-Hawâmîm"],
+    "reponse": "B",
+    "explication": "As-Sab' at-Tiwal désigne les sept sourates les plus longues ouvrant le Coran, une classification ancienne reconnue par les Compagnons eux-mêmes. Elle se distingue d'al-Mufassal, qui regroupe à l'inverse les sourates courtes de la fin du Coran, plus fréquemment récitées en prière.",
+    "theme": "coran",
+    "source": "Sahîh al-Bukhârî n°4993 ; classification classique des 'ulûm al-Qur'ân",
+    "difficulte": "avancé",
+    "jour": 36
+  },
+  {
+    "id": "quiz_104",
+    "question": "En cas de forte pluie, les écoles shâfi'ite et hanbalite autorisent-elles de combiner Maghrib et 'Ishâ' en congrégation, contrairement aux Hanafites ?",
+    "choix": ["A. Oui, la pluie est reconnue comme excuse valable par ces écoles, pas par les Hanafites", "B. Non, aucune école n'autorise cela", "C. Seuls les Hanafites l'autorisent", "D. Toutes les écoles s'accordent à l'interdire"],
+    "reponse": "A",
+    "explication": "Shâfi'ites et Hanbalites reconnaissent la pluie forte comme excuse légitime pour combiner réellement Maghrib et 'Ishâ' en congrégation à la mosquée, facilitant la présence des fidèles. Les Hanafites, plus restrictifs sur le jam' réel, ne retiennent cette excuse pour aucune prière hors du cadre du Hajj.",
+    "theme": "fiqh",
+    "source": "Al-Majmû', an-Nawawî ; Fiqh comparatif de la prière",
+    "difficulte": "avancé",
+    "jour": 37
+  },
+  {
+    "id": "quiz_105",
+    "question": "Selon la règle générale la plus répandue, quand effectue-t-on la prosternation de l'oubli (sujûd as-sahw) en cas d'ajout involontaire dans la prière ?",
+    "choix": ["A. Toujours avant le salâm final", "B. Généralement après le salâm final", "C. Uniquement le vendredi", "D. Cela n'existe pas en cas d'ajout"],
+    "reponse": "B",
+    "explication": "La règle générale la plus suivie distingue : en cas d'ajout (rak'a ou position supplémentaire), la prosternation se fait après le salâm ; en cas d'omission (élément manquant), elle se fait avant le salâm. Des nuances existent néanmoins selon les écoles et les situations précises.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1224 ; Fiqh comparatif de la prière",
+    "difficulte": "intermédiaire",
+    "jour": 37
+  },
+  {
+    "id": "quiz_106",
+    "question": "Selon la majorité des savants, que recouvre la notion d'istitâ'a (capacité) rendant le Hajj obligatoire ?",
+    "choix": ["A. Seulement la capacité physique", "B. Seulement la capacité financière", "C. La capacité physique ET financière, incluant la subsistance de la famille restée derrière", "D. Le simple désir de l'accomplir"],
+    "reponse": "C",
+    "explication": "L'istitâ'a inclut la santé physique suffisante pour le voyage et les rites, ainsi que les moyens financiers couvrant le transport, le séjour, et la subsistance de la famille laissée derrière jusqu'au retour — sans quoi le Hajj n'est pas une obligation immédiate.",
+    "theme": "fiqh",
+    "source": "Tafsîr Ibn Kathîr, 3:97 ; Fiqh classique du Hajj",
+    "difficulte": "intermédiaire",
+    "jour": 37
+  },
+  {
+    "id": "quiz_107",
+    "question": "Environ combien de temps dura le boycott économique et social imposé par Quraysh au clan du Prophète ﷺ, réfugié dans le défilé de Shi'b Abî Tâlib ?",
+    "choix": ["A. Quelques semaines", "B. Environ trois ans", "C. Dix ans", "D. Six mois"],
+    "reponse": "B",
+    "explication": "Quraysh imposa un pacte d'exclusion contre les Banû Hâshim et Banû al-Muttalib, coupant tout commerce, mariage et contact, les forçant à se réfugier dans le défilé de montagne de Shi'b Abî Tâlib pendant environ trois années, marquées par une faim sévère.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 38
+  },
+  {
+    "id": "quiz_108",
+    "question": "Comment prit fin le boycott de Shi'b Abî Tâlib ?",
+    "choix": ["A. Une révélation ordonna directement d'y mettre fin", "B. Plusieurs chefs qurayshites, touchés par l'injustice, se mobilisèrent pour annuler le document du pacte", "C. Une bataille militaire y mit fin", "D. Le Négus intervint diplomatiquement"],
+    "reponse": "B",
+    "explication": "Plusieurs notables qurayshites, dont Hishâm ibn 'Amr, jugeant l'injustice du pacte intolérable, se mobilisèrent pour le faire annuler. La tradition rapporte que le document s'était détérioré, ne laissant intact que la formule d'invocation d'Allah, ce qu'Abû Tâlib présenta comme signe en faveur des Hâshimites.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 38
+  },
+  {
+    "id": "quiz_109",
+    "question": "Qui allaita le Prophète ﷺ pendant quelques jours, avant que Halîma as-Sa'diyya ne prenne le relais ?",
+    "choix": ["A. Umm Ayman", "B. Thuwayba, affranchie d'Abû Lahab", "C. Barîra", "D. Umm Sulaym"],
+    "reponse": "B",
+    "explication": "Thuwayba, esclave affranchie d'Abû Lahab, allaita brièvement le nouveau-né Muhammad ﷺ avant que la coutume qurayshite d'envoi chez une nourrice bédouine ne confie l'enfant à Halîma as-Sa'diyya pour plusieurs années dans le désert.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "avancé",
+    "jour": 39
+  },
+  {
+    "id": "quiz_110",
+    "question": "Qui donna au nouveau-né le prénom « Muhammad », rare et peu répandu à l'époque en Arabie ?",
+    "choix": ["A. Sa mère Âmina", "B. Son grand-père 'Abd al-Muttalib", "C. Son oncle Abû Tâlib", "D. Waraqa ibn Nawfal"],
+    "reponse": "B",
+    "explication": "'Abd al-Muttalib, chef des Banû Hâshim, choisit ce prénom peu courant pour son petit-fils, orphelin de père avant même sa naissance. Interrogé sur ce choix inhabituel, il exprima le souhait que l'enfant soit loué (l'un des sens du nom Muhammad) par les gens du ciel et de la terre.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 39
+  },
+  {
+    "id": "quiz_111",
+    "question": "Quel Compagnon, célèbre pour son ascétisme, est traditionnellement compté parmi les tout premiers à embrasser l'Islam malgré son éloignement géographique de la Mecque ?",
+    "choix": ["A. Abû Dharr al-Ghifârî", "B. Salmân al-Fârisî", "C. Bilâl ibn Rabâh", "D. 'Ammâr ibn Yâsir"],
+    "reponse": "A",
+    "explication": "Abû Dharr, de la lointaine tribu des Ghifâr, entendit parler du nouveau message et se rendit seul à la Mecque pour rencontrer le Prophète ﷺ, se convertissant très tôt — parfois cité comme quatrième ou cinquième converti — avant de retourner prêcher au sein de sa propre tribu.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3861 ; Sahîh Muslim n°2474",
+    "difficulte": "avancé",
+    "jour": 39
+  },
+  {
+    "id": "quiz_112",
+    "question": "Selon 'Â'isha, à quoi le Prophète ﷺ comparait-il l'une des formes les plus intenses de la révélation ?",
+    "choix": ["A. Au bruissement du vent", "B. Au tintement d'une cloche", "C. Au bruit du tonnerre", "D. À un chant d'oiseau"],
+    "reponse": "B",
+    "explication": "Interrogé par al-Hârith ibn Hishâm sur la manière dont lui venait la révélation, le Prophète ﷺ répondit que parfois elle venait « comme le tintement d'une cloche », la forme la plus pénible pour lui, et parfois l'ange lui apparaissait sous la forme d'un homme lui parlant directement.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°2, hadith d'ouverture du Sahîh",
+    "difficulte": "intermédiaire",
+    "jour": 40
+  },
+  {
+    "id": "quiz_113",
+    "question": "Le Prophète ﷺ interdit-il puis autorisa-t-il finalement la visite des tombes ?",
+    "choix": ["A. Non, elle fut toujours interdite", "B. Oui, initialement interdite puis autorisée pour rappeler l'au-delà", "C. Elle fut seulement autorisée aux femmes", "D. Elle fut autorisée uniquement pendant le Hajj"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ déclara : « Je vous avais interdit de visiter les tombes ; visitez-les désormais, car cela rappelle l'au-delà. » L'interdiction initiale visait à éviter toute confusion avec les pratiques païennes environnantes ; l'autorisation vint une fois le Tawhîd fermement enraciné chez les croyants.",
+    "theme": "aqida",
+    "source": "Sahîh Muslim n°977",
+    "difficulte": "intermédiaire",
+    "jour": 40
+  },
+  {
+    "id": "quiz_114",
+    "question": "Comment la Sunna concilie-t-elle la croyance en la prédestination (qadar) avec la responsabilité des actes de chacun ?",
+    "choix": ["A. Elle nie toute responsabilité humaine", "B. Chacun est facilité vers ce pour quoi il a été créé, sans que cela dispense d'agir", "C. Elle nie totalement le qadar", "D. Le sujet n'est jamais abordé dans la Sunna"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ enseigna : « Agissez, car chacun est facilité vers ce pour quoi il a été créé. » Loin de justifier la passivité, cette parole invite à agir selon les signes qu'Allah place sur le chemin de chacun, la destinée n'étant connue qu'a posteriori, jamais comme excuse a priori.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°4949 ; Sahîh Muslim n°2647",
+    "difficulte": "avancé",
+    "jour": 40
+  },
+  {
+    "id": "quiz_115",
+    "question": "Quelle sourate est traditionnellement surnommée « le Cœur du Coran » (Qalb al-Qur'ân) ?",
+    "choix": ["A. Yâ-Sîn", "B. Al-Fâtiha", "C. Al-Baqara", "D. Al-Ikhlâs"],
+    "reponse": "A",
+    "explication": "Yâ-Sîn est très largement surnommée « le Cœur du Coran », un titre popularisé par un hadith rapporté à ce sujet. Les spécialistes du hadith considèrent toutefois que la chaîne de transmission de ce hadith précis est faible, ce qui n'empêche pas la sourate d'occuper une place immense dans la piété populaire.",
+    "theme": "coran",
+    "source": "Sunan at-Tirmidhî n°2887 (chaîne jugée faible) ; usage traditionnel répandu",
+    "difficulte": "avancé",
+    "jour": 41
+  },
+  {
+    "id": "quiz_116",
+    "question": "Selon l'école shâfi'ite, la zakât est-elle due sur le patrimoine d'un enfant mineur qui atteint le nisâb ?",
+    "choix": ["A. Non, jamais avant la puberté", "B. Oui, le tuteur légal doit s'en acquitter sur ses biens", "C. Seulement s'il est orphelin", "D. Seulement pour les biens hérités"],
+    "reponse": "B",
+    "explication": "Shâfi'ites, Mâlikites et Hanbalites considèrent la zakât comme un droit lié au patrimoine lui-même, indépendamment de la puberté du propriétaire : le tuteur légal doit donc s'en acquitter au nom du mineur. Les Hanafites, à l'inverse, ne l'exigent généralement pas avant l'atteinte de la majorité, sauf pour certains biens agricoles.",
+    "theme": "fiqh",
+    "source": "Al-Majmû', an-Nawawî ; Fiqh comparatif de la zakât",
+    "difficulte": "avancé",
+    "jour": 41
+  },
+  {
+    "id": "quiz_117",
+    "question": "Comment le Prophète ﷺ acquit-il le terrain sur lequel fut construite la Masjid an-Nabawî à Médine ?",
+    "choix": ["A. Il le reçut en cadeau du Négus", "B. Il l'acheta à deux jeunes orphelins qui voulaient le lui offrir gratuitement", "C. Il le conquit militairement", "D. Il l'hérita de Khadîja"],
+    "reponse": "B",
+    "explication": "Le terrain, servant de séchoir à dattes, appartenait à deux orphelins, Sahl et Suhayl. Bien qu'ils souhaitassent l'offrir gratuitement, le Prophète ﷺ insista pour le leur acheter, un geste de justice et de délicatesse envers des enfants sans protecteur.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°428",
+    "difficulte": "avancé",
+    "jour": 41
+  },
+  {
+    "id": "quiz_118",
+    "question": "Quelle nuance distinguent les savants entre Al-Kawthar et Al-Hawd ?",
+    "choix": ["A. Ce sont deux noms strictement identiques pour la même réalité", "B. Al-Kawthar est un fleuve du Paradis ; Al-Hawd est le bassin du Jour du Jugement qu'il alimente", "C. Al-Hawd est au Paradis, Al-Kawthar au Jour du Jugement", "D. Al-Kawthar n'existe que dans l'au-delà, Al-Hawd sur Terre"],
+    "reponse": "B",
+    "explication": "De nombreux savants distinguent Al-Kawthar, fleuve du Paradis promis au Prophète ﷺ (sourate 108), d'Al-Hawd, le bassin où sa communauté viendra s'abreuver le Jour du Jugement avant d'entrer au Paradis — ce bassin étant alimenté par les eaux d'Al-Kawthar.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°6579 ; Tafsîr Ibn Kathîr, 108:1",
+    "difficulte": "avancé",
+    "jour": 41
+  },
+  {
+    "id": "quiz_119",
+    "question": "Qui guida le Prophète ﷺ et Abû Bakr sur les routes détournées du désert lors de leur migration vers Médine ?",
+    "choix": ["A. Un ange envoyé spécialement", "B. 'Abdullâh ibn Urayqit, un guide qurayshite non-musulman réputé pour sa fiabilité", "C. Zayd ibn Hâritha", "D. Salmân al-Fârisî"],
+    "reponse": "B",
+    "explication": "Bien que non-musulman, 'Abdullâh ibn Urayqit fut choisi pour sa parfaite connaissance des chemins du désert et sa réputation de confiance, illustrant que le Prophète ﷺ et Abû Bakr surent s'appuyer pragmatiquement sur une compétence reconnue, indépendamment de la foi de la personne.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°3905 ; Ibn Hishâm, as-Sîra",
+    "difficulte": "avancé",
+    "jour": 42
+  },
+  {
+    "id": "quiz_120",
+    "question": "Comment appelle-t-on la station unique et élevée du Paradis que les musulmans sont invités à demander pour le Prophète ﷺ après chaque adhân ?",
+    "choix": ["A. Al-Maqâm al-Mahmûd", "B. Al-Wasîla", "C. Al-Firdaws seul", "D. Al-'Illiyyîn"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ enseigna à ses Compagnons d'invoquer Allah après l'adhân en demandant qu'Il lui accorde al-Wasîla, un rang unique du Paradis destiné à une seule personne — et le Prophète ﷺ espérait en être le destinataire, invitant sa communauté à le demander en sa faveur.",
+    "theme": "aqida",
+    "source": "Sahîh al-Bukhârî n°614",
+    "difficulte": "intermédiaire",
+    "jour": 42
+  }
+]
