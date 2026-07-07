@@ -1,0 +1,222 @@
+[
+  {
+    "id": "quiz_441",
+    "question": "Comment appelle-t-on, en 'ulûm al-Qur'ân, la distinction entre versets au sens clair et direct (muhkam) et versets au sens ambigu nécessitant interprétation (mutashâbih) ?",
+    "choix": ["A. Muhkam et Mutashâbih, distinction établie par le Coran lui-même", "B. Makkî et Madanî", "C. Nâsikh et Mansûkh", "D. Muhâjir et Ansâr"],
+    "reponse": "A",
+    "explication": "Âl 'Imrân (3:7) établit cette distinction fondamentale : « Il y a dans le Livre des versets clairs qui sont la base du Livre, et d'autres versets ambigus. » Le verset avertit que ceux dont le cœur est enclin à la déviance poursuivent les versets ambigus, cherchant la discorde et une interprétation forcée.",
+    "theme": "coran",
+    "source": "Coran 3:7 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 155
+  },
+  {
+    "id": "quiz_442",
+    "question": "Combien de types d'abrogation (naskh) les savants classiques distinguent-ils généralement dans les sciences coraniques ?",
+    "choix": ["A. Deux types", "B. Trois types : abrogation du jugement et de la récitation, abrogation de la récitation seule, abrogation du jugement seul", "C. Un seul type universel", "D. Sept types distincts"],
+    "reponse": "B",
+    "explication": "Les savants classiques distinguent trois cas d'abrogation : celle où jugement ET récitation disparaissent, celle où seule la récitation disparaît tandis que le jugement demeure (comme pour le verset de la lapidation), et celle où seul le jugement est modifié tandis que la récitation du verset original demeure dans le Mushaf.",
+    "theme": "coran",
+    "source": "'Ulûm al-Qur'ân classiques ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 155
+  },
+  {
+    "id": "quiz_443",
+    "question": "Quelle sourate utilise l'argument du fluide méprisable (la goutte de sperme) dont l'homme est issu pour prouver la possibilité logique de la résurrection ?",
+    "choix": ["A. Al-Wâqi'a", "B. Al-Kahf uniquement", "C. Maryam uniquement", "D. Al-Anbiyâ' uniquement"],
+    "reponse": "A",
+    "explication": "Al-Wâqi'a (56:57-59) interroge : « Nous vous avons créés. Pourquoi ne croyez-vous donc pas [à la résurrection] ? Voyez-vous donc ce que vous éjaculez ? Est-ce vous qui le créez, ou en sommes-Nous le Créateur ? » Un argument logique s'appuyant sur l'origine humble de la création humaine elle-même.",
+    "theme": "coran",
+    "source": "Coran 56:57-59 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 155
+  },
+  {
+    "id": "quiz_444",
+    "question": "Selon la majorité des écoles, l'essuyage (mash) sur un plâtre ou un bandage médical est-il soumis à la même limite de temps que le mash sur les chaussettes en cuir (1 jour/nuit résident, 3 jours voyageur) ?",
+    "choix": ["A. Oui, exactement les mêmes délais s'appliquent", "B. Non, le mash sur plâtre ou bandage n'a pas de limite de temps précise, il reste valable tant que le pansement est nécessaire médicalement", "C. Il est totalement interdit d'essuyer sur un plâtre", "D. Seulement 12 heures, plus court que pour les chaussettes"],
+    "reponse": "B",
+    "explication": "Contrairement au mash sur chaussettes, limité dans le temps, le mash sur un plâtre ou un bandage médical (jabîra) reste valable sans limite de durée précise, tant que le retrait causerait un préjudice médical, une facilité reconnue par la majorité des écoles en raison de la nécessité thérapeutique.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de la purification médicale",
+    "difficulte": "avancé",
+    "jour": 156
+  },
+  {
+    "id": "quiz_445",
+    "question": "Selon un hadith explicite, une personne ayant mangé de l'ail ou de l'oignon cru doit-elle s'abstenir de se rendre à la mosquée avant d'avoir éliminé l'odeur ?",
+    "choix": ["A. Non, aucune restriction n'existe à ce sujet", "B. Oui, le Prophète ﷺ a explicitement demandé à quiconque a mangé de ces aliments à forte odeur de s'éloigner de la mosquée par respect pour les autres fidèles et les anges", "C. Cette restriction concerne uniquement le vendredi", "D. Elle concerne uniquement les femmes"],
+    "reponse": "B",
+    "explication": "Le Prophète ﷺ a dit : « Quiconque a mangé de cette plante [ail/oignon], qu'il ne s'approche pas de notre mosquée, car les anges sont incommodés par ce qui incommode les fils d'Adam. » Une prescription pratique protégeant le confort collectif et la dignité du lieu de culte.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°853 ; Sahîh Muslim n°561",
+    "difficulte": "intermédiaire",
+    "jour": 156
+  },
+  {
+    "id": "quiz_446",
+    "question": "Selon la majorité des savants, la zakât est-elle due chaque année sur une dette qu'une autre personne solvable vous doit, même avant son remboursement effectif ?",
+    "choix": ["A. Non, aucune zakât n'est jamais due sur une créance", "B. Position divergente : certains exigent le paiement annuel dès que la dette est due par un débiteur solvable, d'autres autorisent le report du paiement jusqu'à la récupération effective de la somme", "C. La zakât est due immédiatement en totalité, sans distinction de solvabilité", "D. Seule la moitié de la dette est concernée"],
+    "reponse": "B",
+    "explication": "Les savants divergent sur les créances : certains, notamment shâfi'ites, considèrent la zakât due chaque année si le débiteur est solvable et reconnaît la dette, même sans remboursement effectif ; d'autres autorisent son report jusqu'à la récupération réelle de la somme, en raison de l'incertitude sur la disponibilité effective du bien.",
+    "theme": "fiqh",
+    "source": "Fiqh az-Zakât, Yûsuf al-Qaradâwî ; Fiqh comparatif",
+    "difficulte": "avancé",
+    "jour": 156
+  },
+  {
+    "id": "quiz_447",
+    "question": "Quel dirigeant égyptien répondit à la lettre du Prophète ﷺ par des cadeaux, dont une esclave qui devint son épouse et la mère de son fils Ibrâhîm ?",
+    "choix": ["A. Muqawqis, gouverneur d'Égypte", "B. Le Négus d'Abyssinie", "C. Chosroès de Perse", "D. Héraclius de Byzance"],
+    "reponse": "A",
+    "explication": "Muqawqis, gouverneur byzantin d'Égypte, répondit favorablement à la lettre du Prophète ﷺ en offrant plusieurs présents, dont Maria al-Qibtiyya, qui devint son épouse et lui donna son fils Ibrâhîm, décédé en bas âge — un épisode déjà relié à la correction prophétique contre la superstition de l'éclipse.",
+    "theme": "sira",
+    "source": "Ibn Sa'd, at-Tabaqât al-Kubrâ",
+    "difficulte": "avancé",
+    "jour": 157
+  },
+  {
+    "id": "quiz_448",
+    "question": "Lors d'une dispute entre Muhâjirûn et Ansâr sur l'appartenance tribale de Salmân al-Fârisî, comment le Prophète ﷺ trancha-t-il ?",
+    "choix": ["A. Il déclara : « Salmân est des nôtres, les gens de la Maison (ahl al-bayt) »", "B. Il refusa de trancher, laissant le conflit se poursuivre", "C. Il l'exclut des deux groupes", "D. Il l'affecta à une troisième catégorie créée pour l'occasion"],
+    "reponse": "A",
+    "explication": "Face à la dispute d'appartenance entre Muhâjirûn et Ansâr revendiquant chacun Salmân, le Prophète ﷺ trancha avec une formule dépassant les catégories tribales habituelles : « Salmân est des nôtres, les gens de la Maison », l'intégrant directement à sa propre famille spirituelle, au-delà de toute origine ethnique perse.",
+    "theme": "sira",
+    "source": "Récits classiques de la Sîra ; hadith rapporté dans plusieurs recueils",
+    "difficulte": "avancé",
+    "jour": 157
+  },
+  {
+    "id": "quiz_449",
+    "question": "Lorsque le père de Zayd ibn Hâritha vint le racheter après avoir découvert où se trouvait son fils, que choisit finalement Zayd ?",
+    "choix": ["A. Il choisit de rester avec le Prophète ﷺ plutôt que de repartir avec son père biologique, malgré la liberté offerte", "B. Il repartit immédiatement avec son père", "C. Il refusa de voir son père", "D. Le Coran ne mentionne aucun détail à ce sujet"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ, ayant affranchi Zayd, lui laissa le libre choix entre repartir avec son père et rester. Zayd choisit de rester, déclarant préférer le Prophète ﷺ à toute sa famille — un geste qui toucha profondément le Prophète ﷺ, au point de l'adopter symboliquement, avant que la révélation n'abolisse plus tard l'adoption filiative comme institution légale.",
+    "theme": "sira",
+    "source": "Ibn Hishâm, as-Sîra an-Nabawiyya vol.1",
+    "difficulte": "intermédiaire",
+    "jour": 157
+  },
+  {
+    "id": "quiz_450",
+    "question": "Combien de catégories de patience (sabr) les savants distinguent-ils classiquement en Islam ?",
+    "choix": ["A. Trois : patience dans l'obéissance, patience contre le péché, patience face aux épreuves du destin", "B. Une seule catégorie universelle", "C. Cinq catégories distinctes", "D. Aucune classification n'existe"],
+    "reponse": "A",
+    "explication": "Ibn al-Qayyim et d'autres savants classent la patience en trois catégories : la persévérance dans l'accomplissement des actes d'obéissance, la résistance face à la tentation du péché, et l'endurance face aux épreuves et décrets douloureux du destin — les trois formant ensemble la vertu complète de sabr.",
+    "theme": "aqida",
+    "source": "Ibn al-Qayyim, 'Uddat as-Sâbirîn",
+    "difficulte": "intermédiaire",
+    "jour": 158
+  },
+  {
+    "id": "quiz_451",
+    "question": "Selon un hadith célèbre, comment le Prophète ﷺ répondit-il à un homme qui affirmait laisser son chameau sans l'attacher, se reposant entièrement sur Allah (tawakkul) ?",
+    "choix": ["A. « Attache-le, puis place ta confiance en Allah »", "B. « C'est correct, ne l'attache jamais »", "C. « Vends-le plutôt »", "D. Aucune réponse n'est rapportée à ce sujet"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ répondit à cet homme : « I'qilhâ wa tawakkal » (Attache-le, puis place ta confiance en Allah). Ce hadith fonde l'équilibre islamique entre la prise des moyens légitimes (asbâb) et la confiance totale en Allah pour le résultat final, rejetant tant la négligence déguisée en piété que l'excès de calcul sans foi.",
+    "theme": "aqida",
+    "source": "Sunan at-Tirmidhî n°2517",
+    "difficulte": "intermédiaire",
+    "jour": 158
+  },
+  {
+    "id": "quiz_452",
+    "question": "Quelle sourate cite la création des êtres « par couples » (male et femelle) comme l'un des signes évidents de la puissance et de la sagesse d'Allah ?",
+    "choix": ["A. An-Naba'", "B. Al-Mursalât uniquement", "C. Al-Qiyâma uniquement", "D. Al-Insân uniquement"],
+    "reponse": "A",
+    "explication": "An-Naba' (78:8) rappelle parmi les bienfaits de la création : « Ne vous avons-Nous pas créés en couples ? » Ce principe de complémentarité et de diversité par paires, observable à travers le règne animal, végétal et humain, est présenté comme un signe cohérent de la sagesse divine dans l'organisation de l'univers.",
+    "theme": "coran",
+    "source": "Coran 78:8 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 158
+  },
+  {
+    "id": "quiz_453",
+    "question": "Selon la majorité des écoles, la prière de consultation (salât al-istikhâra) est-elle obligatoire avant toute décision importante ?",
+    "choix": ["A. Oui, elle est strictement obligatoire", "B. Non, c'est une sunna fortement recommandée, non une obligation, enseignée par le Prophète ﷺ à ses Compagnons « comme il leur enseignait une sourate du Coran »", "C. Elle est réservée uniquement aux décisions de mariage", "D. Elle a été abrogée par d'autres prescriptions"],
+    "reponse": "B",
+    "explication": "Jâbir ibn 'Abdullâh rapporte que le Prophète ﷺ leur enseignait la prière d'istikhâra pour toutes leurs affaires « comme il leur enseignait une sourate du Coran », soulignant son importance pédagogique sans pour autant en faire une obligation stricte, mais une sunna fortement recommandée avant toute décision significative.",
+    "theme": "fiqh",
+    "source": "Sahîh al-Bukhârî n°1166",
+    "difficulte": "intermédiaire",
+    "jour": 159
+  },
+  {
+    "id": "quiz_454",
+    "question": "Comment le Prophète ﷺ réagit-il lorsqu'un bédouin urina à l'intérieur de la mosquée, provoquant l'indignation immédiate des Compagnons présents ?",
+    "choix": ["A. Il le laissa terminer, puis ordonna simplement qu'on verse un seau d'eau sur l'endroit souillé, sans réprimander durement l'homme", "B. Il le fit expulser violemment et publiquement humilier", "C. Il ordonna sa punition immédiate", "D. Il ferma la mosquée pour plusieurs jours"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ empêcha ses Compagnons d'interrompre brusquement l'homme, le laissant terminer pour éviter un préjudice plus grand, puis ordonna simplement de verser un seau d'eau sur la souillure. Il expliqua ensuite : « Vous avez été envoyés pour faciliter, non pour rendre les choses difficiles », un modèle de pédagogie douce envers l'ignorance plutôt que la sévérité immédiate.",
+    "theme": "sira",
+    "source": "Sahîh al-Bukhârî n°220 ; Sahîh Muslim n°284",
+    "difficulte": "intermédiaire",
+    "jour": 159
+  },
+  {
+    "id": "quiz_455",
+    "question": "Selon un hadith souvent cité, comment le Prophète ﷺ recommande-t-il de se prémunir contre les grandes divergences à venir après lui ?",
+    "choix": ["A. En s'attachant fermement à sa Sunna et à celle des califes bien guidés, en s'y accrochant « avec les molaires »", "B. En suivant systématiquement l'opinion majoritaire du moment, quelle qu'elle soit", "C. En évitant toute étude religieuse pour ne pas se diviser", "D. Aucune recommandation de ce type n'est rapportée"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ a dit, anticipant les divergences futures : « Attachez-vous à ma Sunna et à celle des califes bien guidés après moi, accrochez-vous-y avec les molaires (fermement), et méfiez-vous des choses nouvellement introduites [en religion]. » Un ancrage méthodologique central face à la dispersion des opinions.",
+    "theme": "aqida",
+    "source": "Sunan Abî Dâwûd n°4607 ; Sunan at-Tirmidhî n°2676",
+    "difficulte": "intermédiaire",
+    "jour": 159
+  },
+  {
+    "id": "quiz_456",
+    "question": "Quelle sourate décrit les habitants du Paradis vêtus de soie fine et épaisse, ornés de bracelets d'argent, buvant dans des récipients d'argent et de cristal ?",
+    "choix": ["A. Al-Insân", "B. Al-Wâqi'a uniquement", "C. Ar-Rahmân uniquement", "D. Al-Mulk uniquement"],
+    "reponse": "A",
+    "explication": "Al-Insân (76:21) décrit les habitants du Paradis : « Ils porteront des vêtements verts de soie fine et de brocart. Ils seront parés de bracelets d'argent... » Une description sensorielle riche du raffinement et de la beauté promis aux gens du Paradis en récompense de leur générosité et de leur patience terrestres.",
+    "theme": "coran",
+    "source": "Coran 76:21 ; Tafsîr Ibn Kathîr",
+    "difficulte": "intermédiaire",
+    "jour": 160
+  },
+  {
+    "id": "quiz_457",
+    "question": "Selon la majorité des écoles, peut-on accomplir en une seule prière l'intention combinée du fard (obligatoire) et d'une sunna en même temps ?",
+    "choix": ["A. Oui, sans aucune restriction", "B. Non, généralement chaque prière requiert une intention distincte et propre, sauf cas particuliers reconnus comme le tahiyyat al-masjid pouvant se fondre dans la prière obligatoire suivante", "C. Cela dépend uniquement de l'heure de la journée", "D. Cela n'a jamais fait l'objet de discussion en fiqh"],
+    "reponse": "B",
+    "explication": "La règle générale exige une intention propre et distincte pour chaque prière selon son statut (fard ou sunna), empêchant leur fusion en une seule intention combinée. Des exceptions limitées sont reconnues par certains savants, comme la salutation de la mosquée (tahiyyat al-masjid) pouvant être satisfaite par n'importe quelle prière accomplie en entrant, y compris une prière obligatoire.",
+    "theme": "fiqh",
+    "source": "Fiqh comparatif de l'intention en prière",
+    "difficulte": "avancé",
+    "jour": 160
+  },
+  {
+    "id": "quiz_458",
+    "question": "Quelle sourate décrit le ciel « se fendant » (inshaqqat) et « obéissant à son Seigneur » comme signe de la fin des temps ?",
+    "choix": ["A. Al-Inshiqâq", "B. At-Takwîr uniquement", "C. Al-Infitâr uniquement", "D. Al-Mutaffifîn uniquement"],
+    "reponse": "A",
+    "explication": "Al-Inshiqâq (84:1-2) décrit : « Quand le ciel se fendra et obéira à son Seigneur, et fera ce qu'il doit faire. » Cette obéissance immédiate et totale de la création face à l'ordre divin contraste avec la désobéissance humaine, soulignant la soumission naturelle de l'univers entier au décret d'Allah.",
+    "theme": "coran",
+    "source": "Coran 84:1-5 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 160
+  },
+  {
+    "id": "quiz_459",
+    "question": "Qui était Uwais al-Qarnî, personnage non-Compagnon mais dont le Prophète ﷺ recommanda expressément à 'Umar de chercher les invocations, en raison de sa dévotion exceptionnelle envers sa mère ?",
+    "choix": ["A. Un Successeur (Tâbi'î) yéménite pieux, resté totalement inconnu de son vivant malgré son rang spirituel élevé", "B. Un Compagnon célèbre ayant combattu à Badr", "C. Un roi converti à l'Islam", "D. Un ange déguisé en homme"],
+    "reponse": "A",
+    "explication": "Le Prophète ﷺ annonça à 'Umar l'existence future d'Uwais al-Qarnî, homme pieux du Yémen dévoué à sa mère aveugle et malade, lui recommandant de lui demander une invocation de pardon s'il le rencontrait. 'Umar le retrouva effectivement des années plus tard, un exemple rare de sainteté reconnue prophétiquement en dehors des Compagnons directs.",
+    "theme": "sira",
+    "source": "Sahîh Muslim n°2542",
+    "difficulte": "avancé",
+    "jour": 161
+  },
+  {
+    "id": "quiz_460",
+    "question": "Au-delà de son sens historique lié aux conflits politiques (comme la première Fitna), comment le terme « fitna » est-il employé plus largement dans les textes islamiques ?",
+    "choix": ["A. Il désigne toute forme d'épreuve ou de tentation testant la foi (richesse, enfants, désaccords, désirs), un sens bien plus large que sa seule connotation de conflit armé", "B. Il désigne uniquement les guerres civiles", "C. Il concerne exclusivement les femmes selon le Coran", "D. Ce terme n'apparaît que dans un seul verset du Coran"],
+    "reponse": "A",
+    "explication": "At-Taghâbun (64:15) déclare : « Vos biens et vos enfants ne sont qu'une fitna [épreuve]. » Le terme couvre en réalité toute épreuve testant la sincérité de la foi — richesse, progéniture, désirs, désaccords communautaires — bien au-delà de son usage historique restreint aux conflits politiques internes à la première génération musulmane.",
+    "theme": "aqida",
+    "source": "Coran 64:15, 8:28 ; Tafsîr Ibn Kathîr",
+    "difficulte": "avancé",
+    "jour": 161
+  }
+]
