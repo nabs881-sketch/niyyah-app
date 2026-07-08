@@ -13031,18 +13031,17 @@ function _openTawhidJour() {
   window._knowledgeFromFil = true;
   window._tawhidFromFil = true;
   window._tawhidFromPratique = false;
-  var _dayRaw = Math.floor(Date.now() / 86400000);
   if (_tawhidCapsules.length === 0) {
     fetch('tawhid_capsules.json?v=' + (window.APP_VERSION || '1'))
       .then(function(r){ return r.json(); })
       .then(function(data){
         _tawhidCapsules = data;
-        _tawhidIndex = _dayRaw % _tawhidCapsules.length;
+        _tawhidIndex = ((typeof SIRA !== 'undefined' && SIRA.getCurrentRdvNum) ? SIRA.getCurrentRdvNum() - 1 : 0) % _tawhidCapsules.length;
         _renderTawhidOverlay();
       })
       .catch(function(e){ console.error('[TAWHID] fetch error', e); });
   } else {
-    _tawhidIndex = _dayRaw % _tawhidCapsules.length;
+    _tawhidIndex = ((typeof SIRA !== 'undefined' && SIRA.getCurrentRdvNum) ? SIRA.getCurrentRdvNum() - 1 : 0) % _tawhidCapsules.length;
     _renderTawhidOverlay();
   }
 }
