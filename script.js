@@ -6987,7 +6987,7 @@ _cureJourRenderers.medisance_7 = function(el) { _cureMedisanceGenericDay(el, 7);
 // ── COFFRET GÉNÉRIQUE (réutilisé par Anxiété + Colère) ────────────────────────
 function _openCoffret(key, jsonFile, section) {
   var d = window['COFFRET_' + key.toUpperCase()];
-  if (!d) { fetch(jsonFile).then(function(r){return r.ok?r.json():null}).then(function(data){if(data){window['COFFRET_'+key.toUpperCase()]=data;_openCoffret(key,jsonFile,section);}else{showToast('Coffret \u2014 chargement impossible');}}).catch(function(){showToast('Coffret \u2014 chargement impossible');}); return; }
+  if (!d) { fetch(jsonFile).then(function(r){return r.ok?r.json():null}).then(function(data){if(data){window['COFFRET_'+key.toUpperCase()]=data;_openCoffret(key,jsonFile,section);}else{_showFetchErrorOverlay('coffret-'+key+'-overlay','#0A0908','_openCoffret(\''+key+'\',\''+jsonFile+'\',\''+section+'\');','document.getElementById(\'coffret-'+key+'-overlay\').remove();');}}).catch(function(){_showFetchErrorOverlay('coffret-'+key+'-overlay','#0A0908','_openCoffret(\''+key+'\',\''+jsonFile+'\',\''+section+'\');','document.getElementById(\'coffret-'+key+'-overlay\').remove();');}); return; }
   var ovId = 'coffret-' + key + '-overlay';
   var existing = document.getElementById(ovId);
   if (existing) existing.remove();
@@ -12960,13 +12960,31 @@ window.renderQasrCard = renderQasrCard;
 var _tawhidCapsules = [];
 var _tawhidIndex = 0;
 
+function _fetchErrorBlock(retryCall, closeCall) {
+  return '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;padding:40px 24px;text-align:center;">'
+    + '<div style="font-size:28px;color:rgba(200,168,74,0.25);margin-bottom:20px;">&#9651;</div>'
+    + '<p style="font-family:\'Georgia\',serif;font-size:17px;color:rgba(232,223,200,0.7);line-height:1.6;margin:0 0 28px;">Contenu indisponible<br>pour le moment</p>'
+    + '<button onclick="' + retryCall + '" style="padding:10px 28px;border-radius:10px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Georgia\',serif;font-size:15px;cursor:pointer;margin-bottom:14px;">R\u00e9essayer</button>'
+    + (closeCall ? '<br><button onclick="' + closeCall + '" style="background:none;border:none;color:rgba(200,168,74,0.35);font-size:13px;cursor:pointer;font-family:\'Georgia\',serif;padding:6px;">Fermer</button>' : '')
+    + '</div>';
+}
+function _showFetchErrorOverlay(ovId, bg, retryCall, closeCall) {
+  var ex = document.getElementById(ovId);
+  if (ex) ex.remove();
+  var ov = document.createElement('div');
+  ov.id = ovId;
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:' + bg + ';display:flex;align-items:center;justify-content:center;';
+  ov.innerHTML = _fetchErrorBlock(retryCall, closeCall);
+  document.body.appendChild(ov);
+}
+
 function openTawhid() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   if (_tawhidCapsules.length === 0) {
     fetch('tawhid_capsules.json?v=' + (window.APP_VERSION || '1'))
       .then(function(r){ return r.json(); })
       .then(function(data){ _tawhidCapsules = data; _tawhidIndex = 0; _renderTawhidOverlay(); })
-      .catch(function(e){ console.error('[TAWHID]', e); });
+      .catch(function(e){ console.error('[TAWHID]', e); _showFetchErrorOverlay('tawhid-overlay','#0d0a06','openTawhid();','closeTawhid();'); });
   } else {
     _tawhidIndex = 0;
     _renderTawhidOverlay();
@@ -13039,7 +13057,7 @@ function _openTawhidJour() {
         _tawhidIndex = ((typeof SIRA !== 'undefined' && SIRA.getCurrentRdvNum) ? SIRA.getCurrentRdvNum() - 1 : 0) % _tawhidCapsules.length;
         _renderTawhidOverlay();
       })
-      .catch(function(e){ console.error('[TAWHID] fetch error', e); });
+      .catch(function(e){ console.error('[TAWHID] fetch error', e); _showFetchErrorOverlay('tawhid-overlay','#0d0a06','_openTawhidJour();','closeTawhid();'); });
   } else {
     _tawhidIndex = ((typeof SIRA !== 'undefined' && SIRA.getCurrentRdvNum) ? SIRA.getCurrentRdvNum() - 1 : 0) % _tawhidCapsules.length;
     _renderTawhidOverlay();
@@ -13079,7 +13097,7 @@ function _openQuizJour() {
   window._quizFromFil = true;
   window._quizFromPratique = !!(window._quizFromPratique);
   var _qs = getQuizDuJour();
-  if (!_qs || _qs.length === 0) return;
+  if (!_qs || _qs.length === 0) { _showFetchErrorOverlay('quiz-overlay','#0d0a06','_openQuizJour();','closeQuiz();'); return; }
   _quizSession = { questions: _qs, index: 0 };
   _renderQuizOverlay();
 }
@@ -20964,6 +20982,11 @@ const SIRA = {
         + '</div>';
     }
     await this.load();
+    if (!this.data) {
+      ov.innerHTML = this._closeBtn
+        + '<div id="sira-content">' + _fetchErrorBlock('SIRA.openDetail();', null) + '</div>';
+      return;
+    }
     ov.innerHTML = this._closeBtn
       + '<div id="sira-content" style="max-width:720px;margin:0 auto;padding:80px 20px;opacity:0;transition:opacity 0.3s ease;">' + this.renderHome() + '</div>';
     ov.scrollTop = 0;
