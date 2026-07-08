@@ -5018,7 +5018,26 @@ function _cureJ7FinaleSucces() {
 
 // _cureDoucement supprimé
 
+var _cureDataLoaded = {};
+var _cureDataLoading = {};
+var _cureDataCbs = {};
+function _ensureCureData(dataKey, file, cb) {
+  if (_cureDataLoaded[dataKey]) { if (cb) cb(); return; }
+  if (cb) { if (!_cureDataCbs[dataKey]) _cureDataCbs[dataKey] = []; _cureDataCbs[dataKey].push(cb); }
+  if (_cureDataLoading[dataKey]) return;
+  _cureDataLoading[dataKey] = true;
+  fetch(file).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+    if (d) window[dataKey] = d;
+    _cureDataLoaded[dataKey] = true; _cureDataLoading[dataKey] = false;
+    var cbs = (_cureDataCbs[dataKey] || []).splice(0); cbs.forEach(function(fn){ fn(); });
+  }).catch(function(){
+    _cureDataLoaded[dataKey] = true; _cureDataLoading[dataKey] = false;
+    var cbs = (_cureDataCbs[dataKey] || []).splice(0); cbs.forEach(function(fn){ fn(); });
+  });
+}
+
 function openCureColere() {
+  if (!window.CURE_COLERE_CYCLE1) { _ensureCureData('CURE_COLERE_CYCLE1', 'cure-colere-cycle1.json', function(){ openCureColere(); }); return; }
   var sk = 'cure_colere';
   var cure = {}; try { cure = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
   var day = cure.current_day || 1;
@@ -5091,6 +5110,7 @@ _cureJourRenderers.colere_7 = function(el) { _cureColereGenericDay(el, 7); };
 
 // ── CURE ANXIÉTÉ ──────────────────────────────────────────────────────────────
 function openCureAnxiete() {
+  if (!window.CURE_ANXIETE_CYCLE1) { _ensureCureData('CURE_ANXIETE_CYCLE1', 'cure-anxiete-cycle1.json', function(){ openCureAnxiete(); }); return; }
   var cure = {}; try { cure = JSON.parse(safeGetItem('cure_anxiete') || '{}'); } catch(e) {}
   var day = cure.current_day || 1;
   if (cure.completed === true) day = 'complete';
@@ -6752,6 +6772,7 @@ _cureJourRenderers.anxiete_7 = function(el) { _cureWizardState.porte = 'anxiete'
 
 // ── CURE REGARD ───────────────────────────────────────────────────────────────
 function openCureRegard() {
+  if (!window.CURE_REGARD_CYCLE1) { _ensureCureData('CURE_REGARD_CYCLE1', 'cure-regard-cycle1.json', function(){ openCureRegard(); }); return; }
   var sk = 'cure_regard';
   var cure = {}; try { cure = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
   var day = cure.current_day || 1;
@@ -6877,6 +6898,7 @@ _cureJourRenderers.regard_7 = function(el) { _cureRegardGenericDay(el, 7); };
 
 // ── CURE ARROGANCE ────────────────────────────────────────────────────────────
 function openCureArrogance() {
+  if (!window.CURE_ARROGANCE_CYCLE1) { _ensureCureData('CURE_ARROGANCE_CYCLE1', 'cure-arrogance-cycle1.json', function(){ openCureArrogance(); }); return; }
   var sk = 'cure_arrogance';
   var cure = {}; try { cure = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
   var day = cure.current_day || 1;
@@ -6913,6 +6935,7 @@ _cureJourRenderers.arrogance_7 = function(el) { _cureArroganceGenericDay(el, 7);
 
 // ── CURE PARESSE ──────────────────────────────────────────────────────────────
 function openCureParesse() {
+  if (!window.CURE_PARESSE_CYCLE1) { _ensureCureData('CURE_PARESSE_CYCLE1', 'cure-paresse-cycle1.json', function(){ openCureParesse(); }); return; }
   var sk = 'cure_paresse';
   var cure = {}; try { cure = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
   var day = cure.current_day || 1;
@@ -6949,6 +6972,7 @@ _cureJourRenderers.paresse_7 = function(el) { _cureParesseGenericDay(el, 7); };
 
 // ── CURE MÉDISANCE ────────────────────────────────────────────────────────────
 function openCureMedisance() {
+  if (!window.CURE_MEDISANCE_CYCLE1) { _ensureCureData('CURE_MEDISANCE_CYCLE1', 'cure-medisance-cycle1.json', function(){ openCureMedisance(); }); return; }
   var sk = 'cure_medisance';
   var cure = {}; try { cure = JSON.parse(safeGetItem(sk) || '{}'); } catch(e) {}
   var day = cure.current_day || 1;
@@ -17554,35 +17578,11 @@ function _aidVoeuxExport(canvas) {
 
 // Load Bab an-Nafs external content
 fetch('bab-nafs-content.json').then(function(r){return r.json()}).then(function(d){window.babNafsContent=d;console.log('Bab an-Nafs content loaded: v'+d.version)}).catch(function(){console.warn('bab-nafs-content.json not found')});
-window.CURE_COLERE_CYCLE1 = null;
-fetch('cure-colere-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_COLERE_CYCLE1=d;console.log('Cure Colère Cycle 1 loaded')}}).catch(function(){});
-window.CURE_ANXIETE_CYCLE1 = null;
-fetch('cure-anxiete-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_ANXIETE_CYCLE1=d;console.log('Cure Anxiété Cycle 1 loaded')}}).catch(function(){});
-window.COFFRET_ANXIETE = null;
-fetch('coffret-anxiete.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_ANXIETE=d;console.log('Coffret Anxiété loaded')}}).catch(function(){});
-window.COFFRET_COLERE = null;
-fetch('coffret-colere.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_COLERE=d;console.log('Coffret Colère loaded')}}).catch(function(){});
-window.CURE_REGARD_CYCLE1 = null;
-fetch('cure-regard-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_REGARD_CYCLE1=d;console.log('Cure Regard Cycle 1 loaded')}}).catch(function(){});
-window.COFFRET_REGARD = null;
-fetch('coffret-regard.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_REGARD=d;console.log('Coffret Regard loaded')}}).catch(function(){});
 fetch('./data/duaas-regard.json').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
   if (!d) return;
   var n = {}; Object.keys(d).forEach(function(k){ if (k !== '_meta') n[k.toUpperCase()] = d[k]; });
   window.REGARD_DUAAS = n;
 }).catch(function(){});
-window.CURE_ARROGANCE_CYCLE1 = null;
-fetch('cure-arrogance-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_ARROGANCE_CYCLE1=d;console.log('Cure Arrogance Cycle 1 loaded')}}).catch(function(){});
-window.COFFRET_ARROGANCE = null;
-fetch('coffret-arrogance.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_ARROGANCE=d;console.log('Coffret Arrogance loaded')}}).catch(function(){});
-window.COFFRET_MEDISANCE = null;
-fetch('coffret-medisance.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_MEDISANCE=d;console.log('Coffret Médisance loaded')}}).catch(function(){});
-window.CURE_PARESSE_CYCLE1 = null;
-fetch('cure-paresse-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_PARESSE_CYCLE1=d;console.log('Cure Paresse Cycle 1 loaded')}}).catch(function(){});
-window.COFFRET_PARESSE = null;
-fetch('coffret-paresse.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.COFFRET_PARESSE=d;console.log('Coffret Paresse loaded')}}).catch(function(){});
-window.CURE_MEDISANCE_CYCLE1 = null;
-fetch('cure-medisance-cycle1.json').then(function(r){return r.ok?r.json():null}).then(function(d){if(d){window.CURE_MEDISANCE_CYCLE1=d;console.log('Cure Médisance Cycle 1 loaded')}}).catch(function(){});
 
 // Boot after V1's own DOMContentLoaded fires
 if (document.readyState === 'loading') {
