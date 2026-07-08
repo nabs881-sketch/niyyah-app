@@ -8710,9 +8710,26 @@ var MEDIT_PHRASES_AR = [
   '\u0634\u064E\u0647\u0650\u064A\u0642. \u0627\u0644\u0644\u0651\u064E\u0647. \u0632\u064E\u0641\u0650\u064A\u0631. \u0627\u0644\u062D\u064E\u0645\u0652\u062F\u064F \u0644\u0650\u0644\u0651\u064E\u0647. \u0645\u064F\u062C\u064E\u062F\u0651\u064E\u062F\u064B\u0627.'
 ];
 window.QUIZ_DB = [];
-(function _loadQuizDB() {
+var _quizDBLoaded = false;
+var _quizDBLoading = false;
+var _quizPendingCbs = [];
+function _loadQuizDB(cb) {
+  if (_quizDBLoaded) { if (cb) cb(); return; }
+  if (cb) _quizPendingCbs.push(cb);
+  if (_quizDBLoading) return;
+  _quizDBLoading = true;
   var _lots = [];
   for (var i = 1; i <= 30; i++) { _lots.push('quiz_lot_' + String(i).padStart(2, '0')); }
+  var _pending = _lots.length;
+  function _done() {
+    _pending--;
+    if (_pending === 0) {
+      _quizDBLoaded = true;
+      _quizDBLoading = false;
+      var cbs = _quizPendingCbs.splice(0);
+      cbs.forEach(function(fn) { fn(); });
+    }
+  }
   _lots.forEach(function(lot) {
     fetch('./data/waqt/quiz/' + lot + '.json')
       .then(function(r) { return r.ok ? r.json() : null; })
@@ -8721,10 +8738,12 @@ window.QUIZ_DB = [];
           window.QUIZ_DB = window.QUIZ_DB.concat(d);
           window.QUIZ_DB.sort(function(a, b) { return a.id < b.id ? -1 : a.id > b.id ? 1 : 0; });
         }
-      }).catch(function() {});
+        _done();
+      }).catch(function() { _done(); });
   });
-})();
+}
 function getQuizDuJour() {
+  if (!_quizDBLoaded && !_quizDBLoading) _loadQuizDB(); // prefetch sans callback
   var _jour = (typeof SIRA !== 'undefined' && SIRA.getCurrentRdvNum) ? SIRA.getCurrentRdvNum() : 1;
   var _maxJour = window.QUIZ_DB.reduce(function(m, q){ return Math.max(m, q.jour); }, 1);
   var _jourEffectif = ((_jour - 1) % _maxJour) + 1;
@@ -13096,6 +13115,7 @@ function _openQuizJour() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   window._quizFromFil = true;
   window._quizFromPratique = !!(window._quizFromPratique);
+  if (!_quizDBLoaded) { _loadQuizDB(function() { _openQuizJour(); }); return; }
   var _qs = getQuizDuJour();
   if (!_qs || _qs.length === 0) { _showFetchErrorOverlay('quiz-overlay','#0d0a06','_openQuizJour();','closeQuiz();'); return; }
   _quizSession = { questions: _qs, index: 0 };
