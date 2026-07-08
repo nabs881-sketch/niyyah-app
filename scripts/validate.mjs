@@ -64,6 +64,57 @@ try {
   info(`Hadiths: ${h.length} items, ${noSrc.length} sans source`);
 } catch (e) { fail(`Hadiths illisibles: ${e.message}`); }
 
+// ── Quiz lots ──────────────────────────────────────────────────────────────
+try {
+  const QUIZ_FIELDS = ['id','question','choix','reponse','theme','source','difficulte','jour'];
+  const LETTERS = ['A','B','C','D'];
+  let quizTotal = 0, quizErrors = 0;
+  for (let i = 1; i <= 30; i++) {
+    const lotFile = `data/waqt/quiz/quiz_lot_${String(i).padStart(2,'0')}.json`;
+    try {
+      const lot = readJSON(lotFile);
+      if (!Array.isArray(lot)) { fail(`Quiz ${lotFile}: pas un tableau`); quizErrors++; continue; }
+      lot.forEach((q, idx) => {
+        const missing = QUIZ_FIELDS.filter(f => !(f in q));
+        if (missing.length) { fail(`Quiz ${lotFile}[${idx}] (${q.id||'?'}): champs manquants → ${missing.join(',')}`); quizErrors++; }
+        if (!Array.isArray(q.choix) || q.choix.length !== 4) { fail(`Quiz ${lotFile}[${idx}] (${q.id||'?'}): "choix" doit avoir 4 éléments`); quizErrors++; }
+        if (q.reponse && !LETTERS.includes(q.reponse)) { fail(`Quiz ${lotFile}[${idx}] (${q.id||'?'}): "reponse" invalide → "${q.reponse}"`); quizErrors++; }
+      });
+      quizTotal += lot.length;
+    } catch(e) { fail(`Quiz ${lotFile}: ${e.message}`); quizErrors++; }
+  }
+  info(`Quiz: 30 lots, ${quizTotal} questions, ${quizErrors} erreur(s) de schéma`);
+} catch(e) { fail(`Quiz (global): ${e.message}`); }
+
+// ── Tawhid capsules ─────────────────────────────────────────────────────────
+try {
+  const TAWHID_FIELDS = ['id','num','pilier','titre','corps','phrase','ref','note'];
+  const tc = readJSON('tawhid_capsules.json');
+  if (!Array.isArray(tc)) { fail('Tawhid: pas un tableau'); }
+  else {
+    const missing = tc.filter(c => TAWHID_FIELDS.some(f => !(f in c)));
+    if (missing.length) fail(`Tawhid: ${missing.length} objet(s) avec champs manquants (ex: num ${missing[0].num||'?'})`);
+    const nums = tc.map(c => c.num).filter(n => typeof n === 'number');
+    const dupNums = nums.filter((n, i) => nums.indexOf(n) !== i);
+    if (dupNums.length) fail(`Tawhid: num en doublon → ${[...new Set(dupNums)].join(',')}`);
+    const sorted = [...nums].sort((a,b) => a-b);
+    const gaps = [];
+    for (let i = 1; i < sorted.length; i++) { if (sorted[i] - sorted[i-1] > 1) gaps.push(`${sorted[i-1]+1}…${sorted[i]-1}`); }
+    if (gaps.length) fail(`Tawhid: trou(s) dans la numérotation → ${gaps.join(', ')}`);
+    info(`Tawhid: ${tc.length} capsules, ${dupNums.length} doublon(s), ${gaps.length} trou(s) de numérotation`);
+  }
+} catch(e) { fail(`Tawhid illisible: ${e.message}`); }
+
+// ── Coffrets & Cures — JSON valide uniquement ───────────────────────────────
+try {
+  const COFFRETS = ['coffret-anxiete','coffret-colere','coffret-regard','coffret-arrogance','coffret-paresse','coffret-medisance'];
+  const CURES    = ['cure-anxiete-cycle1','cure-colere-cycle1','cure-regard-cycle1','cure-arrogance-cycle1','cure-paresse-cycle1','cure-medisance-cycle1'];
+  let coffretOk = 0, cureOk = 0;
+  for (const name of COFFRETS) { try { readJSON(`${name}.json`); coffretOk++; } catch(e) { fail(`Coffret ${name}.json: ${e.message}`); } }
+  for (const name of CURES)    { try { readJSON(`${name}.json`);    cureOk++; } catch(e) { fail(`Cure ${name}.json: ${e.message}`); } }
+  info(`Coffrets: ${coffretOk}/6 valides | Cures: ${cureOk}/6 valides`);
+} catch(e) { fail(`Coffrets/Cures (global): ${e.message}`); }
+
 try {
   const sw = fs.readFileSync('sw.js', 'utf8');
   const m = sw.match(/niyyah-v(\d+)/);
