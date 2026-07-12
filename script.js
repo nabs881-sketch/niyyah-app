@@ -7945,7 +7945,33 @@ function _getRecitsCurrentNum(data) {
 }
 function _renderRecitsCoran(data) {
   var currentNum = _getRecitsCurrentNum(data);
+  var currentIdx = currentNum - 1;
+  var prevIdx = (currentIdx - 1 + data.length) % data.length;
+  var currentRecit = data[currentIdx];
+  var prevRecit = data[prevIdx];
+  // Transition coran → hadith : premier jour d'un récit hadith après une série coran
+  if (
+    currentRecit && currentRecit.categorie === 'hadith' &&
+    prevRecit && prevRecit.categorie === 'coran' &&
+    safeGetItem('niyyah_recits_transition_seen') !== String(currentNum)
+  ) {
+    _showRecitsTransition(currentNum);
+    return;
+  }
   _openRecitDetail(currentNum);
+}
+function _showRecitsTransition(nextNum) {
+  var existing = document.getElementById('recits-coran-overlay');
+  if (existing) existing.remove();
+  var ov = document.createElement('div');
+  ov.id = 'recits-coran-overlay';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9500;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 28px;';
+  ov.innerHTML = ''
+    + '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px)+12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;">&#x2715;</button>'
+    + '<div style="font-family:\'Scheherazade New\',serif;font-size:28px;color:rgba(200,168,74,0.35);margin-bottom:28px;">&#x2737;</div>'
+    + '<p style="font-family:\'Georgia\',serif;font-size:18px;font-style:italic;color:rgba(232,223,200,0.85);line-height:1.7;max-width:340px;margin:0 0 36px;">Les r\u00e9cits du Coran touchent \u00e0 leur fin.<br>Place maintenant aux grands r\u00e9cits authentiques de la Sunna.</p>'
+    + '<button onclick="safeSetItem(\'niyyah_recits_transition_seen\',\'' + nextNum + '\');document.getElementById(\'recits-coran-overlay\').remove();_openRecitDetail(' + nextNum + ');" style="padding:14px 36px;border-radius:12px;border:1px solid rgba(200,168,74,0.5);background:transparent;color:#C8A84A;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;cursor:pointer;letter-spacing:0.5px;">Continuer</button>';
+  document.body.appendChild(ov);
 }
 function _openRecitDetail(num) {
   if (!_recitsCoranData) return;
