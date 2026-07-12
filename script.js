@@ -2496,7 +2496,7 @@ function renderLevel(levelId) {
   var _parole = _getParoleScore(scoreJour);
   var _lvlItems = getLevelItems(levelId);
   var _lvlDone = _lvlItems.filter(function(i) { return isItemDone(i, state); }).length;
-  let html = '<div class="level-hero"><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + pct + '%"></div></div><div class="hero-pct">' + Math.round(pct) + '%</div></div>'
+  let html = '<div class="level-hero"><div class="hero-title">' + t('level_' + level.id) + '</div><div class="hero-bar-row"><div class="hero-bar-track"><div class="hero-bar-fill" style="width:' + Math.min(pct, 100) + '%"></div></div><div class="hero-pct">' + Math.min(Math.round(pct), 100) + '%' + (pct > 100 ? ' <span style="color:#C8A84A;font-size:0.75em;">\u2726</span>' : '') + '</div></div>'
     + '<div style="text-align:right;margin-top:6px;padding:0 4px;"><div style="font-size:12px;color:' + scoreColor + ';opacity:0.7;" onclick="openScoreInfo()">' + scoreJour + '% du jour</div></div>'
     + '</div>' + graceBanner + fridayBanner;
   var _block = getCurrentPrayerBlock();
