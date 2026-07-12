@@ -1,7 +1,7 @@
 {
-  "module": "RECITS_UNIFIE",
+  "module": "RECITS_CORAN",
   "version": "2.0",
-  "items_count": 42,
+  "items_count": 44,
   "introduction": {
     "fr": "Ces récits sont basés sur le Coran. Certains détails proviennent de la tradition exégétique classique (Ibn Kathîr, Tabarî) ou des Israeliyyât (récits transmis par des convertis juifs et chrétiens des débuts de l’Islam). Ces ajouts traditionnels sont signalés dans le texte ou les sources. Le Coran lui-même reste la référence — quand un détail manque dans le Coran, c’est qu’Allâh n’a pas voulu nous le dire.",
     "en": "",
@@ -4098,6 +4098,172 @@
       },
       "source": {
         "fr": "Sahîh Muslim n°2942",
+        "en": "",
+        "ar": ""
+      }
+    },
+    {
+      "num": 43,
+      "id": "recit_043",
+      "categorie": "hadith",
+      "theme": "La vérité, même quand elle coûte cher",
+      "titre": {
+        "fr": "Ka'b ibn Mâlik et les cinquante nuits de silence",
+        "en": "",
+        "ar": ""
+      },
+      "paragraphes": [
+        {
+          "type": "text",
+          "content": {
+            "fr": "Ka'b ibn Mâlik n'avait jamais manqué une seule expédition aux côtés du Prophète ﷺ. Mais au moment de partir pour Tabûk, sans raison valable, sans excuse sincère, il repoussa ses préparatifs, jour après jour, jusqu'à ce que l'armée soit déjà loin.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Il resta à Médine, seul parmi les hypocrites déclarés et les malades réellement excusés — la pire compagnie possible pour un homme qui n'avait, lui, aucune excuse à présenter.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Quand le Prophète ﷺ revint et demanda après lui, Ka'b se prépara à mentir, comme d'autres l'avaient fait avant lui pour se justifier. Mais au moment de parler, quelque chose en lui refusa. Ô Messager d'Allah, dit-il, je n'ai aucune excuse. J'étais simplement plus fort et plus capable que jamais, et pourtant je ne suis pas parti.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Le Prophète ﷺ le félicita pour cette honnêteté, mais ordonna malgré tout à toute la communauté de ne plus lui adresser la parole, sans exception, jusqu'à nouvel ordre.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Cinquante nuits s'écoulèrent ainsi. Ka'b continuait de saluer les gens dans les rues de Médine — mais personne, jamais, ne lui répondait. Même en mosquée, près du Prophète ﷺ lui-même, aucun mot ne lui était adressé.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Il escalada un jour le mur du jardin de son propre cousin, l'homme qu'il aimait le plus au monde après le Prophète ﷺ. Il le salua. Aucune réponse. Il insista, le suppliant par Allah de lui dire s'il l'aimait encore. Le silence continua, ses yeux se remplirent de larmes.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Puis vint l'ordre final : même son épouse devait le quitter temporairement. Ka'b dormit sur le toit de sa maison, seul, cinquante nuits durant, dans un isolement total au sein même de sa ville natale.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Au matin du cinquantième jour, alors qu'il priait sur ce même toit, une voix cria depuis la montagne : Ô Ka'b ibn Mâlik, réjouis-toi ! Allah avait révélé un verset acceptant son repentir, ainsi que celui des deux autres restés sincèrement en arrière.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Ka'b se prosterna immédiatement, submergé de joie, avant même de finir sa prière. Il voulut alors donner l'intégralité de ses biens en aumône, tant sa reconnaissance était immense — mais le Prophète ﷺ lui conseilla d'en garder une partie, jugeant ce sacrifice total inutile désormais.",
+            "en": "",
+            "ar": ""
+          }
+        }
+      ],
+      "meditation": {
+        "fr": "Un simple mensonge, comme d'autres l'avaient fait, lui aurait épargné cinquante nuits de souffrance. Il a choisi la vérité malgré son coût immédiat, et c'est précisément cette vérité qui a fini par le sauver.",
+        "en": "",
+        "ar": ""
+      },
+      "source": {
+        "fr": "Sahîh al-Bukhârî n°4418 ; Sahîh Muslim n°2769 ; Sourate At-Tawba (9:118)",
+        "en": "",
+        "ar": ""
+      }
+    },
+    {
+      "num": 44,
+      "id": "recit_044",
+      "categorie": "hadith",
+      "theme": "La dignité de ceux qu'on oublie",
+      "titre": {
+        "fr": "Celle qui balayait la mosquée",
+        "en": "",
+        "ar": ""
+      },
+      "paragraphes": [
+        {
+          "type": "text",
+          "content": {
+            "fr": "Une femme, dont le nom n'a même pas été retenu par la mémoire collective, avait pour habitude de balayer la mosquée du Prophète ﷺ. Une tâche modeste, répétée jour après jour, sans éclat ni reconnaissance particulière.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Elle mourut, discrètement, durant la nuit. Les Compagnons présents l'enterrèrent sans réveiller le Prophète ﷺ, pensant probablement ne pas devoir le déranger pour quelqu'un d'aussi humble dans sa fonction.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Quelque temps plus tard, le Prophète ﷺ demanda de ses nouvelles, remarquant simplement son absence dans la mosquée qu'elle entretenait habituellement.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Elle est morte, lui répondit-on, presque en passant, comme une information mineure parmi tant d'autres à traiter ce jour-là.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Pourquoi ne m'en avez-vous pas informé, demanda-t-il, visiblement contrarié par ce silence. Montrez-moi sa tombe.",
+            "en": "",
+            "ar": ""
+          }
+        },
+        {
+          "type": "text",
+          "content": {
+            "fr": "Il s'y rendit personnellement, malgré l'heure tardive et malgré le fait qu'elle ait déjà été enterrée, et pria pour elle sur sa tombe — un honneur rarement accordé de cette façon, réservé habituellement aux funérailles immédiates.",
+            "en": "",
+            "ar": ""
+          }
+        }
+      ],
+      "meditation": {
+        "fr": "Personne n'avait jugé utile de le prévenir, pensant sa fonction trop modeste pour mériter ce dérangement. Lui a jugé, au contraire, qu'aucune fonction sincèrement rendue à la communauté n'était trop modeste pour être honorée.",
+        "en": "",
+        "ar": ""
+      },
+      "source": {
+        "fr": "Sahîh al-Bukhârî n°458 ; Sahîh Muslim n°956",
         "en": "",
         "ar": ""
       }
