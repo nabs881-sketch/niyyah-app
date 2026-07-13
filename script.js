@@ -16313,6 +16313,8 @@ function updateSanctuaireMoment() {
   (function() {
     var _lines = ['[DEBUG] blockId=' + blockId + ' total=' + blockTotal + ' done=' + blockDone + ' remaining=' + blockRemaining];
     blockItems.forEach(function(it) { _lines.push('  ' + it.id + ' → isDone=' + _isDone(it) + ' (state=' + JSON.stringify(state[it.id]) + ')'); });
+    _lines.push('[DEBUG] istighfar: state=' + JSON.stringify(state['istighfar']) + ' target=100 done=' + (((state['istighfar']||0) >= 100) || state['istighfar'] === true));
+    _lines.push('[DEBUG] tasbih:    state=' + JSON.stringify(state['tasbih'])    + ' target=99  done=' + (((state['tasbih']   ||0) >= 99 ) || state['tasbih']    === true));
     var _dbg = document.getElementById('_sanctuaire_debug');
     if (!_dbg) { _dbg = document.createElement('div'); _dbg.id = '_sanctuaire_debug'; _dbg.style.cssText = 'position:fixed;bottom:80px;left:0;right:0;z-index:99999;background:rgba(0,0,0,0.92);color:#C8A84A;font-family:monospace;font-size:11px;padding:8px 10px;white-space:pre;overflow-x:auto;max-height:40vh;overflow-y:auto;border-top:1px solid rgba(200,168,74,0.4);'; document.body.appendChild(_dbg); }
     _dbg.textContent = _lines.join('\n');
