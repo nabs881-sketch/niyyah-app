@@ -13089,7 +13089,7 @@ function _renderTawhidOverlay() {
     + '<button class="tawhid-nav-btn" onclick="_tawhidGo(-1)"' + (_tawhidIndex === 0 ? ' disabled' : '') + '>&#8592;</button>'
     + '<button class="tawhid-nav-btn" onclick="_tawhidGo(1)"' + (_tawhidIndex === total - 1 ? ' disabled' : '') + '>&#8594;</button>'
     + '</div>')
-    + (window._tawhidFromFil ? '<div class="tawhid-return-wrap"><button class="tawhid-return-btn" onclick="closeTawhid()">&#8592; Retour au Fil du jour</button></div>' : '')
+    + (window._tawhidFromFil ? '<div class="tawhid-return-wrap"><button class="tawhid-return-btn" onclick="closeTawhid()">Retour au Fil du jour</button></div>' : '')
     + '</div>';
   document.body.insertAdjacentHTML('beforeend', html);
   var _ov = document.getElementById('tawhid-overlay');
