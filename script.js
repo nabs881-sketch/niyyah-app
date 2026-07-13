@@ -1421,7 +1421,6 @@ function getPropheteJour() {
   if (!_ps) { _ps = String(Date.now()); safeSetItem('niyyah_prophetes_start', _ps); }
   if (!_ss) { _ss = String(Date.now()); safeSetItem('niyyah_sira_start', _ss); }
   if (!_cs) { _cs = String(Date.now()); safeSetItem('niyyah_compagnons_start', _cs); }
-  console.log('[Niyyah] Parcours starts — Proph\u00e8tes:', _ps, '| S\u00eera:', _ss, '| Compagnons:', _cs);
 })();
 function getHadithJourRule() {
   if (!HADITHS_JOUR || !HADITHS_JOUR.length) return { theme: '', texte_ar: '', texte_fr: '', source: '', degre: '' };
@@ -13270,7 +13269,6 @@ window._resetTawhidJour = function() {
   var st = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
   delete st.tawhid_jour;
   localStorage.setItem('spiritual_v2', JSON.stringify(st));
-  console.log('[RESET] tawhid_jour supprimé');
 };
 
 function closeRepere() { var o = document.getElementById('repere-overlay'); if (o) o.remove(); _restoreScroll(); }
@@ -15777,9 +15775,8 @@ function v2RefreshStats() {
       var _grPool = getGreetingPhrases(new Date().getDay());
       var _wn = Math.floor((Date.now() - new Date(new Date().getFullYear(),0,1).getTime()) / 604800000);
       var _dbgW = new URLSearchParams(window.location.search).get('debugWeek');
-      if (_dbgW !== null) { _wn = parseInt(_dbgW, 10) || 0; console.log('[murmure debug] forced week=' + _wn); }
+      if (_dbgW !== null) { _wn = parseInt(_dbgW, 10) || 0; }
       _murmureText = _grPool[_wn % _grPool.length];
-      console.log('[murmure] day=' + new Date().getDay() + ' week=' + _wn + ' pool=' + _grPool.length + ' idx=' + (_wn % _grPool.length) + ' → "' + _murmureText + '"');
       if (!safeGetItem('niyyah_welcome_shown')) {
         var _motiv = safeGetItem('niyyah_motivation');
         if (_motiv === 'routine' || _motiv === 'reconnecter' || _motiv === 'sacraliser') {
@@ -17302,13 +17299,11 @@ function _aidRevealSanctuaire() {
   if (sanct) sanct.style.visibility = 'visible';
 }
 function _aidBoot() {
-  console.log('[Aid] _aidBoot called, onboard:', _onboardDone, 'data:', !!window._AID_DATA);
   setTimeout(function(){ try { _aidRevealSanctuaire(); } catch(e){} }, 3000);
   if (!_onboardDone) { _aidRevealSanctuaire(); return; }
   _aidInjectStyles();
   if (!window._AID_DATA) {
     setTimeout(function() {
-      console.log('[Aid] retry, data:', !!window._AID_DATA);
       if (window._AID_DATA) { _aidBootInner(); } else { _aidRevealSanctuaire(); }
     }, 1500);
     return;
@@ -17317,7 +17312,6 @@ function _aidBoot() {
 }
 function _aidBootInner() {
   getCurrentHijri().then(function(hijri) {
-    console.log('[Aid] hijri:', JSON.stringify(hijri));
     var evt = _aidDetectEvent(hijri);
 
     /* ── Garde-fou Grégorien (sunset/API lag fix) ──
@@ -17339,28 +17333,23 @@ function _aidBootInner() {
         safeSetItem(gKey, gregDay1Str);
       }
       var elapsed = Math.round((today - new Date(gregDay1Str)) / 86400000);
-      console.log('[Aid] greg guard:', evt.key, 'day1=' + gregDay1Str, 'elapsed=' + elapsed, 'max=' + maxDays);
       if (elapsed >= maxDays) {
-        console.log('[Aid] event expired (greg guard) — cutting off');
         try { safeRemoveItem(gKey); } catch(e) {}
         evt = null;
       }
     }
 
     if (!evt) {
-      console.log('[Aid] no active event');
       _aidRevealSanctuaire();
       return;
     }
     window._AID_ACTIVE = evt;
-    console.log('[Aid] active:', evt.key, 'day:', evt.dayNum);
 
     /* ── Adha jour 1 vs jours 2-4 (Tachrîq) ──
        Jour 1 : takeover complet + overlay (comme avant).
        Jours 2-4 : app normale + carte discrète Tachrîq dans le sanctuaire.
        Les messages waqt spéciaux continuent les 4 jours. */
     if (evt.key === 'AID_AL_ADHA' && evt.dayNum >= 2) {
-      console.log('[Aid] Tachr\u00eeq mode (jour', evt.dayNum + ') \u2014 carte discr\u00e8te');
       _aidRevealSanctuaire();
       _aidInjectTachriqCard(evt);
     } else {
@@ -17368,7 +17357,7 @@ function _aidBootInner() {
       _aidRevealSanctuaire();
       _aidShowOverlay(evt);
     }
-  }).catch(function(e) { console.warn('[Aid] hijri error:', e); _aidRevealSanctuaire(); });
+  }).catch(function(e) { _aidRevealSanctuaire(); });
 }
 
 /* ═══════════════════════════════════════════════════
@@ -17602,7 +17591,7 @@ function _aidVoeuxExport(canvas) {
 }
 
 // Load Bab an-Nafs external content
-fetch('bab-nafs-content.json').then(function(r){return r.json()}).then(function(d){window.babNafsContent=d;console.log('Bab an-Nafs content loaded: v'+d.version)}).catch(function(){console.warn('bab-nafs-content.json not found')});
+fetch('bab-nafs-content.json').then(function(r){return r.json()}).then(function(d){window.babNafsContent=d;}).catch(function(){console.warn('bab-nafs-content.json not found')});
 fetch('./data/duaas-regard.json').then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
   if (!d) return;
   var n = {}; Object.keys(d).forEach(function(k){ if (k !== '_meta') n[k.toUpperCase()] = d[k]; });
@@ -19983,7 +19972,6 @@ function _mergeMashhurat(cb) {
         }
       });
       _mashhuratMerged = true;
-      console.log('[Mashhurat] merged, pool now:', SAVAIS_TU.length);
       if (cb) cb();
     });
   });
