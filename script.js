@@ -16304,7 +16304,7 @@ function updateSanctuaireMoment() {
   var _allUnlocked = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
     .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); })
     .filter(function(item) { return !_motivS || !item.paths || item.paths.includes(_motivS); });
-  var blockItems = _allUnlocked.filter(function(item) { return Array.isArray(item.block) ? item.block.includes(blockId) : item.block === blockId; });
+  var blockItems = _allUnlocked.filter(function(item) { if (item.id === 'quiz_jour') return false; return Array.isArray(item.block) ? item.block.includes(blockId) : item.block === blockId; });
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
@@ -16318,7 +16318,7 @@ function updateSanctuaireMoment() {
   if (jourRemaining > 0 && jourItems.length <= 5) {
     jourLine = '<div style="font-family:\'Inter\',var(--sans);font-size:12px;color:rgba(255,255,255,0.55);margin-top:4px;">+ ' + jourRemaining + ' acte' + (jourRemaining > 1 ? 's' : '') + ' du jour</div>';
   }
-  var _fjItemsC = typeof getFilJourItems === 'function' ? getFilJourItems().filter(function(i){ return i.type !== 'defi' && i.id.indexOf('defi') < 0; }) : [];
+  var _fjItemsC = typeof getFilJourItems === 'function' ? getFilJourItems().filter(function(i){ return i.type !== 'defi' && i.id.indexOf('defi') < 0 && i.id !== 'quiz_jour'; }) : [];
   var _fjStC = safeParseJSON('spiritual_v2', {});
   var _allFjDone = _fjItemsC.length > 0 && _fjItemsC.every(function(i){ return !!_fjStC[i.id] || _fjStC[i.id] === true || (_fjStC[i.id] || 0) >= (i.target || 1); });
   if (blockRemaining === 0 && _bissDone && _allFjDone) {
