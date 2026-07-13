@@ -8845,7 +8845,6 @@ function _getTafakkurHistory() {
 function _tafakkurDoneToday() {
   var key = 'niyyah_tafakkur_lu_' + todayKey();
   var val = safeGetItem(key);
-  console.log('[Tafakkur] _tafakkurDoneToday key=' + key + ' val=' + (val ? 'EXISTS' : 'NULL'));
   return !!val;
 }
 function _markTafakkurDone(phrase) {
@@ -8853,7 +8852,6 @@ function _markTafakkurDone(phrase) {
   var tempsPasse = Math.max(0, _tafakkurDuration - _tafakkurRemaining);
   var data = { date: todayKey(), phrase: phrase, theme: 'tafakkur', temps_passe: tempsPasse };
   safeSetItem(key, JSON.stringify(data));
-  console.log('[Tafakkur] _markTafakkurDone WRITTEN key=' + key + ' | temps_passe=' + tempsPasse + 's');
 }
 function _openTafakkurArchiveRecit(date) {
   var hist = _getTafakkurHistory();
@@ -8986,7 +8984,6 @@ function setTafakkurAudio(mode, btn) {
 }
 
 function closeTafakkur(forceClose) {
-  console.log('[Tafakkur] closeTafakkur called | running=' + _tafakkurRunning + ' | remaining=' + _tafakkurRemaining + ' | forceClose=' + !!forceClose);
   // Récit = cadeau de clôture : affiché à TOUTE fermeture (chrono lancé ou non), jamais retenu.
   // Le verrou quotidien n'est posé QUE si une halte a réellement commencé (chrono lancé, _elapsed > 0).
   // _tafakkurEnded empêche la ré-entrée (cas phrase sans récit) ; _tafakkurDoneToday() évite
@@ -8998,6 +8995,11 @@ function closeTafakkur(forceClose) {
     _computeTafakkurEligible();
     if (_elapsed > 0) { _markTafakkurDone(_tafakkurCurrentPhrase); }
     _showTafakkurEnd();
+    return;
+  }
+  // Récit en cours de préparation (2.4s entre _showTafakkurEnd et _showTafakkurRecitOverlay) :
+  // bloquer la fermeture forcée pour éviter le flash Sanctuaire → le récit fermera l'écran lui-même.
+  if (!forceClose && _tafakkurEnded && !document.getElementById('tafakkur-recit-overlay')) {
     return;
   }
   var existing = document.getElementById('tafakkur-recit-overlay');
@@ -9062,22 +9064,14 @@ function toggleTafakkurTimer() {
 }
 
 function _findTafakkurRecit(phrase) {
-  console.log('[Tafakkur] _findTafakkurRecit | Q_MAP:', window.TAFAKKUR_Q_MAP ? Object.keys(window.TAFAKKUR_Q_MAP).length + ' entries' : 'NULL', '| RECITS:', window.TAFAKKUR_RECITS ? window.TAFAKKUR_RECITS.length + ' entries' : 'NULL');
-  if (!window.TAFAKKUR_Q_MAP || !window.TAFAKKUR_RECITS) { console.error('[Tafakkur] Q_MAP ou RECITS non charge'); return null; }
+  if (!window.TAFAKKUR_Q_MAP || !window.TAFAKKUR_RECITS) { return null; }
   var qId = window.TAFAKKUR_Q_MAP[phrase];
-  console.log('[Tafakkur] phrase lookup:', phrase ? '"' + phrase.substring(0, 60) + '..."' : 'EMPTY', '→ qId:', qId || 'NOT FOUND');
-  if (!qId) { console.error('[Tafakkur] Phrase non trouvee dans Q_MAP (pas une des 200 nouvelles questions)'); return null; }
-  var recit = window.TAFAKKUR_RECITS.find(function(r) { return r.question_id === qId; }) || null;
-  console.log('[Tafakkur] recit pour', qId, ':', recit ? 'FOUND (theme=' + recit.theme + ')' : 'NOT FOUND');
-  return recit;
+  if (!qId) { return null; }
+  return window.TAFAKKUR_RECITS.find(function(r) { return r.question_id === qId; }) || null;
 }
 function _showTafakkurRecitOverlay(recit, fromArchive) {
-  console.log('[Tafakkur] _showTafakkurRecitOverlay CALLED');
-  console.log('[Tafakkur] question_id=' + recit.question_id + ' | theme=' + recit.theme);
-  console.log('[Tafakkur] texte=' + (recit.recit.texte || '').substring(0, 80) + '...');
-  console.log('[Tafakkur] source_nom=' + (recit.recit.source_nom || 'none'));
   var existing = document.getElementById('tafakkur-recit-overlay');
-  if (existing) { console.log('[Tafakkur] removing existing overlay'); existing.remove(); }
+  if (existing) existing.remove();
   var ov = document.createElement('div');
   ov.id = 'tafakkur-recit-overlay';
   ov.style.cssText = 'position:fixed;inset:0;z-index:9998;background:rgba(10,8,5,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity 500ms ease;';
@@ -9094,7 +9088,6 @@ function _showTafakkurRecitOverlay(recit, fromArchive) {
     + '<button onclick="' + _closeRecit + '" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:20px;cursor:pointer;">\u2715</button>'
     + '</div>';
   document.body.appendChild(ov);
-  console.log('[Tafakkur] overlay appended to body, z-index=9998, triggering fade-in');
   requestAnimationFrame(function() { ov.style.opacity = '1'; });
 }
 function _showTafakkurEnd() {
@@ -9103,21 +9096,13 @@ function _showTafakkurEnd() {
   if (timerEl) timerEl.textContent = '';
   if (!el) return;
   _tafakkurEnded = true;
-  var eligibleRaw = safeGetItem('niyyah_tafakkur_recit_eligible');
-  var eligible = eligibleRaw === 'true';
-  console.log('[Tafakkur] _showTafakkurEnd | eligible raw="' + eligibleRaw + '" → ' + eligible);
-  console.log('[Tafakkur] _showTafakkurEnd | phrase="' + (_tafakkurCurrentPhrase || 'EMPTY').substring(0, 60) + '"');
-  console.log('[Tafakkur] _showTafakkurEnd | Q_MAP=' + (window.TAFAKKUR_Q_MAP ? Object.keys(window.TAFAKKUR_Q_MAP).length : 'NULL') + ' | RECITS=' + (window.TAFAKKUR_RECITS ? window.TAFAKKUR_RECITS.length : 'NULL'));
   el.style.opacity = '0';
   setTimeout(function() {
     el.innerHTML = '<div style="font-family:\'Georgia\',serif;font-size:18px;font-style:italic;color:#C8A84A;line-height:1.7;max-width:320px;margin:0 auto;">' + _tafakkurCurrentPhrase + '</div>';
     el.style.opacity = '1';
     var recit = _findTafakkurRecit(_tafakkurCurrentPhrase);
     if (recit) {
-      console.log('[Tafakkur] → overlay recit dans 2s');
       setTimeout(function() { _showTafakkurRecitOverlay(recit); }, 2000);
-    } else {
-      console.error('[Tafakkur] PAS de recit pour cette phrase — seul 200/379 phrases ont un recit');
     }
   }, 400);
 }
