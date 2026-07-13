@@ -16292,19 +16292,32 @@ function updateSanctuaireMoment() {
     }
   }
   function _isDone(item) {
+    if (item.type === 'wird') {
+      try {
+        var _wSess = WIRD_DATA[item.session];
+        if (_wSess && _wSess.items.every(function(wi) { return !!wirdState[wi.id]; })) return true;
+      } catch(e) {}
+      return !!state[item.id];
+    }
     if (item.id === 'wird_soir') {
       return state['w_tasbih_100_s'] >= 100 || state['w_tasbih_100_s'] === true
         || state['w_tahlil_100_s'] >= 100 || state['w_tahlil_100_s'] === true
-        || state['w_salawat_s'] >= 10 || state['w_salawat_s'] === true
+        || state['w_salawat_s'] >= 10  || state['w_salawat_s'] === true
         || !!state['wird_soir'];
     }
-    return item.type === 'counter' ? ((state[item.id] || 0) >= item.target || state[item.id] === true) : !!state[item.id];
+    return item.type === 'counter'
+      ? ((state[item.id] || 0) >= item.target || state[item.id] === true)
+      : !!state[item.id];
   }
   var _motivS = getEffectiveMotiv();
   var _allUnlocked = LEVELS.filter(function(l) { return state._unlocked && state._unlocked.includes(l.id); })
     .flatMap(function(l) { return l.sections.flatMap(function(s) { return s.items; }); })
     .filter(function(item) { return !_motivS || !item.paths || item.paths.includes(_motivS); });
-  var blockItems = _allUnlocked.filter(function(item) { if (item.id === 'quiz_jour') return false; return Array.isArray(item.block) ? item.block.includes(blockId) : item.block === blockId; });
+  var blockItems = _allUnlocked.filter(function(item) {
+    if (item.id === 'quiz_jour') return false;
+    if (item.optional) return false;
+    return Array.isArray(item.block) ? item.block.includes(blockId) : item.block === blockId;
+  });
   var blockTotal = blockItems.length;
   var blockDone = blockItems.filter(_isDone).length;
   var blockRemaining = blockTotal - blockDone;
