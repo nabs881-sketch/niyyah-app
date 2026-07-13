@@ -9934,21 +9934,20 @@ body.onboarding-active #nav-bar-v2 {
 .tawhid-return-wrap { padding: 20px 24px 40px; border-top: 0.5px solid rgba(200,168,74,0.15); }
 .tawhid-return-btn {
   width: 100%;
-  padding: 14px;
-  border: 0.5px solid rgba(200,168,74,0.3);
+  padding: 13px;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(200,168,74,0.06), rgba(200,168,74,0.02));
-  box-shadow: 0 0 12px rgba(200,168,74,0.08);
-  transition: all 0.25s ease;
+  border: 1px solid var(--sep2);
+  background: transparent;
   color: #C8A84A;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--sans);
   font-weight: 500;
   font-size: 15px;
-  cursor: pointer;
   letter-spacing: 0.04em;
+  transition: all 0.15s;
+  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-.tawhid-return-btn:active { background: rgba(200,168,74,0.15); box-shadow: 0 0 18px rgba(200,168,74,0.15); }
+.tawhid-return-btn:active { background: var(--card2); }
 
 /* ── QUIZ DU JOUR ── */
 .quiz-overlay {
