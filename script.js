@@ -16271,7 +16271,7 @@ function updateSanctuaireMoment() {
       if (_pm > _nowM2) {
         var _diff = _pm - _nowM2;
         if (_diff <= 120) _nextInfo = '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.9;margin-top:2px;">' + _pNames[_pi] + ' dans ' + _diff + ' min</div>';
-        else _nextInfo = '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.9;margin-top:2px;">' + _pNames[_pi] + ' \u2014 ' + _prayerTimes[_pNames[_pi]].substring(0,5) + '</div>';
+        else _nextInfo = '<div style="font-family:\'Georgia\',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.9;margin-top:2px;">' + _pNames[_pi] + ' \u00e0 ' + _prayerTimes[_pNames[_pi]].substring(0,5) + '</div>';
         break;
       }
     }
