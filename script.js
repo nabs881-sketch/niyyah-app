@@ -15170,6 +15170,7 @@ function openWaqtModal() {
     html += '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;margin-bottom:16px;">' + (story.texte || '') + '</div>';
     html += '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
     if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
+    if (story.fiabilite) { var _sfb = {authentique:['✦','Authentique','#C8A84A'],sira:['❖','Sîra','rgba(200,168,74,0.75)'],tradition:['◌','Tradition signalée','rgba(200,168,74,0.55)'],contexte:['·','Contexte','#888']}[story.fiabilite]; if (_sfb) html += '<div style="text-align:center;font-size:11px;letter-spacing:2px;color:'+_sfb[2]+';margin:6px 0 0;opacity:0.85;">'+_sfb[0]+' '+_sfb[1]+'</div>'; }
     var _storyTts = ((story.titre ? story.titre + '. ' : '') + (story.texte ? story.texte.replace(/\n+/g, ' ') + '. ' : '') + (story.morale || '')).replace(/"/g, '&quot;');
     html += '<div style="text-align:center;margin-top:16px;"><button class="btn-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_waqtPlayTTS(this)" data-tts="' + _storyTts + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
     actionEl.innerHTML = html;
