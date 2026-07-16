@@ -15205,6 +15205,35 @@ var _WAQT_LUMIERE = {
 };
 function _waqtHashPriere(p) { var h = 0; for (var i = 0; i < p.length; i++) h = (h * 31 + p.charCodeAt(i)) & 0x7fffffff; return h; }
 var _waqtModalPriere = null;
+function _parseWaqtCitation(texte) {
+  var r = { citation: '', reference: '', commentaire: '' };
+  if (!texte || typeof texte !== 'string') { r.commentaire = texte || ''; return r; }
+  var refM = texte.match(/([\u2014\u2013\-]\s*Coran\s+\d+:\d+(?:[-\u2013\u2014]\d+)?)\s*$/);
+  if (!refM) { r.commentaire = texte; return r; }
+  r.reference = refM[1].trim();
+  var sans = texte.slice(0, refM.index).trim();
+  var citM = sans.match(/^([\s\S]*?)'((?:[^']|'(?=[A-Za-z\u00C0-\u024F]))*)'([\s\S]*)$/);
+  if (citM) {
+    var before = citM[1].trim();
+    r.citation = citM[2].trim();
+    var after = citM[3].trim();
+    r.commentaire = ((before ? before + ' ' : '') + after).trim();
+  } else {
+    r.commentaire = sans;
+  }
+  return r;
+}
+function _renderWaqtText(txt) {
+  var p = _parseWaqtCitation(txt);
+  if (!p.citation && !p.reference) {
+    return '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;">' + escapeHtml(txt) + '</div>';
+  }
+  var h = '';
+  if (p.citation) h += '<div style="font-family:\'Georgia\',serif;font-size:19px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;margin-bottom:2px;">\u2018' + escapeHtml(p.citation) + '\u2019</div>';
+  if (p.reference) h += '<div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,74,0.65);margin-bottom:10px;">' + escapeHtml(p.reference) + '</div>';
+  if (p.commentaire) h += '<div style="font-family:\'Georgia\',serif;font-size:17px;color:rgba(233,221,199,0.75);line-height:1.7;max-width:340px;">' + escapeHtml(p.commentaire) + '</div>';
+  return h;
+}
 function openWaqtModal() {
   _nAn('waqt_started');
   var priere = isWaqtAvailable();
@@ -15263,7 +15292,7 @@ function openWaqtModal() {
     var _contentHtml = _hasVerset
       ? '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;margin-bottom:12px;">' + escapeHtml(item.verset) + '</div>'
         + (item.explication ? '<div style="font-family:\'Georgia\',serif;font-size:16px;color:rgba(233,221,199,0.55);line-height:1.7;max-width:340px;">' + escapeHtml(item.explication) + '</div>' : '')
-      : '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;">' + txt + '</div>';
+      : _renderWaqtText(txt);
     actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>'
       + ambianceHtml
       + _contentHtml
