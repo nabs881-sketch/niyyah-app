@@ -217,6 +217,8 @@ function addNiyyahEntry(entry) {
 
 function getRegardeHistory() { return _journalGet('niyyah_regarde_history'); }
 function getNiyyahHistory() { return _journalGet('niyyah_niyyah_history'); }
+function _getRegardeHistory() { try { return JSON.parse(localStorage.getItem('niyyah_regarde_refs') || '[]'); } catch(e) { return []; } }
+function _saveRegardeHistory(ref) { if (!ref || typeof ref !== 'string') return; try { var arr = _getRegardeHistory(); arr = arr.filter(function(r) { return r !== ref; }); arr.push(ref); if (arr.length > 15) arr = arr.slice(arr.length - 15); localStorage.setItem('niyyah_regarde_refs', JSON.stringify(arr)); } catch(e) {} }
 
 function updateRegardeEntry(id, updates) {
   var arr = _journalGet('niyyah_regarde_history');
@@ -18394,7 +18396,7 @@ function regardeCapture() {
     fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64, seen_versets: _seenVersets, premium: false }),
+      body: JSON.stringify({ image: base64, seen_versets: _seenVersets, premium: false, versets_recents: _getRegardeHistory() }),
       signal: _acR.signal
     })
     .then(function(res) {
@@ -18407,6 +18409,7 @@ function regardeCapture() {
       if (data.mode === 'premium') {
         if (_done) return; _done = true;
         clearTimeout(_toR);
+        if (data.reference) _saveRegardeHistory(data.reference);
         _renderRegardePremium(content, data, dataUrl);
         return;
       }
