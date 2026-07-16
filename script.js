@@ -13152,7 +13152,7 @@ function _openQuizJour() {
   if (!_quizDBLoaded) { _loadQuizDB(function() { _openQuizJour(); }); return; }
   var _qs = getQuizDuJour();
   if (!_qs || _qs.length === 0) { _showFetchErrorOverlay('quiz-overlay','#0d0a06','_openQuizJour();','closeQuiz();'); return; }
-  _quizSession = { questions: _qs, index: 0 };
+  _quizSession = { questions: _qs, index: 0, correct: 0 };
   _renderQuizOverlay();
 }
 
@@ -13222,9 +13222,16 @@ function _quizChoiceTap(btn, choix, reponse) {
   var allCards = ov.querySelectorAll('.quiz-choice');
   allCards.forEach(function(c) { c.style.pointerEvents = 'none'; });
   // Colorier correct / wrong
+  var isCorrect = (choix === reponse);
+  if (_quizSession) {
+    if (isCorrect) _quizSession.correct++;
+    if (!_quizSession._answers) _quizSession._answers = [];
+    var _q = _quizSession.questions[_quizSession.index];
+    _quizSession._answers.push({ theme: _q ? _q.theme : 'autre', correct: isCorrect });
+  }
   allCards.forEach(function(c) {
     if (c.dataset.letter === reponse) c.classList.add('correct');
-    else if (c === btn && choix !== reponse) c.classList.add('wrong');
+    else if (c === btn && !isCorrect) c.classList.add('wrong');
   });
   // Afficher explication
   var q = _quizSession.questions[_quizSession.index];
@@ -13247,24 +13254,98 @@ function _quizNext() {
   } else {
     // Écran de fin
     _markQuizDone();
+    _saveQuizProgression();
     var ov = document.getElementById('quiz-overlay');
     if (!ov) return;
+    var _total = _quizSession.questions.length;
+    var _correct = _quizSession.correct || 0;
+    var _pct = _total > 0 ? Math.round(_correct / _total * 100) : 0;
+    var _scoreMsg;
+    if (_pct >= 90) _scoreMsg = 'Excellent\u00a0\u2014 ta connaissance s\u2019affine jour apr\u00e8s jour.';
+    else if (_pct >= 70) _scoreMsg = 'Tr\u00e8s bien\u00a0\u2014 tu ancres ces connaissances solidement.';
+    else if (_pct >= 50) _scoreMsg = 'Bonne session\u00a0\u2014 la r\u00e9p\u00e9tition fera le reste.';
+    else _scoreMsg = 'Chaque question est une lumi\u00e8re qui progresse. Continue.';
     ov.innerHTML = '<div class="quiz-topbar">'
       + '<button class="quiz-back" onclick="closeQuiz()">&#8249;</button>'
       + '<span class="quiz-counter"></span>'
       + '</div>'
       + '<div class="quiz-fin">'
-      + '<div class="quiz-fin-titre">Barak All\u0101hu f\u012bk\u00a0\u2014<br>tu as r\u00e9pondu aux ' + _quizSession.questions.length + '\u00a0questions d\u2019aujourd\u2019hui.</div>'
-      + '<div class="quiz-fin-msg">Chaque connaissance est un\u00a0lumi\u00e8re\u00a0qui guide.</div>'
+      + '<div class="quiz-fin-score">' + _correct + '\u00a0/\u00a0' + _total + '</div>'
+      + '<div class="quiz-fin-titre">Barak All\u0101hu f\u012bk</div>'
+      + '<div class="quiz-fin-msg">' + _scoreMsg + '</div>'
+      + '<button class="quiz-prog-btn" onclick="_openQuizProgression()">Ma progression \u2197</button>'
       + '<button class="quiz-retour-btn" onclick="closeQuiz()">&#8592;\u00a0Retour au Fil du jour</button>'
       + '</div>';
   }
+}
+
+function _saveQuizProgression() {
+  if (!_quizSession || !_quizSession._answers || !_quizSession._answers.length) return;
+  var today = new Date().toISOString().slice(0, 10);
+  var prog = safeParseJSON('niyyah_quiz_prog', {});
+  _quizSession._answers.forEach(function(ans) {
+    var th = ans.theme || 'autre';
+    if (!prog[th]) prog[th] = { vues: 0, justes: 0, derniere: null };
+    prog[th].vues++;
+    if (ans.correct) prog[th].justes++;
+    prog[th].derniere = today;
+  });
+  safeSetItem('niyyah_quiz_prog', JSON.stringify(prog));
+}
+
+function _openQuizProgression() {
+  var existing = document.getElementById('quiz-prog-overlay');
+  if (existing) existing.remove();
+  var prog = safeParseJSON('niyyah_quiz_prog', {});
+  var themeLabels = { coran: 'Coran', fiqh: 'Fiqh', sira: 'S\u00eera', aqida: '\u02bfAq\u012bda', autre: 'Autre' };
+  var themes = Object.keys(prog);
+  var html = '<div id="quiz-prog-overlay" style="position:fixed;inset:0;background:#0d0a06;z-index:9100;display:flex;flex-direction:column;overflow-y:auto;">'
+    + '<div class="quiz-topbar">'
+    + '<button class="quiz-back" onclick="document.getElementById(\'quiz-prog-overlay\').remove()">&#8249;</button>'
+    + '<span class="quiz-counter" style="font-size:13px;letter-spacing:1px;">MA PROGRESSION</span>'
+    + '</div>'
+    + '<div style="padding:24px 20px 40px;">';
+  if (themes.length === 0) {
+    html += '<p style="color:rgba(233,221,199,0.5);text-align:center;margin-top:60px;font-family:Georgia,serif;font-size:16px;">Aucune session enregistr\u00e9e encore.<br>Compl\u00e8te un quiz pour voir ta progression.</p>';
+  } else {
+    // Find weakest theme (lowest % correct, min 3 vues)
+    var weakest = null, weakestPct = 101;
+    themes.forEach(function(th) {
+      var p = prog[th];
+      if (p.vues >= 3) {
+        var pct = p.vues > 0 ? Math.round(p.justes / p.vues * 100) : 0;
+        if (pct < weakestPct) { weakestPct = pct; weakest = th; }
+      }
+    });
+    themes.forEach(function(th) {
+      var p = prog[th];
+      var pct = p.vues > 0 ? Math.round(p.justes / p.vues * 100) : 0;
+      var barW = Math.max(4, pct);
+      var label = themeLabels[th] || th;
+      var isWeak = (th === weakest);
+      html += '<div style="margin-bottom:28px;">'
+        + '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;">'
+        + '<span style="font-family:Georgia,serif;font-size:16px;color:#e9ddc7;font-weight:' + (isWeak ? '700' : '400') + ';">' + label + (isWeak ? ' \u00a0<span style="font-size:11px;color:#C8A84A;letter-spacing:1px;">\u25cb \u00c0 r\u00e9viser</span>' : '') + '</span>'
+        + '<span style="font-family:Inter,sans-serif;font-size:13px;color:rgba(200,168,74,0.85);">' + p.justes + '\u00a0/\u00a0' + p.vues + '</span>'
+        + '</div>'
+        + '<div style="background:rgba(255,255,255,0.08);border-radius:4px;height:6px;overflow:hidden;">'
+        + '<div style="height:6px;width:' + barW + '%;background:' + (pct >= 70 ? '#C8A84A' : pct >= 50 ? 'rgba(200,168,74,0.6)' : 'rgba(200,168,74,0.3)') + ';border-radius:4px;transition:width 0.6s;"></div>'
+        + '</div>'
+        + '<div style="font-family:Inter,sans-serif;font-size:11px;color:rgba(233,221,199,0.35);margin-top:4px;">'
+        + (p.derniere ? 'Derni\u00e8re session\u00a0: ' + p.derniere : '') + '</div>'
+        + '</div>';
+    });
+  }
+  html += '</div></div>';
+  document.body.insertAdjacentHTML('beforeend', html);
 }
 
 window._openQuizJour = _openQuizJour;
 window._quizChoiceTap = _quizChoiceTap;
 window._quizNext = _quizNext;
 window.closeQuiz = closeQuiz;
+window._saveQuizProgression = _saveQuizProgression;
+window._openQuizProgression = _openQuizProgression;
 window._resetTawhidJour = function() {
   var st = JSON.parse(localStorage.getItem('spiritual_v2') || '{}');
   delete st.tawhid_jour;

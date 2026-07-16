@@ -9708,3 +9708,24 @@ body.onboarding-active #nav-bar-v2 {
   -webkit-tap-highlight-color: transparent;
 }
 .quiz-retour-btn:active { background: rgba(200,168,74,0.08); }
+.quiz-fin-score {
+  font-family: 'Georgia', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #C8A84A;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.quiz-prog-btn {
+  padding: 12px 24px;
+  background: rgba(200,168,74,0.1);
+  border: 0.5px solid rgba(200,168,74,0.5);
+  border-radius: 12px;
+  color: #C8A84A;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.quiz-prog-btn:active { background: rgba(200,168,74,0.18); }
