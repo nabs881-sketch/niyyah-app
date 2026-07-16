@@ -17977,17 +17977,19 @@ function _renderRegardePremium(content, data, dataUrl) {
   content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div></div>';
   content.style.opacity = '1';
   var ref = (data.reference || '').replace(/\s/g, '');
-  fetch('https://api.alquran.cloud/v1/ayah/' + ref + '/editions/quran-uthmani,fr.hamidullah,ar.alafasy')
+  fetch('https://api.alquran.cloud/v1/ayah/' + ref + '/editions/quran-uthmani,fr.hamidullah,en.transliteration,ar.alafasy')
     .then(function(r) { return r.json(); })
     .then(function(res) {
       if (res.code !== 200 || !res.data || res.data.length < 2) throw new Error('API error');
       var ar = res.data[0];
       var fr = res.data[1];
-      var audioUrl = (res.data[2] && res.data[2].audio) ? res.data[2].audio : '';
+      var translit = (res.data[2] && res.data[2].text) ? res.data[2].text : (data.phonetique || '');
+      var audioUrl = (res.data[3] && res.data[3].audio) ? res.data[3].audio : '';
       var sourateName = ar.surah ? ar.surah.englishName : '';
       var refLabel = sourateName + ' (' + ref + ')';
-      var _lieuHtml = data.lieu_revelation ? ' <span style="font-size:12px;color:rgba(200,168,75,0.45);">(' + data.lieu_revelation + ')</span>' : '';
-      var _phoneHtml = data.phonetique ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + data.phonetique + '</div>' : '';
+      var lieuFixe = (ar.surah && ar.surah.revelationType) ? (ar.surah.revelationType === 'Medinan' ? 'Médine' : 'Mecque') : (data.lieu_revelation || '');
+      var _lieuHtml = lieuFixe ? ' <span style="font-size:12px;color:rgba(200,168,75,0.45);">(' + lieuFixe + ')</span>' : '';
+      var _phoneHtml = translit ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + translit + '</div>' : '';
       var _sep = '<div style="width:40px;height:1px;background:rgba(200,168,75,0.3);margin:20px auto;"></div>';
       var _hasAudio = !!audioUrl;
       content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:40px 24px;text-align:center;">'
