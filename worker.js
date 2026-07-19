@@ -426,13 +426,13 @@ ENFANT_FAMILLE = enfant, scène de famille, proches.
 MAIN_TRAVAIL = main(s), outil, geste ou poste de travail.
 VILLE = rue urbaine, foule, immeubles, marché (≠ ROUTE, ≠ HABITAT intérieur).
 TEMPS = horloge, montre, calendrier.
-RÈGLE BOUTEILLE : une bouteille d'eau, de soda, de jus, une gourde, un verre d'eau → EAU ou NOURRITURE, JAMAIS INAPPROPRIE. INAPPROPRIE pour une bouteille uniquement si le mot "alcool", "bière", "vin", "whisky", "vodka" ou une marque d'alcool connue est lisible en toutes lettres sur l'étiquette. Une étiquette colorée, floue ou partiellement visible ne suffit pas.
-INAPPROPRIE = contenu strictement contraire à la pudeur islamique :
-- Alcool (mot "alcool" ou marque d'alcool lisible en toutes lettres sur l'étiquette)
-- Occultisme (pentagramme, tarot, zodiaque)
-- Baiser bouche / contact intime
-- Nudité / contenu sexuel
-RÈGLE : en cas de doute → INDETERMINE, jamais INAPPROPRIE.
+RÈGLE OBJETS QUOTIDIENS : tout objet du quotidien (bouteille, boisson, aliment, emballage, produit ménager, outil, appareil électronique, vêtement, accessoire, médicament, produit d'hygiène, jouet, livre, sac) → jamais INAPPROPRIE. Ces objets vont dans EAU, NOURRITURE, OBJET_PERSONNEL, MAIN_TRAVAIL, HABITAT ou INDETERMINE selon le contexte. INAPPROPRIE pour un objet uniquement si une mention textuelle explicite et lisible désigne de l'alcool (mot "alcool", "bière", "vin", "whisky", "vodka", marque connue) ou un symbole occulte clairement visible.
+INAPPROPRIE = contenu strictement contraire à la pudeur islamique avec signal EXPLICITE et NON AMBIGU :
+- Alcool : mot ou marque lisible en toutes lettres sur l'étiquette (une couleur ou forme de bouteille ne suffit pas)
+- Occultisme : pentagramme, tarot, zodiaque clairement reconnaissable
+- Contact intime : baiser bouche à bouche, geste sexuel
+- Nudité / contenu sexuel explicite
+RÈGLE FONDAMENTALE : en cas de doute → INDETERMINE, JAMAIS INAPPROPRIE. Un objet ambigu ou une scène ambiguë n'est JAMAIS INAPPROPRIE.
 Si confidence < 0.80 → INDETERMINE.
 FORMAT (JSON strict) : {"category": "...", "confidence": 0.92}`;
 
@@ -455,7 +455,7 @@ CE QUE TU NE FAIS JAMAIS
 - Jamais un verset de châtiment, menace, polémique pour une image apaisante. En cas de doute, choisis miséricorde, signe cosmique, gratitude.
 - Jamais un verset isolé d'un contexte juridique précis.
 - Jamais associer un verset sur la base d'un mot-clé qui recoupe le nom de l'application ("regard", "voir", "yeux") si ce mot n'a aucun lien avec le contenu RÉEL de l'image. Le nom de la fonctionnalité ("Pose un regard") ne doit JAMAIS influencer le choix du verset. Exemple concret d'erreur à ne plus jamais reproduire : une photo d'un objet neutre (répulsif anti-moustique, produit ménager, accessoire quelconque) ne doit jamais recevoir un verset sur la pudeur du regard (24:30-31) sous prétexte que la fonctionnalité s'appelle "regard". Le verset doit résonner avec CE QUI EST PHOTOGRAPHIÉ, jamais avec le nom de l'app.
-- INTERDIT ABSOLU : 24:30 et 24:31 (versets sur la pudeur du regard) ne peuvent être choisis que si l'image montre une scène sociale ou humaine réelle où la question du regard entre personnes est directement pertinente. Pour tout objet seul (bouteille, ustensile, vêtement, appareil, aliment, plante, paysage), 24:30-31 est strictement interdit — même si l'objet est lié à l'eau, au corps, ou à un contexte de pudeur. En cas de tentation de choisir 24:30-31 pour un objet, choisis un verset sur la providence, la gratitude, ou la création.
+- INTERDIT ABSOLU — 24:30 et 24:31 : ces versets traitent de la pudeur du regard entre personnes dans un contexte social. Ils sont interdits pour toute image qui ne montre pas une scène sociale ou humaine réelle (personnes présentes, interaction visible). Sont donc interdits : tout objet seul, toute boisson, tout aliment, tout produit ménager, tout paysage, tout animal, toute plante, toute texture, toute lumière — même si l'objet est lié à l'eau, au corps, ou à n'importe quel autre contexte. Si tu es tenté de choisir 24:30 ou 24:31, arrête-toi et choisis à la place un verset sur la providence divine, la gratitude, la création, ou l'attention d'Allah aux petites choses. Ce n'est pas une suggestion — c'est une règle sans exception.
 
 SUJETS LÉGITIMES (exemples NON exhaustifs)
 - Ciel, nuages, étoiles, lune, soleil
