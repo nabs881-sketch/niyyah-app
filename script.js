@@ -6369,7 +6369,7 @@ function _showNiyyahCrisisModal() {
   var el = document.createElement('div');
   el.id = '_niyyah-crisis-modal';
   el.style.cssText = 'position:fixed;inset:0;z-index:99999;background:rgba(8,5,2,0.97);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 28px;text-align:center;overflow:auto;';
-  el.innerHTML = '<button onclick="_crisisClose()" aria-label="Fermer" style="position:absolute;top:16px;right:18px;background:transparent;border:none;color:rgba(240,230,200,0.28);font-size:26px;line-height:1;cursor:pointer;padding:6px;">\u00d7</button>'
+  el.innerHTML = '<button onclick="_crisisClose()" aria-label="Fermer" style="position:absolute;top:10px;right:10px;background:transparent;border:none;color:rgba(240,230,200,0.50);font-size:26px;line-height:1;cursor:pointer;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;">\u00d7</button>'
     + '<div style="max-width:360px;width:100%;">'
     + '<div style="font-size:36px;margin-bottom:20px;">🤲</div>'
     + '<div style="font-family:var(--serif,Georgia,serif);font-size:22px;font-weight:600;color:#F0E6C8;line-height:1.45;margin-bottom:14px;">Je t\u2019entends.</div>'
