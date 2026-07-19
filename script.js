@@ -6369,7 +6369,8 @@ function _showNiyyahCrisisModal() {
   var el = document.createElement('div');
   el.id = '_niyyah-crisis-modal';
   el.style.cssText = 'position:fixed;inset:0;z-index:99999;background:rgba(8,5,2,0.97);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 28px;text-align:center;overflow:auto;';
-  el.innerHTML = '<div style="max-width:360px;width:100%;">'
+  el.innerHTML = '<button onclick="_crisisClose()" aria-label="Fermer" style="position:absolute;top:16px;right:18px;background:transparent;border:none;color:rgba(240,230,200,0.28);font-size:26px;line-height:1;cursor:pointer;padding:6px;">\u00d7</button>'
+    + '<div style="max-width:360px;width:100%;">'
     + '<div style="font-size:36px;margin-bottom:20px;">🤲</div>'
     + '<div style="font-family:var(--serif,Georgia,serif);font-size:22px;font-weight:600;color:#F0E6C8;line-height:1.45;margin-bottom:14px;">Je t\u2019entends.</div>'
     + '<div style="font-family:var(--serif,Georgia,serif);font-size:17px;color:rgba(240,230,200,0.72);line-height:1.75;margin-bottom:32px;">Ce que tu ressens est une vraie souffrance.\u00a0Tu n\u2019as pas \u00e0 rester seul avec \u00e7a.</div>'
