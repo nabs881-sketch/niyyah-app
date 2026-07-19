@@ -10810,32 +10810,33 @@ function toggleTheme() {
 /* ─── BLOC 4 : Service Worker ────────────────────── */
 
 if ('serviceWorker' in navigator && location.protocol !== 'null:' && (location.protocol === 'https:' || location.protocol === 'http:')) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').then(function(reg) {
-      var _lastSwCheck = 0;
-      function _throttledSwUpdate() { var now = Date.now(); if (now - _lastSwCheck < 5 * 60 * 1000) return; _lastSwCheck = now; try { reg.update().catch(function(){}); } catch(e) {} }
-      setInterval(_throttledSwUpdate, 30 * 60 * 1000);
-      window.addEventListener('focus', _throttledSwUpdate);
-      reg.addEventListener('updatefound', function() {
-        var newWorker = reg.installing;
-        if (!newWorker) return;
-        newWorker.addEventListener('statechange', function() {
-          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            var _updateLabels = {fr:{msg:'Niyyah a \u00e9volu\u00e9',sub:'Une nouvelle version est pr\u00eate',btn:'Reprendre \u203A'},en:{msg:'Niyyah has evolved',sub:'A new version is ready',btn:'Resume \u203A'},ar:{msg:'\u0646\u0650\u064a\u0651\u064e\u0629 \u062a\u062d\u062f\u0651\u062b\u062a',sub:'\u0646\u0633\u062e\u0629 \u062c\u062f\u064a\u062f\u0629 \u062c\u0627\u0647\u0632\u0629',btn:'\u0627\u0633\u062a\u0626\u0646\u0627\u0641 \u203A'}};
-            var _ul = _updateLabels[(typeof V2_LANG!=='undefined'?V2_LANG:'fr')] || _updateLabels.fr;
-            var banner = document.createElement('div');
-            banner.style.cssText = 'position:fixed;top:calc(var(--safe-top,0px) + 8px);left:16px;right:16px;max-width:400px;margin:0 auto;background:rgba(20,18,15,0.95);border:1px solid rgba(200,168,75,0.25);border-radius:10px;padding:10px 16px;z-index:9999;display:flex;align-items:center;gap:12px;opacity:' + (window._reducedMotion ? '1' : '0') + ';' + (window._reducedMotion ? '' : 'transition:opacity 0.6s ease;');
-            banner.innerHTML = '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:#C8A84A;">' + _ul.msg + '</div></div><span id="_sw-resume" style="font-family:\'Georgia\',serif;font-size:13px;color:#C8A84A;cursor:pointer;flex-shrink:0;white-space:nowrap;">' + _ul.btn + '</span>';
-            if (!window._reducedMotion) { requestAnimationFrame(function(){requestAnimationFrame(function(){banner.style.opacity='1';});}); }
-            banner.querySelector('#_sw-resume').onclick = function() { newWorker.postMessage({type:'SKIP_WAITING'}); window.location.reload(); };
-            document.body.appendChild(banner);
-          }
-        });
+  // Enregistrement immédiat (hors load) pour que le SW puisse s'installer et
+  // mettre en cache les ressources CORE dès la première visite.
+  // clients.claim() dans sw.js garantit la prise de contrôle sans rechargement.
+  navigator.serviceWorker.register('./sw.js').then(function(reg) {
+    var _lastSwCheck = 0;
+    function _throttledSwUpdate() { var now = Date.now(); if (now - _lastSwCheck < 5 * 60 * 1000) return; _lastSwCheck = now; try { reg.update().catch(function(){}); } catch(e) {} }
+    setInterval(_throttledSwUpdate, 30 * 60 * 1000);
+    window.addEventListener('focus', _throttledSwUpdate);
+    reg.addEventListener('updatefound', function() {
+      var newWorker = reg.installing;
+      if (!newWorker) return;
+      newWorker.addEventListener('statechange', function() {
+        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+          var _updateLabels = {fr:{msg:'Niyyah a \u00e9volu\u00e9',sub:'Une nouvelle version est pr\u00eate',btn:'Reprendre \u203A'},en:{msg:'Niyyah has evolved',sub:'A new version is ready',btn:'Resume \u203A'},ar:{msg:'\u0646\u0650\u064a\u0651\u064e\u0629 \u062a\u062d\u062f\u0651\u062b\u062a',sub:'\u0646\u0633\u062e\u0629 \u062c\u062f\u064a\u062f\u0629 \u062c\u0627\u0647\u0632\u0629',btn:'\u0627\u0633\u062a\u0626\u0646\u0627\u0641 \u203A'}};
+          var _ul = _updateLabels[(typeof V2_LANG!=='undefined'?V2_LANG:'fr')] || _updateLabels.fr;
+          var banner = document.createElement('div');
+          banner.style.cssText = 'position:fixed;top:calc(var(--safe-top,0px) + 8px);left:16px;right:16px;max-width:400px;margin:0 auto;background:rgba(20,18,15,0.95);border:1px solid rgba(200,168,75,0.25);border-radius:10px;padding:10px 16px;z-index:9999;display:flex;align-items:center;gap:12px;opacity:' + (window._reducedMotion ? '1' : '0') + ';' + (window._reducedMotion ? '' : 'transition:opacity 0.6s ease;');
+          banner.innerHTML = '<div style="flex:1;min-width:0;"><div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:#C8A84A;">' + _ul.msg + '</div></div><span id="_sw-resume" style="font-family:\'Georgia\',serif;font-size:13px;color:#C8A84A;cursor:pointer;flex-shrink:0;white-space:nowrap;">' + _ul.btn + '</span>';
+          if (!window._reducedMotion) { requestAnimationFrame(function(){requestAnimationFrame(function(){banner.style.opacity='1';});}); }
+          banner.querySelector('#_sw-resume').onclick = function() { newWorker.postMessage({type:'SKIP_WAITING'}); window.location.reload(); };
+          document.body.appendChild(banner);
+        }
       });
-    }).catch(() => {});
-    // Ne pas reload automatiquement — le banner "Mise à jour" (ligne 9920) suffit
-    // navigator.serviceWorker.addEventListener('controllerchange', function() { window.location.reload(); });
-  });
+    });
+  }).catch(function() {});
+  // Ne pas reload automatiquement — le banner "Mise à jour" suffit
+  // navigator.serviceWorker.addEventListener('controllerchange', function() { window.location.reload(); });
 }
 
 
