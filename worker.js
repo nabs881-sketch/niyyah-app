@@ -119,29 +119,42 @@ async function handleMetals(env) {
     }
   } catch (e) {}
   try {
-    const [xauRes, xagRes, fxRes] = await Promise.all([
-      fetch('https://api.gold-api.com/price/XAU'),
-      fetch('https://api.gold-api.com/price/XAG'),
-      fetch('https://api.frankfurter.app/latest?from=USD&to=EUR'),
+    const [xauResult, xagResult, fxResult] = await Promise.allSettled([
+      fetch('https://api.gold-api.com/price/XAU').then(r => r.json()),
+      fetch('https://api.gold-api.com/price/XAG').then(r => r.json()),
+      fetch('https://api.frankfurter.app/latest?from=USD&to=EUR').then(r => r.json()),
     ]);
-    const xau = await xauRes.json();
-    const xag = await xagRes.json();
-    const fx = await fxRes.json();
-    const usdEur = fx && fx.rates && fx.rates.EUR ? fx.rates.EUR : null;
+
     const OZ = 31.1034768; // grammes par once troy
-    if (!xau.price || !xag.price || !usdEur) {
+    const xauPrice = xauResult.status === 'fulfilled' && xauResult.value?.price
+      ? xauResult.value.price : null;
+    const xagPrice = xagResult.status === 'fulfilled' && xagResult.value?.price
+      ? xagResult.value.price : null;
+    const usdEur = fxResult.status === 'fulfilled' && fxResult.value?.rates?.EUR
+      ? fxResult.value.rates.EUR : null;
+
+    // All three unavailable → hard failure
+    if (!xauPrice && !xagPrice && !usdEur) {
       return jsonResponse({ error: 'unavailable' }, 502);
     }
+
+    const partial = !xauPrice || !xagPrice || !usdEur;
     const data = {
-      gold_eur_g: +((xau.price / OZ) * usdEur).toFixed(2),
-      silver_eur_g: +((xag.price / OZ) * usdEur).toFixed(2),
+      gold_eur_g:   (xauPrice && usdEur) ? +((xauPrice / OZ) * usdEur).toFixed(2) : null,
+      silver_eur_g: (xagPrice && usdEur) ? +((xagPrice / OZ) * usdEur).toFixed(2) : null,
       updated: new Date().toISOString(),
+      ...(partial ? { partial: true } : {}),
     };
-    try {
-      if (env.RATE_LIMIT_KV) {
-        await env.RATE_LIMIT_KV.put('metals:eur', JSON.stringify(data), { expirationTtl: 86400 });
-      }
-    } catch (e) {}
+
+    // Cache uniquement si les trois sources sont disponibles
+    if (!partial) {
+      try {
+        if (env.RATE_LIMIT_KV) {
+          await env.RATE_LIMIT_KV.put('metals:eur', JSON.stringify(data), { expirationTtl: 86400 });
+        }
+      } catch (e) {}
+    }
+
     return jsonResponse(data);
   } catch (e) {
     return jsonResponse({ error: 'fetch_failed' }, 502);
