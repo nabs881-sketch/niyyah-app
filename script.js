@@ -6327,9 +6327,12 @@ _outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
   html += '<div style="display:flex;flex-direction:column;gap:0;">';
   opts.forEach(function(opt) {
     var chk = saved.indexOf(opt.id) !== -1;
-    html += '<label style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:13px;margin-bottom:9px;border:1px solid ' + (chk ? 'rgba(232,208,140,.6)' : 'rgba(200,168,74,.13)') + ';background:' + (chk ? 'linear-gradient(180deg,rgba(200,168,74,.16),rgba(200,168,74,.07))' : 'transparent') + ';' + (chk ? 'box-shadow:0 0 16px rgba(200,168,74,.14);' : '') + 'cursor:pointer;transition:all 0.2s;">'
-      + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbDynUpdate(\'' + escapeHtml(o.id) + '\',\'' + opt.id + '\',this.checked,\'' + sk + '\',\'' + msgId + '\')" style="position:absolute;opacity:0;pointer-events:none;">'
-      + '<span style="flex-shrink:0;width:23px;height:23px;border-radius:7px;border:1.5px solid ' + (chk ? '#E8CF8A' : 'rgba(200,168,74,.45)') + ';background:' + (chk ? 'linear-gradient(180deg,#F0D58A,#C8A84A)' : 'transparent') + ';display:flex;align-items:center;justify-content:center;' + (chk ? 'box-shadow:0 0 8px rgba(232,208,140,.4);' : '') + 'font-size:14px;font-weight:700;color:#2a1c08;">' + (chk ? '\u2713' : '') + '</span>'
+    var isCrisis = opt.is_crisis ? '1' : '0';
+    var borderColor = chk ? (opt.is_crisis ? 'rgba(220,80,80,.65)' : 'rgba(232,208,140,.6)') : (opt.is_crisis ? 'rgba(220,80,80,.22)' : 'rgba(200,168,74,.13)');
+    var bgColor = chk ? (opt.is_crisis ? 'linear-gradient(180deg,rgba(220,80,80,.14),rgba(180,40,40,.07))' : 'linear-gradient(180deg,rgba(200,168,74,.16),rgba(200,168,74,.07))') : 'transparent';
+    html += '<label style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:13px;margin-bottom:9px;border:1px solid ' + borderColor + ';background:' + bgColor + ';' + (chk ? 'box-shadow:0 0 16px rgba(200,168,74,.14);' : '') + 'cursor:pointer;transition:all 0.2s;">'
+      + '<input type="checkbox" ' + (chk ? 'checked' : '') + ' onchange="_cbDynUpdate(\'' + escapeHtml(o.id) + '\',\'' + opt.id + '\',this.checked,\'' + sk + '\',\'' + msgId + '\',' + isCrisis + ')" style="position:absolute;opacity:0;pointer-events:none;">'
+      + '<span style="flex-shrink:0;width:23px;height:23px;border-radius:7px;border:1.5px solid ' + (chk ? (opt.is_crisis ? '#E88A8A' : '#E8CF8A') : (opt.is_crisis ? 'rgba(220,80,80,.45)' : 'rgba(200,168,74,.45)')) + ';background:' + (chk ? (opt.is_crisis ? 'linear-gradient(180deg,#E88A8A,#C84040)' : 'linear-gradient(180deg,#F0D58A,#C8A84A)') : 'transparent') + ';display:flex;align-items:center;justify-content:center;' + (chk ? 'box-shadow:0 0 8px rgba(232,208,140,.4);' : '') + 'font-size:14px;font-weight:700;color:#2a1c08;">' + (chk ? '\u2713' : '') + '</span>'
       + '<span style="flex:1;font-family:var(--serif);font-size:17px;color:' + (chk ? '#F4E6BE' : 'rgba(240,234,214,0.8)') + ';line-height:1.5;">' + escapeHtml(opt.label) + '</span>'
       + '</label>';
   });
@@ -6347,14 +6350,71 @@ _outilAnxieteRenderers.checkboxes_avec_message_dynamique = function(o, c) {
   html += '</div>';
   return html;
 };
-function _cbDynUpdate(outilId, optId, checked, sk, msgId) {
+function _cbDynUpdate(outilId, optId, checked, sk, msgId, isCrisis) {
   var saved = []; try { saved = JSON.parse(safeGetItem(sk) || '[]'); } catch(e) {}
   if (checked && saved.indexOf(optId) === -1) saved.push(optId);
   if (!checked) saved = saved.filter(function(x) { return x !== optId; });
   safeSetItem(sk, JSON.stringify(saved));
+  if (checked && isCrisis) {
+    _showNiyyahCrisisModal();
+    return;
+  }
   _cureAnxieteWizardRender();
 }
 window._cbDynUpdate = _cbDynUpdate;
+
+function _showNiyyahCrisisModal() {
+  var existing = document.getElementById('_niyyah-crisis-modal');
+  if (existing) existing.remove();
+  var el = document.createElement('div');
+  el.id = '_niyyah-crisis-modal';
+  el.style.cssText = 'position:fixed;inset:0;z-index:99999;background:rgba(8,5,2,0.97);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 28px;text-align:center;overflow:auto;';
+  el.innerHTML = '<div style="max-width:360px;width:100%;">'
+    + '<div style="font-size:36px;margin-bottom:20px;">🤲</div>'
+    + '<div style="font-family:var(--serif,Georgia,serif);font-size:22px;font-weight:600;color:#F0E6C8;line-height:1.45;margin-bottom:14px;">Je t\u2019entends.</div>'
+    + '<div style="font-family:var(--serif,Georgia,serif);font-size:17px;color:rgba(240,230,200,0.72);line-height:1.75;margin-bottom:32px;">Ce que tu ressens est une vraie souffrance.\u00a0Tu n\u2019as pas \u00e0 rester seul avec \u00e7a.</div>'
+    + '<div style="background:rgba(200,168,74,0.10);border:1.5px solid rgba(200,168,74,0.38);border-radius:18px;padding:22px 28px;margin-bottom:32px;">'
+    +   '<div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.65);margin-bottom:10px;">Numéro national de prévention du suicide</div>'
+    +   '<div style="font-size:54px;font-weight:700;color:#E8CF8A;letter-spacing:3px;line-height:1;margin-bottom:8px;">3114</div>'
+    +   '<div style="font-size:14px;color:rgba(240,230,200,0.55);margin-bottom:16px;">Gratuit \u00b7 24h/24 \u00b7 7j/7</div>'
+    +   '<a href="tel:3114" style="display:block;padding:13px;border-radius:11px;background:rgba(200,168,74,0.22);border:1px solid rgba(200,168,74,0.5);color:#E8CF8A;font-family:var(--serif,Georgia,serif);font-size:17px;font-weight:600;text-decoration:none;">Appeler le 3114 maintenant</a>'
+    + '</div>'
+    + '<button onclick="_crisisChoice(\'aide\')" style="display:block;width:100%;padding:15px;border-radius:13px;border:none;background:linear-gradient(180deg,rgba(200,168,74,0.28),rgba(200,168,74,0.14));color:#F0E6C8;font-family:var(--serif,Georgia,serif);font-size:17px;font-weight:600;cursor:pointer;margin-bottom:12px;">Je veux de l\u2019aide maintenant</button>'
+    + '<button onclick="_crisisChoice(\'continue\')" style="display:block;width:100%;padding:13px;border-radius:13px;border:1px solid rgba(240,234,214,0.15);background:transparent;color:rgba(240,234,214,0.5);font-family:var(--serif,Georgia,serif);font-size:16px;cursor:pointer;">Je continue le programme</button>'
+    + '</div>';
+  document.body.appendChild(el);
+}
+window._showNiyyahCrisisModal = _showNiyyahCrisisModal;
+
+function _crisisChoice(choice) {
+  if (choice === 'aide') {
+    // Replace modal content with resources focus — keep modal open, show more
+    var el = document.getElementById('_niyyah-crisis-modal');
+    if (!el) return;
+    el.innerHTML = '<div style="max-width:360px;width:100%;">'
+      + '<div style="font-size:36px;margin-bottom:20px;">🤲</div>'
+      + '<div style="font-family:var(--serif,Georgia,serif);font-size:21px;font-weight:600;color:#F0E6C8;line-height:1.5;margin-bottom:20px;">Merci de l\u2019avoir dit.\u00a0C\u2019est un acte de courage.</div>'
+      + '<div style="background:rgba(200,168,74,0.10);border:1.5px solid rgba(200,168,74,0.38);border-radius:18px;padding:22px 24px;margin-bottom:20px;">'
+      +   '<div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(200,168,74,0.65);margin-bottom:10px;">Appelle maintenant</div>'
+      +   '<div style="font-size:52px;font-weight:700;color:#E8CF8A;letter-spacing:3px;line-height:1;margin-bottom:8px;">3114</div>'
+      +   '<div style="font-size:14px;color:rgba(240,230,200,0.55);margin-bottom:16px;">Gratuit \u00b7 24h/24 \u00b7 7j/7</div>'
+      +   '<a href="tel:3114" style="display:block;padding:14px;border-radius:11px;background:rgba(200,168,74,0.28);border:1px solid rgba(200,168,74,0.55);color:#F0E6C8;font-family:var(--serif,Georgia,serif);font-size:18px;font-weight:700;text-decoration:none;">📞\u2009Appeler le 3114</a>'
+      + '</div>'
+      + '<div style="font-family:var(--serif,Georgia,serif);font-size:15px;color:rgba(240,230,200,0.5);line-height:1.7;margin-bottom:24px;">Si tu n\u2019es pas en France\u00a0: contacte les services d\u2019urgence locaux ou une personne de confiance.\u00a0Tu peux revenir \u00e0 la cure quand tu veux.</div>'
+      + '<button onclick="_crisisClose()" style="display:block;width:100%;padding:13px;border-radius:13px;border:1px solid rgba(240,234,214,0.15);background:transparent;color:rgba(240,234,214,0.45);font-family:var(--serif,Georgia,serif);font-size:15px;cursor:pointer;">Fermer</button>'
+      + '</div>';
+  } else {
+    _crisisClose();
+  }
+}
+window._crisisChoice = _crisisChoice;
+
+function _crisisClose() {
+  var el = document.getElementById('_niyyah-crisis-modal');
+  if (el) el.remove();
+  _cureAnxieteWizardRender();
+}
+window._crisisClose = _crisisClose;
 
 // 3.3 — radio_unique
 _outilAnxieteRenderers.radio_unique = function(o, c) {

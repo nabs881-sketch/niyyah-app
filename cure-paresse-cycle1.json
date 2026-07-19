@@ -111,12 +111,17 @@
             {
               "id": "forces",
               "label": "Même les petits gestes semblent au-dessus de mes forces réelles"
+            },
+            {
+              "id": "ideation",
+              "label": "Il m'arrive de penser que ce serait mieux si je n'étais plus là",
+              "is_crisis": true
             }
           ],
           "stockage": "cure_paresse_garde_fou",
           "message_si_coche": {
             "titre": "Ce que tu décris n'est pas de la paresse.",
-            "texte": "C'est une souffrance réelle — et une souffrance, ça se soigne. Ce n'est ni un manque de volonté ni une faute : Ibn Hajar te l'a rappelé, on n'est tenu qu'à ce qu'on peut, et Allah est Miséricordieux pour le reste. En parler à un médecin ou un professionnel est une force, pas un échec. Cette cure peut t'accompagner en douceur — mais elle ne remplace pas ce soutien. Et si tout te semble sans issue, ou si tu penses ne plus vouloir être là : ne reste pas seul. Parle dès maintenant à quelqu'un de confiance, ou à une ligne d'écoute (en France, le 3114 — gratuit, 24h/24)."
+            "texte": "C'est une souffrance réelle — et une souffrance, ça se soigne. Ce n'est ni un manque de volonté ni une faute : Ibn Hajar te l'a rappelé, on n'est tenu qu'à ce qu'on peut, et Allah est Miséricordieux pour le reste. En parler à un médecin ou un professionnel est une force, pas un échec. Cette cure peut t'accompagner en douceur — mais elle ne remplace pas ce soutien."
           },
           "message_si_aucun_coche": {
             "texte": "Bien. Alors il s'agit surtout de l'élan — et l'élan, ça se rallume doucement, à partir d'un seul petit geste. Continuons."
