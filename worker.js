@@ -625,6 +625,30 @@ async function handleNiyyah(request, env) {
   }
 }
 
+// ── Regard library : fetch depuis GitHub Pages, cache KV 24h ────────────────
+async function getRegardLibrary(env) {
+  const KV_KEY = 'regard_lib_v1';
+  try {
+    if (env.RATE_LIMIT_KV) {
+      const cached = await env.RATE_LIMIT_KV.get(KV_KEY);
+      if (cached) return JSON.parse(cached);
+    }
+  } catch(e) {}
+  const r = await fetch(`${ALLOWED_ORIGIN}/niyyah-app/data/regard-library.json`);
+  if (!r.ok) return null;
+  const raw = await r.json();
+  const lib = {};
+  for (const k of Object.keys(raw)) {
+    if (k !== '_meta') lib[k.toUpperCase()] = raw[k];
+  }
+  try {
+    if (env.RATE_LIMIT_KV) {
+      await env.RATE_LIMIT_KV.put(KV_KEY, JSON.stringify(lib), { expirationTtl: 86400 });
+    }
+  } catch(e) {}
+  return lib;
+}
+
 async function handleRegarde(request, env) {
   try {
     const body = await request.json();
@@ -698,17 +722,68 @@ async function handleRegarde(request, env) {
         }
       });
     }
-    // Verset index (anti-repetition from seen_versets)
-    let verset_index, returning_verset = false;
-    const seenForCat = Array.isArray(seen_versets) ? seen_versets.filter(s => s.category === category).map(s => s.verset_index) : [];
-    const allIndices = [0,1,2,3,4,5,6,7];
-    const unseen = allIndices.filter(i => !seenForCat.includes(i));
-    if (unseen.length > 0) {
-      verset_index = unseen[Math.floor(Math.random() * unseen.length)];
-    } else {
-      verset_index = Math.floor(Math.random() * 8);
-      returning_verset = true;
+    // ── PASS 2 : sélection précise du verset dans le pool ───────────────────
+    // Anti-répétition : on ne propose à Haiku que les versets non encore vus.
+    const seenForCat = Array.isArray(seen_versets)
+      ? seen_versets.filter(s => s.category === category).map(s => s.verset_index)
+      : [];
+
+    // Charger la librairie (KV cache → GitHub Pages)
+    let lib = null;
+    try { lib = await getRegardLibrary(env); } catch(e) {}
+
+    const catData   = lib && lib[category];
+    const versets   = catData && Array.isArray(catData.versets) ? catData.versets : [];
+    const poolSize  = versets.length || 8;
+    const allIdx    = Array.from({ length: poolSize }, (_, i) => i);
+    const unseenIdx = allIdx.filter(i => !seenForCat.includes(i));
+    const candidates = unseenIdx.length > 0 ? unseenIdx : allIdx;
+    const returning_verset = unseenIdx.length === 0;
+
+    let verset_index;
+
+    // Pass 2 uniquement si la lib est disponible et qu'il y a au moins 2 candidats
+    if (versets.length > 0 && candidates.length > 1) {
+      const candidateLines = candidates.map((idx, pos) => {
+        const v = versets[idx];
+        return `[${pos}] "${v.texte}" — ${v.reference} · ${v.murmure}`;
+      }).join('\n');
+
+      const pass2Prompt =
+`Catégorie détectée : ${category}
+
+Versets candidats pour cette catégorie :
+${candidateLines}
+
+Regarde attentivement l'image. Identifie CE QUI EST VRAIMENT PHOTOGRAPHIÉ — l'objet précis, la matière, la situation, le détail visible — pas juste la catégorie générale.
+Choisis le verset dont le sens résonne le mieux avec CET objet ou CETTE scène spécifique.
+
+Réponds uniquement en JSON strict, sans texte autour :
+{"index": 0, "raison": "2-3 mots"}
+index = numéro entre crochets du verset choisi (0 à ${candidates.length - 1}).`;
+
+      try {
+        const pass2Resp = await callAnthropic(env, {
+          model: MODEL_HAIKU, max_tokens: 60, temperature: 0.1,
+          messages: [{ role: 'user', content: [
+            { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
+            { type: 'text', text: pass2Prompt }
+          ]}]
+        });
+        const p2Text = pass2Resp.content?.[0]?.text || '';
+        const p2Json = extractJSON(p2Text);
+        if (p2Json && typeof p2Json.index === 'number'
+            && p2Json.index >= 0 && p2Json.index < candidates.length) {
+          verset_index = candidates[p2Json.index];
+        }
+      } catch(e) { /* silencieux — fallback aléatoire ci-dessous */ }
     }
+
+    // Fallback aléatoire si Pass 2 échoue ou non applicable
+    if (typeof verset_index !== 'number') {
+      verset_index = candidates[Math.floor(Math.random() * candidates.length)];
+    }
+
     const response = { mode: 'verset', category, confidence, verset_index };
     if (returning_verset) response.returning_verset = true;
     return jsonResponseV2(response);
