@@ -617,7 +617,7 @@ async function handleRegarde(request, env) {
     const body = await request.json();
     const { image, seen_versets } = body;
     const _versetsRecents = Array.isArray(body.versets_recents) && body.versets_recents.length > 0
-      ? body.versets_recents.join(', ')
+      ? body.versets_recents.slice(0, 20).map(v => sanitizeText(v, 80)).filter(v => v).join(', ')
       : 'Aucun';
 
     // branche duʿāʾ supprimée (du'âs piochées côté client depuis duaas-regard.json)
@@ -789,11 +789,61 @@ ${texte.substring(0, 2000)}`;
 }
 
 // ═══════════════════════════════════════════════════
+// INPUT SANITIZATION — prompt injection prevention
+// ═══════════════════════════════════════════════════
+
+// Patterns that signal prompt-injection attempts (case-insensitive, multiline)
+const _INJECTION_PATTERNS = [
+  /ignore\s+(les\s+)?(instructions?|r[eè]gles?|directives?|syst[eè]me)(\s+(pr[eé]c[eé]dentes?|ci-dessus|ci-avant))?/gi,
+  /oublie\s+(tout|tes\s+instructions?|ton\s+r[oô]le|ce\s+qui\s+pr[eé]c[eè]de)/gi,
+  /tu\s+es\s+maintenant\b/gi,
+  /nouveau\s+(syst[eè]me|r[oô]le|personnage|contexte)\b/gi,
+  /act\s+as\b/gi,
+  /\[(?:INST|SYS|SYSTEM|\/INST|\/SYS)\]/gi,
+  /<\s*(?:system|assistant|user|prompt|instruction)\s*[/]?\s*>/gi,
+  /^(system|assistant|user)\s*:/gim,
+  /`{2,}/g,
+  /-{4,}/g,
+  /#{3,}\s/g,
+];
+
+/**
+ * Sanitize a free-text user field before prompt interpolation.
+ * - Truncates to maxLen characters
+ * - Neutralises injection patterns (replaced by […])
+ * - Normalises whitespace
+ */
+function sanitizeText(raw, maxLen) {
+  if (raw === null || raw === undefined) return '';
+  const s0 = String(raw).slice(0, maxLen || 300);
+  let s = s0;
+  for (const pat of _INJECTION_PATTERNS) {
+    pat.lastIndex = 0;
+    s = s.replace(pat, '[…]');
+  }
+  return s.replace(/\r\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
+/**
+ * Sanitize a name/prenom field: letters (incl. accented), spaces, hyphens,
+ * apostrophes only — everything else is stripped. Max 50 chars.
+ */
+function sanitizeName(raw) {
+  if (!raw || typeof raw !== 'string') return '';
+  return raw
+    .trim()
+    .slice(0, 50)
+    .replace(/[^a-zA-Z\u00C0-\u024F \-']/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// ═══════════════════════════════════════════════════
 // BILAN PREMIUM — Lettre hebdomadaire IA
 // ═══════════════════════════════════════════════════
 
 function buildBilanSystemPrompt(prenom) {
-  const nom = prenom && prenom.trim() ? prenom.trim() : 'toi';
+  const nom = sanitizeName(prenom) || 'toi';
   return `Tu es la voix de Niyyah. Tu écris à ${nom} une courte lettre : le récit de sa semaine spirituelle écoulée.
 
 Ton ton : un témoin bienveillant et lucide, jamais sermonneur. Chaleureux, sobre, contemplatif. Tu tutoies. Le français d'un cœur, pas d'un prêcheur.
@@ -817,9 +867,9 @@ function buildBilanUserMessage(body) {
   const { profil, dominante, zone_manquante, stats, stats_passee, bontes_semaine, etats_semaine, intentions_semaine, defi_semaine } = body;
   const lines = [];
 
-  lines.push(`Profil : ${profil || 'non précisé'}`);
-  lines.push(`Dominante de la semaine : ${dominante || 'équilibre'}`);
-  if (zone_manquante) lines.push(`Zone qui a manqué : ${zone_manquante}`);
+  lines.push(`Profil : ${sanitizeText(profil, 80) || 'non précisé'}`);
+  lines.push(`Dominante de la semaine : ${sanitizeText(dominante, 80) || 'équilibre'}`);
+  if (zone_manquante) lines.push(`Zone qui a manqué : ${sanitizeText(zone_manquante, 100)}`);
 
   // Stats
   if (stats) {
@@ -845,15 +895,21 @@ function buildBilanUserMessage(body) {
       const parts = [`${d} :`];
       // État du soir
       const etat = etats_semaine?.[d];
-      parts.push(etat ? `état du soir = ${etat}` : 'pas de bilan ce soir-là');
+      parts.push(etat ? `état du soir = ${sanitizeText(etat, 100)}` : 'pas de bilan ce soir-là');
       // Intention
       const intention = intentions_semaine?.[d];
-      if (intention && intention.type) parts.push(`intention = ${intention.label || intention.type}`);
-      else if (intention === null) parts.push('intention passée');
+      if (intention && intention.type) {
+        const intentionLabel = sanitizeText(intention.label || intention.type, 150);
+        parts.push(`intention = ${intentionLabel}`);
+      } else if (intention === null) parts.push('intention passée');
       // Bontés
       const bontes = bontes_semaine?.[d];
       if (bontes && Array.isArray(bontes) && bontes.length > 0) {
-        parts.push(`bontés notées : « ${bontes.join(' » « ')} »`);
+        const bontesSanitized = bontes
+          .slice(0, 10)
+          .map(b => sanitizeText(b, 200))
+          .filter(b => b.length > 0);
+        if (bontesSanitized.length > 0) parts.push(`bontés notées : « ${bontesSanitized.join(' » « ')} »`);
       }
       lines.push('  ' + parts.join(' · '));
     }
@@ -863,7 +919,7 @@ function buildBilanUserMessage(body) {
   if (defi_semaine) {
     lines.push('');
     lines.push('DÉFI DE LA SEMAINE :');
-    lines.push(`- ${defi_semaine.nom || 'inconnu'}`);
+    lines.push(`- ${sanitizeText(defi_semaine.nom, 100) || 'inconnu'}`);
     lines.push(`- Jours tenus : ${defi_semaine.jours ? defi_semaine.jours.length : 0}`);
     lines.push(`- ${defi_semaine.complete ? 'Réussi' : 'En cours'}`);
   }
