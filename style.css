@@ -9058,22 +9058,22 @@ body.onboarding-active #nav-bar-v2 {
 @media (prefers-reduced-motion:reduce){ .tasbih-breath{ animation:none; } }
 /* Orbe vivant — teinte du halo selon le moment (le défaut gold reste si pas d'attribut) */
 .orb-wrap-v2[data-moment="fajr"]::before{
-  background:radial-gradient(circle, rgba(150,172,194,0.30) 0%, rgba(150,172,194,0.14) 22%, rgba(150,172,194,0.05) 45%, transparent 78%);
+  background:radial-gradient(circle, rgba(170,190,240,0.30) 0%, rgba(170,190,240,0.14) 22%, rgba(170,190,240,0.05) 45%, transparent 78%);
 }
 .orb-wrap-v2[data-moment="dhuhr"]::before{
-  background:radial-gradient(circle, rgba(222,202,140,0.34) 0%, rgba(222,202,140,0.16) 22%, rgba(222,202,140,0.06) 45%, transparent 80%);
+  background:radial-gradient(circle, rgba(255,220,40,0.34) 0%, rgba(255,220,40,0.16) 22%, rgba(255,220,40,0.06) 45%, transparent 80%);
 }
 .orb-wrap-v2[data-moment="asr"]::before{
-  background:radial-gradient(circle, rgba(212,170,92,0.36) 0%, rgba(212,170,92,0.17) 22%, rgba(212,170,92,0.06) 45%, transparent 80%);
+  background:radial-gradient(circle, rgba(248,138,40,0.36) 0%, rgba(248,138,40,0.17) 22%, rgba(248,138,40,0.06) 45%, transparent 80%);
 }
 .orb-wrap-v2[data-moment="maghrib"]::before{
-  background:radial-gradient(circle, rgba(232,158,70,0.44) 0%, rgba(232,158,70,0.22) 20%, rgba(232,158,70,0.09) 42%, rgba(232,158,70,0.03) 60%, transparent 82%);
+  background:radial-gradient(circle, rgba(240,80,80,0.44) 0%, rgba(240,80,80,0.22) 20%, rgba(240,80,80,0.09) 42%, rgba(240,80,80,0.03) 60%, transparent 82%);
 }
 .orb-wrap-v2[data-moment="isha"]::before{
-  background:radial-gradient(circle, rgba(184,134,74,0.26) 0%, rgba(184,134,74,0.12) 22%, rgba(184,134,74,0.04) 45%, transparent 76%);
+  background:radial-gradient(circle, rgba(140,90,210,0.26) 0%, rgba(140,90,210,0.12) 22%, rgba(140,90,210,0.04) 45%, transparent 76%);
 }
 .orb-wrap-v2[data-moment="nuit"]::before{
-  background:radial-gradient(circle, rgba(150,112,72,0.20) 0%, rgba(150,112,72,0.09) 22%, rgba(150,112,72,0.03) 45%, transparent 74%);
+  background:radial-gradient(circle, rgba(50,70,170,0.20) 0%, rgba(50,70,170,0.09) 22%, rgba(50,70,170,0.03) 45%, transparent 74%);
 }
 /* Orbe vivant — cohérence du jour (superposée au moment) */
 .orb-wrap-v2[data-coherence="full"]::before { filter:brightness(1.20) saturate(1.12); }
