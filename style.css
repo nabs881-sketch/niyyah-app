@@ -5639,8 +5639,9 @@ body::before {
   position: absolute;
   width: 3px; height: 3px;
   border-radius: 50%;
-  background: hsla(45,90%,80%,0.95);
-  box-shadow: 0 0 6px hsla(43,82%,64%,0.85);
+  background: rgba(255,252,235,0.97);
+  box-shadow: 0 0 9px rgba(140,90,20,0.70);
+  border: 0.5px solid rgba(0,0,0,0.22);
   pointer-events: none;
   z-index: 2;
   opacity: 0;
