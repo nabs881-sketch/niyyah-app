@@ -14197,7 +14197,10 @@ function openNiyyahMenu() {
   backdrop.onclick = function(e) { if (e.target === backdrop) closeNiyyahMenu(); };
   backdrop.innerHTML = '<div class="niyyah-menu-panel">'
     + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">Niyyah</div><button onclick="closeNiyyahMenu()" aria-label="Fermer le menu" style="background:none;border:none;color:var(--t3);font-size:22px;cursor:pointer;min-width:44px;min-height:44px;">\u2715</button></div>'
-    + '<div onclick="closeNiyyahMenu();openFreemium(\'default\');" style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));cursor:pointer;"><span style="font-family:\'Georgia\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">Niyyah Premium</span></div>'
+    + (isPremium()
+        ? '<div style="display:flex;align-items:center;justify-content:center;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));"><span style="font-family:\'Georgia\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">\u2726 Niyyah+ actif \u2726</span></div>'
+        : '<div onclick="closeNiyyahMenu();openFreemium(\'default\');" style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));cursor:pointer;"><span style="font-family:\'Georgia\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">D\u00e9bloquer Niyyah+ \u2726</span></div>'
+      )
     /* Langue masquée pour beta FR — réactiver quand EN/AR prêts
     + '<div class="niyyah-menu-section">Langue</div>'
     + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'fr\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'fr' ? '<strong>Fran\u00e7ais</strong>' : 'Fran\u00e7ais') + '</div>'
@@ -14359,14 +14362,6 @@ function v2OpenSettings() {
           <div data-sil style="width:36px;height:20px;border-radius:10px;background:${isSilentMode()?'#C8A84A':'#444'};transition:background 0.2s;flex-shrink:0;"></div>
         </div>
       </div>
-
-      <div style="margin-top:14px;background:#1a1a1a;border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;text-align:center;">
-        ${isPremium()
-          ? '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#C8A84A;margin-bottom:10px;">\u2726 Premium actif</div><button onclick="setPremium(false);location.reload();" style="padding:6px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:none;color:rgba(255,255,255,0.35);font-size:15px;cursor:pointer;">D\u00e9sactiver</button>'
-          : '<div style="font-family:\'Georgia\',serif;font-size:16px;color:#C8A84A;margin-bottom:12px;">\u2726 Niyyah Premium</div><div style="display:flex;gap:8px;justify-content:center;"><input id="premium-code-input" type="text" placeholder="Entrer votre code" style="flex:1;max-width:200px;padding:10px 14px;border-radius:10px;border:1px solid rgba(200,168,75,0.3);background:rgba(200,168,75,0.04);color:#E5E0DC;font-family:\'Georgia\',serif;font-size:14px;outline:none;"><button onclick="var c=document.getElementById(\'premium-code-input\');if(unlockPremium(c.value)){v2ShowToast(\'Premium activ\\u00e9 \\u2726\');setTimeout(function(){location.reload();},1200);}else{v2ShowToast(\'Code invalide\');}" style="padding:10px 18px;border-radius:10px;border:none;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:14px;font-weight:600;cursor:pointer;">Activer</button></div>'
-        }
-      </div>
-
 
       <div style="margin-top:12px;">
         <div onclick="shareNiyyah()" style="padding:13px 16px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.05);text-align:center;cursor:pointer;font-family:'Georgia',serif;font-size:15px;color:#C8A84A;letter-spacing:0.05em;">
