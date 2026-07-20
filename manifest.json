@@ -5,6 +5,7 @@
   "start_url": "/niyyah-app/index.html",
   "scope": "/niyyah-app/",
   "display": "standalone",
+  "display_override": ["fullscreen", "standalone"],
   "background_color": "#0A0A0A",
   "theme_color": "#0A0A0A",
   "orientation": "portrait",
