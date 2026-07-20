@@ -5456,6 +5456,38 @@ body::before {
 }
 .topbar-btn-v2:hover { color: var(--gold-v2); background: var(--mist-v2); }
 
+/* ─── BADGE STATUT PREMIUM (centré dans la topbar) ─── */
+#premium-badge {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Georgia', var(--serif);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 4px 11px;
+  border-radius: 20px;
+  white-space: nowrap;
+  transition: opacity 0.25s, color 0.25s;
+  pointer-events: all;
+  user-select: none;
+}
+#premium-badge.pb-premium {
+  color: #C8A84A;
+  border: 1px solid rgba(200,168,75,0.35);
+  background: rgba(200,168,75,0.07);
+  cursor: default;
+}
+#premium-badge.pb-free {
+  color: rgba(200,200,200,0.38);
+  border: 1px solid rgba(255,255,255,0.07);
+  background: transparent;
+  cursor: pointer;
+}
+#premium-badge.pb-free:hover {
+  color: rgba(200,168,75,0.65);
+  border-color: rgba(200,168,75,0.22);
+}
+
 /* ─── BOTTOM NAV V2 ─── */
 .nav-bar-v2 {
   position: fixed;
