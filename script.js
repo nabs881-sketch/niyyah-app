@@ -9623,7 +9623,7 @@ function isPremium() {
 function unlockPremium(code) {
   if (code && code.trim().toUpperCase() === 'BISMILLAH') {
     safeSetItem('niyyah_premium', 'true');
-    return true;
+    return safeGetItem('niyyah_premium') === 'true';
   }
   return false;
 }
