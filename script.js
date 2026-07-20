@@ -48,8 +48,7 @@ if (typeof Sentry !== 'undefined') {
 }
 window.testSentry = function() { throw new Error('Niyyah Sentry test — this is intentional'); };
 const NIYYAH_DEBUG = false;
-let _siraUtterance = null;
-let _siraIsPaused = false;
+
 if (!NIYYAH_DEBUG) { console.log = function(){}; console.debug = function(){}; }
 function niyyahIcon(type, size) {
   var s = size || 20;
@@ -8051,11 +8050,6 @@ function _openRecitDetail(num) {
   html += '<div style="font-family:\'Georgia\',serif;font-size:24px;font-style:italic;color:#E5E0DC;margin-bottom:4px;">' + T(recit.titre) + '</div>';
   html += '<div style="font-size:12px;color:#B5A685;margin-bottom:8px;">' + (recit.theme || '') + '</div>';
   html += '<div onclick="_recitsShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">R\u00e9cit ' + recit.num + ' sur ' + total + ' \u2014 voir les pr\u00e9c\u00e9dents</div>';
-  var _rTtsParts = [];
-  if (recit.paragraphes) recit.paragraphes.forEach(function(p) { var t = T(p.content); if (t) _rTtsParts.push(t); });
-  if (recit.meditation) { var _rMed = T(recit.meditation); if (_rMed) _rTtsParts.push(_rMed); }
-  var _rTts = _rTtsParts.join('. ').replace(/"/g,'&quot;');
-  html += '<div style="margin-top:10px;"><button class="btn-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_narratifPlayAudio(this,this.dataset.tts)" data-tts="' + _rTts + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   if (recit.paragraphes) {
@@ -8081,14 +8075,13 @@ function _openRecitDetail(num) {
     var src = T(recit.source);
     if (src) html += '<div style="text-align:center;font-size:12px;color:rgba(200,168,75,0.4);margin-bottom:16px;">' + src + '</div>';
   }
-  html += '<button onclick="_narratifStopAudio();validerLectureRecit(' + num + ');" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
+  html += '<button onclick="validerLectureRecit(' + num + ');" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
-  html += '<button onclick="_narratifStopAudio();document.getElementById(\'recits-coran-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  html += '<button onclick="document.getElementById(\'recits-coran-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
   document.body.appendChild(ov);
 }
 function _closeRecitDetail(num) {
-  if (window.speechSynthesis && window.speechSynthesis.speaking) window.speechSynthesis.cancel();
   var ov = document.getElementById('recits-coran-overlay');
   if (ov) ov.remove();
 }
@@ -15357,20 +15350,16 @@ function openWaqtModal() {
     html += '<div style="font-family:\'Georgia\',serif;font-size:17px;font-weight:700;color:#e9ddc7;line-height:1.6;margin-bottom:12px;">' + story.morale + '</div>';
     if (story.source) html += '<div style="font-family:\'Inter\',sans-serif;font-size:12px;color:rgba(200,168,75,0.4);line-height:1.4;">' + story.source + '</div>';
     if (story.fiabilite) { var _sfb = {authentique:['✦','Authentique','#C8A84A'],sira:['❖','Sîra','rgba(200,168,74,0.75)'],tradition:['◌','Tradition signalée','rgba(200,168,74,0.55)'],contexte:['·','Contexte','#888']}[story.fiabilite]; if (_sfb) html += '<div style="text-align:center;font-size:11px;letter-spacing:2px;color:'+_sfb[2]+';margin:6px 0 0;opacity:0.85;">'+_sfb[0]+' '+_sfb[1]+'</div>'; }
-    var _storyTts = ((story.titre ? story.titre + '. ' : '') + (story.texte ? story.texte.replace(/\n+/g, ' ') + '. ' : '') + (story.morale || '')).replace(/"/g, '&quot;');
-    html += '<div style="text-align:center;margin-top:16px;"><button class="btn-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_waqtPlayTTS(this)" data-tts="' + _storyTts + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
     actionEl.innerHTML = html;
   } else {
     var _hasVerset = item && item.verset;
-    var _plainTts = (_hasVerset ? (item.verset + ' ' + (item.explication || '')) : txt).replace(/"/g, '&quot;');
     var _contentHtml = _hasVerset
       ? '<div style="font-family:\'Georgia\',serif;font-size:20px;font-style:italic;color:#e9ddc7;line-height:1.8;max-width:340px;margin-bottom:12px;">' + escapeHtml(item.verset) + '</div>'
         + (item.explication ? '<div style="font-family:\'Georgia\',serif;font-size:16px;color:rgba(233,221,199,0.55);line-height:1.7;max-width:340px;">' + escapeHtml(item.explication) + '</div>' : '')
       : _renderWaqtText(txt);
     actionEl.innerHTML = '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:28px;color:#C8A84A;direction:rtl;margin-bottom:20px;">' + arName + '</div>'
       + ambianceHtml
-      + _contentHtml
-      + '<div style="text-align:center;margin-top:16px;"><button class="btn-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_waqtPlayTTS(this)" data-tts="' + _plainTts + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
+      + _contentHtml;
   }
   modal.style.display = 'flex';
   document.body.classList.add('in-waqt-modal');
@@ -15400,26 +15389,7 @@ function closeWaqtModal() {
     _waqtConsumedByClick = true;
   }
   updateMedaillonState();
-  if (window.speechSynthesis && window.speechSynthesis.speaking) window.speechSynthesis.cancel();
 }
-function _waqtPlayTTS(btn) {
-  if (!window.speechSynthesis) return;
-  if (window.speechSynthesis.speaking) {
-    window.speechSynthesis.cancel();
-    btn.classList.remove('playing');
-    return;
-  }
-  var text = btn.getAttribute('data-tts') || '';
-  if (!text) return;
-  var utt = new SpeechSynthesisUtterance(text);
-  utt.lang = 'fr-FR';
-  utt.rate = 0.95;
-  utt.onend = function() { btn.classList.remove('playing'); };
-  utt.onerror = function() { btn.classList.remove('playing'); };
-  btn.classList.add('playing');
-  window.speechSynthesis.speak(utt);
-}
-window._waqtPlayTTS = _waqtPlayTTS;
 function getCurrentMoment() {
   var h = new Date().getHours();
   if (h >= 5 && h < 11) return 'matin';
@@ -19553,7 +19523,6 @@ function validerLecture(id) {
 }
 window.validerLecture = validerLecture;
 function validerLectureSira() {
-  _siraStopAudio();
   if (!state['sira']) { state['sira'] = true; saveState(); updateGlobalProgress(); }
   var ov = document.getElementById('sira-overlay');
   if (ov) ov.remove();
@@ -19561,64 +19530,6 @@ function validerLectureSira() {
   _knowledgeReturn('sira');
 }
 window.validerLectureSira = validerLectureSira;
-
-var _narratifUtterance = null;
-var _narratifIsPaused = false;
-function _narratifPlayAudio(btn, text) {
-  if (!window.speechSynthesis) return;
-  if (_narratifIsPaused && _narratifUtterance) {
-    speechSynthesis.resume(); _narratifIsPaused = false; btn.classList.add('playing'); return;
-  }
-  if (speechSynthesis.speaking) {
-    speechSynthesis.cancel(); _narratifIsPaused = false; _narratifUtterance = null; btn.classList.remove('playing'); return;
-  }
-  if (!text) return;
-  _narratifUtterance = new SpeechSynthesisUtterance(text);
-  _narratifUtterance.lang = 'fr-FR'; _narratifUtterance.rate = 0.95;
-  _narratifUtterance.onend = function() { btn.classList.remove('playing'); _narratifUtterance = null; _narratifIsPaused = false; };
-  _narratifUtterance.onerror = function() { btn.classList.remove('playing'); _narratifUtterance = null; };
-  speechSynthesis.speak(_narratifUtterance); btn.classList.add('playing');
-}
-function _narratifStopAudio() {
-  if (window.speechSynthesis) speechSynthesis.cancel();
-  _narratifUtterance = null; _narratifIsPaused = false;
-}
-window._narratifPlayAudio = _narratifPlayAudio;
-window._narratifStopAudio = _narratifStopAudio;
-
-function _siraBuildText(rdv) {
-  function T(f) { return (f && f.fr) ? f.fr : ''; }
-  var text = T(rdv.titre) + '. ';
-  if (rdv.paragraphes && Array.isArray(rdv.paragraphes)) {
-    rdv.paragraphes.forEach(function(p) { var t = p.content && p.content.fr && p.content.fr.trim(); if (t) text += t + ' '; });
-  }
-  if (rdv.meditation && T(rdv.meditation)) text += 'Méditation. ' + T(rdv.meditation) + ' ';
-  if (rdv.source && T(rdv.source)) text += 'Source. ' + T(rdv.source);
-  return text;
-}
-function _siraPlayAudio(rdv, btnEl) {
-  if (_siraIsPaused && _siraUtterance) {
-    speechSynthesis.resume(); _siraIsPaused = false; btnEl.classList.add('playing'); return;
-  }
-  if (speechSynthesis.speaking) {
-    speechSynthesis.cancel(); _siraIsPaused = false; _siraUtterance = null; btnEl.classList.remove('playing'); return;
-  }
-  _siraUtterance = new SpeechSynthesisUtterance(_siraBuildText(rdv));
-  _siraUtterance.lang = 'fr-FR'; _siraUtterance.rate = 0.95;
-  _siraUtterance.onend = function() { btnEl.classList.remove('playing'); _siraUtterance = null; _siraIsPaused = false; };
-  _siraUtterance.onerror = function() { btnEl.classList.remove('playing'); _siraUtterance = null; };
-  speechSynthesis.speak(_siraUtterance); btnEl.classList.add('playing');
-}
-function _siraPauseAudio(btnEl) {
-  if (speechSynthesis.speaking && !_siraIsPaused) { speechSynthesis.pause(); _siraIsPaused = true; btnEl.classList.remove('playing'); }
-}
-function _siraStopAudio() {
-  speechSynthesis.cancel(); _siraUtterance = null; _siraIsPaused = false;
-  var b = document.getElementById('sira-audio-btn'); if (b) b.classList.remove('playing');
-}
-window._siraPlayAudio = _siraPlayAudio;
-window._siraPauseAudio = _siraPauseAudio;
-window._siraStopAudio = _siraStopAudio;
 
 function getEffectiveMotiv() {
   var m = safeGetItem('niyyah_motivation');
@@ -20760,22 +20671,19 @@ function _compagnonsRenderDetail(c, jour) {
   html += (c.compagnon_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + c.compagnon_ar + '</div>' : '');
   html += (_epLabel ? '<div style="font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;margin-bottom:4px;">' + _epLabel + '</div>' : '');
   html += '<div onclick="_compagnonsShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">\u00c9pisode ' + (c.jour || jour) + ' sur ' + COMPAGNONS.length + ' \u2014 voir les pr\u00e9c\u00e9dents</div>';
-  var _cTts = [(c.recit||''),(c.parole||''),(c.station||'')].filter(Boolean).join('. ').replace(/\n/g,' ').replace(/"/g,'&quot;');
-  html += '<div style="margin-top:10px;"><button class="btn-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_narratifPlayAudio(this,this.dataset.tts)" data-tts="' + _cTts + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   html += '<div style="font-family:\'Georgia\',serif;font-size:20px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (c.recit || '').replace(/\n/g, '<br>') + '</div>';
   if (c.parole) html += '<div style="border-left:2px solid rgba(200,168,74,0.4);padding:8px 16px;margin-bottom:16px;font-family:\'Georgia\',serif;font-size:17px;font-style:italic;line-height:1.6;color:rgba(200,168,74,0.85);">' + c.parole + '</div>';
   if (c.station) html += '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:16px;line-height:1.6;color:rgba(200,168,74,0.8);">' + c.station + '</div>';
   if (c.source) html += '<div style="text-align:center;font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + c.source + ' \u2014</div>';
-  html += '<button onclick="_narratifStopAudio();validerLecture(\'vie_compagnons\');document.getElementById(\'compagnons-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
+  html += '<button onclick="validerLecture(\'vie_compagnons\');document.getElementById(\'compagnons-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
-  html += '<button onclick="_narratifStopAudio();document.getElementById(\'compagnons-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  html += '<button onclick="document.getElementById(\'compagnons-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
   document.body.appendChild(ov);
 }
 function _compagnonsShowArchive() {
-  if (window.speechSynthesis && window.speechSynthesis.speaking) window.speechSynthesis.cancel();
   var existing = document.getElementById('compagnons-overlay');
   if (existing) existing.remove();
   if (!COMPAGNONS) return;
@@ -20837,8 +20745,6 @@ function _prophetesRenderDetail(p, jour) {
   html += '<div style="font-family:\'Georgia\',serif;font-size:22px;font-weight:700;color:#E5E0DC;margin-bottom:4px;">' + (p.prophete || '') + _epLabel + '</div>';
   html += (p.prophete_ar ? '<div style="font-family:\'Amiri\',serif;font-size:18px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:4px;">' + p.prophete_ar + '</div>' : '');
   html += '<div onclick="_prophetesShowArchive();" style="display:inline-block;cursor:pointer;font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">\u00c9pisode ' + (p.jour || jour) + ' sur 77 \u2014 voir les pr\u00e9c\u00e9dents</div>';
-  var _pTts = [(p.recit||''),(p.parole||''),(p.station||'')].filter(Boolean).join('. ').replace(/\n/g,' ').replace(/"/g,'&quot;');
-  html += '<div style="margin-top:10px;"><button class="btn-audio" aria-label="\u00c9couter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_narratifPlayAudio(this,this.dataset.tts)" data-tts="' + _pTts + '"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button></div>';
   html += '</div>';
   html += '<div style="flex:1;overflow-y:auto;padding:0 24px calc(20px + var(--safe-bot,0px));-webkit-overflow-scrolling:touch;">';
   html += '<div style="font-family:\'Georgia\',serif;font-size:20px;line-height:1.8;color:rgba(240,234,214,0.9);margin-bottom:20px;">' + (p.recit || '').replace(/\n/g, '<br>') + '</div>';
@@ -20846,14 +20752,13 @@ function _prophetesRenderDetail(p, jour) {
   if (p.station) html += '<div style="border:1px solid rgba(200,168,74,0.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-style:italic;font-size:17px;line-height:1.6;color:rgba(200,168,74,0.8);">' + p.station + '</div>';
   if (p.sources) html += '<div style="text-align:center;font-size:12px;color:rgba(200,168,74,0.6);letter-spacing:0.1em;margin-bottom:16px;">\u2014 ' + p.sources + ' \u2014</div>';
   if (p.renvoi_module === 'sira') html += '<div style="text-align:center;margin-bottom:16px;"><button onclick="document.getElementById(\'prophetes-overlay\').remove();if(typeof SIRA!==\'undefined\')SIRA.openDetail();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,74,0.4);background:transparent;color:#C8A84A;font-family:\'Georgia\',serif;font-size:14px;font-weight:600;cursor:pointer;">Ouvrir la S\u00eera</button></div>';
-  html += '<button onclick="_narratifStopAudio();validerLecture(\'vie_prophetes\');document.getElementById(\'prophetes-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
+  html += '<button onclick="validerLecture(\'vie_prophetes\');document.getElementById(\'prophetes-overlay\').remove();" style="display:block;width:calc(100% - 48px);max-width:320px;margin:24px auto 32px;padding:16px;border:none;border-radius:12px;background:#C8A84A;color:#2C2E32;font-family:\'Georgia\',serif;font-size:16px;font-weight:600;cursor:pointer;">J\u2019ai termin\u00e9 ma lecture</button>';
   html += '</div>';
-  html += '<button onclick="_narratifStopAudio();document.getElementById(\'prophetes-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
+  html += '<button onclick="document.getElementById(\'prophetes-overlay\').remove();" style="position:absolute;top:calc(var(--safe-top,0px) + 12px);right:16px;background:none;border:none;color:#B5A685;font-size:24px;cursor:pointer;z-index:1;">\u2715</button>';
   ov.innerHTML = html;
   document.body.appendChild(ov);
 }
 function _prophetesShowArchive() {
-  if (window.speechSynthesis && window.speechSynthesis.speaking) window.speechSynthesis.cancel();
   var existing = document.getElementById('prophetes-overlay');
   if (existing) existing.remove();
   if (!PROPHETES) return;
@@ -21183,11 +21088,11 @@ const SIRA = {
       document.body.appendChild(ov);
       setTimeout(function() { ov.style.opacity = '1'; }, 10);
       ov.ontouchstart = function(e) { _swipeCloseStartX = e.touches[0].clientX; };
-      ov.ontouchend = function(e) { if (e.changedTouches[0].clientX - _swipeCloseStartX > 100) { _siraStopAudio(); document.getElementById('sira-overlay').remove(); _restoreScroll(); a11yOnOverlayClose(); } };
+      ov.ontouchend = function(e) { if (e.changedTouches[0].clientX - _swipeCloseStartX > 100) { document.getElementById('sira-overlay').remove(); _restoreScroll(); a11yOnOverlayClose(); } };
     }
     return ov;
   },
-  _closeBtn: '<button onclick="_siraStopAudio();document.getElementById(\'sira-overlay\').remove();_restoreScroll();a11yOnOverlayClose();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>',
+  _closeBtn: '<button onclick="document.getElementById(\'sira-overlay\').remove();_restoreScroll();a11yOnOverlayClose();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>',
   async openDetail() {
     if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
     _saveScroll();
@@ -21234,7 +21139,6 @@ const SIRA = {
         var badge = document.getElementById('sira-tissue-badge'); if (badge) { badge.style.opacity = '1'; badge.style.transform = 'translateY(0)'; }
       }, 1200);
     }
-    _siraStopAudio();
     var ct = document.getElementById('sira-content');
     if (ct) {
       ct.style.opacity = '0';
@@ -21323,10 +21227,6 @@ const SIRA = {
     var _rpt = (_rp && _rp.titre && _rp.titre.fr) ? _rp.titre.fr : '';
     if (rdv.partie && _rpt) h += '<div style="text-align:center;font-style:italic;color:#999;font-size:12px;letter-spacing:1px;margin-bottom:8px;">Partie ' + rdv.partie + ' \u00b7 ' + _rpt + '</div>';
     h += '<div style="text-align:center;margin-bottom:16px;"><span onclick="SIRA.openList()" style="display:inline-block;cursor:pointer;font-family:Georgia,serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);border-bottom:1px solid rgba(200,168,75,0.25);padding-bottom:2px;">Jour ' + num + ' sur ' + _siraMax + ' \u2014 voir les pr\u00e9c\u00e9dents</span></div>';
-    h += '<div style="text-align:center;margin-bottom:24px;">'
-      + '<button id="sira-audio-btn" class="btn-audio" aria-label="Écouter" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();_siraPlayAudio(SIRA.getRdv(' + num + '),this)" style="margin-right:8px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#C8A84A" style="pointer-events:none"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>'
-      + '<button onclick="_siraStopAudio()" style="background:none;border:1px solid rgba(200,168,75,0.2);border-radius:20px;color:#888;font-size:14px;padding:6px 12px;cursor:pointer;">\u2715</button>'
-      + '</div>';
     if (rdv.quiz_type) {
       // Quiz mode
       h += '<div style="font-family:Georgia,serif;font-size:22px;font-style:italic;color:#FAF7EE;line-height:1.7;text-align:center;margin:24px 0 32px;">' + escape(rdv.quiz_question || '') + '</div>';
