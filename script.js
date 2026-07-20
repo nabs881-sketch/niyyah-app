@@ -9560,7 +9560,7 @@ function closeFreemium(e) {
 }
 function freemiumShowCode(){ var r=document.getElementById('freemium-code-row'); if(r) r.style.display='flex'; var i=document.getElementById('freemium-code-input'); if(i) i.focus(); }
 function freemiumBuy(){ freemiumShowCode(); showToast('Disponible au lancement \u2014 pendant la beta, entre ton code.'); }
-function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ _updatePremiumBadge(); v2ShowToast('Niyyah+ activ\u00e9 \u2726'); setTimeout(function(){ location.reload(); }, 1200); } else { v2ShowToast('Code invalide'); } }
+function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ v2ShowToast('Niyyah+ activ\u00e9 \u2726'); setTimeout(function(){ location.reload(); }, 1200); } else { v2ShowToast('Code invalide'); } }
 window.freemiumShowCode=freemiumShowCode; window.freemiumBuy=freemiumBuy; window.freemiumActivate=freemiumActivate;
 function shareNiyyah() {
   var url = 'https://nabs881-sketch.github.io/niyyah-app/';
@@ -9629,27 +9629,10 @@ function unlockPremium(code) {
 }
 function setPremium(bool) {
   safeSetItem('niyyah_premium', bool ? 'true' : 'false');
-  _updatePremiumBadge();
-}
-function _updatePremiumBadge() {
-  var badge = document.getElementById('premium-badge');
-  if (!badge) return;
-  if (isPremium()) {
-    badge.className = 'pb-premium';
-    badge.textContent = '\u2726 Premium actif';
-    badge.onclick = null;
-    badge.removeAttribute('title');
-  } else {
-    badge.className = 'pb-free';
-    badge.textContent = 'Gratuit';
-    badge.title = 'D\u00e9bloquer Niyyah+';
-    badge.onclick = function() { openFreemium('default'); };
-  }
 }
 window.isPremium = isPremium;
 window.unlockPremium = unlockPremium;
 window.setPremium = setPremium;
-window._updatePremiumBadge = _updatePremiumBadge;
 /* ══ FREEMIUM V2 — utilitaires ══ */
 function _daysSinceInstall() {
   var inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
@@ -14214,10 +14197,7 @@ function openNiyyahMenu() {
   backdrop.onclick = function(e) { if (e.target === backdrop) closeNiyyahMenu(); };
   backdrop.innerHTML = '<div class="niyyah-menu-panel">'
     + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;"><div style="font-family:var(--serif);font-size:20px;color:#C8A84A;">Niyyah</div><button onclick="closeNiyyahMenu()" aria-label="Fermer le menu" style="background:none;border:none;color:var(--t3);font-size:22px;cursor:pointer;min-width:44px;min-height:44px;">\u2715</button></div>'
-    + (isPremium()
-        ? '<div style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));"><span style="font-family:\'Georgia\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">\u2726 Premium actif</span><span style="margin-left:auto;font-size:11px;color:rgba(200,168,75,0.55);font-style:italic;">activ\u00e9</span></div>'
-        : '<div onclick="closeNiyyahMenu();openFreemium(\'default\');" style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));cursor:pointer;"><span style="font-family:\'Georgia\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">D\u00e9bloquer Niyyah+ \u2726</span><span style="margin-left:auto;font-size:12px;color:rgba(200,168,75,0.6);">\u2192</span></div>'
-      )
+    + '<div onclick="closeNiyyahMenu();openFreemium(\'default\');" style="display:flex;align-items:center;gap:10px;padding:14px 16px;margin-bottom:14px;border-radius:14px;border:1px solid rgba(200,168,75,0.35);background:linear-gradient(180deg,rgba(200,168,74,0.12),rgba(138,106,31,0.05));cursor:pointer;"><span style="font-family:\'Georgia\',var(--serif);font-weight:600;font-size:16px;color:#EBD79A;">Niyyah Premium</span></div>'
     /* Langue masquée pour beta FR — réactiver quand EN/AR prêts
     + '<div class="niyyah-menu-section">Langue</div>'
     + '<div class="niyyah-menu-item" onclick="v2SetLanguage(\'fr\');closeNiyyahMenu()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>' + (V2_LANG === 'fr' ? '<strong>Fran\u00e7ais</strong>' : 'Fran\u00e7ais') + '</div>'
@@ -16961,8 +16941,6 @@ function v2Init() {
     langPill0.style.fontFamily = V2_LANG === 'ar' ? "'Amiri', serif" : "'Georgia', serif";
     langPill0.style.fontSize = V2_LANG === 'ar' ? '13px' : '10px';
   }
-  // Badge statut premium visible en permanence dans la topbar
-  _updatePremiumBadge();
   // Regard library chargée au premier besoin (lazy)
   if (_onboardDone) {
     v2GoSanctuaire();
