@@ -15207,6 +15207,50 @@ function _pickStableWaqt(moment) {
   safeSetItem('niyyah_sablier_history', JSON.stringify(histData));
   return idx;
 }
+function _getWaqtItemCat(item) {
+  if (!item) return null;
+  if (typeof item === 'string') return null;
+  if (item._cat) return item._cat; // story item: langue, transaction, etc.
+  return item.categorie || null;   // phrase item: SUNNAH, CONTEMPLATIF
+}
+function _pickWaqtItem(priere, pool) {
+  if (!pool || !pool.length) return 0;
+  var today = todayKey();
+  var pickKey = 'niyyah_waqt_pick_' + priere;
+  var histKey = 'niyyah_waqt_hist_' + priere;
+  // Reuse today's pick if already set (stable within same day)
+  try {
+    var stored = JSON.parse(safeGetItem(pickKey) || 'null');
+    if (stored && stored.date === today && stored.idx >= 0 && stored.idx < pool.length) return stored.idx;
+  } catch(e) {}
+  // Load history
+  var hist = [];
+  try { hist = JSON.parse(safeGetItem(histKey) || '[]'); } catch(e) {}
+  if (!Array.isArray(hist)) hist = [];
+  // Build available indices (not in recent history)
+  var i, available = [];
+  for (i = 0; i < pool.length; i++) { if (hist.indexOf(i) === -1) available.push(i); }
+  // Full cycle done — reset
+  if (available.length === 0) {
+    hist = []; available = [];
+    for (i = 0; i < pool.length; i++) available.push(i);
+  }
+  // Try to avoid same category as last shown item
+  var lastIdx = hist.length > 0 ? hist[hist.length - 1] : -1;
+  var lastCat = lastIdx >= 0 ? _getWaqtItemCat(pool[lastIdx]) : null;
+  var preferred = lastCat ? available.filter(function(j) { return _getWaqtItemCat(pool[j]) !== lastCat; }) : available;
+  var candidates = preferred.length > 0 ? preferred : available;
+  // Pick randomly
+  var idx = candidates[Math.floor(Math.random() * candidates.length)];
+  // Save today's pick
+  safeSetItem(pickKey, JSON.stringify({ date: today, idx: idx }));
+  // Update history — keep last (pool.length - 1) so no item repeats within a full cycle
+  hist.push(idx);
+  var maxHist = Math.max(pool.length - 1, 1);
+  if (hist.length > maxHist) hist = hist.slice(-maxHist);
+  safeSetItem(histKey, JSON.stringify(hist));
+  return idx;
+}
 function isWaqtAvailable() {
   if (!_prayerTimes) return null;
   var mapping = [
@@ -15270,7 +15314,7 @@ var _WAQT_LUMIERE = {
   maghrib: 'La lumi\u00e8re d\u00e9cline. Le jour s\u2019ach\u00e8ve \u2014 pose ta gratitude.',
   isha:    'La nuit s\u2019installe. Le calme recouvre toute chose.'
 };
-function _waqtHashPriere(p) { var h = 0; for (var i = 0; i < p.length; i++) h = (h * 31 + p.charCodeAt(i)) & 0x7fffffff; return h; }
+
 var _waqtModalPriere = null;
 function _parseWaqtCitation(texte) {
   var r = { citation: '', reference: '', commentaire: '' };
@@ -15315,8 +15359,7 @@ function openWaqtModal() {
   var pool = (window.WAQT_BY_PRIERE && window.WAQT_BY_PRIERE[priere] && window.WAQT_BY_PRIERE[priere].length > 0) ? window.WAQT_BY_PRIERE[priere] : null;
   var txt = '';
   if (pool) {
-    var dayOfYear = Math.floor(Date.now() / 86400000);
-    var idx = (dayOfYear + _waqtHashPriere(priere)) % pool.length;
+    var idx = _pickWaqtItem(priere, pool);
     var item = pool[idx];
     var lang = (typeof V2_LANG !== 'undefined') ? V2_LANG : 'fr';
     txt = (typeof item === 'string') ? item : (item[lang] || item.fr || item.texte || '');
@@ -15710,7 +15753,7 @@ function loadWaqtData(cb) {
             Object.keys(d.categories).forEach(function(cat) {
               if (Array.isArray(d.categories[cat])) {
                 d.categories[cat].forEach(function(h) {
-                  pool.push({ fr: h.texte || h.fr || '', _story: h });
+                  pool.push({ fr: h.texte || h.fr || '', _story: h, _cat: cat });
                 });
               }
             });
