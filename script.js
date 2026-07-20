@@ -9586,20 +9586,37 @@ function shareNiyyah() {
 }
 window.shareNiyyah = shareNiyyah;
 function showQuotaLimit(kind){
-  var title, sub, hint;
+  var _prem = isPremium();
+  var title, sub, hint, upgradeBtn;
   if (kind === 'regard') {
-    title = 'Ton Regard du jour';
-    sub = 'Tu as re\u00e7u ton Regard d\u2019aujourd\u2019hui.<br>Reviens demain in cha Allah \uD83C\uDF19';
-    hint = 'Avec Niyyah+ : 3 Regards par jour.';
+    if (_prem) {
+      title = 'Regards du jour \u2726';
+      sub = 'Tu as fait tes Regards d\u2019aujourd\u2019hui.<br>Reviens demain in cha Allah \uD83C\uDF19';
+      hint = '';
+      upgradeBtn = '';
+    } else {
+      title = 'Ton Regard du jour';
+      sub = 'Tu as re\u00e7u ton Regard d\u2019aujourd\u2019hui.<br>Reviens demain in cha Allah \uD83C\uDF19';
+      hint = 'Avec Niyyah+ : jusqu\u2019\u00e0 3 Regards par jour.';
+      upgradeBtn = '<button class="ql-premium" onclick="closeQuotaLimit();openFreemium(\'regard\');">D\u00e9bloquer Niyyah+ \u2726</button>';
+    }
   } else {
     var q = []; try { q = JSON.parse(safeGetItem('niyyah_scanner_quota') || '[]'); } catch(e) {}
     var weekAgo = new Date(Date.now() - 7*86400000).toISOString();
     q = q.filter(function(t){ return t > weekAgo; }).sort();
     var oldest = q.length ? new Date(q[0]).getTime() : Date.now();
     var days = Math.max(1, Math.ceil((oldest + 7*86400000 - Date.now()) / 86400000));
-    title = 'Tes scans de la semaine';
-    sub = 'Tu as utilis\u00e9 tes 3 scans d\u2019intention.<br>Prochain dans ' + days + ' jour' + (days>1?'s':'') + '.';
-    hint = 'Avec Niyyah+ : 3 scans par jour.';
+    if (_prem) {
+      title = 'Scans du jour \u2726';
+      sub = 'Tu as fait tes scans d\u2019intention du jour.<br>Reviens demain in cha Allah \uD83C\uDF19';
+      hint = '';
+      upgradeBtn = '';
+    } else {
+      title = 'Tes scans de la semaine';
+      sub = 'Tu as utilis\u00e9 tes 3 scans d\u2019intention.<br>Prochain dans ' + days + ' jour' + (days>1?'s':'') + '.';
+      hint = 'Avec Niyyah+ : 3 scans par jour.';
+      upgradeBtn = '<button class="ql-premium" onclick="closeQuotaLimit();openFreemium(\'scanner\');">D\u00e9bloquer Niyyah+ \u2726</button>';
+    }
   }
   var prev = document.getElementById('quota-limit-overlay'); if (prev) prev.remove();
   var ov = document.createElement('div'); ov.id = 'quota-limit-overlay'; ov.className = 'quota-limit';
@@ -9608,8 +9625,8 @@ function showQuotaLimit(kind){
     + '<div class="ql-orb">\uD83C\uDF19</div>'
     + '<div class="ql-title">' + title + '</div>'
     + '<div class="ql-sub">' + sub + '</div>'
-    + '<div class="ql-when">' + hint + '</div>'
-    + '<button class="ql-premium" onclick="closeQuotaLimit();openFreemium(\'' + kind + '\');">D\u00e9bloquer Niyyah+ \u2726</button>'
+    + (hint ? '<div class="ql-when">' + hint + '</div>' : '')
+    + upgradeBtn
     + '<button class="ql-close" onclick="closeQuotaLimit()">Fermer</button>'
     + '</div>';
   document.body.appendChild(ov);
@@ -18484,7 +18501,7 @@ function regardeCapture() {
     fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64, seen_versets: _seenVersets, premium: false, versets_recents: _getRegardeHistory() }),
+      body: JSON.stringify({ image: base64, seen_versets: _seenVersets, premium: isPremium(), versets_recents: _getRegardeHistory() }),
       signal: _acR.signal
     })
     .then(function(res) {
