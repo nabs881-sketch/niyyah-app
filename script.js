@@ -9553,7 +9553,7 @@ function closeFreemium(e) {
 }
 function freemiumShowCode(){ var r=document.getElementById('freemium-code-row'); if(r) r.style.display='flex'; var i=document.getElementById('freemium-code-input'); if(i) i.focus(); }
 function freemiumBuy(){ freemiumShowCode(); showToast('Disponible au lancement \u2014 pendant la beta, entre ton code.'); }
-function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ v2ShowToast('Niyyah+ activ\u00e9 \u2726'); setTimeout(function(){ location.reload(); }, 1200); } else { v2ShowToast('Code invalide'); } }
+function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ v2ShowToast('Niyyah+ activ\u00e9 \u2726'); if(document.body.classList.contains('onboarding-active')){ var _fov=document.getElementById('freemiumOverlay'); if(_fov)_fov.classList.remove('show'); setTimeout(function(){ onboardNext(); },600); } else { setTimeout(function(){ location.reload(); },1200); } } else { v2ShowToast('Code invalide'); } }
 window.freemiumShowCode=freemiumShowCode; window.freemiumBuy=freemiumBuy; window.freemiumActivate=freemiumActivate;
 function shareNiyyah() {
   var url = 'https://nabs881-sketch.github.io/niyyah-app/';
