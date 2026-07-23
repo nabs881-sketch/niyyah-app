@@ -18532,8 +18532,8 @@ function regardeCapture() {
       signal: _acR.signal
     })
     .then(function(res) {
-      if (res.status === 429) { showToast('Quota IA atteint, r\u00e9essayez dans 1h'); if (!_done) { _done = true; clearTimeout(_toR); _showErrorUI(); } return null; }
-      if (res.status >= 500) { showToast('Service indisponible'); if (!_done) { _done = true; clearTimeout(_toR); _showErrorUI(); } return null; }
+      if (res.status === 429) { showToast('Quota IA atteint, r\u00e9essayez dans 1h'); if (!_done) { _done = true; clearTimeout(_toR); setTimeout(_showErrorUI, 2500); } return null; }
+      if (res.status >= 500) { showToast('Service indisponible'); if (!_done) { _done = true; clearTimeout(_toR); setTimeout(_showErrorUI, 2500); } return null; }
       return res.json();
     })
     .then(function(data) {
