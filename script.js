@@ -18439,11 +18439,21 @@ function regardeCapture() {
     content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:24px;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div><div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);">'+t('scanner_analyzing')+'</div><button onclick="regardeCancelThinking()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:transparent;color:rgba(255,255,255,0.6);font-size:13px;cursor:pointer;">Annuler</button></div>';
     content.style.opacity = '1';
 
-    // Appel API avec AbortController timeout 8s
+    // Appel API avec AbortController timeout 25s
     var _acR = new AbortController();
     window._regardeAC = _acR;
-    var _toR = setTimeout(function() { _acR.abort(); }, 8000);
     var _done = false;
+    var _toR = setTimeout(function() {
+      _acR.abort();
+      // Filet de sécurité : si le catch ne se déclenche pas (certains WebViews),
+      // force l'affichage de l'erreur après 600ms supplémentaires
+      setTimeout(function() {
+        if (_done) return;
+        _done = true;
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">L\u2019analyse a pris trop de temps.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+        content.style.opacity = '1';
+      }, 600);
+    }, 25000);
 
     function saveAndShow(question, cat) {
       if (_done) return; _done = true;
@@ -18558,8 +18568,19 @@ function regardeCapture() {
         fallback();
       }
     })
-    .catch(function() {
-      fallback();
+    .catch(function(err) {
+      if (_done) return;
+      var _isTimeout = err && (err.name === 'AbortError' || err.name === 'TimeoutError');
+      if (_isTimeout) {
+        // Timeout : essaie quand même le fallback verset, sinon message clair
+        _done = true;
+        clearTimeout(_toR);
+        if (_fallbackWithVersets()) return;
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">L\u2019analyse a pris trop de temps.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+        content.style.opacity = '1';
+      } else {
+        fallback();
+      }
     });
   }, 400);
 }
