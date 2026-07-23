@@ -3913,6 +3913,8 @@ function _applyPrayerTimings(timings) {
   schedulePrayerReminders();
   startPrayerCountdown();
   renderLevel(currentLevel);
+  window._sanctuaireMomentRetryCount = 0;
+  window._sanctuaireMomentPendingRetry = false;
   if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
 }
 function _loadPrayerByCoords(lat, lng) {
@@ -16412,6 +16414,7 @@ function updateSanctuaireMoment() {
       setTimeout(updateSanctuaireMoment, 3000);
     } else {
       _hideBlock();
+      window._sanctuaireMomentPendingRetry = true;
     }
     return;
   }
