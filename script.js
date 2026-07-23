@@ -3934,7 +3934,13 @@ function _loadPrayerByCoords(lat, lng) {
     .catch(function() {
       clearTimeout(_to1);
       if (_prayerCity) { _loadPrayerByCity(); }
-      else { _prayerLoading = false; _prayerError = true; renderLevel(currentLevel); }
+      else {
+        var _fallback = safeGetItem('niyyah_prayer_cache');
+        if (_fallback) { try { _prayerTimes = JSON.parse(_fallback); } catch(e) {} }
+        _prayerLoading = false;
+        _prayerError = !_prayerTimes;
+        renderLevel(currentLevel);
+      }
     });
 }
 function _retryPrayerLoad() {
@@ -10296,7 +10302,7 @@ function loadQibla() {
       _qiblaLoading = false;
       renderLevel(currentLevel);
     },
-    { timeout: 10000, maximumAge: 300000 }
+    { timeout: 10000 }
   );
 }
 function renderZakatCard() {
