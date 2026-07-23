@@ -18473,7 +18473,7 @@ function regardeCapture() {
     function _fallbackWithVersets() {
       var _fv = window.REGARD_VERSETS && window.REGARD_VERSETS['INDETERMINE'] && window.REGARD_VERSETS['INDETERMINE'].versets && window.REGARD_VERSETS['INDETERMINE'].versets[0];
       if (_fv) {
-        _regardeBreath(content, function(){ _regardeShowVerset(content, _fv, true); });
+        try { _regardeBreath(content, function(){ _regardeShowVerset(content, _fv, true); }); } catch(e) { _showErrorUI(); return true; }
         _currentRegardeCat = 'INDETERMINE';
         _regardeStarred = false;
         var _jLabel = _fv.murmure || _fv.texte.substring(0, 80);
@@ -18487,6 +18487,10 @@ function regardeCapture() {
         return true;
       }
       return false;
+    }
+    function _showErrorUI() {
+      content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">L\u2019analyse a pris trop de temps.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+      content.style.opacity = '1';
     }
     function fallback() {
       if (_done) return; _done = true;
@@ -18528,8 +18532,8 @@ function regardeCapture() {
       signal: _acR.signal
     })
     .then(function(res) {
-      if (res.status === 429) { showToast('Quota IA atteint, r\u00e9essayez dans 1h'); return null; }
-      if (res.status >= 500) { showToast('Service indisponible'); return null; }
+      if (res.status === 429) { showToast('Quota IA atteint, r\u00e9essayez dans 1h'); if (!_done) { _done = true; clearTimeout(_toR); _showErrorUI(); } return null; }
+      if (res.status >= 500) { showToast('Service indisponible'); if (!_done) { _done = true; clearTimeout(_toR); _showErrorUI(); } return null; }
       return res.json();
     })
     .then(function(data) {
@@ -18538,7 +18542,7 @@ function regardeCapture() {
         if (_done) return; _done = true;
         clearTimeout(_toR);
         if (data.reference) _saveRegardeHistory(data.reference);
-        _renderRegardePremium(content, data, dataUrl);
+        try { _renderRegardePremium(content, data, dataUrl); } catch(e) { _showErrorUI(); }
         return;
       }
       if (data.mode === 'verset' && data.category && typeof data.verset_index === 'number') {
@@ -18549,7 +18553,7 @@ function regardeCapture() {
         if (!_v) { fallback(); return; }
         if (_done) return; _done = true;
         clearTimeout(_toR);
-        _regardeBreath(content, function(){ _regardeShowVerset(content, _v, true, !!data.returning_verset); });
+        try { _regardeBreath(content, function(){ _regardeShowVerset(content, _v, true, !!data.returning_verset); }); } catch(e) { _showErrorUI(); return; }
         _currentRegardeCat = data.category;
         _regardeStarred = false;
         if (data.category === 'INAPPROPRIE') return;
