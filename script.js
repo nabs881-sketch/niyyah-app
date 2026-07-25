@@ -10761,10 +10761,6 @@ function onboardRender() {
   requestAnimationFrame(function() {
     var content = document.getElementById('onboardContent');
     if (content && ONBOARD_SLIDES[slideIdx]) content.innerHTML = ONBOARD_SLIDES[slideIdx]();
-    if (slideIdx === 3 && !isPremium() && safeGetItem('niyyah_plus_intro') !== '1') {
-      safeSetItem('niyyah_plus_intro', '1');
-      setTimeout(function(){ openFreemium('default'); }, 350);
-    }
     if (content) content.querySelectorAll('.ob-rise').forEach(function(el,k){ el.style.animationDelay=(k*0.07)+'s'; });
     var _obScreen = document.getElementById('onboardScreen');
     if (_obScreen) _obScreen.scrollTop = 0;
@@ -10787,6 +10783,14 @@ function onboardNext() {
 function onboardFinish() {
   document.body.classList.remove('onboarding-active');
   safeSetItem('niyyah_onboard', '1');
+  // Force-close freemium si resté ouvert pendant l'onboarding (race condition TWA)
+  var _fov = document.getElementById('freemiumOverlay');
+  if (_fov) _fov.classList.remove('show');
+  // Proposer Niyyah+ après atterrissage stable dans le Sanctuaire
+  if (!isPremium() && safeGetItem('niyyah_plus_intro') !== '1') {
+    safeSetItem('niyyah_plus_intro', '1');
+    setTimeout(function(){ openFreemium('default'); }, 1500);
+  }
   if (!safeGetItem('niyyah_install_date')) safeSetItem('niyyah_install_date', String(Date.now()));
   const screen = document.getElementById('onboardScreen');
   if (screen) {

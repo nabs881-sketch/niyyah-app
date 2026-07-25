@@ -2632,14 +2632,16 @@ to {
   display:flex;
   align-items:flex-end;
   overflow:hidden;
-  touch-action:none;
+  touch-action:auto;
   opacity:0;
   pointer-events:none;
+  visibility:hidden;
   transition:opacity 0.3s ease
 }
 .freemium-overlay.show {
   opacity:1;
-  pointer-events:all
+  pointer-events:all;
+  visibility:visible
 }
 .freemium-sheet {
   width:100%;
