@@ -10773,7 +10773,10 @@ function onboardFinish() {
     navigator.geolocation.getCurrentPosition(function(pos) {
       safeSetItem('niyyah_coords', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
       if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
-    }, function() {}, { enableHighAccuracy: false, timeout: 10000 });
+    }, function() {
+      if (_prayerCity) { _loadPrayerByCity(); }
+      else { _showCityInput = true; renderLevel(currentLevel); }
+    }, { enableHighAccuracy: false, timeout: 10000 });
   }
   // Aller directement au Sanctuaire
   setTimeout(() => {
