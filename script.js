@@ -10333,25 +10333,42 @@ function loadQibla() {
   _qiblaLoading = true;
   _qiblaError = null;
   renderLevel(currentLevel);
-  if (!navigator.geolocation) {
-    _qiblaError = 'Géolocalisation non disponible';
+  function _qiblaByCoords(lat, lng) {
+    safeSetItem('niyyah_coords', JSON.stringify({ lat: lat, lng: lng }));
+    _qiblaAngle = calcQiblaAngle(lat, lng);
     _qiblaLoading = false;
     renderLevel(currentLevel);
-    return;
   }
-  navigator.geolocation.getCurrentPosition(
-    pos => {
-      _qiblaAngle = calcQiblaAngle(pos.coords.latitude, pos.coords.longitude);
+  function _qiblaFail() {
+    _qiblaError = 'Position indisponible \u2014 v\u00e9rifie ta connexion ou autorise la localisation';
+    _qiblaLoading = false;
+    renderLevel(currentLevel);
+  }
+  // 1. Coords en cache
+  var savedCoords = safeGetItem('niyyah_coords');
+  if (savedCoords) {
+    try {
+      var c = JSON.parse(savedCoords);
+      _qiblaAngle = calcQiblaAngle(c.lat, c.lng);
       _qiblaLoading = false;
       renderLevel(currentLevel);
-    },
-    err => {
-      _qiblaError = err.code === 3 ? 'Position indisponible (timeout)' : err.code === 1 ? 'Position refus\u00e9e — autorise la localisation' : 'Position indisponible';
-      _qiblaLoading = false;
-      renderLevel(currentLevel);
-    },
-    { timeout: 10000 }
-  );
+      return;
+    } catch(e) {}
+  }
+  // 2. GPS natif
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(pos) { _qiblaByCoords(pos.coords.latitude, pos.coords.longitude); },
+      function() {
+        // 3. IP géoloc fallback
+        _fetchIPGeoloc(_qiblaByCoords, _qiblaFail);
+      },
+      { timeout: 10000, enableHighAccuracy: true }
+    );
+  } else {
+    // 3. IP géoloc fallback (pas d'API GPS)
+    _fetchIPGeoloc(_qiblaByCoords, _qiblaFail);
+  }
 }
 function renderZakatCard() {
   return '<div onclick="openZakat()" style="position:relative;background:linear-gradient(165deg,#1a130b,#0d0a06);border:1px solid rgba(200,168,74,0.22);border-radius:16px;padding:15px 16px;margin-bottom:8px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(232,206,138,0.08),0 4px 16px rgba(0,0,0,0.35);overflow:hidden;">'
