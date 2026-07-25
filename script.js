@@ -3763,7 +3763,7 @@ function _watchGeolocationPermission() {
           if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
           if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
           renderLevel(currentLevel);
-        }, function(err) { showToast('Position indisponible' + (err ? ' (code\u00a0' + err.code + ')' : '')); }, { enableHighAccuracy: false, timeout: 10000 });
+        }, function(err) { showToast('Position indisponible' + (err ? ' (code\u00a0' + err.code + ')' : '')); }, { enableHighAccuracy: true, timeout: 10000 });
       }
     };
   }).catch(function() {});
@@ -3776,7 +3776,7 @@ function _retryGeoloc() {
     _forceCityInput = false;
     if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
     if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
-  }, function(err) { showToast('Position indisponible' + (err ? ' (code\u00a0' + err.code + ')' : '')); }, { enableHighAccuracy: false, timeout: 15000 });
+  }, function(err) { showToast('Position indisponible' + (err ? ' (code\u00a0' + err.code + ')' : '')); }, { enableHighAccuracy: true, timeout: 15000 });
 }
 window._retryGeoloc = _retryGeoloc;
 // Cache horaires — valide seulement si même jour + même timezone
@@ -10810,7 +10810,7 @@ function onboardFinish() {
     }, function() {
       if (_prayerCity) { _loadPrayerByCity(); }
       else { _showCityInput = true; renderLevel(currentLevel); }
-    }, { enableHighAccuracy: false, timeout: 10000 });
+    }, { enableHighAccuracy: true, timeout: 10000 });
     _watchGeolocationPermission();
   }
   // Aller directement au Sanctuaire
