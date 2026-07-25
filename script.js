@@ -3768,6 +3768,17 @@ function _watchGeolocationPermission() {
     };
   }).catch(function() {});
 }
+function _fetchIPGeoloc(onSuccess, onFail) {
+  fetch('https://ipapi.co/json/')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d && typeof d.latitude === 'number' && typeof d.longitude === 'number') {
+        safeSetItem('niyyah_coords', JSON.stringify({ lat: d.latitude, lng: d.longitude }));
+        onSuccess(d.latitude, d.longitude);
+      } else { onFail(); }
+    })
+    .catch(function() { onFail(); });
+}
 function _retryGeoloc() {
   if (!navigator.geolocation) return;
   navigator.geolocation.getCurrentPosition(function(pos) {
@@ -4035,17 +4046,19 @@ function loadPrayerTimes() {
         _loadPrayerByCoords(lat, lng);
       },
       function() {
-        // Geoloc refused → fallback city input
-        if (_prayerCity) { _loadPrayerByCity(); }
-        else { _showCityInput = true; renderLevel(currentLevel); }
+        _fetchIPGeoloc(
+          function(lat, lng) { if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(lat, lng); },
+          function() { if (_prayerCity) { _loadPrayerByCity(); } else { _showCityInput = true; renderLevel(currentLevel); } }
+        );
       },
       { timeout: 8000 }
     );
     _watchGeolocationPermission();
   } else {
-    // No geolocation API
-    if (_prayerCity) { _loadPrayerByCity(); }
-    else { _showCityInput = true; renderLevel(currentLevel); }
+    _fetchIPGeoloc(
+      function(lat, lng) { if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(lat, lng); },
+      function() { if (_prayerCity) { _loadPrayerByCity(); } else { _showCityInput = true; renderLevel(currentLevel); } }
+    );
   }
 }
 const WIRD_DATA = {
@@ -10808,10 +10821,17 @@ function onboardFinish() {
       safeSetItem('niyyah_coords', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
       if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
     }, function() {
-      if (_prayerCity) { _loadPrayerByCity(); }
-      else { _showCityInput = true; renderLevel(currentLevel); }
+      _fetchIPGeoloc(
+        function(lat, lng) { if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(lat, lng); },
+        function() { if (_prayerCity) { _loadPrayerByCity(); } else { _showCityInput = true; renderLevel(currentLevel); } }
+      );
     }, { enableHighAccuracy: true, timeout: 10000 });
     _watchGeolocationPermission();
+  } else {
+    _fetchIPGeoloc(
+      function(lat, lng) { if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(lat, lng); },
+      function() { if (_prayerCity) { _loadPrayerByCity(); } else { _showCityInput = true; renderLevel(currentLevel); } }
+    );
   }
   // Aller directement au Sanctuaire
   setTimeout(() => {
