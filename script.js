@@ -3784,14 +3784,25 @@ function _fetchIPGeoloc(onSuccess, onFail) {
     });
 }
 function _retryGeoloc() {
-  if (!navigator.geolocation) return;
-  navigator.geolocation.getCurrentPosition(function(pos) {
-    safeSetItem('niyyah_coords', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
+  function _onCoords(lat, lng) {
+    safeSetItem('niyyah_coords', JSON.stringify({ lat: lat, lng: lng }));
     _showCityInput = false;
     _forceCityInput = false;
-    if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
+    if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(lat, lng);
     if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
-  }, function(err) { showToast('Position indisponible' + (err ? ' (code\u00a0' + err.code + ')' : '')); }, { enableHighAccuracy: true, timeout: 15000 });
+  }
+  function _onFail() {
+    showToast('Position indisponible \u2014 entre ta ville manuellement');
+  }
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(pos) { _onCoords(pos.coords.latitude, pos.coords.longitude); },
+      function() { _fetchIPGeoloc(_onCoords, _onFail); },
+      { enableHighAccuracy: true, timeout: 15000 }
+    );
+  } else {
+    _fetchIPGeoloc(_onCoords, _onFail);
+  }
 }
 window._retryGeoloc = _retryGeoloc;
 // Cache horaires — valide seulement si même jour + même timezone
