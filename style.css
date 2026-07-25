@@ -8080,8 +8080,8 @@ button[style*="gold-v2"] {
   50% { transform:translate(-50%,-50%) scale(1.08); }
 }
 #caverne-bloom{position:absolute;inset:-20%;z-index:3;pointer-events:none;opacity:0;background:radial-gradient(circle,rgba(255,244,210,0.95) 0%,rgba(232,200,120,0.6) 35%,transparent 75%);transition:opacity 1.6s ease;}
-#caverne-stage .cav-n{font-weight:400;font-size:23px;color:#E8D5A0;line-height:1.5;letter-spacing:-0.01em;}
-#caverne-stage .cav-q{font-weight:300;font-style:italic;font-size:17px;color:rgba(232,213,160,0.55);line-height:1.5;}
+#caverne-stage .cav-n{font-weight:400;font-size:27px;color:#E8D5A0;line-height:1.65;letter-spacing:-0.01em;}
+#caverne-stage .cav-q{font-weight:300;font-style:italic;font-size:20px;color:rgba(232,213,160,0.55);line-height:1.65;}
 #caverne-stage .cav-a{font-style:italic;font-weight:400;font-size:25px;color:#C8A84A;letter-spacing:0.01em;line-height:1.4;}
 #caverne-stage .cav-c{font-weight:600;font-size:32px;color:#C8A84A;line-height:1.15;}
 #caverne-stage .cav-m{font-weight:700;font-size:48px;color:#C8A84A;line-height:1.08;text-shadow:0 0 24px rgba(200,168,75,0.45);}
