@@ -3769,15 +3769,19 @@ function _watchGeolocationPermission() {
   }).catch(function() {});
 }
 function _fetchIPGeoloc(onSuccess, onFail) {
-  fetch('https://ipapi.co/json/')
+  fetch('https://ipwho.is/')
     .then(function(r) { return r.json(); })
     .then(function(d) {
-      if (d && typeof d.latitude === 'number' && typeof d.longitude === 'number') {
+      if (d && d.success && typeof d.latitude === 'number' && typeof d.longitude === 'number') {
         safeSetItem('niyyah_coords', JSON.stringify({ lat: d.latitude, lng: d.longitude }));
         onSuccess(d.latitude, d.longitude);
       } else { onFail(); }
     })
-    .catch(function() { onFail(); });
+    .catch(function(err) {
+      console.error('[_fetchIPGeoloc] échec réseau :', err);
+      showToast('IP-géoloc échouée : ' + (err && err.message ? err.message : String(err)));
+      onFail();
+    });
 }
 function _retryGeoloc() {
   if (!navigator.geolocation) return;
