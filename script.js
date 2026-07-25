@@ -3751,6 +3751,34 @@ let _prayerLoading = false;
 let _prayerError   = false;
 let _showCityInput = !_prayerCity && !safeGetItem('niyyah_coords');
 let _forceCityInput = false;
+function _watchGeolocationPermission() {
+  if (!navigator.permissions || safeGetItem('niyyah_coords')) return;
+  navigator.permissions.query({ name: 'geolocation' }).then(function(perm) {
+    perm.onchange = function() {
+      if (perm.state === 'granted' && !safeGetItem('niyyah_coords')) {
+        perm.onchange = null;
+        navigator.geolocation.getCurrentPosition(function(pos) {
+          safeSetItem('niyyah_coords', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
+          _showCityInput = false;
+          if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
+          if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
+          renderLevel(currentLevel);
+        }, function() {}, { enableHighAccuracy: false, timeout: 10000 });
+      }
+    };
+  }).catch(function() {});
+}
+function _retryGeoloc() {
+  if (!navigator.geolocation) return;
+  navigator.geolocation.getCurrentPosition(function(pos) {
+    safeSetItem('niyyah_coords', JSON.stringify({ lat: pos.coords.latitude, lng: pos.coords.longitude }));
+    _showCityInput = false;
+    _forceCityInput = false;
+    if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
+    if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
+  }, function() {}, { enableHighAccuracy: false, timeout: 15000 });
+}
+window._retryGeoloc = _retryGeoloc;
 // Cache horaires — valide seulement si même jour + même timezone
 var _currentTZ = ''; try { _currentTZ = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch(e) {}
 var _cachedTZ = safeGetItem('niyyah_prayer_tz') || '';
@@ -3770,6 +3798,7 @@ function renderPrayerTimesCard() {
     return '<div class="prayer-times-card">' +
       '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div></div>' +
       '<div style="font-size:12px;color:var(--t3);margin-bottom:8px;">' + t('city_enter') + '</div>' +
+      (navigator.geolocation ? '<button onclick="_retryGeoloc()" style="width:100%;padding:10px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:#C8A84A;font-size:14px;cursor:pointer;margin-bottom:10px;">\uD83D\uDCCD Utiliser ma position</button>' : '') +
       '<div class="city-input-wrap">' +
         '<input class="city-input" id="cityInput" type="text" placeholder="Ex: Paris, Casablanca, Bruxelles..." value="' + escapeHtml(_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
         '<button class="city-input-btn" aria-label="Valider la ville" onclick="saveCityAndLoad()">OK</button>' +
@@ -4012,6 +4041,7 @@ function loadPrayerTimes() {
       },
       { timeout: 8000 }
     );
+    _watchGeolocationPermission();
   } else {
     // No geolocation API
     if (_prayerCity) { _loadPrayerByCity(); }
@@ -10777,6 +10807,7 @@ function onboardFinish() {
       if (_prayerCity) { _loadPrayerByCity(); }
       else { _showCityInput = true; renderLevel(currentLevel); }
     }, { enableHighAccuracy: false, timeout: 10000 });
+    _watchGeolocationPermission();
   }
   // Aller directement au Sanctuaire
   setTimeout(() => {
