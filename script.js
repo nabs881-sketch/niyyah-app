@@ -3099,6 +3099,7 @@ function toggleItem(id, event) {
       if (navigator.vibrate) navigator.vibrate([12, 8, 25]);
       playCheckSound();
       if (event) spawnPremiumBurst(event.clientX || event.touches?.[0]?.clientX || 0, event.clientY || event.touches?.[0]?.clientY || 0);
+      _maybeShowFreemiumAfterAction();
       // Collapse parent .fil-acc accordion immediately if all its items are now checked
       var _filBody = el.closest && el.closest('.fil-acc-body');
       if (_filBody) {
@@ -9710,6 +9711,12 @@ function setPremium(bool) {
 window.isPremium = isPremium;
 window.unlockPremium = unlockPremium;
 window.setPremium = setPremium;
+function _maybeShowFreemiumAfterAction() {
+  if (isPremium()) return;
+  if (safeGetItem('niyyah_plus_intro') === '1') return;
+  safeSetItem('niyyah_plus_intro', '1');
+  setTimeout(function() { openFreemium('default'); }, 1500);
+}
 /* ══ FREEMIUM V2 — utilitaires ══ */
 function _daysSinceInstall() {
   var inst = parseInt(safeGetItem('niyyah_install_date') || '0', 10);
@@ -10832,11 +10839,6 @@ function onboardFinish() {
   // Force-close freemium si resté ouvert pendant l'onboarding (race condition TWA)
   var _fov = document.getElementById('freemiumOverlay');
   if (_fov) _fov.classList.remove('show');
-  // Proposer Niyyah+ après atterrissage stable dans le Sanctuaire
-  if (!isPremium() && safeGetItem('niyyah_plus_intro') !== '1') {
-    safeSetItem('niyyah_plus_intro', '1');
-    setTimeout(function(){ openFreemium('default'); }, 1500);
-  }
   if (!safeGetItem('niyyah_install_date')) safeSetItem('niyyah_install_date', String(Date.now()));
   const screen = document.getElementById('onboardScreen');
   if (screen) {
@@ -15529,6 +15531,7 @@ function closeWaqtModal() {
     markWaqtLu(_waqtModalPriere);
     _waqtModalPriere = null;
     _waqtConsumedByClick = true;
+    _maybeShowFreemiumAfterAction();
   }
   updateMedaillonState();
 }
