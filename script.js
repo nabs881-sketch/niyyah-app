@@ -3845,6 +3845,7 @@ function renderPrayerTimesCard() {
   const now = new Date();
   const nowMin = now.getHours() * 60 + now.getMinutes();
   function timeToMin(t) {
+    if (!t || typeof t !== 'string' || !t.includes(':')) return 0;
     const parts = t.split(':');
     return parseInt(parts[0]) * 60 + parseInt(parts[1]);
   }
@@ -12627,12 +12628,12 @@ function renderPriere() {
   var c = document.getElementById('priere-content');
   if (!c) return;
   var html = '';
-  if (typeof renderPrayerTimesCard === 'function') html += renderPrayerTimesCard();
-  if (typeof _prierMieuxHomeEntry === 'function') html += _prierMieuxHomeEntry();
-  if (typeof renderQiblaCard === 'function') html += renderQiblaCard();
-  if (typeof renderRawatibCard === 'function') html += renderRawatibCard();
-  if (typeof renderRappelsCard === 'function') html += renderRappelsCard();
-  if (typeof renderCompteurCard === 'function') html += renderCompteurCard();
+  try { if (typeof renderPrayerTimesCard === 'function') html += renderPrayerTimesCard(); } catch(e) { console.error('[renderPriere] renderPrayerTimesCard:', e); }
+  try { if (typeof _prierMieuxHomeEntry === 'function') html += _prierMieuxHomeEntry(); } catch(e) { console.error('[renderPriere] _prierMieuxHomeEntry:', e); }
+  try { if (typeof renderQiblaCard === 'function') html += renderQiblaCard(); } catch(e) { console.error('[renderPriere] renderQiblaCard:', e); }
+  try { if (typeof renderRawatibCard === 'function') html += renderRawatibCard(); } catch(e) { console.error('[renderPriere] renderRawatibCard:', e); }
+  try { if (typeof renderRappelsCard === 'function') html += renderRappelsCard(); } catch(e) { console.error('[renderPriere] renderRappelsCard:', e); }
+  try { if (typeof renderCompteurCard === 'function') html += renderCompteurCard(); } catch(e) { console.error('[renderPriere] renderCompteurCard:', e); }
   c.innerHTML = html;
 }
 window.renderPriere = renderPriere;
