@@ -3769,12 +3769,13 @@ function _watchGeolocationPermission() {
   }).catch(function() {});
 }
 function _fetchIPGeoloc(onSuccess, onFail) {
-  fetch('https://ipapi.co/json/')
+  fetch('https://api.aladhan.com/v1/ipToLocation')
     .then(function(r) { return r.json(); })
     .then(function(d) {
-      if (d && typeof d.latitude === 'number' && typeof d.longitude === 'number') {
-        safeSetItem('niyyah_coords', JSON.stringify({ lat: d.latitude, lng: d.longitude }));
-        onSuccess(d.latitude, d.longitude);
+      var loc = d && d.data;
+      if (loc && typeof loc.latitude === 'number' && typeof loc.longitude === 'number') {
+        safeSetItem('niyyah_coords', JSON.stringify({ lat: loc.latitude, lng: loc.longitude }));
+        onSuccess(loc.latitude, loc.longitude);
       } else { onFail(); }
     })
     .catch(function() { onFail(); });
