@@ -12540,7 +12540,7 @@ function _showWaswasaScreen() {
 
 function v2GoPriere() {
   if (v2CurrentView === 'sanctuaire') { try { history.pushState({ niyyah_view: 'priere' }, ''); } catch(e) {} }
-  showToast('\u2192 pushState priere | len:' + history.length + ' | was:' + v2CurrentView);
+  _dbgToast('\u2192 pushState priere | len:' + history.length + ' | was:' + v2CurrentView);
   v2CurrentView = 'priere';
   setupTopUI('priere');
   document.body.classList.add('in-priere-view');
@@ -12679,7 +12679,7 @@ function v2GoNafs() {
   // Avertissement à la 1ère ouverture
   if (!safeGetItem('nafs_avertissement_seen')) _showWaswasaScreen();
   if (v2CurrentView === 'sanctuaire') { try { history.pushState({ niyyah_view: 'nafs' }, ''); } catch(e) {} }
-  showToast('\u2192 pushState nafs | len:' + history.length + ' | was:' + v2CurrentView);
+  _dbgToast('\u2192 pushState nafs | len:' + history.length + ' | was:' + v2CurrentView);
   v2CurrentView = 'nafs';
   setupTopUI('nafs');
   document.body.classList.add('in-nafs-view');
@@ -14167,7 +14167,7 @@ function v2GoSanctuaire() {
 function v2GoTo(viewName) {
   if (viewName === 'checklist' && safeGetItem('niyyah_intro_pratique') !== '1') { return _niyyahIntro('pratique', function(){ v2GoTo('checklist'); }); }
   if (v2CurrentView === 'sanctuaire') { try { history.pushState({ niyyah_view: viewName }, ''); } catch(e) {} }
-  showToast('\u2192 pushState ' + viewName + ' | len:' + history.length + ' | was:' + v2CurrentView);
+  _dbgToast('\u2192 pushState ' + viewName + ' | len:' + history.length + ' | was:' + v2CurrentView);
   setupTopUI(viewName);
   document.body.classList.remove('pratique-active', 'in-progression-view');
   if (viewName === 'checklist') document.body.classList.add('pratique-active');
@@ -14206,7 +14206,7 @@ function v2GoTo(viewName) {
   const _origSwitch = typeof switchView === 'function' ? switchView : null;
   window.switchView = function(view) {
     if (v2CurrentView === 'sanctuaire') { try { history.pushState({ niyyah_view: view }, ''); } catch(e) {} }
-    showToast('\u2192 switchView ' + view + ' | len:' + history.length + ' | was:' + v2CurrentView);
+    _dbgToast('\u2192 switchView ' + view + ' | len:' + history.length + ' | was:' + v2CurrentView);
     // Hide V2 sanctuaire
     const sanct = document.getElementById('view-sanctuaire');
     if (sanct) sanct.classList.remove('active');
@@ -14310,10 +14310,20 @@ const Capacitor = {
   window.Capacitor           = Capacitor;
 })();
 
+/* ══ DEBUG HELPER — toast persistant jusqu'au tap (à retirer après diagnostic) ══ */
+function _dbgToast(msg) {
+  var d = document.createElement('div');
+  d.textContent = msg;
+  d.style.cssText = 'position:fixed;bottom:' + (60 + document.querySelectorAll('._dbg-toast').length * 52) + 'px;left:50%;transform:translateX(-50%);background:rgba(180,20,20,0.93);color:#fff;font-size:12px;font-family:monospace;padding:10px 16px;border-radius:8px;z-index:99999;max-width:90vw;word-break:break-all;box-shadow:0 2px 12px rgba(0,0,0,0.5);cursor:pointer;';
+  d.className = '_dbg-toast';
+  d.onclick = function() { d.remove(); };
+  document.body.appendChild(d);
+}
+
 /* ══ BOUTON RETOUR ANDROID — handler popstate centralisé ══ */
 window.addEventListener('popstate', function() {
   /* DEBUG TEMPORAIRE — à retirer après confirmation */
-  showToast('\u25c4 popstate | view:' + (typeof v2CurrentView !== 'undefined' ? v2CurrentView : '?') + ' | state:' + (history.state ? JSON.stringify(history.state) : 'null'));
+  _dbgToast('\u25c4 popstate | view:' + (typeof v2CurrentView !== 'undefined' ? v2CurrentView : '?') + ' | state:' + (history.state ? JSON.stringify(history.state) : 'null'));
   // Scanner Hub a son propre handler (_scannerHubOnPop) — ne pas interférer
   if (document.getElementById('scanner-hub-overlay')) return;
   // Niveau 1 — fermer la modale ouverte en priorité
