@@ -15413,9 +15413,20 @@ function markWaqtLu(priere) {
 window.isWaqtAvailable = isWaqtAvailable;
 window.markWaqtLu = markWaqtLu;
 var _waqtConsumedByClick = false;
+function _isWaqtDeadZone() {
+  if (!_prayerTimes) return false;
+  var fajr = (_prayerTimes['Fajr'] || '').replace(/ *\(.*\)/, '').split(':');
+  var fajrMin = parseInt(fajr[0], 10) * 60 + parseInt(fajr[1], 10);
+  if (isNaN(fajrMin)) return false;
+  var now = new Date();
+  var nowMin = now.getHours() * 60 + now.getMinutes();
+  return nowMin < fajrMin; // minuit → Fajr : zone morte
+}
 function updateMedaillonState() {
   var med = document.getElementById('medaillon-alwaqt');
   if (!med) return;
+  if (_isWaqtDeadZone()) { med.style.display = 'none'; return; }
+  med.style.display = '';
   var available = isWaqtAvailable();
   var wasCuivre = med.classList.contains('medaillon-cuivre');
   med.classList.toggle('medaillon-pierre', !available);
