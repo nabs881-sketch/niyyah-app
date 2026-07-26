@@ -13536,6 +13536,7 @@ window._resetTawhidJour = function() {
 
 function closeRepere() { var o = document.getElementById('repere-overlay'); if (o) o.remove(); _restoreScroll(); }
 function openRepere() {
+  try { history.pushState({ niyyah_modal: 'repere' }, ''); } catch(e) {}
   _saveScroll();
   closeRepere();
   var eb = function(t) { return '<div style="display:flex;align-items:center;gap:10px;margin:24px 2px 13px;"><div style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,74,0.22));"></div><span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(200,168,74,0.5);">' + t + '</span><div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(200,168,74,0.22),transparent);"></div></div>'; };
@@ -14333,6 +14334,8 @@ window.addEventListener('popstate', function() {
   if (fov && fov.classList.contains('show')) { closeFreemium(); return; }
   var aho = document.getElementById('alhaya-overlay');
   if (aho && aho.style.display === 'flex') { closeAlHaya(); return; }
+  var ro = document.getElementById('repere-overlay');
+  if (ro) { closeRepere(); return; }
   // Niveau 2 — revenir au Sanctuaire depuis une sous-vue
   if (typeof v2CurrentView !== 'undefined' && v2CurrentView !== 'sanctuaire') {
     v2GoSanctuaire();
