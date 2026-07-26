@@ -9025,6 +9025,7 @@ function openTafakkurArchive() {
 window.openTafakkurArchive = openTafakkurArchive;
 function openTafakkur() {
   if (safeGetItem('niyyah_intro_tafakkur') !== '1') return _niyyahIntro('tafakkur', openTafakkur);
+  try { history.pushState({ niyyah_modal: 'tafakkur' }, ''); } catch(e) {}
   _tafakkurEnded = false;
   var _tScreen = document.getElementById('tafakkurScreen');
   if (_tafakkurDoneToday()) {
@@ -14336,6 +14337,8 @@ window.addEventListener('popstate', function() {
   if (aho && aho.style.display === 'flex') { closeAlHaya(); return; }
   var ro = document.getElementById('repere-overlay');
   if (ro) { closeRepere(); return; }
+  var ts = document.getElementById('tafakkurScreen');
+  if (ts && ts.classList.contains('show')) { closeTafakkur(true); return; }
   // Niveau 2 — revenir au Sanctuaire depuis une sous-vue
   if (typeof v2CurrentView !== 'undefined' && v2CurrentView !== 'sanctuaire') {
     v2GoSanctuaire();
