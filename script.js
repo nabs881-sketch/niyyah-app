@@ -15420,7 +15420,14 @@ function _isWaqtDeadZone() {
   if (isNaN(fajrMin)) return false;
   var now = new Date();
   var nowMin = now.getHours() * 60 + now.getMinutes();
-  return nowMin < fajrMin; // minuit → Fajr : zone morte
+  // Cas 1 : minuit → Fajr (nouveau jour, aucune prière encore passée)
+  if (nowMin < fajrMin) return true;
+  // Cas 2 : Isha consommé — masquer jusqu'à Fajr le lendemain
+  try {
+    var lu = JSON.parse(safeGetItem('niyyah_waqt_lu_' + todayKey()) || '{}');
+    if (lu['isha']) return true;
+  } catch(e) {}
+  return false;
 }
 function updateMedaillonState() {
   var med = document.getElementById('medaillon-alwaqt');
