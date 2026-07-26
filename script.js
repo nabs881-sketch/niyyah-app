@@ -9611,6 +9611,7 @@ function openFreemium(context) {
   };
   var el = document.getElementById('i18n-freemium-sub');
   if (el) el.textContent = accroches[context] || accroches['default'];
+  try { history.pushState({ niyyah_modal: 'freemium' }, ''); } catch(e) {}
   document.getElementById('freemiumOverlay').classList.add('show');
   document.body.style.overflow = 'hidden';
 }
@@ -14159,6 +14160,7 @@ function v2GoSanctuaire() {
 
 function v2GoTo(viewName) {
   if (viewName === 'checklist' && safeGetItem('niyyah_intro_pratique') !== '1') { return _niyyahIntro('pratique', function(){ v2GoTo('checklist'); }); }
+  if (v2CurrentView === 'sanctuaire') { try { history.pushState({ niyyah_view: viewName }, ''); } catch(e) {} }
   setupTopUI(viewName);
   document.body.classList.remove('pratique-active', 'in-progression-view');
   if (viewName === 'checklist') document.body.classList.add('pratique-active');
@@ -14196,6 +14198,7 @@ function v2GoTo(viewName) {
 (function patchV1Nav() {
   const _origSwitch = typeof switchView === 'function' ? switchView : null;
   window.switchView = function(view) {
+    if (v2CurrentView === 'sanctuaire') { try { history.pushState({ niyyah_view: view }, ''); } catch(e) {} }
     // Hide V2 sanctuaire
     const sanct = document.getElementById('view-sanctuaire');
     if (sanct) sanct.classList.remove('active');
@@ -14298,6 +14301,25 @@ const Capacitor = {
   window.v2DismissTawba      = v2DismissTawba;
   window.Capacitor           = Capacitor;
 })();
+
+/* ══ BOUTON RETOUR ANDROID — handler popstate centralisé ══ */
+window.addEventListener('popstate', function() {
+  // Scanner Hub a son propre handler (_scannerHubOnPop) — ne pas interférer
+  if (document.getElementById('scanner-hub-overlay')) return;
+  // Niveau 1 — fermer la modale ouverte en priorité
+  var wm = document.getElementById('waqt-modal');
+  if (wm && wm.style.display === 'flex') { closeWaqtModal(); return; }
+  var fov = document.getElementById('freemiumOverlay');
+  if (fov && fov.classList.contains('show')) { closeFreemium(); return; }
+  var aho = document.getElementById('alhaya-overlay');
+  if (aho && aho.style.display === 'flex') { closeAlHaya(); return; }
+  // Niveau 2 — revenir au Sanctuaire depuis une sous-vue
+  if (typeof v2CurrentView !== 'undefined' && v2CurrentView !== 'sanctuaire') {
+    v2GoSanctuaire();
+    return;
+  }
+  // Niveau 3 — déjà au Sanctuaire → laisser le TWA quitter naturellement
+});
 
 // ── Hamburger slide-in menu ──
 function openNiyyahMenu() {
@@ -15237,6 +15259,7 @@ function showAlHayaBtn() { var bab = document.getElementById('view-bab-an-nafs')
 function hideAlHayaBtn() { var b = document.getElementById('alhaya-btn'); if (b) b.style.display = 'none'; var tb = document.getElementById('topbar-alhaya-btn'); if (tb) tb.style.opacity = '0.5'; }
 function openAlHaya() {
   if (safeGetItem('niyyah_intro_alhaya') !== '1') return _niyyahIntro('alhaya', openAlHaya);
+  try { history.pushState({ niyyah_modal: 'alhaya' }, ''); } catch(e) {}
   var ov = document.getElementById('alhaya-overlay');
   if (ov) { ov.style.display = 'flex'; ov.style.opacity = '1'; }
   document.body.classList.add('alhaya-active');
@@ -15505,6 +15528,7 @@ function openWaqtModal() {
       + ambianceHtml
       + _contentHtml;
   }
+  try { history.pushState({ niyyah_modal: 'waqt' }, ''); } catch(e) {}
   modal.style.display = 'flex';
   document.body.classList.add('in-waqt-modal');
   // ── Aid waqt special message — 3s intro ──
