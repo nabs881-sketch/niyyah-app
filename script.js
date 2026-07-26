@@ -1159,8 +1159,8 @@ function toggleFast(dayStr) {
     showToast(t('ramadan_fast'));
     if (navigator.vibrate) navigator.vibrate(25);
   }
-  if (!history.ramadan) history.ramadan = { totalFasts: 0, laylatul: {} };
-  history.ramadan.totalFasts = Object.values(ramadanState.days).filter(Boolean).length;
+  if (!spiritualHistory.ramadan) spiritualHistory.ramadan = { totalFasts: 0, laylatul: {} };
+  spiritualHistory.ramadan.totalFasts = Object.values(ramadanState.days).filter(Boolean).length;
   saveHistory();
   saveRamadanState();
   renderRamadan();
@@ -1169,8 +1169,8 @@ function toggleLaylatul(night) {
   if (!ramadanState.laylatul) ramadanState.laylatul = {};
   ramadanState.laylatul[night] = !ramadanState.laylatul[night];
   if (ramadanState.laylatul[night]) showToast(t('ramadan_laylatul') + night + t('ramadan_laylatul_end'));
-  if (!history.ramadan) history.ramadan = { totalFasts: 0, laylatul: {} };
-  history.ramadan.laylatul = ramadanState.laylatul;
+  if (!spiritualHistory.ramadan) spiritualHistory.ramadan = { totalFasts: 0, laylatul: {} };
+  spiritualHistory.ramadan.laylatul = ramadanState.laylatul;
   saveHistory();
   saveRamadanState();
   renderRamadan();
@@ -1566,7 +1566,7 @@ window.addEventListener('storage', function(e) {
     if (e.key === 'spiritual_v2' && e.newValue) {
       state = JSON.parse(e.newValue) || {};
     } else if (e.key === 'spiritual_history' && e.newValue) {
-      history = JSON.parse(e.newValue) || {};
+      spiritualHistory = JSON.parse(e.newValue) || {};
     } else if (e.key && e.key.startsWith('niyyah_wird_') && e.newValue) {
       wirdState = JSON.parse(e.newValue) || {};
     } else if (e.key === 'niyyah_regarde_history' || e.key === 'niyyah_niyyah_history') {
@@ -1579,9 +1579,9 @@ window.addEventListener('storage', function(e) {
   } catch(err) {}
 });
 let state; try { state = JSON.parse(safeGetItem('spiritual_v2')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_v2')); } state = state || {};
-let history; try { history = JSON.parse(safeGetItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_history')); } history = history || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
+let spiritualHistory; try { spiritualHistory = JSON.parse(safeGetItem('spiritual_history')); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: spiritual_history')); } spiritualHistory = spiritualHistory || {days:{},dayMedals:{},streak:0,bestStreak:0,totalDays:0,unlockedBadges:[],weekDays:0,jumuahCount:0};
 let currentLevel = parseInt(safeGetItem('niyyah_current_level') || '1', 10) || 1;
-if (history.jumuahCount === undefined) history.jumuahCount = 0;
+if (spiritualHistory.jumuahCount === undefined) spiritualHistory.jumuahCount = 0;
 if (typeof state['tasbih'] === 'boolean') { delete state['tasbih']; saveState(); }
 if (typeof state['istighfar'] === 'boolean') { delete state['istighfar']; saveState(); }
 if (state._date !== TODAY) {
@@ -1645,31 +1645,31 @@ function checkAndSaveYesterdayStreak() {
     const lvl2Pct = getCalcLvlPct(2, state);
     const allComplete = LEVELS.every(l => getCalcLvlPct(l.id, state) >= 100);
     let dayMedal = 'bronze';
-    if (allComplete && history.streak >= 7) dayMedal = 'gold';
+    if (allComplete && spiritualHistory.streak >= 7) dayMedal = 'gold';
     else if (lvl2Pct >= 100) dayMedal = 'silver';
-    history.days[prevDate] = true;
-    if (!history.dayMedals) history.dayMedals = {};
-    history.dayMedals[prevDate] = dayMedal;
-    if (!history.dayScores) history.dayScores = {};
+    spiritualHistory.days[prevDate] = true;
+    if (!spiritualHistory.dayMedals) spiritualHistory.dayMedals = {};
+    spiritualHistory.dayMedals[prevDate] = dayMedal;
+    if (!spiritualHistory.dayScores) spiritualHistory.dayScores = {};
     const prevItems = LEVELS.filter(l => (state._unlocked||[]).includes(l.id)).flatMap(l => getLevelItems(l.id)).filter(_itemMatchesProfile);
-    history.dayScores[prevDate] = Math.round(getWeightedScore(prevItems, state));
+    spiritualHistory.dayScores[prevDate] = Math.round(getWeightedScore(prevItems, state));
     const todayDate  = new Date(TODAY + 'T12:00:00');
     const prevDateObj = new Date(prevDate + 'T12:00:00');
     const diffDays = Math.round((todayDate - prevDateObj) / 86400000);
     if (diffDays <= 0) return;
     if (diffDays === 1) {
-      history.streak = (history.streak || 0) + 1;
-      history._gracePending = false; 
+      spiritualHistory.streak = (spiritualHistory.streak || 0) + 1;
+      spiritualHistory._gracePending = false;
     } else if (diffDays === 2) {
-      history._gracePending = true;
-      history._graceMissedDate = getDateMinus(TODAY, 1);
-      history.streak = (history.streak || 0) + 1; 
+      spiritualHistory._gracePending = true;
+      spiritualHistory._graceMissedDate = getDateMinus(TODAY, 1);
+      spiritualHistory.streak = (spiritualHistory.streak || 0) + 1;
     } else if (diffDays > 2) {
-      history.streak = isSilenceDay() ? (history.streak || 0) : 1;
-      history._gracePending = false;
+      spiritualHistory.streak = isSilenceDay() ? (spiritualHistory.streak || 0) : 1;
+      spiritualHistory._gracePending = false;
     }
-    history.bestStreak = Math.max(history.bestStreak || 0, history.streak);
-    history.totalDays = (history.totalDays || 0) + 1;
+    spiritualHistory.bestStreak = Math.max(spiritualHistory.bestStreak || 0, spiritualHistory.streak);
+    spiritualHistory.totalDays = (spiritualHistory.totalDays || 0) + 1;
   } else {
     const todayDate  = new Date(TODAY + 'T12:00:00');
     const prevDateObj = new Date((prevDate || TODAY) + 'T12:00:00');
@@ -1677,38 +1677,38 @@ function checkAndSaveYesterdayStreak() {
     if (isSilenceDay()) {
       // Silence day: streak frozen, no break
     } else if (diffDays === 1) {
-      if ((history.streak || 0) > 0) {
-        history._gracePending = true;
-        history._graceMissedDate = prevDate;
+      if ((spiritualHistory.streak || 0) > 0) {
+        spiritualHistory._gracePending = true;
+        spiritualHistory._graceMissedDate = prevDate;
       } else {
-        history._gracePending = false;
+        spiritualHistory._gracePending = false;
       }
     } else if (diffDays > 1) {
-      history.streak = 0;
-      history._gracePending = false;
+      spiritualHistory.streak = 0;
+      spiritualHistory._gracePending = false;
     }
   }
-  history.weekDays = 0;
-  for (let i = 0; i < 7; i++) if (history.days[getDateMinus(TODAY, i+1)]) history.weekDays++;
+  spiritualHistory.weekDays = 0;
+  for (let i = 0; i < 7; i++) if (spiritualHistory.days[getDateMinus(TODAY, i+1)]) spiritualHistory.weekDays++;
   saveHistory();
 }
 function isGraceActive() {
-  if (!history._gracePending || !history._graceMissedDate) return false;
-  if (getLevelProgress(1) >= 100) return false; 
-  if (history.totalDays === 0) return false; 
+  if (!spiritualHistory._gracePending || !spiritualHistory._graceMissedDate) return false;
+  if (getLevelProgress(1) >= 100) return false;
+  if (spiritualHistory.totalDays === 0) return false;
   const yesterday = getDateMinus(TODAY, 1);
-  if (history._graceMissedDate !== yesterday) {
-    history._gracePending = false;
-    history._graceMissedDate = null;
+  if (spiritualHistory._graceMissedDate !== yesterday) {
+    spiritualHistory._gracePending = false;
+    spiritualHistory._graceMissedDate = null;
     saveHistory();
     return false;
   }
   return true;
 }
 function resolveGrace() {
-  if (history._gracePending) {
-    history._gracePending = false;
-    history._graceMissedDate = null;
+  if (spiritualHistory._gracePending) {
+    spiritualHistory._gracePending = false;
+    spiritualHistory._graceMissedDate = null;
     saveHistory();
     showToast(t('toast_streak_saved'));
     if (navigator.vibrate) navigator.vibrate([20, 30, 60]);
@@ -1719,9 +1719,9 @@ function getDateMinus(dateStr, days) {
 }
 function saveState()   { safeSetItem('spiritual_v2', JSON.stringify(state)); }
 function saveHistory() {
-  if (history.days) { var _keys = Object.keys(history.days).sort(); if (_keys.length > 365) { _keys.slice(0, _keys.length - 365).forEach(function(k) { delete history.days[k]; }); } }
-  if (history.dayMedals) { var _km = Object.keys(history.dayMedals).sort(); if (_km.length > 365) { _km.slice(0, _km.length - 365).forEach(function(k) { delete history.dayMedals[k]; }); } }
-  safeSetItem('spiritual_history', JSON.stringify(history));
+  if (spiritualHistory.days) { var _keys = Object.keys(spiritualHistory.days).sort(); if (_keys.length > 365) { _keys.slice(0, _keys.length - 365).forEach(function(k) { delete spiritualHistory.days[k]; }); } }
+  if (spiritualHistory.dayMedals) { var _km = Object.keys(spiritualHistory.dayMedals).sort(); if (_km.length > 365) { _km.slice(0, _km.length - 365).forEach(function(k) { delete spiritualHistory.dayMedals[k]; }); } }
+  safeSetItem('spiritual_history', JSON.stringify(spiritualHistory));
 }
 function getLevelProgress(levelId) { return getCalcLvlPct(levelId, state); }
 // 'none' removed — was a stub returning 'none'
@@ -2123,7 +2123,7 @@ function renderResume() {
   });
   levelsHtml += '</div>';
   const todayDone = getLevelProgress(1) >= 100;
-  const streakDisplay = history.streak + (todayDone ? 1 : 0);
+  const streakDisplay = spiritualHistory.streak + (todayDone ? 1 : 0);
   el.innerHTML = '<div class="resume-hero">' + ringHtml + '<div class="resume-title">' + msg.title + '</div><div class="resume-sub">' + msg.sub + '</div></div>' +
     '<div style="background:var(--card);border-radius:var(--r-lg);padding:14px 16px;margin-bottom:8px;display:flex;gap:24px;justify-content:center;">' +
       '<div style="text-align:center"><div style="font-family:var(--serif);font-size:28px;color:var(--t1);letter-spacing:-1px;">' + totalDone + '</div><div style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);font-weight:600;margin-top:2px;">Actes</div></div>' +
@@ -3115,10 +3115,10 @@ function toggleItem(id, event) {
         }
       }
       if (id === 'jumua') {
-        if (!history.jumuahDays) history.jumuahDays = {};
-        if (!history.jumuahDays[TODAY]) {
-          history.jumuahDays[TODAY] = true;
-          history.jumuahCount = (history.jumuahCount || 0) + 1;
+        if (!spiritualHistory.jumuahDays) spiritualHistory.jumuahDays = {};
+        if (!spiritualHistory.jumuahDays[TODAY]) {
+          spiritualHistory.jumuahDays[TODAY] = true;
+          spiritualHistory.jumuahCount = (spiritualHistory.jumuahCount || 0) + 1;
           saveHistory();
           showToast(t('jumuah_done'));
         }
@@ -3174,8 +3174,8 @@ function renderYearCalendar() {
       var isFuture = dStr > TODAY;
       var pct = 0;
       if (isToday) pct = todayPct;
-      else if (!isFuture && history.dayScores && history.dayScores[dStr]) pct = history.dayScores[dStr];
-      else if (!isFuture && history.days && history.days[dStr]) pct = 100;
+      else if (!isFuture && spiritualHistory.dayScores && spiritualHistory.dayScores[dStr]) pct = spiritualHistory.dayScores[dStr];
+      else if (!isFuture && spiritualHistory.days && spiritualHistory.days[dStr]) pct = 100;
       var cls = 'year-day';
       if (isFuture) cls += ' fy';
       else if (pct >= 80) cls += ' yg';
@@ -3234,9 +3234,9 @@ function renderProgression(skipIntro) {
     return;
   }
   const todayDone = getLevelProgress(1) >= 100;
-  const streakDisplay = history.streak + (todayDone ? 1 : 0);
-  const bestDisplay   = Math.max(history.bestStreak, streakDisplay);
-  const totalDisplay  = history.totalDays + (todayDone ? 1 : 0);
+  const streakDisplay = spiritualHistory.streak + (todayDone ? 1 : 0);
+  const bestDisplay   = Math.max(spiritualHistory.bestStreak, streakDisplay);
+  const totalDisplay  = spiritualHistory.totalDays + (todayDone ? 1 : 0);
   const HADITHS_DB = {
     zero: [
       { text: "Dis : Ô Mes serviteurs qui avez commis des excès contre vous-mêmes, ne désespérez pas de la miséricorde d'Allah.", ref: "Coran 39:53" },
@@ -3332,7 +3332,7 @@ function renderProgression(skipIntro) {
     const isToday = dStr === TODAY;
     var dayPct = 0;
     if (isToday) { dayPct = todayDone ? 100 : Math.round(getLevelProgress(1)); }
-    else if (history.days && history.days[dStr]) { dayPct = history.dayScores && history.dayScores[dStr] ? history.dayScores[dStr] : 100; }
+    else if (spiritualHistory.days && spiritualHistory.days[dStr]) { dayPct = spiritualHistory.dayScores && spiritualHistory.dayScores[dStr] ? spiritualHistory.dayScores[dStr] : 100; }
     var color = 'rgba(200,168,74,0.16)';
     if (dayPct >= 100) color = '#C8A84A';
     else if (dayPct >= 51) color = 'rgba(200,168,75,0.6)';
@@ -3420,7 +3420,7 @@ function renderProgression(skipIntro) {
   el.innerHTML = `
     <div style="padding:0 0 40px;"><!-- 1. TITRE SPIRITUEL --><div id="v2-spiritual-title" style="text-align:center;margin:0 16px 12px;min-height:110px;"></div><!-- 2. PROGRESSION -->${heroSectionP}<!-- 4. CHALLENGE FAJR --><div id="fajr-challenge-card" style="display:none;margin:0 16px 12px;"></div><!-- 5. SÉRIE EN COURS -->${streakSection}<!-- HADITH CONTEXTUEL --><div style="margin:0 16px 24px;padding:20px;background:linear-gradient(180deg,#15100a,#0e0a06);border:none;border-radius:14px;position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(200,168,74,.22),0 6px 16px rgba(0,0,0,.4);"><div style="position:absolute;top:-10px;right:12px;font-size:48px;opacity:0.07;font-family:serif;">"</div><div style="font-size:14px;line-height:1.7;color:var(--t1);font-style:italic;margin-bottom:10px;">${hadith.text}</div><div style="font-size:14px;color:#c8a84b;font-weight:600;letter-spacing:0.5px;">— ${hadith.ref}</div></div><!-- 6. HEATMAP 30 JOURS --><div style="margin:0 16px 24px;"><div style="font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t3);margin-bottom:12px;text-align:center;">${t('prog_heatmap')}</div><div style="display:grid;grid-template-columns:repeat(10,1fr);gap:4px;">
           ${heatmapHTML}
-        </div><div style="font-family:'Georgia',serif;font-size:16px;color:rgba(200,182,140,.85);text-align:center;margin-top:10px;font-style:italic;">${(history.totalDays||0)===0?t('today_first'):t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))}</div><button onclick="var c=document.getElementById('yearCalWrap');var _calIco='<svg width=\\'16\\' height=\\'16\\' viewBox=\\'0 0 16 16\\' fill=\\'none\\' stroke=\\'%23C8A84A\\' stroke-width=\\'1.3\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'><rect x=\\'2\\' y=\\'3\\' width=\\'12\\' height=\\'11\\' rx=\\'2\\'/><path d=\\'M2 6h12M5 1.5v3M11 1.5v3\\'/></svg> ';if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.innerHTML=_calIco+t('cal_hide');}else{c.style.display='none';this.innerHTML=_calIco+t('cal_annual');}" class="btn-carte-annuelle" aria-label="${t('cal_annual')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 6h12M5 1.5v3M11 1.5v3"/></svg> ${t('cal_annual')}</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<div style="text-align:center;margin:0 16px 24px;"><button onclick="showWeeklyBilan()" class="btn-voir-semaine">Voir ma semaine</button></div><!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Georgia',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{var _gl=JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];return _gl.length===0?t('graine_zero'):_gl.length+' '+t('graine_defis');}catch(e){return t('graine_zero');}})()}</div><div style="font-family:'Georgia',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Georgia',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
+        </div><div style="font-family:'Georgia',serif;font-size:16px;color:rgba(200,182,140,.85);text-align:center;margin-top:10px;font-style:italic;">${(spiritualHistory.totalDays||0)===0?t('today_first'):t('today_pct').replace('{n}',Math.round(getLevelProgress(1)))}</div><button onclick="var c=document.getElementById('yearCalWrap');var _calIco='<svg width=\\'16\\' height=\\'16\\' viewBox=\\'0 0 16 16\\' fill=\\'none\\' stroke=\\'%23C8A84A\\' stroke-width=\\'1.3\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'><rect x=\\'2\\' y=\\'3\\' width=\\'12\\' height=\\'11\\' rx=\\'2\\'/><path d=\\'M2 6h12M5 1.5v3M11 1.5v3\\'/></svg> ';if(c.style.display==='none'){c.style.display='block';calYear=new Date().getFullYear();renderYearCalendar();this.innerHTML=_calIco+t('cal_hide');}else{c.style.display='none';this.innerHTML=_calIco+t('cal_annual');}" class="btn-carte-annuelle" aria-label="${t('cal_annual')}"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#C8A84A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 6h12M5 1.5v3M11 1.5v3"/></svg> ${t('cal_annual')}</button><div id="yearCalWrap" style="display:none;margin-top:16px;background:var(--card);border:1px solid rgba(200,168,75,0.15);border-radius:12px;padding:16px;"><div id="yearCalContent"></div></div></div><!-- BILAN 7 JOURS -->${bilanHTML}<div style="text-align:center;margin:0 16px 24px;"><button onclick="showWeeklyBilan()" class="btn-voir-semaine">Voir ma semaine</button></div><!-- 7. GRAINE DE LUMIÈRE --><div style="margin:0 16px 24px;background:linear-gradient(135deg,rgba(200,168,75,0.08),rgba(200,168,75,0.03));border:1px solid rgba(200,168,75,0.25);border-radius:20px;padding:28px;text-align:center;user-select:none;-webkit-user-select:none;"><div style="font-family:'Georgia',serif;font-size:13px;letter-spacing:3px;color:#C8A84A;text-transform:uppercase;margin-bottom:16px;">${t('graine_title')}</div><div style="position:relative;width:160px;height:160px;min-width:160px;min-height:160px;margin:0 auto 16px;"><div style="position:absolute;inset:-20px;border-radius:50%;background:radial-gradient(circle,rgba(200,168,75,0.1) 0%,rgba(200,168,75,0.04) 50%,transparent 70%);"></div><div style="position:relative;">${getGraineSVG((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div></div><div style="font-family:'Inter',var(--sans);font-size:16px;color:rgba(255,255,255,0.6);margin-bottom:6px;">${(function(){try{var _gl=JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];return _gl.length===0?t('graine_zero'):_gl.length+' '+t('graine_defis');}catch(e){return t('graine_zero');}})()}</div><div style="font-family:'Georgia',serif;font-size:22px;font-style:italic;color:#C8A84A;margin-bottom:12px;">${getGraineStageName((function(){try{return JSON.parse(safeGetItem('niyyah_defi_v2')||'{}').historique||[];}catch(e){return[];}})().length)}</div><div style="font-family:'Georgia',serif;font-size:17px;font-style:italic;color:#C8A84A;opacity:0.7;line-height:1.6;">${t('graine_quote')}</div></div>
 
       </div>
   `;
@@ -6992,7 +6992,7 @@ function _regardStreakTap() {
   safeSetItem('niyyah_regard_streak_current', String(current));
   safeSetItem('niyyah_regard_streak_record', String(record));
   safeSetItem('niyyah_regard_streak_last_check', today);
-  // Save to history
+  // Save to spiritualHistory
   var hist = []; try { hist = JSON.parse(safeGetItem('niyyah_regard_streak_history') || '[]'); } catch(e) {}
   hist.push({ date: today, streak: current });
   if (hist.length > 365) hist = hist.slice(-365);
@@ -7556,7 +7556,7 @@ var _CONSEILS_CHEMIN = {
 };
 function _getWeeklyDominante() {
   var bilanData = {}; try { bilanData = JSON.parse(safeGetItem('niyyah_bilans') || '{}'); } catch(e) {}
-  var _hist = history;
+  var _hist = spiritualHistory;
   try { var _hRaw = safeGetItem('spiritual_history'); if (_hRaw) _hist = JSON.parse(_hRaw) || _hist; } catch(e) {}
   var bilanCount = 0, doneDays = 0, fajrCount = 0, bienfCount = 0, lectCount = 0;
   for (var i = 0; i < 7; i++) {
@@ -7585,7 +7585,7 @@ function _getWeeklyStats() {
   var doneDays = 0, totalGestes = 0, fajrDays = 0;
   var catCounts = { rituels: 0, bienfaisance: 0, lecture: 0, duaa: 0 };
   var hasSnapshots = false;
-  var _hist = history;
+  var _hist = spiritualHistory;
   try { var _hRaw = safeGetItem('spiritual_history'); if (_hRaw) _hist = JSON.parse(_hRaw) || _hist; } catch(e) {}
   for (var i = 0; i < 7; i++) {
     var d = getDateMinus(TODAY, i);
@@ -9377,7 +9377,7 @@ const TAWBA_MESSAGES = [
 function checkTawba() {
   const lastDate = safeGetItem('niyyah_tawba_shown');
   if (lastDate === TODAY) return false;
-  if (!history || !history.totalDays || history.totalDays < 1) return false;
+  if (!spiritualHistory || !spiritualHistory.totalDays || spiritualHistory.totalDays < 1) return false;
 
   /* ══ POINT 4 — Algorithme de détection d'absence ══
    * Calcul : differenceInDays = (Date.now() - lastInteraction) / 86400000
@@ -9404,9 +9404,9 @@ function checkTawba() {
   const yesterday = getDateMinus(TODAY, 1);
   const twoDaysAgo = getDateMinus(TODAY, 2);
   // Tawba si 2+ jours sans pratiquer ET streak était > 0
-  const missedYesterday = !history.days[yesterday];
-  const missedTwoDays = !history.days[twoDaysAgo];
-  const hadStreak = (history.bestStreak || 0) >= 1;
+  const missedYesterday = !spiritualHistory.days[yesterday];
+  const missedTwoDays = !spiritualHistory.days[twoDaysAgo];
+  const hadStreak = (spiritualHistory.bestStreak || 0) >= 1;
   if (missedYesterday && missedTwoDays && hadStreak) {
     setTimeout(() => showTawba(), 1200);
     return true;
@@ -9429,7 +9429,7 @@ function showTawba() {
   if (_lastOpen) {
     daysSince = Math.floor((Date.now() - parseInt(_lastOpen)) / 86400000);
   } else {
-    // Fallback : dernier jour actif dans history
+    // Fallback : dernier jour actif dans spiritualHistory
     var _lastActiveDate = Object.keys(_histRaw.days || {}).sort().pop();
     if (_lastActiveDate) {
       daysSince = Math.floor((new Date(TODAY) - new Date(_lastActiveDate)) / 86400000);
@@ -9443,9 +9443,9 @@ function showTawba() {
     // Aucune action sur le score, on préserve tout
   } else if (daysSince >= 7) {
     // Reset doux du streak uniquement (pas du niveau ni des badges)
-    if (history.streak > 0) {
-      history.streak = 0;
-      try { safeSetItem('spiritual_history', JSON.stringify(history)); } catch(e) {}
+    if (spiritualHistory.streak > 0) {
+      spiritualHistory.streak = 0;
+      try { safeSetItem('spiritual_history', JSON.stringify(spiritualHistory)); } catch(e) {}
     }
   }
 
@@ -9486,9 +9486,9 @@ function showTawba() {
   // Info streak avec message bienveillant
   const streakEl = document.getElementById('tawbaStreakInfo');
   if (streakEl) {
-    if (daysSince < 7 && history.bestStreak > 0) {
-      streakEl.textContent = t('tawba_streak_prefix') + history.bestStreak + t('tawba_streak_suffix');
-    } else if (history.bestStreak > 0) {
+    if (daysSince < 7 && spiritualHistory.bestStreak > 0) {
+      streakEl.textContent = t('tawba_streak_prefix') + spiritualHistory.bestStreak + t('tawba_streak_suffix');
+    } else if (spiritualHistory.bestStreak > 0) {
       streakEl.textContent = t('tawba_week_msg');
     } else {
       streakEl.textContent = '';
@@ -9586,7 +9586,7 @@ function checkWeeklyBilan() {
   const lastShown = safeGetItem('niyyah_bilan_week');
   const thisWeek = getCurrentWeekKey();
   if (lastShown === thisWeek) return false;
-  if ((history.totalDays || 0) < 1) return false;
+  if ((spiritualHistory.totalDays || 0) < 1) return false;
   // Seuil horaire : Maghrib + 1h, fallback 20h
   var seuil = 20 * 60; // 20h en minutes
   if (typeof _prayerTimes !== 'undefined' && _prayerTimes && _prayerTimes['Maghrib']) {
@@ -9905,11 +9905,11 @@ function getMurmureAdaptatif(moment) {
   var history = {};
   try {
     state   = safeParseJSON("spiritual_v2", {});
-    history = safeParseJSON("spiritual_history", {});
+    spiritualHistory = safeParseJSON("spiritual_history", {});
   } catch(e) {}
 
   var todayScore = state._todayScore || state._score || 0;
-  var streak     = history.streak || 0;
+  var streak     = spiritualHistory.streak || 0;
 
   // Si tâches bien avancées (>60%) → message de renforcement positif
   if (moment === "midi" && todayScore >= 60) {
@@ -14920,7 +14920,7 @@ function v2ConfirmIntention() {
   const intention = custom || (selected ? (selected.dataset.niyyahText || selected.textContent) : null);
   if (!intention) return;
 
-  // Track selected niyyah ID in history (30-day rolling)
+  // Track selected niyyah ID in spiritualHistory (30-day rolling)
   if (selected && selected.dataset.niyyahId) {
     _addToNiyyahHistory([parseInt(selected.dataset.niyyahId, 10)]);
   }
@@ -15367,11 +15367,11 @@ function _pickWaqtItem(priere, pool) {
     var stored = JSON.parse(safeGetItem(pickKey) || 'null');
     if (stored && stored.date === today && stored.idx >= 0 && stored.idx < pool.length) return stored.idx;
   } catch(e) {}
-  // Load history
+  // Load spiritualHistory
   var hist = [];
   try { hist = JSON.parse(safeGetItem(histKey) || '[]'); } catch(e) {}
   if (!Array.isArray(hist)) hist = [];
-  // Build available indices (not in recent history)
+  // Build available indices (not in recent spiritualHistory)
   var i, available = [];
   for (i = 0; i < pool.length; i++) { if (hist.indexOf(i) === -1) available.push(i); }
   // Full cycle done — reset
@@ -15388,7 +15388,7 @@ function _pickWaqtItem(priere, pool) {
   var idx = candidates[Math.floor(Math.random() * candidates.length)];
   // Save today's pick
   safeSetItem(pickKey, JSON.stringify({ date: today, idx: idx }));
-  // Update history — keep last (pool.length - 1) so no item repeats within a full cycle
+  // Update spiritualHistory — keep last (pool.length - 1) so no item repeats within a full cycle
   hist.push(idx);
   var maxHist = Math.max(pool.length - 1, 1);
   if (hist.length > maxHist) hist = hist.slice(-maxHist);
@@ -15965,9 +15965,9 @@ function _getNiyyahHistory() {
   } catch(e) { return []; }
 }
 
-function _saveNiyyahHistory(history) {
+function _saveNiyyahHistory(spiritualHistory) {
   var cutoff = Date.now() - 30 * 86400000;
-  var clean = history.filter(function(e) { return e.ts > cutoff; });
+  var clean = spiritualHistory.filter(function(e) { return e.ts > cutoff; });
   safeSetItem('niyyah_history', JSON.stringify(clean));
 }
 
@@ -15985,7 +15985,7 @@ function _pickFromCategory(pool, category, excludeIds, subcategory) {
     return excludeIds.indexOf(n.id) === -1;
   });
   if (candidates.length === 0) {
-    // Fallback: ignore history if pool exhausted
+    // Fallback: ignore spiritualHistory if pool exhausted
     candidates = pool.filter(function(n) {
       if (n.category !== category) return false;
       if (subcategory && n.subcategory !== subcategory) return false;
@@ -16529,7 +16529,7 @@ function updateFajrChallenge() {
 function _updateOrbCoherence() {
   try {
     var coh = (typeof _orbCoherenceTier === 'function') ? _orbCoherenceTier() : '';
-    var st = (typeof history !== 'undefined' && history && history.streak) ? history.streak : 0;
+    var st = (typeof spiritualHistory !== 'undefined' && spiritualHistory && spiritualHistory.streak) ? spiritualHistory.streak : 0;
     var streakTier = st >= 40 ? 's3' : st >= 21 ? 's2' : st >= 7 ? 's1' : '';
     document.querySelectorAll('.orb-wrap-v2').forEach(function (o) {
       if (coh) o.setAttribute('data-coherence', coh); else o.removeAttribute('data-coherence');
