@@ -14308,6 +14308,8 @@ const Capacitor = {
 
 /* ══ BOUTON RETOUR ANDROID — handler popstate centralisé ══ */
 window.addEventListener('popstate', function() {
+  /* DEBUG TEMPORAIRE — à retirer après confirmation */
+  showToast('\u25c4 popstate | view:' + (typeof v2CurrentView !== 'undefined' ? v2CurrentView : '?') + ' | state:' + (history.state ? JSON.stringify(history.state) : 'null'));
   // Scanner Hub a son propre handler (_scannerHubOnPop) — ne pas interférer
   if (document.getElementById('scanner-hub-overlay')) return;
   // Niveau 1 — fermer la modale ouverte en priorité
