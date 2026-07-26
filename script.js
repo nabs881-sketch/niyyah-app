@@ -14323,6 +14323,8 @@ window.addEventListener('popstate', function() {
   if (ro) { closeRepere(); return; }
   var ts = document.getElementById('tafakkurScreen');
   if (ts && ts.classList.contains('show')) { closeTafakkur(true); return; }
+  var vr = document.getElementById('vue-rituel');
+  if (vr && !vr.classList.contains('hidden')) { closeVueRituel(); return; }
   // Niveau 2 — revenir au Sanctuaire depuis une sous-vue
   if (typeof v2CurrentView !== 'undefined' && v2CurrentView !== 'sanctuaire') {
     v2GoSanctuaire();
@@ -19810,6 +19812,7 @@ function openVueRituel(prayer) {
   const v = document.getElementById('vue-rituel');
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_vuedujour') !== '1') return _niyyahIntro('vuedujour', function(){ openVueRituel(prayer); });
+  try { history.pushState({ niyyah_modal: 'vuedujour' }, ''); } catch(e) {}
   _saveScroll();
   _rituelOriginTab = (document.querySelector('.v2-tab.active') || {}).id || 'v2nav-sanctuaire';
   v.querySelector('.rituel-titre').textContent = 'APRÈS ' + prayer.toUpperCase();
@@ -20024,6 +20027,7 @@ function openVueAuFilDuJour() {
   const v = document.getElementById('vue-rituel');
   if (!v) return;
   if (v.classList.contains('hidden') && safeGetItem('niyyah_intro_aufildujour') !== '1') return _niyyahIntro('aufildujour', openVueAuFilDuJour);
+  try { history.pushState({ niyyah_modal: 'fildujour' }, ''); } catch(e) {}
   _saveScroll();
   _rituelOriginTab = (document.querySelector('.v2-tab.active') || {}).id || 'v2nav-sanctuaire';
   window._rituelFromFil = true;
