@@ -14323,6 +14323,10 @@ window.addEventListener('popstate', function() {
   if (ro) { closeRepere(); return; }
   var ts = document.getElementById('tafakkurScreen');
   if (ts && ts.classList.contains('show')) { closeTafakkur(true); return; }
+  var nm = document.getElementById('niyyahModal-v2');
+  if (nm && nm.classList.contains('open')) { v2CloseModal(); return; }
+  var nrm = document.getElementById('niyyahReadModal-v2');
+  if (nrm) { nrm.remove(); if (typeof hideAlHayaBtn === 'function') hideAlHayaBtn(); return; }
   var vr = document.getElementById('vue-rituel');
   if (vr && !vr.classList.contains('hidden')) { closeVueRituel(); return; }
   // Niveau 2 — revenir au Sanctuaire depuis une sous-vue
@@ -14646,6 +14650,7 @@ function closeOrientationPicker() {
    MODAL NIYYAH
    ───────────────────────────────────────────── */
 function v2OpenNiyyahModal() {
+  try { history.pushState({ niyyah_modal: 'intention' }, ''); } catch(e) {}
   // If niyyah already anchored today → show read-only modal
   var _today = todayKey();
   if (safeGetItem('niyyah_intention_date') === _today && safeGetItem('niyyah_intention_label')) {
