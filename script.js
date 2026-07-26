@@ -12539,6 +12539,8 @@ function _showWaswasaScreen() {
 }
 
 function v2GoPriere() {
+  if (v2CurrentView === 'sanctuaire') { try { history.pushState({ niyyah_view: 'priere' }, ''); } catch(e) {} }
+  v2CurrentView = 'priere';
   setupTopUI('priere');
   document.body.classList.add('in-priere-view');
   document.body.classList.remove('pratique-active', 'in-progression-view', 'in-nafs-view');
@@ -12675,6 +12677,8 @@ function v2GoNafs() {
   if (safeGetItem('nafs_waswasa_seen') && !safeGetItem('nafs_avertissement_seen')) safeSetItem('nafs_avertissement_seen', '1');
   // Avertissement à la 1ère ouverture
   if (!safeGetItem('nafs_avertissement_seen')) _showWaswasaScreen();
+  if (v2CurrentView === 'sanctuaire') { try { history.pushState({ niyyah_view: 'nafs' }, ''); } catch(e) {} }
+  v2CurrentView = 'nafs';
   setupTopUI('nafs');
   document.body.classList.add('in-nafs-view');
   _nAn('nafs_visited');
