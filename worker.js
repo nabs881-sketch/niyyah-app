@@ -684,14 +684,14 @@ async function handleRegarde(request, env) {
     // ── Flow unifié Sonnet (gratuits et premium — même qualité, quota seul diffère) ──
     try {
       const resp = await callAnthropic(env, {
-        model: 'claude-sonnet-4-20250514', max_tokens: 400, temperature: 0.6,
+        model: MODEL_SONNET, max_tokens: 400, temperature: 0.6,
         system: buildRegardePremiumPrompt(_versetsRecents),
         messages: [{ role: 'user', content: [
           { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
           { type: 'text', text: 'Regarde cette image.' }
         ]}]
       });
-      logApiUsage('regard', 'claude-sonnet-4-20250514', resp.usage);
+      logApiUsage('regard', MODEL_SONNET, resp.usage);
       const text = resp.content?.[0]?.text || '';
       const json = extractJSON(text);
       if (json && json.sujet) {
