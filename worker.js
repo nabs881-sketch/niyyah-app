@@ -266,6 +266,7 @@ EXEMPLES DU NIVEAU ATTENDU :
     }
 
     const data = await response.json();
+    logApiUsage('scanner', 'claude-sonnet-4-20250514', data.usage);
     const intention = data.content?.[0]?.text?.trim();
     if (!intention) throw new Error('Réponse vide');
 
@@ -386,6 +387,21 @@ async function callAnthropic(env, params) {
     throw new Error(`Anthropic API error ${response.status}: ${errText}`);
   }
   return response.json();
+}
+
+/**
+ * Log Anthropic API usage to Cloudflare Workers logs (wrangler tail / dashboard).
+ * Each log line is a parseable JSON object for easy filtering/aggregation.
+ */
+function logApiUsage(feature, model, usage) {
+  console.log(JSON.stringify({
+    niyyah_api: true,
+    feature,
+    model,
+    input_tokens:  usage?.input_tokens  ?? null,
+    output_tokens: usage?.output_tokens ?? null,
+    date: new Date().toISOString()
+  }));
 }
 
 function extractJSON(text) {
@@ -581,7 +597,8 @@ function validateRegardeQuestion(question) {
 async function handleNiyyah(request, env) {
   try {
     const body = await request.json();
-    const { image } = body;
+    const { image, uid } = body;
+    console.log(JSON.stringify({ niyyah_uid: true, feature: 'niyyah', uid: uid || null, date: new Date().toISOString() }));
     if (!image) return jsonResponseV2({ suggestions: [], error: 'image manquante', source: 'fallback' }, 400);
     if (image.length > 2_000_000) return jsonResponseV2({ suggestions: [], error: 'Image too large', source: 'fallback' }, 413);
     const now = new Date();
@@ -599,6 +616,7 @@ async function handleNiyyah(request, env) {
           { type: 'text', text: prompt }
         ]}]
       });
+      logApiUsage('niyyah', MODEL_SONNET, response.usage);
       const rawText = response.content?.[0]?.text || '';
       const parsed = extractJSON(rawText);
       // Support new 3-suggestions format
@@ -652,7 +670,8 @@ async function getRegardLibrary(env) {
 async function handleRegarde(request, env) {
   try {
     const body = await request.json();
-    const { image, seen_versets } = body;
+    const { image, seen_versets, uid } = body;
+    console.log(JSON.stringify({ niyyah_uid: true, feature: 'regard', uid: uid || null, date: new Date().toISOString() }));
     const _versetsRecents = Array.isArray(body.versets_recents) && body.versets_recents.length > 0
       ? body.versets_recents.slice(0, 20).map(v => sanitizeText(v, 80)).filter(v => v).join(', ')
       : 'Aucun';
@@ -672,6 +691,7 @@ async function handleRegarde(request, env) {
           { type: 'text', text: 'Regarde cette image.' }
         ]}]
       });
+      logApiUsage('regard', 'claude-sonnet-4-20250514', resp.usage);
       const text = resp.content?.[0]?.text || '';
       const json = extractJSON(text);
       if (json && json.sujet) {
@@ -735,6 +755,7 @@ async function _callVerify(env, userMsg) {
       { role: 'assistant', content: '{' }
     ]
   });
+  logApiUsage('verify', 'claude-sonnet-4-20250514', resp.usage);
   const rawText = '{' + (resp.content?.[0]?.text || '');
   return extractJSON(rawText);
 }
@@ -914,6 +935,7 @@ function buildBilanUserMessage(body) {
 async function handleBilanPremium(request, env) {
   try {
     const body = await request.json();
+    console.log(JSON.stringify({ niyyah_uid: true, feature: 'bilan', uid: body.uid || null, date: new Date().toISOString() }));
     const systemPrompt = buildBilanSystemPrompt(body.prenom);
     const userMessage = buildBilanUserMessage(body);
 
@@ -924,6 +946,7 @@ async function handleBilanPremium(request, env) {
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }]
     });
+    logApiUsage('bilan', MODEL_SONNET, response.usage);
 
     const text = response.content?.[0]?.text?.trim();
     if (!text) {

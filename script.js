@@ -7826,7 +7826,7 @@ function showWeeklyBilan() {
     fetch('https://niyyah-api.nabs881.workers.dev/api/bilan-premium', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prenom: prenom || '', profil: _profil, stats: { gestes: stats.totalGestes, fajr: stats.fajrDays, journees: stats.doneDays, bilans: _bilanCount }, stats_passee: _archive, dominante: dominante, zone_manquante: _manque, bontes_semaine: _bontesSemaine, etats_semaine: _etatsSemaine, intentions_semaine: getIntentionHistory7(), defi_semaine: _defiPayload })
+      body: JSON.stringify({ uid: getOrCreateUID(), prenom: prenom || '', profil: _profil, stats: { gestes: stats.totalGestes, fajr: stats.fajrDays, journees: stats.doneDays, bilans: _bilanCount }, stats_passee: _archive, dominante: dominante, zone_manquante: _manque, bontes_semaine: _bontesSemaine, etats_semaine: _etatsSemaine, intentions_semaine: getIntentionHistory7(), defi_semaine: _defiPayload })
     }).then(function(r) { return r.json(); }).then(function(data) {
       if (data && data.message) {
         safeSetItem(_weekKey, data.message);
@@ -9713,6 +9713,28 @@ function setPremium(bool) {
 window.isPremium = isPremium;
 window.unlockPremium = unlockPremium;
 window.setPremium = setPremium;
+
+// ── UUID anonyme par installation ────────────────────────────────────────────
+var _cachedUID = null;
+function getOrCreateUID() {
+  if (_cachedUID) return _cachedUID;
+  var stored = safeGetItem('niyyah_uid');
+  if (stored && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(stored)) {
+    _cachedUID = stored;
+    return _cachedUID;
+  }
+  var uid = (typeof crypto !== 'undefined' && crypto.randomUUID)
+    ? crypto.randomUUID()
+    : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0;
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+      });
+  safeSetItem('niyyah_uid', uid);
+  _cachedUID = uid;
+  return _cachedUID;
+}
+window.getOrCreateUID = getOrCreateUID;
+
 function _maybeShowFreemiumAfterAction() {
   if (isPremium()) return;
   if (safeGetItem('niyyah_plus_intro') === '1') return;
@@ -18693,7 +18715,7 @@ function regardeCapture() {
     fetch('https://niyyah-api.nabs881.workers.dev/api/regarde', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64, seen_versets: _seenVersets, premium: isPremium(), versets_recents: _getRegardeHistory() }),
+      body: JSON.stringify({ uid: getOrCreateUID(), image: base64, seen_versets: _seenVersets, premium: isPremium(), versets_recents: _getRegardeHistory() }),
       signal: _acR.signal
     })
     .then(function(res) {
@@ -19466,7 +19488,7 @@ async function scannerAnalyzeImage(imageData) {
     var response = await fetch('https://niyyah-api.nabs881.workers.dev/api/niyyah', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ image: base64, hour: now.getHours(), isFriday: now.getDay() === 5, isRamadan: false }),
+      body: JSON.stringify({ uid: getOrCreateUID(), image: base64, hour: now.getHours(), isFriday: now.getDay() === 5, isRamadan: false }),
       signal: controller.signal
     });
     clearTimeout(timer);
