@@ -7827,7 +7827,17 @@ function showWeeklyBilan() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ uid: getOrCreateUID(), prenom: prenom || '', profil: _profil, stats: { gestes: stats.totalGestes, fajr: stats.fajrDays, journees: stats.doneDays, bilans: _bilanCount }, stats_passee: _archive, dominante: dominante, zone_manquante: _manque, bontes_semaine: _bontesSemaine, etats_semaine: _etatsSemaine, intentions_semaine: getIntentionHistory7(), defi_semaine: _defiPayload })
-    }).then(function(r) { return r.json(); }).then(function(data) {
+    }).then(function(r) {
+      if (r.status === 429) {
+        return r.json().then(function(err) {
+          if (err && err.upgrade_hint) { showQuotaLimit('bilan'); }
+          else { showToast('Bilan d\u00e9j\u00e0 g\u00e9n\u00e9r\u00e9 cette semaine'); }
+          return null;
+        }).catch(function() { return null; });
+      }
+      return r.json();
+    }).then(function(data) {
+      if (!data) return;
       if (data && data.message) {
         safeSetItem(_weekKey, data.message);
         var el = document.getElementById('_wkConseil');
@@ -18721,7 +18731,28 @@ function regardeCapture() {
       signal: _acR.signal
     })
     .then(function(res) {
-      if (res.status === 429) { showToast('Quota IA atteint, r\u00e9essayez dans 1h'); if (!_done) { _done = true; clearTimeout(_toR); setTimeout(_showErrorUI, 2500); } return null; }
+      if (res.status === 429) {
+        return res.json().then(function(err) {
+          if (_done) return null;
+          _done = true; clearTimeout(_toR);
+          var _upg = err && err.upgrade_hint;
+          if (_upg) {
+            content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;">'
+              + '<div style="font-size:16px;font-style:italic;color:rgba(200,168,75,0.85);margin-bottom:16px;">Tu as utilis\u00e9 ton Regard gratuit.</div>'
+              + '<div style="font-size:14px;color:rgba(200,168,75,0.5);margin-bottom:24px;">Passe \u00e0 Niyyah+ pour scanner sans limite.</div>'
+              + '<button onclick="regardeClose();openFreemium(\'regard\');" style="padding:10px 24px;border-radius:12px;border:none;background:linear-gradient(135deg,#D4AF37,#B8940A);color:#1a1a0e;font-family:\'Georgia\',serif;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:12px;">D\u00e9couvrir Niyyah+ \u2726</button>'
+              + '<br><button onclick="regardeClose();" style="padding:8px 20px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:rgba(200,168,75,0.6);font-size:13px;cursor:pointer;">Fermer</button>'
+              + '</div>';
+          } else {
+            content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);">'
+              + 'Quota du jour atteint.<br><span style="font-size:13px;">Reviens demain \u2014 inch\'Allah.</span>'
+              + '<br><button onclick="regardeClose();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">Fermer</button>'
+              + '</div>';
+          }
+          content.style.opacity = '1';
+          return null;
+        }).catch(function() { if (!_done) { _done = true; clearTimeout(_toR); _showErrorUI(); } return null; });
+      }
       if (res.status >= 500) { showToast('Service indisponible'); if (!_done) { _done = true; clearTimeout(_toR); setTimeout(_showErrorUI, 2500); } return null; }
       return res.json();
     })
@@ -19495,7 +19526,12 @@ async function scannerAnalyzeImage(imageData) {
     });
     clearTimeout(timer);
 
-    if (response.status === 429) { showToast('Quota IA atteint, r\u00e9essayez dans 1h'); return null; }
+    if (response.status === 429) {
+      var _qErr = await response.json().catch(function() { return {}; });
+      if (_qErr && _qErr.upgrade_hint) { showQuotaLimit('scan'); }
+      else { showToast('Quota du jour atteint \u2014 reviens demain'); }
+      return null;
+    }
     if (response.status >= 500) { showToast('Service indisponible'); return null; }
 
     var data = await response.json();
