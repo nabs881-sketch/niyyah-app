@@ -662,131 +662,27 @@ async function handleRegarde(request, env) {
     if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
     if (image.length > 2_000_000) return jsonResponseV2({ error: 'Image too large' }, 413);
 
-    // ── Flow Premium ──
-    if (body.premium === true) {
-      try {
-        const premResp = await callAnthropic(env, {
-          model: 'claude-sonnet-4-20250514', max_tokens: 400, temperature: 0.6,
-          system: buildRegardePremiumPrompt(_versetsRecents),
-          messages: [{ role: 'user', content: [
-            { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
-            { type: 'text', text: 'Regarde cette image.' }
-          ]}]
-        });
-        const premText = premResp.content?.[0]?.text || '';
-        const premJson = extractJSON(premText);
-        if (premJson && premJson.sujet) {
-          let _med = premJson.meditation || '';
-          if (_med && detectForbiddenContent(_med)) _med = ''; // filet : on retire une méditation qui glisse verset/hadith/fatwa/arabe
-          return jsonResponseV2({ mode: 'premium', sujet: premJson.sujet, reference: premJson.reference || '', meditation: _med });
-        }
-        return jsonResponseV2({ mode: 'premium', sujet: premText.substring(0, 200), reference: '', meditation: '' });
-      } catch (e) {
-        return jsonResponseV2({ error: 'Premium indisponible' }, 502);
-      }
-    }
-
-    // PASS 1 : Classification Haiku
-    let category = 'INDETERMINE';
-    let confidence = 0;
+    // ── Flow unifié Sonnet (gratuits et premium — même qualité, quota seul diffère) ──
     try {
-      const classifResp = await callAnthropic(env, {
-        model: MODEL_HAIKU, max_tokens: 50, temperature: 0.1,
+      const resp = await callAnthropic(env, {
+        model: 'claude-sonnet-4-20250514', max_tokens: 400, temperature: 0.6,
+        system: buildRegardePremiumPrompt(_versetsRecents),
         messages: [{ role: 'user', content: [
           { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
-          { type: 'text', text: REGARDE_CLASSIFIER_PROMPT }
+          { type: 'text', text: 'Regarde cette image.' }
         ]}]
       });
-      const classifText = classifResp.content?.[0]?.text || '';
-      const classifJson = extractJSON(classifText);
-      if (classifJson && classifJson.category) {
-        const validCats = ['CIEL', 'EAU', 'ANIMAL', 'NATURE', 'NOURRITURE', 'HABITAT', 'VISAGE', 'INDETERMINE', 'LUMIERE_OMBRE', 'MONTAGNE', 'MORT', 'OBJET_PERSONNEL', 'ROUTE', 'TEXTE', 'TISSU', 'VEHICULE', 'MIROIR', 'PLANTE', 'ECRAN', 'ENFANT_FAMILLE', 'MAIN_TRAVAIL', 'VILLE', 'TEMPS', 'INAPPROPRIE'];
-        if (validCats.includes(classifJson.category)) {
-          category = classifJson.category;
-          confidence = typeof classifJson.confidence === 'number' ? classifJson.confidence : 0.8;
-          if (confidence < 0.80) category = 'INDETERMINE';
-        }
+      const text = resp.content?.[0]?.text || '';
+      const json = extractJSON(text);
+      if (json && json.sujet) {
+        let _med = json.meditation || '';
+        if (_med && detectForbiddenContent(_med)) _med = '';
+        return jsonResponseV2({ mode: 'premium', sujet: json.sujet, reference: json.reference || '', meditation: _med });
       }
-    } catch (e) { category = 'INDETERMINE'; confidence = 0; }
-    // Filtre pudeur : réponse immédiate sans PASS 2
-    if (category === 'INAPPROPRIE') {
-      return jsonResponseV2({
-        mode: 'verset', category: 'INAPPROPRIE', confidence, verset_index: 0,
-        verset_override: {
-          texte: "Dis aux croyants de baisser leurs regards et de garder leur chasteté. C'est plus pur pour eux. Allah est, certes, Parfaitement Connaisseur de ce qu'ils font.",
-          reference: "An-Nûr 24:30",
-          murmure: "Détourne ton regard.",
-          epoque: "Période médinoise",
-          contexte: "Verset révélé pour établir l'éthique du regard dans la communauté musulmane.",
-          sabab: null
-        }
-      });
+      return jsonResponseV2({ mode: 'premium', sujet: text.substring(0, 200), reference: '', meditation: '' });
+    } catch (e) {
+      return jsonResponseV2({ error: 'Service indisponible' }, 502);
     }
-    // ── PASS 2 : sélection précise du verset dans le pool ───────────────────
-    // Anti-répétition : on ne propose à Haiku que les versets non encore vus.
-    const seenForCat = Array.isArray(seen_versets)
-      ? seen_versets.filter(s => s.category === category).map(s => s.verset_index)
-      : [];
-
-    // Charger la librairie (KV cache → GitHub Pages)
-    let lib = null;
-    try { lib = await getRegardLibrary(env); } catch(e) {}
-
-    const catData   = lib && lib[category];
-    const versets   = catData && Array.isArray(catData.versets) ? catData.versets : [];
-    const poolSize  = versets.length || 8;
-    const allIdx    = Array.from({ length: poolSize }, (_, i) => i);
-    const unseenIdx = allIdx.filter(i => !seenForCat.includes(i));
-    const candidates = unseenIdx.length > 0 ? unseenIdx : allIdx;
-    const returning_verset = unseenIdx.length === 0;
-
-    let verset_index;
-
-    // Pass 2 uniquement si la lib est disponible et qu'il y a au moins 2 candidats
-    if (versets.length > 0 && candidates.length > 1) {
-      const candidateLines = candidates.map((idx, pos) => {
-        const v = versets[idx];
-        return `[${pos}] "${v.texte}" — ${v.reference} · ${v.murmure}`;
-      }).join('\n');
-
-      const pass2Prompt =
-`Catégorie détectée : ${category}
-
-Versets candidats pour cette catégorie :
-${candidateLines}
-
-Regarde attentivement l'image. Identifie CE QUI EST VRAIMENT PHOTOGRAPHIÉ — l'objet précis, la matière, la situation, le détail visible — pas juste la catégorie générale.
-Choisis le verset dont le sens résonne le mieux avec CET objet ou CETTE scène spécifique.
-
-Réponds uniquement en JSON strict, sans texte autour :
-{"index": 0, "raison": "2-3 mots"}
-index = numéro entre crochets du verset choisi (0 à ${candidates.length - 1}).`;
-
-      try {
-        const pass2Resp = await callAnthropic(env, {
-          model: MODEL_HAIKU, max_tokens: 60, temperature: 0.1,
-          messages: [{ role: 'user', content: [
-            { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: image } },
-            { type: 'text', text: pass2Prompt }
-          ]}]
-        });
-        const p2Text = pass2Resp.content?.[0]?.text || '';
-        const p2Json = extractJSON(p2Text);
-        if (p2Json && typeof p2Json.index === 'number'
-            && p2Json.index >= 0 && p2Json.index < candidates.length) {
-          verset_index = candidates[p2Json.index];
-        }
-      } catch(e) { /* silencieux — fallback aléatoire ci-dessous */ }
-    }
-
-    // Fallback aléatoire si Pass 2 échoue ou non applicable
-    if (typeof verset_index !== 'number') {
-      verset_index = candidates[Math.floor(Math.random() * candidates.length)];
-    }
-
-    const response = { mode: 'verset', category, confidence, verset_index };
-    if (returning_verset) response.returning_verset = true;
-    return jsonResponseV2(response);
   } catch (err) {
     console.error('handleRegarde error:', err);
     if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
