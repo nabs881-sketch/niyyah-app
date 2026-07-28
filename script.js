@@ -9632,7 +9632,21 @@ function closeFreemium(e) {
   document.body.style.overflow = '';
 }
 function freemiumShowCode(){ var r=document.getElementById('freemium-code-row'); if(r) r.style.display='flex'; var i=document.getElementById('freemium-code-input'); if(i) i.focus(); }
-function freemiumBuy(){ freemiumShowCode(); showToast('Disponible au lancement \u2014 pendant la beta, entre ton code.'); }
+function freemiumBuy(tier) {
+  // tier : 'premium' | 'premium_plus'
+  // En attendant Google Play : simulation locale du statut acheté
+  if (tier === 'premium_plus') {
+    safeSetItem('niyyah_premium', 'true');
+    safeSetItem('niyyah_pro', '1');             // premium+ flag
+    safeSetItem('niyyah_premium_tier', 'premium_plus');
+  } else {
+    safeSetItem('niyyah_premium', 'true');
+    safeRemoveItem('niyyah_pro');
+    safeSetItem('niyyah_premium_tier', 'premium');
+  }
+  freemiumShowCode();
+  showToast('Disponible au lancement \u2014 pendant la beta, entre ton code.');
+}
 async function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(!i) return; var btn=document.querySelector('[onclick*="freemiumActivate"]'); if(btn){ btn.disabled=true; btn.textContent='...'; } var ok=await activateCode(i.value); if(btn){ btn.disabled=false; btn.textContent='Activer'; } if(ok){ v2ShowToast('Niyyah+ activ\u00e9 \u2726'); if(document.body.classList.contains('onboarding-active')){ var _fov=document.getElementById('freemiumOverlay'); if(_fov)_fov.classList.remove('show'); setTimeout(function(){ onboardNext(); },600); } else { setTimeout(function(){ location.reload(); },1200); } } else { v2ShowToast('Code invalide'); } }
 window.freemiumShowCode=freemiumShowCode; window.freemiumBuy=freemiumBuy; window.freemiumActivate=freemiumActivate;
 function shareNiyyah() {
