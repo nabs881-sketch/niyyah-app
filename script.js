@@ -9633,7 +9633,7 @@ function closeFreemium(e) {
 }
 function freemiumShowCode(){ var r=document.getElementById('freemium-code-row'); if(r) r.style.display='flex'; var i=document.getElementById('freemium-code-input'); if(i) i.focus(); }
 function freemiumBuy(){ freemiumShowCode(); showToast('Disponible au lancement \u2014 pendant la beta, entre ton code.'); }
-function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(i && unlockPremium(i.value)){ v2ShowToast('Niyyah+ activ\u00e9 \u2726'); if(document.body.classList.contains('onboarding-active')){ var _fov=document.getElementById('freemiumOverlay'); if(_fov)_fov.classList.remove('show'); setTimeout(function(){ onboardNext(); },600); } else { setTimeout(function(){ location.reload(); },1200); } } else { v2ShowToast('Code invalide'); } }
+async function freemiumActivate(){ var i=document.getElementById('freemium-code-input'); if(!i) return; var btn=document.querySelector('[onclick*="freemiumActivate"]'); if(btn){ btn.disabled=true; btn.textContent='...'; } var ok=await activateCode(i.value); if(btn){ btn.disabled=false; btn.textContent='Activer'; } if(ok){ v2ShowToast('Niyyah+ activ\u00e9 \u2726'); if(document.body.classList.contains('onboarding-active')){ var _fov=document.getElementById('freemiumOverlay'); if(_fov)_fov.classList.remove('show'); setTimeout(function(){ onboardNext(); },600); } else { setTimeout(function(){ location.reload(); },1200); } } else { v2ShowToast('Code invalide'); } }
 window.freemiumShowCode=freemiumShowCode; window.freemiumBuy=freemiumBuy; window.freemiumActivate=freemiumActivate;
 function shareNiyyah() {
   var url = 'https://nabs881-sketch.github.io/niyyah-app/';
@@ -9708,13 +9708,15 @@ function closeQuotaLimit(){ var o = document.getElementById('quota-limit-overlay
 window.showQuotaLimit = showQuotaLimit; window.closeQuotaLimit = closeQuotaLimit;
 /* ══ STATUT PREMIUM ══ */
 function isPremium() {
-  return safeGetItem('niyyah_premium') === 'true' || safeGetItem('niyyah_pro') === '1';
+  // niyyah_token = token HMAC émis par le serveur (étape 3 quota)
+  // niyyah_premium / niyyah_pro = flags legacy (rétro-compatibilité)
+  return !!safeGetItem('niyyah_token')
+      || safeGetItem('niyyah_premium') === 'true'
+      || safeGetItem('niyyah_pro') === '1';
 }
 function unlockPremium(code) {
-  if (code && code.trim().toUpperCase() === 'BISMILLAH') {
-    safeSetItem('niyyah_premium', 'true');
-    return safeGetItem('niyyah_premium') === 'true';
-  }
+  // Stub legacy neutralisé — activation désormais via activateCode() côté serveur.
+  // Conservé pour éviter toute erreur si appelé depuis du vieux code.
   return false;
 }
 function setPremium(bool) {
@@ -9723,6 +9725,27 @@ function setPremium(bool) {
 window.isPremium = isPremium;
 window.unlockPremium = unlockPremium;
 window.setPremium = setPremium;
+
+// ── Activation code beta via serveur (remplace unlockPremium) ────────────────
+async function activateCode(code) {
+  try {
+    var res = await fetch('https://niyyah-api.nabs881.workers.dev/api/activate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ uid: getOrCreateUID(), code: (code || '').trim().toUpperCase() })
+    });
+    if (!res.ok) return false;
+    var data = await res.json();
+    if (data && data.token && data.status) {
+      safeSetItem('niyyah_token', data.token);
+      safeSetItem('niyyah_token_status', data.status);
+      safeSetItem('niyyah_premium', 'true'); // rétro-compatibilité isPremium()
+      return true;
+    }
+    return false;
+  } catch(e) { return false; }
+}
+window.activateCode = activateCode;
 
 // ── UUID anonyme par installation ────────────────────────────────────────────
 var _cachedUID = null;
