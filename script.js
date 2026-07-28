@@ -9720,7 +9720,14 @@ function unlockPremium(code) {
   return false;
 }
 function setPremium(bool) {
-  safeSetItem('niyyah_premium', bool ? 'true' : 'false');
+  if (bool) {
+    safeSetItem('niyyah_premium', 'true');
+  } else {
+    safeRemoveItem('niyyah_premium');
+    safeRemoveItem('niyyah_token');
+    safeRemoveItem('niyyah_token_status');
+    safeRemoveItem('niyyah_pro');
+  }
 }
 window.isPremium = isPremium;
 window.unlockPremium = unlockPremium;
