@@ -9734,11 +9734,14 @@ function _getTrialCount(key) {
 function _incTrialCount(key) {
   safeSetItem(key, String(_getTrialCount(key) + 1));
 }
+// TEST MODE — Scanner Regard illimité jusqu'au 2026-07-30T23:59:59Z
+var _SCANNER_TEST_EXPIRY = 1785455999000;
+function _isScannerTestMode() { return Date.now() < _SCANNER_TEST_EXPIRY; }
 function canUseRegarde() {
-  return isPremium() || _getTrialCount('niyyah_trial_regard') < 2;
+  return _isScannerTestMode() || isPremium() || _getTrialCount('niyyah_trial_regard') < 2;
 }
 function canUseScanner() {
-  return isPremium() || _getTrialCount('niyyah_trial_scanner') < 2;
+  return _isScannerTestMode() || isPremium() || _getTrialCount('niyyah_trial_scanner') < 2;
 }
 function canUseBilan() {
   return isPremium() || _getTrialCount('niyyah_trial_bilan') < 1;
@@ -18550,7 +18553,7 @@ function _regardeShowVerset(content, v, slow, returning) {
 
 function regardeCapture() {
   // Quota Regarde : 1/jour gratuit, 3/jour premium — surprise exemptée
-  if (!window._regardeSurprise) {
+  if (!window._regardeSurprise && !_isScannerTestMode()) {
     var _rq = safeParseJSON('niyyah_regarde_quota', []);
     var _today = todayKey();
     _rq = _rq.filter(function(d){ return d === _today; });
@@ -19364,18 +19367,20 @@ function _updateScannerQuotaHint() {
 /* ── Capturer et Analyser ── */
 async function scannerCapture() {
   // Quota scanner : trial 3 à vie, premium 2/jour
-  var _prem = (typeof isPremium === 'function' && isPremium());
-  if (!_prem) {
-    if (!canUseScanner()) { showQuotaLimit('scan'); return; }
-    _incTrialCount('niyyah_trial_scanner');
-  } else {
-    // Premium : 2/jour
-    var _sq = []; try { _sq = JSON.parse(safeGetItem('niyyah_scanner_quota') || '[]'); } catch(e) { _sq = []; }
-    var _cutoff = new Date(Date.now() - 86400000).toISOString();
-    _sq = _sq.filter(function(ts){ return ts > _cutoff; });
-    if (!NIYYAH_DEBUG && _sq.length >= 2) { showQuotaLimit('scan'); return; }
-    _sq.push(new Date().toISOString());
-    safeSetItem('niyyah_scanner_quota', JSON.stringify(_sq));
+  if (!_isScannerTestMode()) {
+    var _prem = (typeof isPremium === 'function' && isPremium());
+    if (!_prem) {
+      if (!canUseScanner()) { showQuotaLimit('scan'); return; }
+      _incTrialCount('niyyah_trial_scanner');
+    } else {
+      // Premium : 2/jour
+      var _sq = []; try { _sq = JSON.parse(safeGetItem('niyyah_scanner_quota') || '[]'); } catch(e) { _sq = []; }
+      var _cutoff = new Date(Date.now() - 86400000).toISOString();
+      _sq = _sq.filter(function(ts){ return ts > _cutoff; });
+      if (!NIYYAH_DEBUG && _sq.length >= 2) { showQuotaLimit('scan'); return; }
+      _sq.push(new Date().toISOString());
+      safeSetItem('niyyah_scanner_quota', JSON.stringify(_sq));
+    }
   }
 
   const video   = document.getElementById('scanner-video');
