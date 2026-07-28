@@ -164,7 +164,8 @@ async function handleMetals(env) {
 // ═══════════════════════════════════════════════════
 async function handleScanner(request, env) {
   try {
-    const { image } = await request.json();
+    const body = await request.json();
+    const { image, uid } = body;
 
     if (!image) {
       return jsonResponse({ error: 'image (base64) requise' }, 400);
@@ -172,6 +173,8 @@ async function handleScanner(request, env) {
     if (image.length > 2_000_000) {
       return jsonResponse({ error: 'Image too large' }, 413);
     }
+    const _quota = await checkAndIncrementQuota(env, uid, 'scanner');
+    if (!_quota.allowed) return jsonResponse({ error: 'quota_exceeded', feature: 'scanner', reset_at: _quota.reset_at, upgrade_hint: _quota.upgrade_hint }, 429);
 
     // Contexte temporel
     const now = new Date();
@@ -404,6 +407,102 @@ function logApiUsage(feature, model, usage) {
   }));
 }
 
+// ════════════════════════════════════════════════════════════════════════════
+// QUOTA PAR UUID — lecture statut KV + compteurs (étape 2)
+// Namespace réutilisé : RATE_LIMIT_KV (préfixe u: ≠ rl: du rate-limit)
+// ════════════════════════════════════════════════════════════════════════════
+
+const QUOTA_LIMITS = {
+  //           free               premium          premium+
+  regard:  { free: ['lifetime',1], premium: ['daily',1],   'premium+': ['daily',5]  },
+  niyyah:  { free: ['lifetime',3], premium: ['daily',2],   'premium+': ['daily',10] },
+  bilan:   { free: ['lifetime',1], premium: ['weekly',1],  'premium+': ['weekly',1] },
+  scanner: { free: ['lifetime',3], premium: ['daily',2],   'premium+': ['daily',10] },
+};
+
+function _quotaWindow(type) {
+  const now = new Date();
+  if (type === 'lifetime') return 'lifetime';
+  if (type === 'daily') return now.toISOString().slice(0, 10); // YYYY-MM-DD
+  // weekly : ISO YYYY-WNN
+  const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const day = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - day);
+  const y = d.getUTCFullYear();
+  const w = Math.ceil(((d - Date.UTC(y, 0, 1)) / 86400000 + 1) / 7);
+  return `${y}-W${String(w).padStart(2,'0')}`;
+}
+
+function _quotaResetAt(type) {
+  const now = new Date();
+  if (type === 'daily') {
+    const t = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1));
+    return t.toISOString();
+  }
+  if (type === 'weekly') {
+    const daysUntilMon = (8 - (now.getUTCDay() || 7)) % 7 || 7;
+    const t = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + daysUntilMon));
+    return t.toISOString();
+  }
+  return null;
+}
+
+function _isValidUID(uid) {
+  return typeof uid === 'string' &&
+    /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(uid);
+}
+
+async function checkAndIncrementQuota(env, uid, feature) {
+  const kv = env.RATE_LIMIT_KV;
+  // Fail open : si KV absent ou uid invalide, on laisse passer
+  if (!kv || !_isValidUID(uid)) return { allowed: true };
+
+  // 1. Lire le statut utilisateur
+  let status = 'free';
+  try {
+    const raw = await kv.get(`u:${uid}:status`);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (!parsed.expires || new Date(parsed.expires) > new Date()) {
+        status = parsed.status || 'free';
+      }
+    }
+  } catch(e) {}
+
+  // 2. Résoudre la limite applicable
+  const featureLimits = QUOTA_LIMITS[feature];
+  if (!featureLimits) return { allowed: true };
+  const [type, max] = featureLimits[status] || featureLimits['free'];
+
+  // 3. Lire le compteur
+  const window = _quotaWindow(type);
+  const kvKey = `u:${uid}:q:${feature}:${window}`;
+  let count = 0;
+  try {
+    const raw = await kv.get(kvKey);
+    count = raw ? parseInt(raw, 10) : 0;
+  } catch(e) {}
+
+  // 4. Vérifier
+  if (count >= max) {
+    return {
+      allowed: false,
+      status,
+      remaining: 0,
+      reset_at: _quotaResetAt(type),
+      upgrade_hint: status === 'free',
+    };
+  }
+
+  // 5. Incrémenter
+  const ttl = type === 'lifetime' ? null : type === 'daily' ? 90000 : 700000;
+  try {
+    await kv.put(kvKey, String(count + 1), ttl ? { expirationTtl: ttl } : {});
+  } catch(e) {}
+
+  return { allowed: true, status, remaining: max - count - 1 };
+}
+
 function extractJSON(text) {
   if (!text) return null;
   let cleaned = text.trim();
@@ -601,6 +700,8 @@ async function handleNiyyah(request, env) {
     console.log(JSON.stringify({ niyyah_uid: true, feature: 'niyyah', uid: uid || null, date: new Date().toISOString() }));
     if (!image) return jsonResponseV2({ suggestions: [], error: 'image manquante', source: 'fallback' }, 400);
     if (image.length > 2_000_000) return jsonResponseV2({ suggestions: [], error: 'Image too large', source: 'fallback' }, 413);
+    const _quota = await checkAndIncrementQuota(env, uid, 'niyyah');
+    if (!_quota.allowed) return jsonResponseV2({ error: 'quota_exceeded', feature: 'niyyah', reset_at: _quota.reset_at, upgrade_hint: _quota.upgrade_hint }, 429);
     const now = new Date();
     const temporalCtx = buildTemporalContext({
       hour: now.getUTCHours(),
@@ -680,6 +781,8 @@ async function handleRegarde(request, env) {
 
     if (!image) return jsonResponseV2({ error: 'image manquante' }, 400);
     if (image.length > 2_000_000) return jsonResponseV2({ error: 'Image too large' }, 413);
+    const _quota = await checkAndIncrementQuota(env, uid, 'regard');
+    if (!_quota.allowed) return jsonResponseV2({ error: 'quota_exceeded', feature: 'regard', reset_at: _quota.reset_at, upgrade_hint: _quota.upgrade_hint }, 429);
 
     // ── Flow unifié Sonnet (gratuits et premium — même qualité, quota seul diffère) ──
     try {
@@ -935,7 +1038,10 @@ function buildBilanUserMessage(body) {
 async function handleBilanPremium(request, env) {
   try {
     const body = await request.json();
-    console.log(JSON.stringify({ niyyah_uid: true, feature: 'bilan', uid: body.uid || null, date: new Date().toISOString() }));
+    const { uid: _bilanUid } = body;
+    console.log(JSON.stringify({ niyyah_uid: true, feature: 'bilan', uid: _bilanUid || null, date: new Date().toISOString() }));
+    const _quota = await checkAndIncrementQuota(env, _bilanUid, 'bilan');
+    if (!_quota.allowed) return jsonResponseV2({ error: 'quota_exceeded', feature: 'bilan', reset_at: _quota.reset_at, upgrade_hint: _quota.upgrade_hint }, 429);
     const systemPrompt = buildBilanSystemPrompt(body.prenom);
     const userMessage = buildBilanUserMessage(body);
 
