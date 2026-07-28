@@ -18626,7 +18626,8 @@ function regardeCapture() {
     content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:24px;"><div style="width:24px;height:24px;border-radius:50%;background:#D4AF37;animation:regardePulse 1.2s ease-in-out infinite;"></div><div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(200,168,75,0.6);">'+t('scanner_analyzing')+'</div><button onclick="regardeCancelThinking()" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(255,255,255,0.2);background:transparent;color:rgba(255,255,255,0.6);font-size:13px;cursor:pointer;">Annuler</button></div>';
     content.style.opacity = '1';
 
-    // Appel API avec AbortController timeout 25s
+    // Appel API avec AbortController timeout 35s
+    // (Worker Anthropic = 25s + marge réseau/traitement pour éviter la race condition)
     var _acR = new AbortController();
     window._regardeAC = _acR;
     var _done = false;
@@ -18640,7 +18641,7 @@ function regardeCapture() {
         content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">L\u2019analyse a pris trop de temps.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
         content.style.opacity = '1';
       }, 600);
-    }, 25000);
+    }, 35000);
 
     function saveAndShow(question, cat) {
       if (_done) return; _done = true;
