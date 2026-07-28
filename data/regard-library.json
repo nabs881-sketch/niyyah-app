@@ -1,9 +1,9 @@
 {
   "_meta": {
     "feature": "Scanner Regard",
-    "version": "0.3.0-pending-validation",
+    "version": "0.4.0-pending-validation",
     "categories_total": 23,
-    "versets_total": 170,
+    "versets_total": 180,
     "sabab_total": 17,
     "statut": "Tafsirs rédigés — VALIDATION SAVANTE EN ATTENTE (Bajrafil / IESH)",
     "verset_source": "quran.com/fr — traduction Hamidullah, validee par Nabs le 9 mai 2026",
@@ -666,6 +666,18 @@
           "Tafsîr As-Saʿdî"
         ],
         "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "Il vous a accordé de tout ce que vous Lui avez demandé. Et si vous comptiez les bienfaits d'Allah, vous ne sauriez les dénombrer.",
+        "reference": "Coran, Ibrâhîm (14:34)",
+        "murmure": "Ouvre, regarde. Tu ne pourras pas les compter.",
+        "epoque": "Mecque",
+        "contexte": "Allah rappelle qu'Il a accordé à l'homme de tout ce qu'il demande, puis le met devant l'impossibilité de dénombrer Ses bienfaits. Tout objet du foyer — nourriture préservée, boisson fraîche, provision stockée — est une de ces grâces innombrables.",
+        "sources": [
+          "Traduction Hamidullah",
+          "Tafsîr As-Saʿdî"
+        ],
+        "tafsir_validation_savante_pending": true
       }
     ]
   },
@@ -770,6 +782,30 @@
         "sources": [
           "Tafsîr Ibn Kathîr 50:16",
           "Tafsîr As-Saʿdî"
+        ],
+        "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "Et ne marche pas sur la terre avec orgueil, car tu ne saurais fendre la terre ni atteindre les montagnes en hauteur.",
+        "reference": "Coran, Al-Isrâʼ (17:37)",
+        "murmure": "Ces pieds ne t'appartiennent pas. Marche humble.",
+        "epoque": "Mecque",
+        "contexte": "Après avoir énuméré les bienfaits divins, Allah interdit l'orgueil dans la marche. Ibn Kathîr rappelle que ni la force ni la fierté ne peuvent fendre la terre ou dépasser les montagnes — la marche humble est la seule posture juste pour une créature née de peu.",
+        "sources": [
+          "Traduction Hamidullah",
+          "Tafsîr Ibn Kathîr 17:37"
+        ],
+        "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "Et les serviteurs du Tout Miséricordieux sont ceux qui marchent sur la terre avec humilité",
+        "reference": "Coran, Al-Furqân (25:63)",
+        "murmure": "ʿIbâd ar-Raḥmân. Leur signature : la marche humble.",
+        "epoque": "Mecque",
+        "contexte": "Premier attribut des ʿibâd ar-Raḥmân (serviteurs du Tout Miséricordieux) : marcher sur la terre avec humilité (hawnan). Ibn Kathîr précise que cette marche n'est pas faiblesse mais noblesse d'âme — le croyant ne se pavane pas, ne cherche pas l'attention par son pas.",
+        "sources": [
+          "Traduction Hamidullah",
+          "Tafsîr Ibn Kathîr 25:63"
         ],
         "tafsir_validation_savante_pending": true
       }
@@ -1293,6 +1329,29 @@
         "sources": [
           "Tafsîr Ibn Kathîr 83:25-26",
           "Tafsîr As-Saʿdî"
+        ],
+        "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "Nûn. Par le calame et ce qu'ils écrivent !",
+        "reference": "Coran, Al-Qalam (68:1)",
+        "murmure": "La plume que tu tiens : Allah en a fait un serment.",
+        "epoque": "Mecque, période early",
+        "contexte": "La sourate s'ouvre sur un serment divin par le qalam (calame, plume) — instrument ordinaire élevé au rang de témoin sacré. Chaque stylo, chaque plume porte l'écho de ce serment.",
+        "sources": [
+          "Traduction Hamidullah",
+          "Tafsîr Ibn Kathîr 68:1"
+        ],
+        "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "qui a enseigné par la plume [le calame], a enseigné à l'homme ce qu'il ne savait pas.",
+        "reference": "Coran, Al-ʿAlaq (96:4-5)",
+        "murmure": "L'objet dans ta main est le même qu'Allah a sanctifié.",
+        "epoque": "Mecque, période early (suite des premiers versets révélés)",
+        "contexte": "La plume — stylo, calame, crayon — est l'instrument par lequel Allah enseigne à l'homme ce qu'il ignorait. Tenir un outil d'écriture, c'est tenir l'héritier du qalam divin.",
+        "sources": [
+          "Tafsîr Ibn Kathîr 96:4-5"
         ],
         "tafsir_validation_savante_pending": true
       }
@@ -1954,6 +2013,29 @@
           "Traduction Hamidullah"
         ],
         "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "qui a enseigné par la plume [le calame], a enseigné à l'homme ce qu'il ne savait pas.",
+        "reference": "Coran, Al-ʿAlaq (96:4-5)",
+        "murmure": "Ton clavier est le calame d'aujourd'hui.",
+        "epoque": "Mecque, période early (suite des premiers versets révélés)",
+        "contexte": "Allah a enseigné par le qalam (calame) — tout instrument par lequel la connaissance est transmise et consignée porte l'héritage de ce premier verset. Le clavier, outil d'inscription moderne, s'inscrit dans la continuité de ce geste fondateur.",
+        "sources": [
+          "Tafsîr Ibn Kathîr 96:4-5"
+        ],
+        "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "Allah élève ceux d'entre vous qui croient et ceux à qui le savoir a été donné, de plusieurs degrés.",
+        "reference": "Coran, Al-Mujâdala (58:11)",
+        "murmure": "Le savoir élève. Ce que tu apprends ici peut compter.",
+        "epoque": "Médine",
+        "contexte": "Allah distingue deux qualités qui élèvent le croyant : la foi et le savoir (ʿilm). Ibn Kathîr souligne que la combinaison des deux est le sommet — devant un clavier porteur de connaissance, ce verset rappelle que l'apprentissage peut être un acte d'adoration.",
+        "sources": [
+          "Traduction Hamidullah",
+          "Tafsîr Ibn Kathîr 58:11"
+        ],
+        "tafsir_validation_savante_pending": true
       }
     ]
   },
@@ -2109,6 +2191,44 @@
         "contexte": "Le plus infime bien (poids d'un atome) sera vu et compté — rien ne se perd.",
         "sources": [
           "Traduction Hamidullah"
+        ],
+        "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "Nûn. Par le calame et ce qu'ils écrivent !",
+        "reference": "Coran, Al-Qalam (68:1)",
+        "murmure": "Allah jure par la plume. Pèse ce que ta main inscrit.",
+        "epoque": "Mecque, période early",
+        "contexte": "Seul verset du Coran où Allah jure (qasam) par un instrument d'écriture. Le qalam (calame, plume) est élevé au rang de témoin de la parole — tout ce qui est écrit est placé sous le regard divin.",
+        "sources": [
+          "Traduction Hamidullah",
+          "Tafsîr Ibn Kathîr 68:1"
+        ],
+        "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "qui a enseigné par la plume [le calame], a enseigné à l'homme ce qu'il ne savait pas.",
+        "reference": "Coran, Al-ʿAlaq (96:4-5)",
+        "murmure": "Par le calame, Il a enseigné. L'outil dans ta main porte cet héritage.",
+        "epoque": "Mecque, période early (suite des premiers versets révélés)",
+        "contexte": "Selon Ibn Kathîr, le qalam (calame, plume) est élevé au rang d'instrument divin de transmission du savoir. Ces versets font partie des premiers révélés — l'acte d'écriture est posé comme fondement de la civilisation du Livre. Stylo, clavier, calame : tout outil d'inscription en est l'héritier.",
+        "sabab": "Rapporté par Al-Bukhârî (n° 3) et Muslim (n° 160) : ces versets font partie des cinq premiers révélés au Prophète ﷺ dans la grotte de Hirâʼ.",
+        "sources": [
+          "Tafsîr Ibn Kathîr 96:4-5",
+          "Sahîh Al-Bukhârî 3",
+          "Sahîh Muslim 160"
+        ],
+        "tafsir_validation_savante_pending": true
+      },
+      {
+        "texte": "et qu'un scribe l'écrive entre vous avec équité",
+        "reference": "Coran, Al-Baqara (2:282)",
+        "murmure": "Écrire c'est témoigner. Chaque note est un acte.",
+        "epoque": "Médine",
+        "contexte": "L'âyah la plus longue du Coran ordonne de consigner les transactions par écrit, devant un scribe équitable (kâtib bil-ʿadl) — l'écriture est posée comme acte de justice et de responsabilité. Tout outil d'écriture porte cette dignité.",
+        "sources": [
+          "Traduction Hamidullah",
+          "Tafsîr Ibn Kathîr 2:282"
         ],
         "tafsir_validation_savante_pending": true
       }
