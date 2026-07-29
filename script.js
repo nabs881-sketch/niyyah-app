@@ -18747,12 +18747,13 @@ function regardeCapture() {
     var _rq = safeParseJSON('niyyah_regarde_quota', []);
     var _today = todayKey();
     _rq = _rq.filter(function(d){ return d === _today; });
-    // Trial : 3 scans à vie. Premium : 2/jour.
+    // Trial : 2 scans à vie. Premium/beta : 1/jour. Premium+ : 5/jour.
     if (!isPremium()) {
       if (!canUseRegarde()) { showQuotaLimit('regard'); return; }
       _incTrialCount('niyyah_trial_regard');
     } else {
-      var _rLimit = 2;
+      var _rTier = safeGetItem('niyyah_token_status') || '';
+      var _rLimit = (_rTier === 'premium+') ? 5 : 1;
       if (_rq.length >= _rLimit) { showQuotaLimit('regard'); return; }
       _rq.push(_today);
       safeSetItem('niyyah_regarde_quota', JSON.stringify(_rq));

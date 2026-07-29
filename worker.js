@@ -429,11 +429,11 @@ function logApiUsage(feature, model, usage) {
 // ════════════════════════════════════════════════════════════════════════════
 
 const QUOTA_LIMITS = {
-  //           free               premium          premium+
-  regard:  { free: ['lifetime',1], premium: ['daily',1],   'premium+': ['daily',5]  },
-  niyyah:  { free: ['lifetime',3], premium: ['daily',2],   'premium+': ['daily',10] },
-  bilan:   { free: ['lifetime',1], premium: ['weekly',1],  'premium+': ['weekly',1] },
-  scanner: { free: ['lifetime',3], premium: ['daily',2],   'premium+': ['daily',10] },
+  //           free               beta/premium     premium+
+  regard:  { free: ['lifetime',1], beta: ['daily',1],   premium: ['daily',1],   'premium+': ['daily',5]  },
+  niyyah:  { free: ['lifetime',3], beta: ['daily',2],   premium: ['daily',2],   'premium+': ['daily',10] },
+  bilan:   { free: ['lifetime',1], beta: ['weekly',1],  premium: ['weekly',1],  'premium+': ['weekly',1] },
+  scanner: { free: ['lifetime',3], beta: ['daily',2],   premium: ['daily',2],   'premium+': ['daily',10] },
 };
 
 function _quotaWindow(type) {
