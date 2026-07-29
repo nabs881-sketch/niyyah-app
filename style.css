@@ -22,7 +22,7 @@
 --sans:'Nunito','DM Sans',-apple-system,sans-serif;
 --calli:'Georgia','Palatino Linotype',Georgia,serif;
 --theme-icon:'🌙';
-}*,*::before,*::after{transition:background-color 0.25s ease,border-color 0.25s ease,color 0.25s ease}.item,.btn-cnt,.check-circle,.tab,.nav-item,.nav-icon-wrap,.header-progress-fill,.hero-bar-fill,.counter-bar-fill,.level-popup,.level-popup-card,.year-day,.fast-day,.day-cell,.laylatul-night{transition:none}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}html,body{background:#2C2E32;background-image:none;color:var(--t1);font-family:var(--sans);min-height:100vh;-webkit-font-smoothing:antialiased;overscroll-behavior:none;transition:background-color 0.3s ease}body::before{content:'';position:fixed;inset:0;background:
+}*,*::before,*::after{transition:background-color 0.25s ease,border-color 0.25s ease,color 0.25s ease}.item,.btn-cnt,.check-circle,.tab,.nav-item,.nav-icon-wrap,.header-progress-fill,.hero-bar-fill,.counter-bar-fill,.level-popup,.level-popup-card,.year-day,.fast-day,.day-cell,.laylatul-night{transition:none}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}html,body{background:#2C2E32;background-image:none;color:var(--t1);font-family:var(--sans);min-height:100vh;-webkit-font-smoothing:antialiased;overscroll-behavior:none;transition:background-color 0.3s ease;user-select:none;-webkit-user-select:none}body::before{content:'';position:fixed;inset:0;background:
   radial-gradient(ellipse 70% 40% at 50% 0%, rgba(196,168,112,0.07) 0%, transparent 60%),
   radial-gradient(ellipse 50% 30% at 90% 80%, rgba(176,120,72,0.04) 0%, transparent 50%);
 pointer-events:none;
@@ -9750,38 +9750,72 @@ body.onboarding-active #nav-bar-v2 {
 .quiz-prog-btn:active { background: rgba(200,168,74,0.18); }
 
 /* ── Touch-to-Search guard ──────────────────────────────────────────────────
-   user-select:none est posé globalement sur * pour bloquer "Toucher pour
-   chercher" (Chrome Android). On restaure la sélection uniquement sur les
-   zones de contenu que l'utilisateur pourrait vouloir copier : versets,
-   hadiths, duaas, textes arabes, contenu Lisan / Bāb an-Nafs / Tawhid.
-   Les inputs/textareas sont toujours sélectionnables nativement (navigateur).
+   user-select:none est posé sur html,body (PAS sur *) pour bloquer
+   "Toucher pour chercher" (Chrome Android) via héritage CSS.
+   Cela permet d'ouvrir la sélection sur des conteneurs parent : leurs enfants
+   anonymes (divs générés en JS) héritent automatiquement de user-select:text,
+   sans qu'il faille les nommer un par un.
+   Les buttons restent non-sélectionnables même à l'intérieur d'un conteneur.
    ──────────────────────────────────────────────────────────────────────── */
+
+/* Inputs always selectable */
 input, textarea, select {
   user-select: text;
   -webkit-user-select: text;
 }
+
+/* Buttons always non-selectable, even inside a selectable container */
+button, [role="button"] {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ── Conteneurs de contenu — ouverts à la sélection ───────────────────────
+   Tout enfant (y compris les divs anonymes injectés en JS) hérite text.   */
+
+/* Scanner Regard : question, verset, murmure, résultat */
+#regarde-content,
+/* Journal Regard */
+#regarde-journal-list,
+/* Scanner Niyyah : résultat IA + nuances */
+#scanner-result,
+#scanner-ar-text,
+/* Journal Niyyah : liste + détail */
+#niyyah-journal-list,
+#niyyah-detail-content,
+/* Bāb an-Nafs */
+#babAnNafsContent,
+/* Wird */
+#wirdContent,
+/* Bilan */
+#resumeContent,
+/* Ramadan */
+#ramadanContent,
+/* Progression */
+#progContent,
+/* Tafakkur / méditation */
+#tafakkurScreen,
+/* Vue Journal (Fil du jour + Fil de l'accordéon) */
+#view-journal,
+/* Tasbih : texte du dhikr */
+#tasbihArabic, #tasbihPhonetic, #tasbihTranslation, #tasbihSource,
+/* Tawba overlay : verset + sous-titre */
+#tawbaVerseText, #tawbaSub,
+/* Info modal (verset arabe) */
+#infoArabic,
+/* Classes de contenu texte islamique */
 .weekly-hadith-text,
 .friday-item-hadith,
 .tafakkur-phrase,
 .arabic,
-.rituel-item .arabic,
 .tawhid-body,
 .tawhid-ref,
 .nafs-name-ar,
-.lisan-content,
-.bab-content,
 .waqt-text,
 .waqt-hadith,
 .recit-text,
 .duaa-text,
-.duaa-ar,
-#tawbaVerseText,
-#tawbaSub,
-#infoArabic,
-#tasbihArabic,
-#tasbihPhonetic,
-#tasbihTranslation,
-#tasbihSource {
+.duaa-ar {
   user-select: text;
   -webkit-user-select: text;
   -webkit-touch-callout: default;
