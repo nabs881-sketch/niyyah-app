@@ -8997,6 +8997,7 @@ function _openTafakkurArchiveRecit(date) {
 }
 window._openTafakkurArchiveRecit = _openTafakkurArchiveRecit;
 function openTafakkurArchive() {
+  try { history.pushState({ niyyah_modal: 'tafakkur-archive' }, ''); } catch(e) {}
   var hist = _getTafakkurHistory();
   var existing = document.getElementById('tafakkur-archive-overlay');
   if (existing) existing.remove();
@@ -14439,14 +14440,38 @@ window.addEventListener('popstate', function() {
   // Overlay Repères lui-même
   var ro = document.getElementById('repere-overlay');
   if (ro) { closeRepere(); return; }
+  // Archive Tafakkur (ouverte depuis tafakkurScreen — vérifier avant)
+  var tarch = document.getElementById('tafakkur-archive-overlay');
+  if (tarch) { tarch.remove(); return; }
   var ts = document.getElementById('tafakkurScreen');
   if (ts && ts.classList.contains('show')) { closeTafakkur(true); return; }
   var nm = document.getElementById('niyyahModal-v2');
   if (nm && nm.classList.contains('open')) { v2CloseModal(); return; }
   var nrm = document.getElementById('niyyahReadModal-v2');
   if (nrm) { nrm.remove(); if (typeof hideAlHayaBtn === 'function') hideAlHayaBtn(); return; }
+  // Dhikr counter (ouvert depuis vue-rituel — vérifier avant)
+  var dhikrOv = document.getElementById('dhikr-counter-overlay');
+  if (dhikrOv && dhikrOv.style.display === 'flex') { closeDhikrCounter(); return; }
   var vr = document.getElementById('vue-rituel');
   if (vr && !vr.classList.contains('hidden')) { closeVueRituel(); return; }
+  // Overlays contenu
+  var lisOv = document.getElementById('lisan-overlay');
+  if (lisOv) { lisOv.remove(); _restoreScroll(); return; }
+  var cmpOv = document.getElementById('compagnons-overlay');
+  if (cmpOv) { cmpOv.remove(); return; }
+  var fjOv = document.getElementById('finjournee-overlay');
+  if (fjOv && fjOv.style.display !== 'none') { closeFinJournee(); return; }
+  var savOv = document.getElementById('vue-savais-tu');
+  if (savOv && !savOv.classList.contains('hidden')) { closeVueSavaisTu(); return; }
+  // Journaux (détail avant liste)
+  var njdOv = document.getElementById('niyyah-detail-overlay');
+  if (njdOv && njdOv.style.display !== 'none') { closeNiyyahDetail(); return; }
+  var njOv = document.getElementById('niyyah-journal-overlay');
+  if (njOv && njOv.style.display !== 'none') { closeNiyyahJournal(); return; }
+  var rjdOv = document.getElementById('regarde-detail-overlay');
+  if (rjdOv && rjdOv.style.display !== 'none') { closeRegardeDetail(); return; }
+  var rjOv = document.getElementById('regarde-journal-overlay');
+  if (rjOv && rjOv.style.display !== 'none') { closeRegardeJournal(); return; }
   // Niveau 2 — revenir au Sanctuaire depuis une sous-vue
   if (typeof v2CurrentView !== 'undefined' && v2CurrentView !== 'sanctuaire') {
     v2GoSanctuaire();
@@ -16372,6 +16397,7 @@ function openFinJournee() {
     showAlHayaBtn();
     var overlay = document.getElementById('finjournee-overlay');
     if (!overlay) return;
+    try { history.pushState({ niyyah_modal: 'finjournee' }, ''); } catch(e) {}
     overlay.style.display = 'block';
     var b1 = document.getElementById('finjournee-b1');
     var b2 = document.getElementById('finjournee-b2');
@@ -18961,6 +18987,7 @@ function openRegardeJournal() {
   var overlay = document.getElementById('regarde-journal-overlay');
   var list = document.getElementById('regarde-journal-list');
   if (!overlay || !list) return;
+  try { history.pushState({ niyyah_modal: 'regarde-journal' }, ''); } catch(e) {}
   var entries = getRegardeHistory();
   if (entries.length === 0) {
     list.innerHTML = '<div class="empty-state-premium"><div class="empty-state-glyph">\u0646\u064E\u0638\u064E\u0631</div><div class="empty-state-title">'+t('journal_regarde_title')+'</div><div class="empty-state-text">'+t('journal_regarde_text')+'</div><div style="font-family:\'Georgia\',serif;font-size:13px;font-style:italic;color:rgba(200,168,75,0.45);margin-top:12px;line-height:1.5;">Les Regards viennent \u00e0 toi quand Allah veut.<br>Pose ton premier regard depuis Scanner.</div></div>';
@@ -18990,6 +19017,7 @@ function closeRegardeJournal() {
 }
 
 function openRegardeDetail(id) {
+  try { history.pushState({ niyyah_modal: 'regarde-detail' }, ''); } catch(e) {}
   _saveScroll();
   a11yOnOverlayOpen();
   var entries = getRegardeHistory();
@@ -19179,6 +19207,7 @@ function openNiyyahJournal() {
   var overlay = document.getElementById('niyyah-journal-overlay');
   var list = document.getElementById('niyyah-journal-list');
   if (!overlay || !list) return;
+  try { history.pushState({ niyyah_modal: 'niyyah-journal' }, ''); } catch(e) {}
   _niyyahJournalEntries = getNiyyahHistory();
   renderNiyyahJournalList(_niyyahJournalEntries);
   var search = document.getElementById('niyyah-journal-search');
@@ -19217,6 +19246,7 @@ function renderNiyyahJournalList(entries) {
   list.innerHTML = html;
 }
 function openNiyyahDetail(id) {
+  try { history.pushState({ niyyah_modal: 'niyyah-detail' }, ''); } catch(e) {}
   _saveScroll();
   a11yOnOverlayOpen();
   var entries = getNiyyahHistory();
@@ -20415,6 +20445,7 @@ window.closeVueSavaisTu = closeVueSavaisTu;
 
 function openVueSavaisTu() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
+  try { history.pushState({ niyyah_modal: 'savais-tu' }, ''); } catch(e) {}
   _saveScroll();
   a11yOnOverlayOpen();
   const v = document.getElementById('vue-savais-tu');
@@ -20642,8 +20673,11 @@ function openVueLisan(viewDay) {
   if (!mot) return;
   var isToday = currentDay === todayDay;
 
-  // First call: save scroll + a11y
-  if (typeof viewDay === 'undefined') { _saveScroll(); a11yOnOverlayOpen(); }
+  // First call: save scroll + a11y + pushState
+  if (typeof viewDay === 'undefined') {
+    try { history.pushState({ niyyah_modal: 'lisan' }, ''); } catch(e) {}
+    _saveScroll(); a11yOnOverlayOpen();
+  }
 
   var existing = document.getElementById('lisan-overlay');
   if (existing) existing.remove();
@@ -20902,6 +20936,7 @@ window.openLisanMethode = openLisanMethode;
 
 function openVueFiqhJour() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
+  try { history.pushState({ niyyah_modal: 'vuedujour' }, ''); } catch(e) {}
   _saveScroll();
   a11yOnOverlayOpen();
   var v = document.getElementById('vue-rituel');
@@ -20950,6 +20985,7 @@ function _showFiqhDisclaimer() {
 window._showFiqhDisclaimer = _showFiqhDisclaimer;
 
 function openVueHadithJour() {
+  try { history.pushState({ niyyah_modal: 'vuedujour' }, ''); } catch(e) {}
   _saveScroll();
   a11yOnOverlayOpen();
   var v = document.getElementById('vue-rituel');
@@ -20978,6 +21014,7 @@ function openVueHadithJour() {
 window.openVueHadithJour = openVueHadithJour;
 
 function openVueDuaaJour() {
+  try { history.pushState({ niyyah_modal: 'vuedujour' }, ''); } catch(e) {}
   _saveScroll();
   a11yOnOverlayOpen();
   var v = document.getElementById('vue-rituel');
@@ -21108,6 +21145,7 @@ function openVueCompagnon() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   loadCompagnons(function() {
     if (!COMPAGNONS || !COMPAGNONS.length) { showToast('Erreur de chargement'); return; }
+    try { history.pushState({ niyyah_modal: 'compagnons' }, ''); } catch(e) {}
     var c = getCompagnonJour();
     _compagnonsRenderDetail(c, c.jour);
   });
@@ -21680,6 +21718,7 @@ window._siraQuizReveal = _siraQuizReveal;
 /* ── DHIKR COUNTER ── */
 var _dhikrState = { count: 0, config: null, touchStartY: 0, prayer: null };
 function openDhikrCounter(config) {
+  try { history.pushState({ niyyah_modal: 'dhikr' }, ''); } catch(e) {}
   var ov = document.getElementById('dhikr-counter-overlay');
   if (!ov) return;
   _dhikrState.config = config;
