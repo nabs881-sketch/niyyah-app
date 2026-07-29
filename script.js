@@ -10522,6 +10522,7 @@ function computeZakat() {
 }
 
 function openZakat() {
+  try { history.pushState({ niyyah_modal: 'zakat' }, ''); } catch(e) {}
   _saveScroll();
   closeZakat();
   var ov = document.createElement('div');
@@ -12848,6 +12849,7 @@ function openJeune() {
   openSunanHub();
 }
 function openSunanHub() {
+  try { history.pushState({ niyyah_modal: 'sunan' }, ''); } catch(e) {}
   _saveScroll();
   closeSunan();
   var info = _sunanFor(new Date()), fasted = _sunanFastedToday(), up = _sunanUpcoming(), count = _sunanCountThisMonth();
@@ -12932,6 +12934,7 @@ function computeZakatFitr() {
     + '</div></div>';
 }
 function openZakatFitr() {
+  try { history.pushState({ niyyah_modal: 'zakatfitr' }, ''); } catch(e) {}
   _saveScroll();
   closeZakatFitr();
   var ov = document.createElement('div');
@@ -12999,6 +13002,7 @@ function computeFidya() {
   }
 }
 function openFidya() {
+  try { history.pushState({ niyyah_modal: 'fidya' }, ''); } catch(e) {}
   _saveScroll();
   closeFidya();
   var ov = document.createElement('div');
@@ -13138,6 +13142,7 @@ function renderWuduCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openWudu() {
+  try { history.pushState({ niyyah_modal: 'wudu' }, ''); } catch(e) {}
   _saveScroll();
   closeWudu();
   var ov = document.createElement('div');
@@ -13184,6 +13189,7 @@ function renderTayammumCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openTayammum() {
+  try { history.pushState({ niyyah_modal: 'tayammum' }, ''); } catch(e) {}
   _saveScroll();
   closeTayammum();
   var ov = document.createElement('div');
@@ -13227,6 +13233,7 @@ function renderQasrCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openQasr() {
+  try { history.pushState({ niyyah_modal: 'qasr' }, ''); } catch(e) {}
   _saveScroll();
   closeQasr();
   var ov = document.createElement('div');
@@ -13293,6 +13300,7 @@ function _showFetchErrorOverlay(ovId, bg, retryCall, closeCall) {
 
 function openTawhid() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
+  try { history.pushState({ niyyah_modal: 'tawhid' }, ''); } catch(e) {}
   if (_tawhidCapsules.length === 0) {
     fetch('tawhid_capsules.json?v=' + (window.APP_VERSION || '1'))
       .then(function(r){ return r.json(); })
@@ -13691,6 +13699,7 @@ function renderQadaCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openQada() {
+  try { history.pushState({ niyyah_modal: 'qada' }, ''); } catch(e) {}
   _saveScroll();
   closeQada();
   var ov = document.createElement('div');
@@ -13723,6 +13732,7 @@ function renderIstikharaCard() {
 }
 function closeIstikhara() { var o = document.getElementById('istikhara-overlay'); if (o) o.remove(); _restoreScroll(); }
 function openIstikhara() {
+  try { history.pushState({ niyyah_modal: 'istikhara' }, ''); } catch(e) {}
   _saveScroll();
   closeIstikhara();
   var step = function(n, t) { return '<div style="display:flex;gap:13px;margin-bottom:13px;align-items:flex-start;"><div style="flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1px solid rgba(232,206,138,0.4);display:flex;align-items:center;justify-content:center;font-family:\'Georgia\',serif;font-size:14px;color:#E8CE8A;">' + n + '</div><div style="flex:1;font-family:\'Georgia\',serif;font-size:16px;line-height:1.5;color:rgba(240,234,214,0.85);">' + t + '</div></div>'; };
@@ -13804,6 +13814,7 @@ function renderCalendrierCard() {
     + '<div style="color:rgba(200,168,74,0.3);font-size:18px;">\u203a</div></div>';
 }
 function openCalendrier() {
+  try { history.pushState({ niyyah_modal: 'calendrier' }, ''); } catch(e) {}
   _saveScroll();
   closeCalendrier();
   _calOffset = 0;
@@ -14118,6 +14129,7 @@ function renderPM() {
   b.innerHTML = html;
 }
 function openPrierMieux() {
+  try { history.pushState({ niyyah_modal: 'prier-mieux' }, ''); } catch(e) {}
   closePrierMieux();
   _pmStep = 'intro'; _pmIdx = -1;
   var ov = document.createElement('div');
@@ -14398,6 +14410,33 @@ window.addEventListener('popstate', function() {
   if (fov && fov.classList.contains('show')) { closeFreemium(); return; }
   var aho = document.getElementById('alhaya-overlay');
   if (aho && aho.style.display === 'flex') { closeAlHaya(); return; }
+  // Sous-écrans de Repères (z-index 3200 > repere-overlay 3000 — vérifier avant)
+  var qo = document.getElementById('qasr-overlay');
+  if (qo) { closeQasr(); return; }
+  var wo = document.getElementById('wudu-overlay');
+  if (wo) { closeWudu(); return; }
+  var to = document.getElementById('tayammum-overlay');
+  if (to) { closeTayammum(); return; }
+  var zo = document.getElementById('zakat-overlay');
+  if (zo) { closeZakat(); return; }
+  var zfo = document.getElementById('zakatfitr-overlay');
+  if (zfo) { closeZakatFitr(); return; }
+  var fo = document.getElementById('fidya-overlay');
+  if (fo) { closeFidya(); return; }
+  var qao = document.getElementById('qada-overlay');
+  if (qao) { closeQada(); return; }
+  var iso = document.getElementById('istikhara-overlay');
+  if (iso) { closeIstikhara(); return; }
+  var clo = document.getElementById('calendrier-overlay');
+  if (clo) { closeCalendrier(); return; }
+  var so = document.getElementById('sunan-overlay');
+  if (so) { closeSunan(); return; }
+  var tao = document.getElementById('tawhid-overlay');
+  if (tao) { closeTawhid(); return; }
+  // Sous-écran de Prières
+  var pmo = document.getElementById('prier-mieux-overlay');
+  if (pmo) { closePrierMieux(); return; }
+  // Overlay Repères lui-même
   var ro = document.getElementById('repere-overlay');
   if (ro) { closeRepere(); return; }
   var ts = document.getElementById('tafakkurScreen');
