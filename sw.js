@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v3095';
+const VERSION = 'niyyah-v3096';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -101,6 +101,26 @@ self.addEventListener('fetch', e => {
     const cached = await caches.match(e.request);
     return cached || new Response('', { status: 503, statusText: 'Offline' });
   }));
+});
+
+self.addEventListener('push', e => {
+  var data = {};
+  try { data = e.data ? e.data.json() : {}; } catch(err) {
+    try { data = { body: e.data ? e.data.text() : '' }; } catch(err2) {}
+  }
+  var title   = data.title   || 'Niyyah ✦';
+  var options = {
+    body:              data.body    || '',
+    icon:              './icon-notif.png',
+    badge:             './badge.png',
+    tag:               data.tag     || 'niyyah-push',
+    vibrate:           [40, 20, 40],
+    requireInteraction: false,
+    silent:            false,
+    data:  { url: data.url || './', action: data.action || 'open' },
+    actions: data.actions || []
+  };
+  e.waitUntil(self.registration.showNotification(title, options));
 });
 
 self.addEventListener('notificationclick', e => {

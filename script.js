@@ -10200,6 +10200,53 @@ function sendNotification(title, body, icon, moment) {
   }
 }
 
+// ── Web Push — VAPID subscription ──────────────────────────────────────────
+var _VAPID_PUBLIC_KEY = 'BDKoPMWtspdLuxMAbJ86JaV6EeUb52F38zXiXc5f0TYUcLBiemeoTeuvkcCnnVDGCoe_SmYtP09JMle6yhKMwPs';
+
+function _urlB64ToUint8Array(b64) {
+  var pad = '='.repeat((4 - b64.length % 4) % 4);
+  var raw = atob((b64 + pad).replace(/-/g, '+').replace(/_/g, '/'));
+  var out = new Uint8Array(raw.length);
+  for (var i = 0; i < raw.length; i++) out[i] = raw.charCodeAt(i);
+  return out;
+}
+
+async function _subscribePush() {
+  try {
+    if (!('PushManager' in window)) return;
+    var reg = await navigator.serviceWorker.ready;
+    if (!reg.pushManager) return;
+    var existing = await reg.pushManager.getSubscription();
+    if (existing) { _sendPushSubToServer(existing); return; }
+    var sub = await reg.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: _urlB64ToUint8Array(_VAPID_PUBLIC_KEY)
+    });
+    _sendPushSubToServer(sub);
+  } catch(e) {
+    console.warn('[Niyyah Push] subscribe:', e.message || e);
+  }
+}
+
+function _sendPushSubToServer(sub) {
+  try {
+    var uid = safeGetItem('niyyah_uid') || '';
+    var prayers = {};
+    try { prayers = _prayerTimes || {}; } catch(e) {}
+    fetch('https://niyyah-api.nabs881.workers.dev/api/push/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        uid: uid,
+        subscription: sub.toJSON(),
+        prayers: prayers,
+        tz: Intl.DateTimeFormat().resolvedOptions().timeZone || ''
+      })
+    }).catch(function(e) { console.warn('[Niyyah Push] server sync:', e.message); });
+  } catch(e) {}
+}
+// ──────────────────────────────────────────────────────────────────────────────
+
 // Re-planifier chaque jour au chargement
 function initNotifications() {
   try {
@@ -10223,6 +10270,7 @@ function initNotifications() {
           } else {
             scheduleAllNotifications();
           }
+          _subscribePush(); // sync subscription VAPID (idempotent)
         }
       } catch(e) {}
     }, 1000);
@@ -10243,7 +10291,7 @@ function toggleNotifications() {
   } else {
     try {
       Notification.requestPermission().then(function(p) {
-        if (p === 'granted') { showToast(t('notif_enabled')); safeSetItem('niyyah_notif_perm', '1'); scheduleAllNotifications(); }
+        if (p === 'granted') { showToast(t('notif_enabled')); safeSetItem('niyyah_notif_perm', '1'); scheduleAllNotifications(); _subscribePush(); }
         else if (p === 'denied') { showToast(t('notif_denied')); }
         else { showToast(t('notif_later')); }
       }).catch(function() { showToast(t('notif_unavailable')); });
@@ -16603,7 +16651,7 @@ function _maybeShowNotifCard(hist) {
     document.getElementById('niyyah-notif-accept').addEventListener('click', function() {
       try {
         Notification.requestPermission().then(function(p) {
-          if (p === 'granted') { safeSetItem('niyyah_notif_perm', '1'); if (typeof scheduleAllNotifications === 'function') scheduleAllNotifications(); showToast('\u2713 Murmures activ\u00e9s'); }
+          if (p === 'granted') { safeSetItem('niyyah_notif_perm', '1'); if (typeof scheduleAllNotifications === 'function') scheduleAllNotifications(); _subscribePush(); showToast('\u2713 Murmures activ\u00e9s'); }
           safeSetItem('niyyah_notif_asked', '1');
           card.remove();
         }).catch(function() { safeSetItem('niyyah_notif_asked', '1'); card.remove(); });

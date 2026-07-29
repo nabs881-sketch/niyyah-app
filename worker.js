@@ -21,9 +21,10 @@ function jsonResponse(data, status = 200) {
 
 // ── Rate limiting helpers ──
 const RATE_LIMITS = {
-  '/api/scanner': 10,
-  '/api/niyyah': 10,
-  '/api/regarde': 20,
+  '/api/scanner':  10,
+  '/api/niyyah':   10,
+  '/api/regarde':  20,
+  '/api/activate':  5, // anti brute-force codes beta (5/h par IP)
 };
 
 async function checkRateLimit(env, ip, path) {
@@ -102,6 +103,16 @@ export default {
     // ── Route Métaux (cours or/argent EUR/g, cache 24h) ──
     if (path === '/api/metals' && request.method === 'GET') {
       return handleMetals(env);
+    }
+
+    // ── Route Activation code beta / premium ──
+    if (path === '/api/activate' && request.method === 'POST') {
+      return handleActivate(request, env);
+    }
+
+    // ── Route Push subscription (stocke l'endpoint VAPID en KV) ──
+    if (path === '/api/push/subscribe' && request.method === 'POST') {
+      return handlePushSubscribe(request, env);
     }
 
     return jsonResponse({ error: 'Route introuvable' }, 404);
@@ -1064,5 +1075,132 @@ async function handleBilanPremium(request, env) {
     console.error('handleBilanPremium error:', err);
     if (err.name === 'AbortError') return jsonResponseV2({ error: 'Timeout' }, 504);
     return jsonResponseV2({ error: 'Bilan premium indisponible' }, 502);
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// ACTIVATION — /api/activate
+// ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Comparaison en temps constant — évite les timing attacks sur les codes.
+ * Parcourt toujours les deux chaînes jusqu'au bout, même si elles diffèrent.
+ */
+function timingSafeEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string') return false;
+  const len = Math.max(a.length, b.length);
+  let diff = a.length ^ b.length; // non-zéro si longueurs différentes
+  for (let i = 0; i < len; i++) {
+    diff |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0);
+  }
+  return diff === 0;
+}
+
+/**
+ * Génère HMAC-SHA256(uid:status:expires, HMAC_SECRET) en base64.
+ * Le token est auto-porteur : le client peut vérifier la présence sans KV.
+ */
+async function generateHMACToken(uid, status, expires, secret) {
+  const encoder = new TextEncoder();
+  const msg = `${uid}:${status}:${expires || ''}`;
+  const key = await crypto.subtle.importKey(
+    'raw', encoder.encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false, ['sign']
+  );
+  const sig = await crypto.subtle.sign('HMAC', key, encoder.encode(msg));
+  return btoa(String.fromCharCode(...new Uint8Array(sig)));
+}
+
+// ═══════════════════════════════════════════════════
+// WEB PUSH — stockage des subscriptions VAPID en KV
+// clé : push:sub:{uid}  — TTL 90 jours (renouvelé à chaque ouverture)
+// ═══════════════════════════════════════════════════
+async function handlePushSubscribe(request, env) {
+  try {
+    const body = await request.json();
+    const { uid, subscription, prayers, tz } = body;
+
+    if (!uid || typeof uid !== 'string' || uid.length > 64) {
+      return jsonResponse({ error: 'uid invalide' }, 400);
+    }
+    if (!subscription || typeof subscription.endpoint !== 'string' || !subscription.endpoint.startsWith('https://')) {
+      return jsonResponse({ error: 'subscription invalide' }, 400);
+    }
+
+    if (env.RATE_LIMIT_KV) {
+      await env.RATE_LIMIT_KV.put(
+        `push:sub:${uid}`,
+        JSON.stringify({
+          subscription,
+          prayers: prayers || {},
+          tz:      tz      || '',
+          updated: new Date().toISOString(),
+        }),
+        { expirationTtl: 60 * 60 * 24 * 90 } // 90 jours
+      );
+    }
+
+    return jsonResponse({ ok: true });
+  } catch (err) {
+    console.error('handlePushSubscribe error:', err);
+    return jsonResponse({ error: 'Erreur serveur' }, 500);
+  }
+}
+
+async function handleActivate(request, env) {
+  try {
+    // Vérifier que les secrets sont configurés
+    if (!env.BETA_CODES || !env.HMAC_SECRET) {
+      console.error('handleActivate: secrets BETA_CODES / HMAC_SECRET manquants');
+      return jsonResponseV2({ error: 'Service non configuré' }, 500);
+    }
+
+    const body = await request.json();
+    const { uid, code } = body;
+
+    if (!_isValidUID(uid)) return jsonResponseV2({ error: 'uid invalide' }, 400);
+    if (!code || typeof code !== 'string' || code.length > 100) {
+      return jsonResponseV2({ error: 'code requis' }, 400);
+    }
+
+    // Parser BETA_CODES (JSON array stocké en secret)
+    let validCodes;
+    try {
+      validCodes = JSON.parse(env.BETA_CODES);
+      if (!Array.isArray(validCodes)) throw new Error('not an array');
+    } catch(e) {
+      console.error('handleActivate: BETA_CODES malformé:', e.message);
+      return jsonResponseV2({ error: 'Service mal configuré' }, 500);
+    }
+
+    // Comparaison temps constant contre chaque code valide
+    const normalizedCode = code.trim().toUpperCase();
+    let matched = false;
+    for (const c of validCodes) {
+      // On continue même après un match pour ne pas fuiter par timing
+      if (timingSafeEqual(normalizedCode, String(c).trim().toUpperCase())) {
+        matched = true;
+      }
+    }
+
+    if (!matched) return jsonResponseV2({ error: 'Code invalide' }, 401);
+
+    // Écrire le statut en KV
+    const status = 'beta';
+    const granted = new Date().toISOString();
+    const expires = null;
+    const kv = env.RATE_LIMIT_KV;
+    if (kv) {
+      await kv.put(`u:${uid}:status`, JSON.stringify({ status, granted, expires }));
+    }
+
+    // Générer le token HMAC
+    const token = await generateHMACToken(uid, status, expires, env.HMAC_SECRET);
+
+    return jsonResponseV2({ token, status, granted });
+  } catch (err) {
+    console.error('handleActivate error:', err);
+    return jsonResponseV2({ error: 'Erreur activation' }, 500);
   }
 }
