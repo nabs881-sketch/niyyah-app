@@ -117,6 +117,11 @@ export default {
 
     return jsonResponse({ error: 'Route introuvable' }, 404);
   },
+
+  // Cron Trigger — toutes les 5 minutes (voir wrangler.jsonc)
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(_sendPrayerNotifications(env));
+  },
 };
 
 // ═══════════════════════════════════════════════════
@@ -1110,6 +1115,231 @@ async function generateHMACToken(uid, status, expires, secret) {
   );
   const sig = await crypto.subtle.sign('HMAC', key, encoder.encode(msg));
   return btoa(String.fromCharCode(...new Uint8Array(sig)));
+}
+
+// ═══════════════════════════════════════════════════
+// WEB PUSH — chiffrement aes128gcm (RFC 8291/8188) + VAPID (RFC 8292)
+// ═══════════════════════════════════════════════════
+
+const _VAPID_PUBLIC_B64U = 'BDKoPMWtspdLuxMAbJ86JaV6EeUb52F38zXiXc5f0TYUcLBiemeoTeuvkcCnnVDGCoe_SmYtP09JMle6yhKMwPs';
+
+function _b64uToU8(b64u) {
+  const pad = '='.repeat((4 - b64u.length % 4) % 4);
+  const raw = atob((b64u + pad).replace(/-/g, '+').replace(/_/g, '/'));
+  const u8 = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i++) u8[i] = raw.charCodeAt(i);
+  return u8;
+}
+
+function _u8ToB64u(u8) {
+  return btoa(String.fromCharCode(...u8))
+    .replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+}
+
+// HKDF-Extract: PRK = HMAC-SHA256(salt, ikm)
+async function _hkdfExtract(salt, ikm) {
+  const k = await crypto.subtle.importKey('raw', salt, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  return new Uint8Array(await crypto.subtle.sign('HMAC', k, ikm));
+}
+
+// HKDF-Expand T(1) = HMAC-SHA256(PRK, info || 0x01), sliced to `length`
+async function _hkdfExpand(prk, info, length) {
+  const k = await crypto.subtle.importKey('raw', prk, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']);
+  const infoBytes = typeof info === 'string' ? new TextEncoder().encode(info) : info;
+  const T = new Uint8Array(infoBytes.length + 1);
+  T.set(infoBytes);
+  T[infoBytes.length] = 0x01;
+  return new Uint8Array(await crypto.subtle.sign('HMAC', k, T)).slice(0, length);
+}
+
+// Génère le JWT VAPID signé ES256
+async function _vapidJwt(endpoint, privateJwk) {
+  const origin = new URL(endpoint).origin;
+  const now    = Math.floor(Date.now() / 1000);
+  const enc    = new TextEncoder();
+  const hdr  = _u8ToB64u(enc.encode(JSON.stringify({ typ: 'JWT', alg: 'ES256' })));
+  const body = _u8ToB64u(enc.encode(JSON.stringify({ aud: origin, exp: now + 43200, sub: 'mailto:contact@niyyah.app' })));
+  const privKey = await crypto.subtle.importKey('jwk', privateJwk, { name: 'ECDSA', namedCurve: 'P-256' }, false, ['sign']);
+  const sig = new Uint8Array(await crypto.subtle.sign({ name: 'ECDSA', hash: 'SHA-256' }, privKey, enc.encode(`${hdr}.${body}`)));
+  return `${hdr}.${body}.${_u8ToB64u(sig)}`;
+}
+
+// Chiffre `message` (string JSON) selon RFC 8291/8188 pour l'abonné `subscription`
+async function _encryptPayload(message, subscription) {
+  const enc          = new TextEncoder();
+  const ua_pub_u8    = _b64uToU8(subscription.keys.p256dh);  // 65 bytes (uncompressed P-256)
+  const auth_u8      = _b64uToU8(subscription.keys.auth);     // 16 bytes
+
+  // Ephemeral ECDH key pair (as = application server)
+  const ephemeral   = await crypto.subtle.generateKey({ name: 'ECDH', namedCurve: 'P-256' }, true, ['deriveBits']);
+  const as_pub_u8   = new Uint8Array(await crypto.subtle.exportKey('raw', ephemeral.publicKey)); // 65 bytes
+
+  // ECDH: dh = shared secret x-coordinate (32 bytes)
+  const ua_pub_key  = await crypto.subtle.importKey('raw', ua_pub_u8, { name: 'ECDH', namedCurve: 'P-256' }, false, []);
+  const dh          = new Uint8Array(await crypto.subtle.deriveBits({ name: 'ECDH', public: ua_pub_key }, ephemeral.privateKey, 256));
+
+  // IKM = HKDF(IKM=dh, salt=auth, info="WebPush: info\0" || ua_pub || as_pub, L=32)
+  const infoPrefix  = enc.encode('WebPush: info\x00');
+  const keyinfo     = new Uint8Array(infoPrefix.length + ua_pub_u8.length + as_pub_u8.length);
+  keyinfo.set(infoPrefix, 0);
+  keyinfo.set(ua_pub_u8, infoPrefix.length);
+  keyinfo.set(as_pub_u8, infoPrefix.length + ua_pub_u8.length);
+
+  const PRK_key = await _hkdfExtract(auth_u8, dh);
+  const IKM     = await _hkdfExpand(PRK_key, keyinfo, 32);
+
+  // Random salt (16 bytes)
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+
+  // CEK (16 bytes) + NONCE (12 bytes)
+  const PRK_enc = await _hkdfExtract(salt, IKM);
+  const CEK     = await _hkdfExpand(PRK_enc, enc.encode('Content-Encoding: aes128gcm\x00'), 16);
+  const NONCE   = await _hkdfExpand(PRK_enc, enc.encode('Content-Encoding: nonce\x00'), 12);
+
+  // Plaintext = message_bytes || 0x02 (last-record delimiter)
+  const msgBytes  = enc.encode(message);
+  const plaintext = new Uint8Array(msgBytes.length + 1);
+  plaintext.set(msgBytes);
+  plaintext[msgBytes.length] = 0x02;
+
+  // AES-128-GCM encrypt (GCM tag = 16 bytes appended by WebCrypto)
+  const cekKey     = await crypto.subtle.importKey('raw', CEK, { name: 'AES-GCM' }, false, ['encrypt']);
+  const ciphertext = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv: NONCE, tagLength: 128 }, cekKey, plaintext));
+
+  // RFC 8188 body: salt(16) + rs(4 BE=4096) + idlen(1=65) + keyid(65) + ciphertext
+  const rs   = 4096;
+  const body = new Uint8Array(16 + 4 + 1 + 65 + ciphertext.length);
+  body.set(salt, 0);
+  body[16] = (rs >>> 24) & 0xFF; body[17] = (rs >>> 16) & 0xFF;
+  body[18] = (rs >>> 8)  & 0xFF; body[19] = rs & 0xFF;
+  body[20] = 65;
+  body.set(as_pub_u8, 21);
+  body.set(ciphertext, 86);
+  return body;
+}
+
+// Envoie une notification Web Push. Retourne true | false | 'expired'
+async function _sendWebPush(subscription, notification, env) {
+  let privateJwk;
+  try { privateJwk = JSON.parse(env.VAPID_PRIVATE_JWK); }
+  catch(e) { console.error('[Push] VAPID_PRIVATE_JWK manquant/invalide'); return false; }
+
+  try {
+    const bodyBytes = await _encryptPayload(JSON.stringify(notification), subscription);
+    const jwt       = await _vapidJwt(subscription.endpoint, privateJwk);
+
+    const resp = await fetch(subscription.endpoint, {
+      method: 'POST',
+      headers: {
+        'Authorization':      `vapid t=${jwt},k=${_VAPID_PUBLIC_B64U}`,
+        'Content-Type':       'application/octet-stream',
+        'Content-Encoding':   'aes128gcm',
+        'TTL':                '3600',
+      },
+      body: bodyBytes,
+    });
+
+    if (resp.status === 410 || resp.status === 404) return 'expired';
+    return resp.status >= 200 && resp.status < 300;
+  } catch(e) {
+    console.error('[Push] _sendWebPush:', e.message);
+    return false;
+  }
+}
+
+// ═══════════════════════════════════════════════════
+// PRAYER NOTIFICATIONS — logique du Cron Trigger
+// ═══════════════════════════════════════════════════
+
+const _PRAYERS_META = {
+  fajr:    { fr: 'Fajr',    body: 'وَقُومُوا لِلَّهِ قَانِتِينَ — La prière du Fajr est appelée.' },
+  dhuhr:   { fr: 'Dhouhr',  body: 'لَّذِينَ آمَنُوا اذْكُرُوا اللَّهَ ذِكْرًا كَثِيرًا — La prière du Dhouhr vous attend.' },
+  asr:     { fr: 'Asr',     body: 'حَافِظُوا عَلَى الصَّلَوَاتِ — Gardez la prière : Asr approche.' },
+  maghrib: { fr: 'Maghrib', body: 'سُبْحَانَ اللَّهِ حِينَ تُمْسُونَ — Le soleil se couche, Maghrib est là.' },
+  isha:    { fr: 'Icha',    body: 'وَمِنَ اللَّيْلِ فَسَبِّحْهُ — Avant de dormir, ne manquez pas Icha.' },
+};
+
+function _timeToMin(t) {
+  if (!t || typeof t !== 'string') return -1;
+  const [h, m] = t.split(':').map(Number);
+  return (isNaN(h) || isNaN(m)) ? -1 : h * 60 + m;
+}
+
+function _nowMinInTZ(tz) {
+  try {
+    const parts = new Intl.DateTimeFormat('fr-FR', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+    const h = parseInt(parts.find(p => p.type === 'hour').value, 10);
+    const m = parseInt(parts.find(p => p.type === 'minute').value, 10);
+    return (isNaN(h) || isNaN(m)) ? -1 : h * 60 + m;
+  } catch(e) { return -1; }
+}
+
+function _nowDateInTZ(tz) {
+  try { return new Intl.DateTimeFormat('sv-SE', { timeZone: tz }).format(new Date()); } // YYYY-MM-DD
+  catch(e) { return new Date().toISOString().slice(0, 10); }
+}
+
+async function _sendPrayerNotifications(env) {
+  if (!env.RATE_LIMIT_KV) { console.error('[Cron] KV non lié'); return; }
+
+  let cursor;
+  let listComplete = false;
+  let totalSent    = 0;
+
+  do {
+    const page = await env.RATE_LIMIT_KV.list({ prefix: 'push:sub:', limit: 100, ...(cursor ? { cursor } : {}) });
+    cursor       = page.cursor;
+    listComplete = page.list_complete;
+
+    for (const { name: key } of page.keys) {
+      try {
+        const raw = await env.RATE_LIMIT_KV.get(key);
+        if (!raw) continue;
+        const { subscription, prayers, tz } = JSON.parse(raw);
+        if (!subscription?.keys?.p256dh || !subscription?.keys?.auth) continue;
+
+        const userTz = tz || 'UTC';
+        const nowMin = _nowMinInTZ(userTz);
+        const today  = _nowDateInTZ(userTz);
+        if (nowMin < 0) continue;
+
+        const uid = key.slice('push:sub:'.length);
+
+        for (const [prayer, meta] of Object.entries(_PRAYERS_META)) {
+          const prayerMin = _timeToMin(prayers?.[prayer]);
+          if (prayerMin < 0) continue;
+
+          // Fenêtre ±3 min (cron toutes les 5 min, anti-doublon garantit 1 seul envoi)
+          if (Math.abs(nowMin - prayerMin) > 3) continue;
+
+          // Anti-doublon : 1 notification max par prière par jour
+          const sentKey = `push:sent:${uid}:${prayer}:${today}`;
+          if (await env.RATE_LIMIT_KV.get(sentKey)) continue;
+
+          const result = await _sendWebPush(subscription, {
+            title:   `Niyyah ✦ — ${meta.fr}`,
+            body:    meta.body,
+            tag:     `prayer-${prayer}-${today}`,
+            url:     './',
+            action:  'open',
+          }, env);
+
+          if (result === 'expired') {
+            await env.RATE_LIMIT_KV.delete(key);
+            break; // plus de prières à envoyer pour cet abonné
+          }
+          if (result === true) {
+            await env.RATE_LIMIT_KV.put(sentKey, '1', { expirationTtl: 86400 });
+            totalSent++;
+          }
+        }
+      } catch(e) {
+        console.error('[Cron] erreur sub:', e.message);
+      }
+    }
+  } while (!listComplete);
+
+  console.log(`[Cron] Notifications envoyées : ${totalSent}`);
 }
 
 // ═══════════════════════════════════════════════════
