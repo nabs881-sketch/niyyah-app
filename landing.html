@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niyyah Daily ✦ — Pratique &amp; Élévation</title>
+  <meta name="description" content="Transforme chaque acte du quotidien en acte sacré. Scanner Regard, Portes de l’Âme, horaires de prière — Niyyah Daily réunit tout ce dont tu as besoin.">
+  <meta property="og:title" content="Niyyah Daily ✦">
+  <meta property="og:image" content="https://nabs881-sketch.github.io/niyyah-app/images/landing-1-orbe.jpg">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--gold:#C8A84A;--gd:rgba(200,168,74,.55);--cr:rgba(240,234,214,.88);--cd:rgba(240,234,214,.60);--bg:#0A0A0A;--b2:#0d0b08;--r:16px}
+    html{scroll-behavior:smooth}
+    body{font-family:Georgia,serif;background:var(--bg);color:var(--cr);line-height:1.7;font-size:16px;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 28px;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,168,74,.08)}
+    .nl{font-size:18px;color:var(--gold);letter-spacing:2px;text-decoration:none}
+    .nc{display:inline-block;padding:8px 20px;border:1px solid rgba(200,168,74,.5);border-radius:40px;color:var(--gold);font-family:Georgia,serif;font-size:13px;letter-spacing:1px;text-decoration:none;transition:background .2s,border-color .2s}
+    .nc:hover{background:rgba(200,168,74,.10);border-color:var(--gold)}
+    .hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}
+    .hbg{position:absolute;inset:0;background-image:url(images/landing-1-orbe.jpg);background-size:cover;background-position:center;filter:brightness(.25) saturate(.7);z-index:0}
+    .hvi{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(10,10,10,.7) 100%);z-index:1}
+    .hco{position:relative;z-index:2;max-width:640px}
+    .bsm{font-size:26px;color:var(--gd);letter-spacing:3px;margin-bottom:32px;direction:rtl}
+    .ht{font-size:clamp(36px,8vw,64px);color:var(--gold);letter-spacing:3px;font-weight:normal;line-height:1.15;margin-bottom:12px}
+    .hs{font-size:clamp(13px,3vw,16px);color:var(--gd);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:28px}
+    .hd{font-size:clamp(15px,3.5vw,18px);color:var(--cd);max-width:480px;margin:0 auto 48px;line-height:1.75}
+    .hd em{color:var(--cr);font-style:normal}
+    .btn{display:inline-block;padding:18px 44px;background:linear-gradient(135deg,#C8A84A 0%,#9E7E2F 100%);color:#0A0A0A;font-family:Georgia,serif;font-size:16px;font-weight:bold;letter-spacing:1.5px;border-radius:60px;text-decoration:none;box-shadow:0 0 40px rgba(200,168,74,.3),0 4px 20px rgba(0,0,0,.6);transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 0 60px rgba(200,168,74,.45),0 8px 30px rgba(0,0,0,.6)}
+    .hscr{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;color:var(--gd);font-size:11px;letter-spacing:2px;text-align:center;animation:flt 2.5s ease-in-out infinite}
+    .hscr::after{content:"↓";display:block;font-size:18px;margin-top:4px}
+    @keyframes flt{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+    .dv{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto}
+    .ft{padding:0 24px}
+    .fi{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto;padding:96px 0;border-bottom:1px solid rgba(200,168,74,.06)}
+    .fi:last-child{border-bottom:none}
+    .fi.rv .fim{order:2}.fi.rv .fit{order:1}
+    .fim{border-radius:var(--r);overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.7);position:relative}
+    .fim::after{content:"";position:absolute;inset:0;border-radius:var(--r);border:1px solid rgba(200,168,74,.12);pointer-events:none}
+    .fim img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;transition:transform .6s ease}
+    .fim:hover img{transform:scale(1.02)}
+    .ftag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .fti{font-size:clamp(22px,4vw,32px);color:var(--cr);font-weight:normal;letter-spacing:.5px;line-height:1.3;margin-bottom:20px}
+    .fti strong{color:var(--gold);font-weight:normal}
+    .fbo{font-size:15px;color:var(--cd);line-height:1.8;margin-bottom:24px}
+    .fli{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .fli li{font-size:14px;color:var(--cd);padding-left:20px;position:relative}
+    .fli li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:9px;top:4px}
+    .strip{width:100%;overflow:hidden;position:relative;max-height:500px}
+    .strip img{width:100%;height:500px;object-fit:cover;object-position:center top;display:block;filter:brightness(.72) saturate(.85)}
+    .sov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.45) 0%,transparent 35%,transparent 65%,rgba(10,10,10,.7) 100%)}
+    .slb{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(200,168,74,.55);white-space:nowrap}
+    .ms{padding:96px 24px;text-align:center;background:var(--b2)}
+    .sl{font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+    .sti{font-size:clamp(24px,5vw,36px);color:var(--cr);font-weight:normal;letter-spacing:.5px;margin-bottom:14px}
+    .ss{font-size:15px;color:var(--cd);max-width:480px;margin:0 auto 56px}
+    .mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:960px;margin:0 auto}
+    .mc{background:rgba(200,168,74,.04);border:1px solid rgba(200,168,74,.12);border-radius:var(--r);padding:28px 20px;text-align:center;transition:background .25s,border-color .25s,transform .25s}
+    .mc:hover{background:rgba(200,168,74,.08);border-color:rgba(200,168,74,.28);transform:translateY(-3px)}
+    .mi{font-size:28px;margin-bottom:14px;display:block}
+    .mn{font-size:14px;color:var(--cr);letter-spacing:.5px;margin-bottom:8px}
+    .md{font-size:12px;color:var(--cd);line-height:1.6}
+    .cs{padding:120px 24px;text-align:center;position:relative;overflow:hidden}
+    .cbg{position:absolute;inset:0;background-image:url(images/landing-5-sanctuaire.jpg);background-size:cover;background-position:center;filter:brightness(.12) saturate(.4)}
+    .cco{position:relative;z-index:1}
+    .ct{font-size:clamp(26px,6vw,48px);color:var(--gold);font-weight:normal;letter-spacing:2px;margin-bottom:20px}
+    .cs2{font-size:15px;color:var(--cd);max-width:400px;margin:0 auto 48px}
+    .apkb{margin-top:40px}
+    .apl{font-size:11px;color:rgba(200,168,74,.38);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+    .apa{display:inline-block;font-size:13px;color:var(--gd);text-decoration:none;border-bottom:1px solid rgba(200,168,74,.25);padding-bottom:2px;transition:color .2s,border-color .2s}
+    .apa:hover{color:var(--gold);border-color:var(--gold)}
+    .api{margin-top:16px;font-size:12px;color:rgba(240,234,214,.32);max-width:360px;margin-left:auto;margin-right:auto;line-height:1.7}
+    footer{background:var(--b2);border-top:1px solid rgba(200,168,74,.08);padding:40px 24px;text-align:center}
+    .flo{font-size:20px;color:var(--gold);letter-spacing:2px;margin-bottom:16px;display:block}
+    .fln{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:20px}
+    .fln a{font-size:12px;color:rgba(200,168,74,.45);text-decoration:none;letter-spacing:1px;transition:color .2s}
+    .fln a:hover{color:var(--gold)}
+    .fco{font-size:11px;color:rgba(240,234,214,.2);letter-spacing:.5px}
+    @media(max-width:760px){.fi{grid-template-columns:1fr;gap:32px;padding:72px 0}.fi.rv .fim,.fi.rv .fit{order:unset}.fim img{aspect-ratio:4/5}nav{padding:14px 20px}.strip img{height:300px}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nl" href="#">نِيّة  Niyyah</a>
+  <a class="nc" href="https://nabs881-sketch.github.io/niyyah-app/index.html">Ouvrir l’app</a>
+</nav>
+<section class="hero">
+  <div class="hbg"></div><div class="hvi"></div>
+  <div class="hco">
+    <div class="bsm">بِسْمِ اللّهِ</div>
+    <h1 class="ht">Niyyah Daily ✦</h1>
+    <div class="hs">Pratique &amp; Élévation</div>
+    <p class="hd"><em>« Les actes ne valent que par leurs intentions. »</em><br>Transforme chaque geste du quotidien en acte sacré — horaires de prière, invocations, verset du Coran révélé par ta caméra, et bien plus.</p>
+    <a class="btn" href="https://nabs881-sketch.github.io/niyyah-app/index.html">Installer l’application</a>
+  </div>
+  <div class="hscr">Découvrir</div>
+</section>
+<section class="ft">
+  <div class="fi">
+    <div class="fim"><img src="images/landing-2-regard.jpg" alt="Scanner Regard" loading="lazy"></div>
+    <div class="fit">
+      <div class="ftag">Scanner Regard</div>
+      <h2 class="fti">Un <strong>verset du Coran</strong><br>révélé par ta caméra</h2>
+      <p class="fbo">Pointe ta caméra vers ce qui attire ton regard — une personne, un objet, la nature. Niyyah analyse la scène et t’offre le verset qui lui répond, comme si le Coran te parlait directement de ce que tu vois.</p>
+      <ul class="fli"><li>Analyse par intelligence artificielle</li><li>Verset en arabe, translittération et sens</li><li>Journal de tes regards gardé en mémoire</li><li>Partage en image le vendredi</li></ul>
+    </div>
+  </div>
+  <div class="fi rv">
+    <div class="fim"><img src="images/landing-3-portes.jpg" alt="Portes de l’Âme" loading="lazy"></div>
+    <div class="fit">
+      <div class="ftag">Bāb an-Nafs</div>
+      <h2 class="fti">Les <strong>Portes de l’Âme</strong></h2>
+      <p class="fbo">Sept maladies du cœur — colère, arrogance, médisance, paresse, attachement, anxiété, regard — chacune avec un programme de guérison de 7 jours. Textes de Ghazali, Ibn al-Qayyim, Ibn Aṭā Allāh.</p>
+      <ul class="fli"><li>Cures de 7 jours guidées</li><li>Textes des grands savants de l’âme</li><li>Exercices pratiques quotidiens</li><li>Tafakkur — méditation guidée par questions</li></ul>
+    </div>
+  </div>
+  <div class="fi">
+    <div class="fim"><img src="images/landing-4-tasse.jpg" alt="Scanner Niyyah" loading="lazy"></div>
+    <div class="fit">
+      <div class="ftag">Scanner Niyyah</div>
+      <h2 class="fti">Sacralise<br><strong>chaque acte</strong></h2>
+      <p class="fbo">Montre ce que tu t’apprêtes à faire — travailler, cuisiner, étudier, sortir. Niyyah te propose l’intention juste, pour que rien dans ta journée ne soit vide de sens.</p>
+      <ul class="fli"><li>Intention personnalisée par la caméra</li><li>Formulations en français et en arabe</li><li>Journal d’intentions hebdomadaire</li><li>Orbe de lumière pour ancrer l’intention</li></ul>
+    </div>
+  </div>
+</section>
+<div class="strip">
+  <img src="images/landing-5-sanctuaire.jpg" alt="Le Sanctuaire — Niyyah Daily" loading="lazy">
+  <div class="sov"></div><div class="slb">Le Sanctuaire</div>
+</div>
+<section class="ms">
+  <div class="sl">Tout ce dont tu as besoin</div>
+  <h2 class="sti">Une pratique complète</h2>
+  <p class="ss">Niyyah réunit dans une seule application ce que tu faisais sur cinq.</p>
+  <div class="mg">
+    <div class="mc"><span class="mi">🕌</span><div class="mn">Horaires de prière</div><div class="md">Calcul local des 5 prières selon ta position. Rappels configurables.</div></div>
+    <div class="mc"><span class="mi">📿</span><div class="mn">Wird &amp; Dhikr</div><div class="md">Invocations matin et soir. Compteur de dhikr. Audio intégré.</div></div>
+    <div class="mc"><span class="mi">📖</span><div class="mn">Savais-tu ?</div><div class="md">Fiqh, hadiths, récits coraniques, capsules de tawhīd.</div></div>
+    <div class="mc"><span class="mi">🧭</span><div class="mn">Qibla</div><div class="md">Boussole de direction vers La Mecque.</div></div>
+    <div class="mc"><span class="mi">📅</span><div class="mn">Calendrier hijri</div><div class="md">Dates islamiques et événements religieux.</div></div>
+    <div class="mc"><span class="mi">🌙</span><div class="mn">Chemin spirituel</div><div class="md">4 niveaux progressifs. Streak, badges, bilan hebdomadaire.</div></div>
+    <div class="mc"><span class="mi">🤲</span><div class="mn">Purification &amp; Fiqh</div><div class="md">Wudû, Tayammum, Qasr, Zakat, Istikhara — guides illustrés.</div></div>
+    <div class="mc"><span class="mi">🌿</span><div class="mn">Compagnons &amp; Sīra</div><div class="md">365 épisodes de la vie du Prophète et portraits des Compagnons.</div></div>
+  </div>
+</section>
+<section class="cs">
+  <div class="cbg"></div>
+  <div class="cco">
+    <div class="dv" style="margin-bottom:40px"></div>
+    <h2 class="ct">Commence aujourd’hui</h2>
+    <p class="cs2">Gratuit. Sans compte. Tout reste sur ton téléphone.</p>
+    <a class="btn" href="https://nabs881-sketch.github.io/niyyah-app/index.html">Installer l’application</a>
+    <div class="apkb">
+      <div class="apl">Android · Installation directe</div>
+      <a class="apa" href="https://github.com/nabs881-sketch/niyyah-app/releases/latest/download/niyyah.apk" download>Télécharger le fichier APK</a>
+      <p class="api">Ouvre le fichier téléchargé. Si Android demande l’autorisation,<br>active « Sources inconnues » dans Paramètres → Applications → Accès spéciaux.<br>L’application s’installe comme n’importe quelle autre app.</p>
+    </div>
+    <div style="margin-top:56px" class="dv"></div>
+  </div>
+</section>
+<footer>
+  <span class="flo">نِيّة  Niyyah Daily</span>
+  <div class="fln">
+    <a href="https://nabs881-sketch.github.io/niyyah-app/index.html">Ouvrir l’app</a>
+    <a href="privacy-policy.html">Confidentialité</a>
+    <a href="mailto:nabs881@gmail.com">Contact</a>
+  </div>
+  <div class="fco">© 2026 Niyyah Daily · Pratique &amp; Élévation</div>
+</footer>
+</body></html>
