@@ -7843,7 +7843,7 @@ function showWeeklyBilan() {
         var el = document.getElementById('_wkConseil');
         if (el) {
           el.previousElementSibling && el.previousElementSibling.className === '' || el.insertAdjacentHTML('beforebegin', '<div style="text-align:center;font-family:\'Georgia\',serif;font-size:12px;font-style:italic;color:#B5A685;margin-bottom:12px;">\u2726 Une lettre de Niyyah, \u00e9crite cette semaine pour toi.</div>');
-          el.innerHTML = data.message.split('\n\n').map(function(p) { return '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + p + '</div>'; }).join('');
+          el.innerHTML = data.message.split('\n\n').map(function(p) { return '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + escapeHtml(p) + '</div>'; }).join('');
         }
       }
     }).catch(function() {});
@@ -18438,7 +18438,7 @@ async function regardeOpen() {
 
 function _regardeShowQuestion(content, question) {
   content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:0 10%;">'
-    + '<div id="regarde-question" style="font-family:\'Georgia\',serif;font-size:26px;font-style:italic;color:#D4AF37;text-align:center;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + question + '</div>'
+    + '<div id="regarde-question" style="font-family:\'Georgia\',serif;font-size:26px;font-style:italic;color:#D4AF37;text-align:center;line-height:1.6;max-width:80%;opacity:0;animation:regardeFadeIn 1.5s ease forwards;">' + escapeHtml(question) + '</div>'
     + '<div style="display:flex;gap:20px;margin-top:32px;opacity:0;animation:regardeFadeIn 1.5s ease 0.5s forwards;">'
     + '<button id="regarde-btn-star" onclick="regardeToggleStar()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">☆</button>'
     + '<button onclick="regardeRefresh()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">↻</button>'
@@ -18499,18 +18499,18 @@ function _renderRegardePremium(content, data, dataUrl) {
       var sourateName = ar.surah ? ar.surah.englishName : '';
       var refLabel = sourateName + ' (' + ref + ')';
       var lieuFixe = (ar.surah && ar.surah.revelationType) ? (ar.surah.revelationType === 'Medinan' ? 'Médine' : 'Mecque') : (data.lieu_revelation || '');
-      var _lieuHtml = lieuFixe ? ' <span style="font-size:12px;color:rgba(200,168,75,0.45);">(' + lieuFixe + ')</span>' : '';
-      var _phoneHtml = translit ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + translit + '</div>' : '';
+      var _lieuHtml = lieuFixe ? ' <span style="font-size:12px;color:rgba(200,168,75,0.45);">(' + escapeHtml(lieuFixe) + ')</span>' : '';
+      var _phoneHtml = translit ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.5);line-height:1.6;max-width:340px;margin-bottom:8px;">' + escapeHtml(translit) + '</div>' : '';
       var _sep = '<div style="width:40px;height:1px;background:rgba(200,168,75,0.3);margin:20px auto;"></div>';
       var _hasAudio = !!audioUrl;
       content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:40px 24px;text-align:center;">'
-        + '<div style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:16px;">' + refLabel + _lieuHtml + '</div>'
-        + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.8;margin-bottom:8px;">' + (ar.text || '') + '</div>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:13px;letter-spacing:2px;color:rgba(200,168,75,0.6);margin-bottom:16px;">' + escapeHtml(refLabel) + _lieuHtml + '</div>'
+        + '<div style="font-family:\'Scheherazade New\',Amiri,serif;font-size:24px;color:#FAF7EE;direction:rtl;line-height:1.8;margin-bottom:8px;">' + escapeHtml(ar.text || '') + '</div>'
         + _phoneHtml
         + _sep
-        + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(229,224,220,0.85);line-height:1.8;max-width:340px;">' + (fr.text || '') + '</div>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(229,224,220,0.85);line-height:1.8;max-width:340px;">' + escapeHtml(fr.text || '') + '</div>'
         + _sep
-        + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + (data.meditation || '') + '</div>'
+        + '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#C8A84A;line-height:1.6;max-width:320px;">' + escapeHtml(data.meditation || '') + '</div>'
         + (getRegardStreak() > 0 ? '<div class="regard-streak">' + _svgStreakIcon + '<span>' + getRegardStreak() + ' jour' + (getRegardStreak() > 1 ? 's' : '') + ' de Regards</span></div>' : '')
         + '<div class="regard-actions-row">'
         + (audioUrl ? '<button class="btn-regard-premium" id="regarde-premium-audio" onclick="_regardePremiumPlayAudio(this)" data-src="' + audioUrl + '" aria-label="\u00c9couter">' + _svgPlayIcon + '</button>' : '')
@@ -18534,8 +18534,8 @@ function _renderRegardePremium(content, data, dataUrl) {
     })
     .catch(function() {
       content.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:16px;padding:40px;">'
-        + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);text-align:center;">Verset introuvable (' + ref + ')</div>'
-        + (data.meditation ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#C8A84A;text-align:center;max-width:300px;">' + data.meditation + '</div>' : '')
+        + '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);text-align:center;">Verset introuvable (' + escapeHtml(ref) + ')</div>'
+        + (data.meditation ? '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:#C8A84A;text-align:center;max-width:300px;">' + escapeHtml(data.meditation) + '</div>' : '')
         + '<button onclick="_renderRegardePremium(document.getElementById(\'regarde-content\'),' + JSON.stringify(data).replace(/'/g, '\\\'') + ',null);" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button>'
         + '</div>';
     });
