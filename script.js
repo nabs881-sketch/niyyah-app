@@ -1334,7 +1334,7 @@ function renderRamadan() {
 var SAVAIS_TU = null;
 function loadSavaisTu(cb) {
   if (SAVAIS_TU) { if (cb) cb(SAVAIS_TU); return; }
-  fetch('./savais_tu.json').then(function(r) { return r.json(); }).then(function(data) { SAVAIS_TU = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+  fetch('./savais_tu.json').then(function(r) { return r.json(); }).then(function(data) { SAVAIS_TU = data; if (cb) cb(data); }).catch(function() { _scheduleOfflineRetry(); if (cb) cb(null); });
 }
 var duaasData = null;
 function loadDuaas(cb) {
@@ -1342,14 +1342,14 @@ function loadDuaas(cb) {
   fetch('./duaas.json').then(function(r){return r.json();}).then(function(data){
     duaasData = (data && data.items) ? data.items : (Array.isArray(data) ? data : []);
     if (cb) cb(duaasData);
-  }).catch(function(){ if (cb) cb([]); });
+  }).catch(function(){ _scheduleOfflineRetry(); if (cb) cb([]); });
 }
 function getDuaaJourNum() { var p = parseInt(safeGetItem('niyyah_duaa_progress') || '1', 10); var _pool = (duaasData && duaasData.length) || 245; return ((p - 1) % _pool) + 1; }
 function getDuaaJourPreview() { var n = getDuaaJourNum(); var _pool = (duaasData && duaasData.length) || 245; return { jour: n, total: _pool }; }
 var GHIDAA_DATA = null;
 function loadGhidaa(cb) {
   if (GHIDAA_DATA) { if (cb) cb(GHIDAA_DATA); return; }
-  fetch('./data/modules/ghidaa_module_complet.json').then(function(r) { return r.json(); }).then(function(d) { GHIDAA_DATA = d && d.items ? d.items : []; if (cb) cb(GHIDAA_DATA); }).catch(function() { if (cb) cb(null); });
+  fetch('./data/modules/ghidaa_module_complet.json').then(function(r) { return r.json(); }).then(function(d) { GHIDAA_DATA = d && d.items ? d.items : []; if (cb) cb(GHIDAA_DATA); }).catch(function() { _scheduleOfflineRetry(); if (cb) cb(null); });
 }
 function getGhidaaJour() {
   if (!GHIDAA_DATA || !GHIDAA_DATA.length) return null;
@@ -1364,7 +1364,7 @@ function loadTibb(cb) {
     TIBB_DATA = d && d.items ? d.items : [];
     if (d && d.disclaimer) TIBB_DISCLAIMER = d.disclaimer;
     if (cb) cb(TIBB_DATA);
-  }).catch(function() { if (cb) cb(null); });
+  }).catch(function() { _scheduleOfflineRetry(); if (cb) cb(null); });
 }
 function getTibbJour() {
   if (!TIBB_DATA || !TIBB_DATA.length) return null;
@@ -1374,12 +1374,12 @@ function getTibbJour() {
 var MASHHURAT_DATA = null;
 function loadMashhurat(cb) {
   if (MASHHURAT_DATA) { if (cb) cb(MASHHURAT_DATA); return; }
-  fetch('./data/modules/mashhurat_module_complet.json').then(function(r) { return r.json(); }).then(function(d) { MASHHURAT_DATA = d && d.items ? d.items : []; if (cb) cb(MASHHURAT_DATA); }).catch(function() { if (cb) cb(null); });
+  fetch('./data/modules/mashhurat_module_complet.json').then(function(r) { return r.json(); }).then(function(d) { MASHHURAT_DATA = d && d.items ? d.items : []; if (cb) cb(MASHHURAT_DATA); }).catch(function() { _scheduleOfflineRetry(); if (cb) cb(null); });
 }
 var FIQH_JOUR = null;
 function loadFiqh(cb) {
   if (FIQH_JOUR) { if (cb) cb(FIQH_JOUR); return; }
-  fetch('./fiqh_jour.json').then(function(r) { return r.json(); }).then(function(data) { FIQH_JOUR = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+  fetch('./fiqh_jour.json').then(function(r) { return r.json(); }).then(function(data) { FIQH_JOUR = data; if (cb) cb(data); }).catch(function() { _scheduleOfflineRetry(); if (cb) cb(null); });
 }
 function getFiqhJourRule() {
   if (!FIQH_JOUR || !FIQH_JOUR.length) return { categorie: '', sous_theme: '', regle: '', explication: '', source: '', ecole: '' };
@@ -1389,12 +1389,12 @@ function getFiqhJourRule() {
 var HADITHS_JOUR = null;
 function loadHadiths(cb) {
   if (HADITHS_JOUR) { if (cb) cb(HADITHS_JOUR); return; }
-  fetch('./hadiths_jour.json').then(function(r) { return r.json(); }).then(function(data) { HADITHS_JOUR = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+  fetch('./hadiths_jour.json').then(function(r) { return r.json(); }).then(function(data) { HADITHS_JOUR = data; if (cb) cb(data); }).catch(function() { _scheduleOfflineRetry(); if (cb) cb(null); });
 }
 var COMPAGNONS = null;
 function loadCompagnons(cb) {
   if (COMPAGNONS) { if (cb) cb(COMPAGNONS); return; }
-  fetch('./compagnons.json').then(function(r) { return r.json(); }).then(function(data) { COMPAGNONS = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+  fetch('./compagnons.json').then(function(r) { return r.json(); }).then(function(data) { COMPAGNONS = data; if (cb) cb(data); }).catch(function() { _scheduleOfflineRetry(); if (cb) cb(null); });
 }
 function getCompagnonJour() {
   if (!COMPAGNONS || !COMPAGNONS.length) return { compagnon: '', compagnon_ar: '', titre: '', recit: '', parole: '', station: '', source: '', episode_num: 0, episode_total: 0 };
@@ -1407,7 +1407,7 @@ function getCompagnonJour() {
 var PROPHETES = null;
 function loadProphetes(cb) {
   if (PROPHETES) { if (cb) cb(PROPHETES); return; }
-  fetch('./prophetes.json').then(function(r) { return r.json(); }).then(function(data) { PROPHETES = data; if (cb) cb(data); }).catch(function() { if (cb) cb(null); });
+  fetch('./prophetes.json').then(function(r) { return r.json(); }).then(function(data) { PROPHETES = data; if (cb) cb(data); }).catch(function() { _scheduleOfflineRetry(); if (cb) cb(null); });
 }
 function getPropheteJour() {
   if (!PROPHETES || !PROPHETES.length) return { prophete: '', prophete_ar: '', titre: '', recit: '', parole: '', station: '', sources: '', renvoi_module: '' };
@@ -1416,6 +1416,31 @@ function getPropheteJour() {
   var daysSince = Math.floor((Date.now() - parseInt(start, 10)) / 86400000);
   var jourParcours = (daysSince % PROPHETES.length) + 1;
   return PROPHETES.find(function(ep) { return ep.jour === jourParcours; }) || PROPHETES[0];
+}
+
+// ── Offline retry ────────────────────────────────────────────────────────────
+// Quand un fetch JSON échoue (offline), on enregistre un listener 'online'
+// unique qui re-rend l'écran courant. Les données manquantes sont re-fetched
+// automatiquement car leurs variables globales sont toujours null.
+var _offlineRetryRegistered = false;
+function _scheduleOfflineRetry(specificFn) {
+  // Listener spécifique (ex: retry _ensureCureData)
+  if (specificFn) {
+    window.addEventListener('online', function _onceRetry() {
+      window.removeEventListener('online', _onceRetry);
+      try { specificFn(); } catch(e) {}
+    });
+  }
+  // Listener global : re-rend l'onglet courant (1 seul maximum)
+  if (_offlineRetryRegistered) return;
+  _offlineRetryRegistered = true;
+  window.addEventListener('online', function _onOnline() {
+    window.removeEventListener('online', _onOnline);
+    _offlineRetryRegistered = false;
+    if (typeof renderLevel === 'function' && typeof currentLevel !== 'undefined') {
+      try { renderLevel(currentLevel); } catch(e) {}
+    }
+  });
 }
 (function _debugParcours() {
   var _ps = safeGetItem('niyyah_prophetes_start'), _ss = safeGetItem('niyyah_sira_start'), _cs = safeGetItem('niyyah_compagnons_start');
@@ -5099,8 +5124,11 @@ function _ensureCureData(dataKey, file, cb) {
     _cureDataLoaded[dataKey] = true; _cureDataLoading[dataKey] = false;
     var cbs = (_cureDataCbs[dataKey] || []).splice(0); cbs.forEach(function(fn){ fn(); });
   }).catch(function(){
-    _cureDataLoaded[dataKey] = true; _cureDataLoading[dataKey] = false;
-    var cbs = (_cureDataCbs[dataKey] || []).splice(0); cbs.forEach(function(fn){ fn(); });
+    // Ne pas marquer comme chargé → le retry peut re-fetcher
+    // Ne pas flusher les cbs → évite la récursion infinie (openCureXxx rappellerait _ensureCureData)
+    _cureDataLoading[dataKey] = false;
+    _scheduleOfflineRetry(function() { _ensureCureData(dataKey, file, null); });
+    if (!navigator.onLine && typeof showToast === 'function') showToast('Hors ligne \u2014 reconnexion automatique');
   });
 }
 
@@ -5226,7 +5254,7 @@ function _cureAnxieteGenericDay(el, dayNum) {
   var c = _getCureColor();
   var data = _getCureData();
   var j = data && data.jours && data.jours['j' + dayNum];
-  if (!j) { el.innerHTML = '<div style="padding:60px 24px;text-align:center;color:rgba(255,255,255,0.4);">Contenu en cours de chargement\u2026</div>'; return; }
+  if (!j) { el.innerHTML = '<div style="padding:60px 24px;text-align:center;color:rgba(255,255,255,0.4);">' + (!navigator.onLine ? 'Hors ligne \u2014 reconnexion automatique' : 'Contenu en cours de chargement\u2026') + '</div>'; return; }
   var isLast = (dayNum === 7);
 
   // Build steps array (v2: 5 blocs)
@@ -20645,7 +20673,7 @@ function openVueGhidaaJour() {
   _setRituelEmblem('\u063A\u0650\u0630\u064E\u0627\u0621', null);
   loadGhidaa(function() {
     var g = getGhidaaJour();
-    if (!g) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    if (!g) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">' + (!navigator.onLine ? 'Hors ligne \u2014 reconnexion automatique' : 'Erreur de chargement') + '</div>'; return; }
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + '<div class="fiqh-categorie">' + (g.categorie || '').toUpperCase() + '</div>'
       + '<div style="font-family:\'Amiri\',serif;font-size:28px;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:8px;">' + (g.nom_ar || '') + '</div>'
@@ -20683,7 +20711,7 @@ function openVueTibbJour() {
       _showTibbDisclaimer();
     }
     var t = getTibbJour();
-    if (!t) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    if (!t) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">' + (!navigator.onLine ? 'Hors ligne \u2014 reconnexion automatique' : 'Erreur de chargement') + '</div>'; return; }
     /* ── Icône ⓘ dans le header ── */
     var hdr = v.querySelector('.rituel-header');
     if (hdr && !hdr.querySelector('.tibb-info-btn')) {
@@ -21089,7 +21117,7 @@ function openVueFiqhJour() {
   loadFiqh(function() {
     if (safeGetItem('niyyah_fiqh_disclaimer_seen') !== 'true') { _showFiqhDisclaimer(); }
     var rule = getFiqhJourRule();
-    if (!rule.regle) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    if (!rule.regle) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">' + (!navigator.onLine ? 'Hors ligne \u2014 reconnexion automatique' : 'Erreur de chargement') + '</div>'; return; }
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + (rule.categorie ? '<div class="fiqh-categorie">' + rule.categorie.toUpperCase() + '</div>' : '')
       + (rule.sous_theme ? '<div style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:16px;">' + rule.sous_theme + '</div>' : '')
@@ -21137,7 +21165,7 @@ function openVueHadithJour() {
   _setRituelEmblem('\u062D\u064E\u062F\u0650\u064A\u062B', null);
   loadHadiths(function() {
     var h = getHadithJourRule();
-    if (!h.texte_fr) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    if (!h.texte_fr) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">' + (!navigator.onLine ? 'Hors ligne \u2014 reconnexion automatique' : 'Erreur de chargement') + '</div>'; return; }
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + (h.theme ? '<div class="fiqh-categorie">' + h.theme.toUpperCase() + '</div>' : '')
       + (h.texte_ar ? '<div style="font-family:\'Amiri\',serif;font-size:24px;line-height:2;color:rgba(200,168,74,0.85);direction:rtl;margin-bottom:20px;">' + h.texte_ar + '</div>' : '')
@@ -21164,7 +21192,7 @@ function openVueDuaaJour() {
   v.classList.remove('hidden');
   _setRituelEmblem('\u062F\u064F\u0639\u064E\u0627\u0621', null);
   loadDuaas(function(data) {
-    if (!data) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">Erreur de chargement</div>'; return; }
+    if (!data || !data.length) { main.innerHTML = '<div style="text-align:center;padding:40px;color:#C8A84A;">' + (!navigator.onLine ? 'Hors ligne \u2014 reconnexion automatique' : 'Erreur de chargement') + '</div>'; return; }
     var duaa = data.find(function(d) { return d.jour === jourNum; }) || data[0];
     main.innerHTML = '<div style="padding:20px 16px;text-align:center;">'
       + '<div class="fiqh-categorie">' + (duaa.categorie || '').toUpperCase() + ' \u00b7 JOUR ' + jourNum + '/245</div>'
@@ -21280,7 +21308,7 @@ window._compagnonsOpenByJour = _compagnonsOpenByJour;
 function openVueCompagnon() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   loadCompagnons(function() {
-    if (!COMPAGNONS || !COMPAGNONS.length) { showToast('Erreur de chargement'); return; }
+    if (!COMPAGNONS || !COMPAGNONS.length) { showToast(!navigator.onLine ? 'Hors ligne \u2014 reconnexion automatique' : 'Erreur de chargement'); return; }
     try { history.pushState({ niyyah_modal: 'compagnons' }, ''); } catch(e) {}
     var c = getCompagnonJour();
     _compagnonsRenderDetail(c, c.jour);
@@ -21357,7 +21385,7 @@ window._prophetesOpenByJour = _prophetesOpenByJour;
 function openVuePropheteJour() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   loadProphetes(function() {
-    if (!PROPHETES || !PROPHETES.length) { showToast('Erreur de chargement'); return; }
+    if (!PROPHETES || !PROPHETES.length) { showToast(!navigator.onLine ? 'Hors ligne \u2014 reconnexion automatique' : 'Erreur de chargement'); return; }
     var p = getPropheteJour();
     _prophetesRenderDetail(p, p.jour);
   });
