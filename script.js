@@ -14760,15 +14760,6 @@ function v2OpenSettings() {
 
       <div style="text-align:center;padding:8px;font-size:12px;color:rgba(240,234,214,0.55);font-family:'Georgia',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 
-      <!-- DEBUG TEMP — retirer après diagnostic notifications -->
-      <div id="debug-notif-info" style="margin-bottom:12px;padding:10px 12px;background:#0d0d0d;border:1px solid rgba(255,255,255,0.06);border-radius:10px;font-family:monospace;font-size:10px;color:rgba(255,255,255,0.35);line-height:1.8;word-break:break-all;">
-        <div>uid: <span style="color:rgba(200,168,75,0.6);">${(safeGetItem('niyyah_uid')||'—')}</span></div>
-        <div>notif: <span style="color:rgba(200,168,75,0.6);">${(typeof Notification !== 'undefined' ? Notification.permission : 'N/A')}</span></div>
-        <div>token_status: <span style="color:rgba(200,168,75,0.6);">${(safeGetItem('niyyah_token_status')||'—')}</span></div>
-        <div>prayers: <span style="color:rgba(200,168,75,0.6);">${(typeof _prayerTimes !== 'undefined' && _prayerTimes && Object.keys(_prayerTimes).length > 0 ? 'OK — ' + Object.keys(_prayerTimes).join(' ') : 'VIDE')}</span></div>
-        <div>push_sub: <span id="debug-push-sub" style="color:rgba(200,168,75,0.6);">…</span></div>
-      </div>
-      <!-- /DEBUG TEMP -->
 
       <button onclick="document.getElementById('v2-settings-sheet').remove();" aria-label="Fermer les param\u00e8tres"
         style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.55);font-family:'Georgia',serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
@@ -14787,22 +14778,6 @@ function v2OpenSettings() {
               : '\u2014';
     el.textContent = label;
   }, 50);
-  // DEBUG TEMP — vérification push subscription asynchrone
-  (async function() {
-    var span = document.getElementById('debug-push-sub');
-    if (!span) return;
-    try {
-      if (!('serviceWorker' in navigator) || !('PushManager' in window)) { span.textContent = 'non supporté'; return; }
-      var reg = await navigator.serviceWorker.ready;
-      var sub = await reg.pushManager.getSubscription();
-      if (!sub) { span.textContent = 'AUCUNE subscription'; span.style.color = 'rgba(255,80,80,0.7)'; return; }
-      var j = sub.toJSON();
-      var ep = j.endpoint ? j.endpoint.replace('https://','').substring(0,40)+'…' : '?';
-      span.textContent = 'OK — ' + ep;
-      span.style.color = 'rgba(80,200,120,0.7)';
-    } catch(e) { span.textContent = 'erreur: ' + e.message; }
-  })();
-  // /DEBUG TEMP
 }
 
 function openOrientationPicker() {
