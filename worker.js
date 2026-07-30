@@ -1252,12 +1252,29 @@ async function _sendWebPush(subscription, notification, env) {
 // ═══════════════════════════════════════════════════
 
 const _PRAYERS_META = {
-  fajr:    { fr: 'Fajr',    body: 'وَقُومُوا لِلَّهِ قَانِتِينَ — La prière du Fajr est appelée.' },
-  dhuhr:   { fr: 'Dhouhr',  body: 'لَّذِينَ آمَنُوا اذْكُرُوا اللَّهَ ذِكْرًا كَثِيرًا — La prière du Dhouhr vous attend.' },
-  asr:     { fr: 'Asr',     body: 'حَافِظُوا عَلَى الصَّلَوَاتِ — Gardez la prière : Asr approche.' },
-  maghrib: { fr: 'Maghrib', body: 'سُبْحَانَ اللَّهِ حِينَ تُمْسُونَ — Le soleil se couche, Maghrib est là.' },
-  isha:    { fr: 'Icha',    body: 'وَمِنَ اللَّيْلِ فَسَبِّحْهُ — Avant de dormir, ne manquez pas Icha.' },
+  fajr:    { fr: 'Fajr',    kvKey: 'Fajr',    body: 'وَقُومُوا لِلَّهِ قَانِتِينَ — La prière du Fajr est appelée.' },
+  dhuhr:   { fr: 'Dhouhr',  kvKey: 'Dhuhr',   body: 'لَّذِينَ آمَنُوا اذْكُرُوا اللَّهَ ذِكْرًا كَثِيرًا — La prière du Dhouhr vous attend.' },
+  asr:     { fr: 'Asr',     kvKey: 'Asr',     body: 'حَافِظُوا عَلَى الصَّلَوَاتِ — Gardez la prière : Asr approche.' },
+  maghrib: { fr: 'Maghrib', kvKey: 'Maghrib', body: 'سُبْحَانَ اللَّهِ حِينَ تُمْسُونَ — Le soleil se couche, Maghrib est là.' },
+  isha:    { fr: 'Icha',    kvKey: 'Isha',    body: 'وَمِنَ اللَّيْلِ فَسَبِّحْهُ — Avant de dormir, ne manquez pas Icha.' },
 };
+
+const _MURMURES_MATIN = [
+  'Un instant pour ton âme avant de commencer',
+  'Bismillah — chaque acte peut être une ibadah',
+  'Ta journée commence avec la grâce d\'Allah',
+];
+const _MURMURES_SOIR = [
+  'La nuit est un cadeau. Commence-la en paix.',
+  'Ton wird du soir t\'attend. 5 minutes.',
+  'Al-Hamdulillah pour cette journée, quoi qu\'il en soit.',
+];
+const _REGARD_PUSH_MURMURES = [
+  'Un instant — où se posent tes yeux ?',
+  'Baisse le regard. Ton cœur s\'allège.',
+  'Le premier regard passe. Ne le suis pas du second.',
+  'Ce que l\'œil ne suit pas, le cœur ne convoite pas.',
+];
 
 function _timeToMin(t) {
   if (!t || typeof t !== 'string') return -1;
@@ -1305,8 +1322,11 @@ async function _sendPrayerNotifications(env) {
 
         const uid = key.slice('push:sub:'.length);
 
+        let subExpired = false;
+
         for (const [prayer, meta] of Object.entries(_PRAYERS_META)) {
-          const prayerMin = _timeToMin(prayers?.[prayer]);
+          // kvKey is the capitalized form used by the client (e.g. 'Fajr', not 'fajr')
+          const prayerMin = _timeToMin(prayers?.[meta.kvKey]);
           if (prayerMin < 0) continue;
 
           // Fenêtre ±3 min (cron toutes les 5 min, anti-doublon garantit 1 seul envoi)
@@ -1326,11 +1346,84 @@ async function _sendPrayerNotifications(env) {
 
           if (result === 'expired') {
             await env.RATE_LIMIT_KV.delete(key);
-            break; // plus de prières à envoyer pour cet abonné
+            subExpired = true;
+            break;
           }
           if (result === true) {
             await env.RATE_LIMIT_KV.put(sentKey, '1', { expirationTtl: 86400 });
             totalSent++;
+          }
+        }
+
+        if (subExpired) continue;
+
+        // ── Murmure du matin : Fajr+15 min (fallback 7h00 = 420) ──────────
+        {
+          const fajrMin  = _timeToMin(prayers?.Fajr);
+          const matinMin = fajrMin >= 0 ? fajrMin + 15 : 420;
+          if (Math.abs(nowMin - matinMin) <= 3) {
+            const sentKey = `push:sent:${uid}:murmure_matin:${today}`;
+            if (!(await env.RATE_LIMIT_KV.get(sentKey))) {
+              const text = _MURMURES_MATIN[Math.floor(Math.random() * _MURMURES_MATIN.length)];
+              const result = await _sendWebPush(subscription, {
+                title:  'Niyyah ✦ — Murmure du matin',
+                body:   text,
+                tag:    `murmure-matin-${today}`,
+                url:    './',
+                action: 'open',
+              }, env);
+              if (result === 'expired') { await env.RATE_LIMIT_KV.delete(key); continue; }
+              if (result === true) {
+                await env.RATE_LIMIT_KV.put(sentKey, '1', { expirationTtl: 86400 });
+                totalSent++;
+              }
+            }
+          }
+        }
+
+        // ── Murmure du soir : Maghrib+10 min (fallback 21h30 = 1290) ───────
+        {
+          const maghribMin = _timeToMin(prayers?.Maghrib);
+          const soirMin    = maghribMin >= 0 ? maghribMin + 10 : 1290;
+          if (Math.abs(nowMin - soirMin) <= 3) {
+            const sentKey = `push:sent:${uid}:murmure_soir:${today}`;
+            if (!(await env.RATE_LIMIT_KV.get(sentKey))) {
+              const text = _MURMURES_SOIR[Math.floor(Math.random() * _MURMURES_SOIR.length)];
+              const result = await _sendWebPush(subscription, {
+                title:  'Niyyah ✦ — Murmure du soir',
+                body:   text,
+                tag:    `murmure-soir-${today}`,
+                url:    './',
+                action: 'open',
+              }, env);
+              if (result === 'expired') { await env.RATE_LIMIT_KV.delete(key); continue; }
+              if (result === true) {
+                await env.RATE_LIMIT_KV.put(sentKey, '1', { expirationTtl: 86400 });
+                totalSent++;
+              }
+            }
+          }
+        }
+
+        // ── Rappel Regard : fixe 21h00 = 1260 ──────────────────────────────
+        {
+          if (Math.abs(nowMin - 1260) <= 3) {
+            const sentKey = `push:sent:${uid}:rappel_regard:${today}`;
+            if (!(await env.RATE_LIMIT_KV.get(sentKey))) {
+              const text = _REGARD_PUSH_MURMURES[Math.floor(Math.random() * _REGARD_PUSH_MURMURES.length)];
+              const result = await _sendWebPush(subscription, {
+                title:  'Niyyah ✦ — Regard',
+                body:   text,
+                tag:    `rappel-regard-${today}`,
+                url:    './',
+                action: 'open',
+              }, env);
+              if (result === 'expired') { await env.RATE_LIMIT_KV.delete(key); continue; }
+              if (result === true) {
+                await env.RATE_LIMIT_KV.put(sentKey, '1', { expirationTtl: 86400 });
+                totalSent++;
+              }
+            }
           }
         }
       } catch(e) {
