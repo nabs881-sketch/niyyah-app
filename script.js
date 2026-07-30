@@ -20607,6 +20607,12 @@ function closeVueSavaisTu() {
 }
 window.closeVueSavaisTu = closeVueSavaisTu;
 
+// Spinner de chargement doré — réutilisé dans toutes les vues modules
+var _LOADING_SPINNER = '<div style="text-align:center;padding:40px 16px;">'
+  + '<div class="prayer-spinner" style="margin:0 auto 12px;"></div>'
+  + '<div style="color:rgba(200,168,75,0.5);font-size:13px;font-family:\'Georgia\',serif;font-style:italic;">Chargement\u2026</div>'
+  + '</div>';
+
 function openVueSavaisTu() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
   try { history.pushState({ niyyah_modal: 'savais-tu' }, ''); } catch(e) {}
@@ -20614,7 +20620,7 @@ function openVueSavaisTu() {
   a11yOnOverlayOpen();
   const v = document.getElementById('vue-savais-tu');
   if (!v) return;
-  v.querySelector('.savais-fait').textContent = 'Chargement\u2026';
+  v.querySelector('.savais-fait').innerHTML = '<div class="prayer-spinner" style="margin:20px auto;"></div>';
   v.querySelector('.savais-source').textContent = '';
   v.classList.remove('hidden');
   _mergeMashhurat(function() { loadSavaisTu(function() {
@@ -20666,7 +20672,7 @@ function openVueGhidaaJour() {
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
+  main.innerHTML = _LOADING_SPINNER;
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('ghidaa_jour')");
   v.classList.remove('hidden');
@@ -20700,7 +20706,7 @@ function openVueTibbJour() {
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
+  main.innerHTML = _LOADING_SPINNER;
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('tibb_jour')");
   v.classList.remove('hidden');
@@ -21109,7 +21115,7 @@ function openVueFiqhJour() {
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
+  main.innerHTML = _LOADING_SPINNER;
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('fiqh_jour')");
   v.classList.remove('hidden');
@@ -21158,7 +21164,7 @@ function openVueHadithJour() {
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
+  main.innerHTML = _LOADING_SPINNER;
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('hadith1')");
   v.classList.remove('hidden');
@@ -21188,7 +21194,7 @@ function openVueDuaaJour() {
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
   var jourNum = getDuaaJourNum();
-  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
+  main.innerHTML = _LOADING_SPINNER;
   v.classList.remove('hidden');
   _setRituelEmblem('\u062F\u064F\u0639\u064E\u0627\u0621', null);
   loadDuaas(function(data) {
@@ -21401,7 +21407,7 @@ function openVueVersetJour() {
   v.querySelector('.rituel-prochaine').textContent = '';
   v.querySelector('.rituel-poetique').textContent = '';
   var main = v.querySelector('.rituel-content');
-  main.innerHTML = '<div style="text-align:center;padding:40px 16px;color:rgba(255,255,255,0.4);font-size:14px;">Chargement\u2026</div>';
+  main.innerHTML = _LOADING_SPINNER;
   var _footer = v.querySelector('.rituel-footer button');
   if (_footer) _footer.setAttribute('onclick', "validerLecture('quran_read')");
   v.classList.remove('hidden');
