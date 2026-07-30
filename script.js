@@ -2651,7 +2651,7 @@ function renderLevel(levelId) {
           : 'toggleItem(\'' + item.id + '\',event)';
         var shareBtn = '';
         if (_isKnowledge) {
-          shareBtn = '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + customClick + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
+          shareBtn = '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:0;margin:0;position:relative;z-index:10;isolation:isolate;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;" onclick="event.stopPropagation();' + customClick + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
         }
         if (item.id === 'lisan') {
           // Premium luxe render for "Comprendre le Coran"
@@ -6967,8 +6967,8 @@ function _regardStreakInline(displayOnly) {
   var doneToday = lastCheck === today;
   return '<div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:8px auto;max-width:320px;">'
     + '<span style="font-family:var(--serif);font-size:13px;color:rgba(200,168,75,0.6);">' + (current === 0 ? 'Commence aujourd\u2019hui' : (current + ' jour' + (current > 1 ? 's' : '') + ' en silence')) + '</span>'
-    + (doneToday ? '' : '<button onclick="_regardStreakTap()" style="background:none;border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:4px 10px;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:12px;cursor:pointer;">J\u2019ai tenu aujourd\u2019hui</button>')
-    + (current > 0 ? '<button onclick="_regardStreakFall()" style="background:none;border:none;padding:4px 8px;color:rgba(200,168,75,0.25);font-family:var(--serif);font-size:12px;cursor:pointer;">J\u2019ai chut\u00e9</button>' : '')
+    + (doneToday ? '' : '<button onclick="_regardStreakTap()" style="background:none;border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:0 10px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:rgba(200,168,75,0.5);font-family:var(--serif);font-size:12px;cursor:pointer;">J\u2019ai tenu aujourd\u2019hui</button>')
+    + (current > 0 ? '<button onclick="_regardStreakFall()" style="background:none;border:none;padding:0 8px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:rgba(200,168,75,0.25);font-family:var(--serif);font-size:12px;cursor:pointer;">J\u2019ai chut\u00e9</button>' : '')
     + '</div>';
 }
 
@@ -20416,14 +20416,14 @@ function openVueAuFilDuJour() {
       : it.id === 'quiz_jour' ? 'window._openQuizJour();'
       : it.coranPicker ? '_openCoranInlineFil(event);'
       : 'toggleItem(\'' + it.id + '\',event); _filItemToggled(\'' + it.id + '\');';
-    var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:8px 4px;margin:0;position:relative;z-index:10;isolation:isolate;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
+    var _readBtn = _isKnowledgeFil ? '<button style="background:none;border:none;cursor:pointer;flex-shrink:0;align-self:center;padding:0;margin:0;position:relative;z-index:10;isolation:isolate;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;" onclick="event.stopPropagation();' + _click + '"><svg width="14" height="22" viewBox="0 0 14 22" style="pointer-events:none;" aria-hidden="true"><path d="M3 4 L10 11 L3 18" fill="none" stroke="#C8A84A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>' : '';
     var _filKnBg = _isKnowledgeFil ? ' style="background:rgba(200,168,75,0.08);border-color:rgba(200,168,75,0.2);"' : '';
     var _isWirdOrCounter = it.type === 'wird' || it.type === 'counter';
     var _checkClick = it.coranPicker ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"'
       : _isKnowledgeFil ? ' onclick="event.stopPropagation();toggleItem(\'' + it.id + '\',event);_filItemToggled(\'' + it.id + '\');"'
       : _isWirdOrCounter ? ' onclick="event.stopPropagation();_forceFilCheck(\'' + it.id + '\',event);"'
       : '';
-    var _lisanInfo = it.id === 'lisan' ? '<button style="background:none;border:none;cursor:pointer;padding:2px 4px;margin:0;flex-shrink:0;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button>' : '';
+    var _lisanInfo = it.id === 'lisan' ? '<button style="background:none;border:none;cursor:pointer;padding:0;margin:0;flex-shrink:0;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;" ontouchstart="event.stopPropagation()" onclick="event.stopPropagation();openLisanMethode()" title="Méthode"><span style="font-size:14px;color:#C8A84A;opacity:0.6;">ⓘ</span></button>' : '';
     var _labelHtml = _lisanInfo ? '<div style="display:flex;align-items:center;gap:8px;"><div class="label">' + (it.label||it.id) + '</div>' + _lisanInfo + '</div>' : '<div class="label">' + (it.label||it.id) + '</div>';
     return '<div class="rituel-item ' + done + '"' + _filKnBg + ' id="rituel-item-' + it.id + '" onclick="' + _click + '"><div class="check"' + _checkClick + '></div><div style="flex:1">' + _labelHtml + sub + ar + '</div>' + _readBtn + _coranBtn + audio + '</div>';
   };
@@ -20865,12 +20865,12 @@ function openVueLisan(viewDay) {
 
   // Header with navigation
   html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">';
-  html += '<button onclick="openVueLisan(' + (currentDay - 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:4px 10px;color:' + (canPrev ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canPrev ? '' : 'pointer-events:none;') + '">\u2039</button>';
+  html += '<button onclick="openVueLisan(' + (currentDay - 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:0;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;color:' + (canPrev ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canPrev ? '' : 'pointer-events:none;') + '">\u2039</button>';
   html += '<div style="text-align:center;">';
   html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.5);">COMPRENDRE LE CORAN</div>';
   html += '<div style="font-family:\'Georgia\',serif;font-size:12px;color:rgba(200,168,75,0.4);margin-top:2px;">Jour ' + currentDay + ' sur ' + total + ' \u2014 Palier ' + _lisanPalier + '</div>';
   html += '</div>';
-  html += '<button onclick="openVueLisan(' + (currentDay + 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:4px 10px;color:' + (canNext ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canNext ? '' : 'pointer-events:none;') + '">\u203a</button>';
+  html += '<button onclick="openVueLisan(' + (currentDay + 1) + ')" style="background:none;border:none;font-size:20px;cursor:pointer;padding:0;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;color:' + (canNext ? '#C8A84A' : 'rgba(200,168,75,0.15)') + ';' + (canNext ? '' : 'pointer-events:none;') + '">\u203a</button>';
   html += '</div>';
 
   // Today indicator
@@ -20881,7 +20881,7 @@ function openVueLisan(viewDay) {
   }
 
   // Close button
-  html += '<div style="text-align:right;margin-top:-48px;margin-bottom:24px;"><button onclick="document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:4px 8px;">\u00d7</button></div>';
+  html += '<div style="text-align:right;margin-top:-48px;margin-bottom:24px;"><button onclick="document.getElementById(\'lisan-overlay\').remove();_restoreScroll();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:0;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;">\u00d7</button></div>';
 
   // Mot arabe (grand)
   html += '<div style="text-align:center;margin-bottom:8px;">';
@@ -20977,7 +20977,7 @@ function openLisanGlossaire() {
   html += '<div style="font-family:\'Georgia\',serif;font-size:12px;letter-spacing:2px;color:rgba(200,168,75,0.5);">MES MOTS</div>';
   html += '<div style="font-family:\'Georgia\',serif;font-size:13px;color:rgba(200,168,75,0.35);margin-top:2px;">' + todayDay + ' mots d\u00e9bloqu\u00e9s sur ' + window.LISAN_DATA.length + '</div>';
   html += '</div>';
-  html += '<button onclick="document.getElementById(\'lisan-glossaire\').remove();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:4px 8px;">\u00d7</button>';
+  html += '<button onclick="document.getElementById(\'lisan-glossaire\').remove();" style="background:none;border:none;color:rgba(255,255,255,0.4);font-size:22px;cursor:pointer;padding:0;min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;">\u00d7</button>';
   html += '</div>';
 
   // Search
