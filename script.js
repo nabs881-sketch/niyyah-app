@@ -189,7 +189,7 @@ function addRegardeEntry(entry) {
     verset_index: typeof entry.verset_index === 'number' ? entry.verset_index : undefined,
     photo: entry.photo || null,
     bookmark: !!entry.bookmark,
-    note: entry.note || ''
+    note: (entry.note || '').substring(0, 1000)
   };
   if (item.photo && safeGetItem('niyyah_photo_disclaimer_seen') !== '1') {
     safeSetItem('niyyah_photo_disclaimer_seen', '1');
@@ -205,7 +205,7 @@ function addNiyyahEntry(entry) {
   var item = {
     id: Date.now() + '_' + Math.random().toString(36).slice(2, 6),
     date: new Date().toISOString(),
-    intention: entry.intention || '',
+    intention: (entry.intention || '').substring(0, 500),
     category: entry.category || 'INDETERMINE',
     photo: entry.photo || null
   };
@@ -224,7 +224,7 @@ function updateRegardeEntry(id, updates) {
   for (var i = 0; i < arr.length; i++) {
     if (arr[i].id === id) {
       if (updates.bookmark !== undefined) arr[i].bookmark = updates.bookmark;
-      if (updates.note !== undefined) arr[i].note = updates.note;
+      if (updates.note !== undefined) arr[i].note = String(updates.note).substring(0, 1000);
       _journalSave('niyyah_regarde_history', arr);
       return arr[i];
     }
@@ -18462,7 +18462,7 @@ function _regardeShowQuestion(content, question) {
     + '<button onclick="regardeToggleNote()" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:24px;color:#D4AF37;">✎</button>'
     + '</div>'
     + '<div id="regarde-note-wrap" style="display:none;width:100%;max-width:80%;margin-top:20px;opacity:0;transition:opacity 0.3s ease;">'
-    + '<textarea id="regarde-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
+    + '<textarea id="regarde-note-input" maxlength="1000" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
     + '</div>'
     + '</div>';
   content.style.opacity = '1';
@@ -18792,7 +18792,7 @@ function _regardeShowVerset(content, v, slow, returning) {
     + '<button onclick="_regardeDuaa()" aria-label="Du\u02BFa\u02BE" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(212,175,55,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#D4AF37;">' + _svgDuaaIcon + '</button>'
     + '</div>'
     + '<div id="regarde-note-wrap" style="display:none;width:100%;max-width:80%;margin-top:20px;opacity:0;transition:opacity 0.3s ease;">'
-    + '<textarea id="regarde-note-input" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
+    + '<textarea id="regarde-note-input" maxlength="1000" placeholder="' + t('regarde_note_placeholder') + '" oninput="regardeSaveNote()" style="width:100%;min-height:60px;background:rgba(200,168,75,0.04);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:12px;color:#D4AF37;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;resize:none;outline:none;box-sizing:border-box;"></textarea>'
     + '</div>'
     + '</div>';
   content.style.opacity = '1';
