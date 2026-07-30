@@ -3873,12 +3873,15 @@ function renderPrayerTimesCard() {
       '</div>' +
     '</div>';
   }
-  if (!_prayerTimes) return '<div class="prayer-times-card">' +
-    '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div>' +
-    '<div class="prayer-times-city" onclick="showCityInput()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="2" style="vertical-align:-2px;margin-right:5px;"><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>' + escapeHtml(_prayerCity||'Choisir la ville') + '</div></div>' +
-    '<div style="font-size:12px;color:var(--t3);margin-bottom:10px;">Les horaires n\'ont pas pu être chargés.</div>' +
-    '<button class="city-input-btn" style="width:100%;padding:10px;" onclick="loadPrayerTimes()">\u21BB Charger les horaires</button>' +
+  if (!_prayerTimes) {
+    if (!navigator.onLine) _scheduleOfflineRetry(_retryPrayerLoad);
+    return '<div class="prayer-times-card">' +
+      '<div class="prayer-times-header"><div class="prayer-times-title">' + t('prayer_title') + '</div>' +
+      '<div class="prayer-times-city" onclick="showCityInput()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="2" style="vertical-align:-2px;margin-right:5px;"><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>' + escapeHtml(_prayerCity||'Choisir la ville') + '</div></div>' +
+      '<div style="font-size:13px;color:var(--t3);text-align:center;padding:8px;">' + (!navigator.onLine ? 'Horaires indisponibles \u2014 reconnexion automatique' : 'Horaires indisponibles \u2014 v\u00e9rifie ta connexion') + '</div>' +
+      '<button class="city-input-btn" style="width:100%;padding:10px;" onclick="_retryPrayerLoad()">\u21BB R\u00e9essayer</button>' +
     '</div>';
+  }
   const now = new Date();
   const nowMin = now.getHours() * 60 + now.getMinutes();
   function timeToMin(t) {
@@ -4081,6 +4084,10 @@ function loadPrayerTimes() {
       return;
     } catch(e) {}
   }
+  // Pas de coordonnées sauvegardées — géolocalisation async :
+  // on passe en mode chargement pour éviter l'affichage du bloc de secours
+  // "Les horaires n'ont pas pu être chargés." pendant l'attente.
+  _prayerLoading = true; _prayerError = false; renderLevel(currentLevel);
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       function(pos) {
@@ -4092,7 +4099,7 @@ function loadPrayerTimes() {
       function() {
         _fetchIPGeoloc(
           function(lat, lng) { if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(lat, lng); },
-          function() { if (_prayerCity) { _loadPrayerByCity(); } else { _showCityInput = true; renderLevel(currentLevel); } }
+          function() { if (_prayerCity) { _loadPrayerByCity(); } else { _prayerLoading = false; _showCityInput = true; renderLevel(currentLevel); } }
         );
       },
       { timeout: 8000 }
@@ -4101,7 +4108,7 @@ function loadPrayerTimes() {
   } else {
     _fetchIPGeoloc(
       function(lat, lng) { if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(lat, lng); },
-      function() { if (_prayerCity) { _loadPrayerByCity(); } else { _showCityInput = true; renderLevel(currentLevel); } }
+      function() { if (_prayerCity) { _loadPrayerByCity(); } else { _prayerLoading = false; _showCityInput = true; renderLevel(currentLevel); } }
     );
   }
 }
