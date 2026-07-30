@@ -7835,6 +7835,18 @@ function showWeeklyBilan() {
           return null;
         }).catch(function() { return null; });
       }
+      if (r.status >= 500) {
+        var _httpStatus = r.status;
+        return r.json().catch(function() { return {}; }).then(function(err) {
+          var _reason = err && (err.error || err.reason);
+          var _msg = _httpStatus === 504 ? 'Ça prend trop de temps \u2014 réessaie'
+            : (_reason && typeof _reason === 'string' && _reason !== 'error' && _reason.length < 80) ? _reason
+            : 'Service indisponible';
+          var _conseilEl = document.getElementById('_wkConseil');
+          if (_conseilEl) _conseilEl.innerHTML = '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.4);">(' + escapeHtml(_msg) + ')</div>';
+          return null;
+        });
+      }
       return r.json();
     }).then(function(data) {
       if (!data) return;
@@ -7846,7 +7858,12 @@ function showWeeklyBilan() {
           el.innerHTML = data.message.split('\n\n').map(function(p) { return '<div style="font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:#B5A685;line-height:1.7;margin-bottom:12px;">' + escapeHtml(p) + '</div>'; }).join('');
         }
       }
-    }).catch(function() {});
+    }).catch(function(err) {
+      var _isOffline = !navigator.onLine || (err && err.name === 'TypeError');
+      var _msg = _isOffline ? 'Pas de connexion \u2014 réessaie' : 'Lettre non disponible cette semaine';
+      var _conseilEl = document.getElementById('_wkConseil');
+      if (_conseilEl) _conseilEl.innerHTML = '<div style="font-family:\'Georgia\',serif;font-size:14px;font-style:italic;color:rgba(200,168,75,0.4);">(' + escapeHtml(_msg) + ')</div>';
+    });
   }
 }
 function _animateWeeklyNums(targets) {
@@ -18951,7 +18968,21 @@ function regardeCapture() {
           return null;
         }).catch(function() { if (!_done) { _done = true; clearTimeout(_toR); _showErrorUI(); } return null; });
       }
-      if (res.status >= 500) { showToast('Service indisponible'); if (!_done) { _done = true; clearTimeout(_toR); setTimeout(_showErrorUI, 2500); } return null; }
+      if (res.status >= 500) {
+        if (_done) return null;
+        var _httpStatus = res.status;
+        return res.json().catch(function() { return {}; }).then(function(err) {
+          if (_done) return null;
+          _done = true; clearTimeout(_toR);
+          var _reason = err && (err.error || err.reason);
+          var _msg = _httpStatus === 504 ? 'Ça prend trop de temps \u2014 réessaie'
+            : (_reason && typeof _reason === 'string' && _reason !== 'error' && _reason !== 'Timeout' && _reason.length < 80) ? _reason
+            : 'Service indisponible';
+          showToast(_msg);
+          setTimeout(_showErrorUI, 2500);
+          return null;
+        });
+      }
       return res.json();
     })
     .then(function(data) {
@@ -18993,12 +19024,16 @@ function regardeCapture() {
     .catch(function(err) {
       if (_done) return;
       var _isTimeout = err && (err.name === 'AbortError' || err.name === 'TimeoutError');
+      var _isOffline = !navigator.onLine || (err && err.name === 'TypeError');
+      _done = true; clearTimeout(_toR);
       if (_isTimeout) {
         // Timeout : essaie quand même le fallback verset, sinon message clair
-        _done = true;
-        clearTimeout(_toR);
         if (_fallbackWithVersets()) return;
-        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">L\u2019analyse a pris trop de temps.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">\u00c7a prend trop de temps \u2014 r\u00e9essaie.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
+        content.style.opacity = '1';
+      } else if (_isOffline) {
+        if (_fallbackWithVersets()) return;
+        content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:16px;font-style:italic;color:rgba(200,168,75,0.6);">Pas de connexion \u2014 r\u00e9essaie.<br><button onclick="regardeClose();regardeOpen();" style="margin-top:16px;padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:#C8A84A;font-size:13px;cursor:pointer;">R\u00e9essayer</button></div>';
         content.style.opacity = '1';
       } else {
         fallback();
@@ -19734,7 +19769,15 @@ async function scannerAnalyzeImage(imageData) {
       else { showToast('Quota du jour atteint \u2014 reviens demain'); }
       return null;
     }
-    if (response.status >= 500) { showToast('Service indisponible'); return null; }
+    if (response.status >= 500) {
+      var _errBody = await response.json().catch(function() { return {}; });
+      var _reason = _errBody && (_errBody.error || _errBody.reason);
+      var _msg = response.status === 504 ? 'Ça prend trop de temps \u2014 réessaie'
+        : (_reason && typeof _reason === 'string' && _reason !== 'error' && _reason !== 'Timeout' && _reason.length < 80) ? _reason
+        : 'Service indisponible';
+      showToast(_msg);
+      return null;
+    }
 
     var data = await response.json();
 
@@ -19756,7 +19799,11 @@ async function scannerAnalyzeImage(imageData) {
     return { category: _cat, suggestions: _localSuggs, niyyahDirect: _localSuggs[0] };
 
   } catch(e) {
-    // Timeout ou erreur réseau → fallback local 3 suggestions
+    // Timeout ou erreur réseau → toast différencié + fallback local
+    var _isTimeout = e && (e.name === 'AbortError' || e.name === 'TimeoutError');
+    var _isOffline = !navigator.onLine || (e && e.name === 'TypeError');
+    if (_isTimeout) showToast('Ça prend trop de temps \u2014 réessaie');
+    else if (_isOffline) showToast('Pas de connexion \u2014 réessaie');
     var _f1 = pickNiyyahIntention('INDETERMINE');
     var _f2 = pickNiyyahIntention('INDETERMINE');
     var _f3 = pickNiyyahIntention('INDETERMINE');
