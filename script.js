@@ -3865,7 +3865,7 @@ function renderPrayerTimesCard() {
       '<div class="prayer-times-header"><div class="prayer-times-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="#C8A84A" style="vertical-align:-2px;margin-right:6px;"><path d="M14 3a9 9 0 1 0 7 14.5A7 7 0 0 1 14 3z"/></svg>Horaires</div>' +
         '<div class="prayer-times-city" onclick="showCityInput()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8A84A" stroke-width="2" style="vertical-align:-2px;margin-right:5px;"><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>' + escapeHtml(_prayerCity||'Choisir la ville') + '</div>' +
       '</div>' +
-      '<div style="font-size:12px;color:var(--t3);text-align:center;padding:8px;">Erreur \u2014 v\u00e9rifie ta connexion ou la ville</div>' +
+      '<div style="font-size:13px;color:var(--t3);text-align:center;padding:8px;">' + (!navigator.onLine ? 'Horaires indisponibles \u2014 reconnexion automatique' : 'Erreur \u2014 v\u00e9rifie ta connexion ou la ville') + '</div>' +
       '<div style="text-align:center;padding:0 0 8px;"><button onclick="_retryPrayerLoad()" style="padding:8px 16px;border-radius:10px;border:1px solid rgba(200,168,74,0.3);background:transparent;color:#C8A84A;font-size:15px;cursor:pointer;">R\u00e9essayer</button></div>' +
       '<div class="city-input-wrap">' +
         '<input class="city-input" id="cityInput" type="text" placeholder="' + t('city_placeholder_prayer') + '" value="' + escapeHtml(_prayerCity||'') + '" onkeydown="if(event.key===\'Enter\')saveCityAndLoad()">' +
@@ -4021,6 +4021,7 @@ function _loadPrayerByCoords(lat, lng) {
         if (_fallback) { try { _prayerTimes = JSON.parse(_fallback); } catch(e) {} }
         _prayerLoading = false;
         _prayerError = !_prayerTimes;
+        if (_prayerError && !navigator.onLine) _scheduleOfflineRetry(_retryPrayerLoad);
         renderLevel(currentLevel);
       }
     });
@@ -4052,6 +4053,7 @@ function _loadPrayerByCity() {
       if (_fallback) { try { _prayerTimes = JSON.parse(_fallback); } catch(e) {} }
       _prayerLoading = false;
       _prayerError = !_prayerTimes;
+      if (_prayerError && !navigator.onLine) _scheduleOfflineRetry(_retryPrayerLoad);
       renderLevel(currentLevel);
     });
 }
