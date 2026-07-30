@@ -12714,10 +12714,49 @@ function renderRappelsCard() {
         + '</div>';
     });
     card += '<div style="font-family:\'Georgia\',serif;font-size:10px;font-style:italic;color:rgba(232,217,188,0.3);text-align:center;margin-top:10px;">Rappel in-app \u2014 son, vibration et toast \u00e0 l\u2019heure de la pri\u00e8re</div>';
+    // Bouton activation notifications — visible si permission pas encore accordée
+    var _notifPerm = (typeof Notification !== 'undefined') ? Notification.permission : 'granted';
+    if (_notifPerm !== 'granted') {
+      var _notifLabel = _notifPerm === 'denied'
+        ? 'Notifications bloqu\u00e9es \u2014 \u00e0 autoriser dans les r\u00e9glages'
+        : 'Activer les notifications';
+      var _notifStyle = _notifPerm === 'denied'
+        ? 'width:100%;margin-top:12px;padding:11px;border-radius:10px;border:1px solid rgba(255,80,80,0.25);background:transparent;color:rgba(255,120,120,0.6);font-family:\'Georgia\',serif;font-size:12px;font-style:italic;cursor:default;'
+        : 'width:100%;margin-top:12px;padding:11px;border-radius:10px;border:none;background:linear-gradient(135deg,#C8A84A,#A68B30);color:#0A0908;font-family:\'Georgia\',serif;font-size:13px;font-weight:700;cursor:pointer;';
+      var _notifOnclick = _notifPerm === 'denied' ? '' : ' onclick="_activerNotifications()"';
+      card += '<button' + _notifOnclick + ' style="' + _notifStyle + '">' + _notifLabel + '</button>';
+    }
   }
   card += '</div>';
   return card;
 }
+
+function _activerNotifications() {
+  if (!('Notification' in window)) { showToast(t('notif_unsupported_device')); return; }
+  if (Notification.permission === 'granted') {
+    safeSetItem('niyyah_notif_perm', '1');
+    if (typeof _subscribePush === 'function') _subscribePush();
+    if (typeof scheduleAllNotifications === 'function') scheduleAllNotifications();
+    showToast(t('notif_enabled'));
+    renderLevel(currentLevel);
+    return;
+  }
+  Notification.requestPermission().then(function(p) {
+    safeSetItem('niyyah_notif_asked', '1');
+    if (p === 'granted') {
+      safeSetItem('niyyah_notif_perm', '1');
+      if (typeof _subscribePush === 'function') _subscribePush();
+      if (typeof scheduleAllNotifications === 'function') scheduleAllNotifications();
+      showToast(t('notif_enabled'));
+    } else if (p === 'denied') {
+      showToast(t('notif_denied'));
+    } else {
+      showToast(t('notif_later'));
+    }
+    renderLevel(currentLevel);
+  }).catch(function() { showToast(t('notif_unavailable')); });
+}
+window._activerNotifications = _activerNotifications;
 
 function _compteurTap() {
   var val = parseInt(safeGetItem('niyyah_compteur_val') || '0', 10) + 1;
