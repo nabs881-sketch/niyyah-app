@@ -470,13 +470,16 @@ function _isValidUID(uid) {
 
 async function checkAndIncrementQuota(env, uid, feature) {
   const kv = env.RATE_LIMIT_KV;
-  // Fail open : si KV absent ou uid invalide, on laisse passer
-  if (!kv || !_isValidUID(uid)) return { allowed: true };
+  // KV absent → fail-open (problème infra, pas un attaquant)
+  if (!kv) return { allowed: true };
+  // UID invalide/absent → fail-closed : statut free mutualisé sur clé anonyme partagée.
+  // Tous les appels sans UID valide partagent le même compteur → abusé rapidement bloqué.
+  const safeUid = _isValidUID(uid) ? uid : '__invalid__';
 
-  // 1. Lire le statut utilisateur
+  // 1. Lire le statut utilisateur (uid invalide → safeUid='__invalid__' → toujours free)
   let status = 'free';
   try {
-    const raw = await kv.get(`u:${uid}:status`);
+    const raw = await kv.get(`u:${safeUid}:status`);
     if (raw) {
       const parsed = JSON.parse(raw);
       if (!parsed.expires || new Date(parsed.expires) > new Date()) {
@@ -492,7 +495,7 @@ async function checkAndIncrementQuota(env, uid, feature) {
 
   // 3. Lire le compteur
   const window = _quotaWindow(type);
-  const kvKey = `u:${uid}:q:${feature}:${window}`;
+  const kvKey = `u:${safeUid}:q:${feature}:${window}`;
   let count = 0;
   try {
     const raw = await kv.get(kvKey);
