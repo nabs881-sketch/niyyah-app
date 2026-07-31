@@ -65,7 +65,10 @@ export default {
 
     // ── Origin check for API routes ──
     if (!checkOrigin(request)) {
-      return jsonResponse({ error: 'Forbidden' }, 403);
+      return new Response(JSON.stringify({ error: 'Forbidden' }), {
+        status: 403,
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
     // ── Rate limiting ──

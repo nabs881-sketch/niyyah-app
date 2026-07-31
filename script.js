@@ -3692,7 +3692,7 @@ function _watchGeolocationPermission() {
           if (typeof _loadPrayerByCoords === 'function') _loadPrayerByCoords(pos.coords.latitude, pos.coords.longitude);
           if (typeof updateSanctuaireMoment === 'function') updateSanctuaireMoment();
           renderLevel(currentLevel);
-        }, function(err) { showToast('Position indisponible' + (err ? ' (code\u00a0' + err.code + ')' : '')); }, { enableHighAccuracy: true, timeout: 10000 });
+        }, function() { showToast('Position indisponible \u2014 v\u00e9rifie les permissions de localisation'); }, { enableHighAccuracy: true, timeout: 10000 });
       }
     };
   }).catch(function() {});
@@ -3708,7 +3708,7 @@ function _fetchIPGeoloc(onSuccess, onFail) {
     })
     .catch(function(err) {
       console.error('[_fetchIPGeoloc] échec réseau :', err);
-      showToast('IP-géoloc échouée : ' + (err && err.message ? err.message : String(err)));
+      showToast('Position indisponible \u2014 entre ta ville manuellement');
       onFail();
     });
 }
