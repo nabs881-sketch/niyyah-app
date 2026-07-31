@@ -1,4 +1,4 @@
-const VERSION = 'niyyah-v3120';
+const VERSION = 'niyyah-v3121';
 const CORE = [
   './index.html',
   './script.min.js',
@@ -12,18 +12,8 @@ const CORE = [
   './compagnons.json',
   './prophetes.json',
   './savais_tu.json',
-  './data/sira.min.json',
-  './data/regard-library.json',
   './data/greeting_murmures.json',
   './data/niyyah_pool.json',
-  './data/waqt/tafakkur_final.json',
-  './data/waqt/tafakkur_nouvelles_questions.json',
-  './data/waqt/tafakkur_recits.json',
-  './data/waqt/waqt_fajr.json',
-  './data/waqt/waqt_dhuhr.json',
-  './data/waqt/waqt_asr.json',
-  './data/waqt/waqt_maghrib.json',
-  './data/waqt/waqt_isha.json',
   './tawhid_capsules.json',
   './duaas.json',
   './data/defis_db.json',
