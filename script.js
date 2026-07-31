@@ -350,113 +350,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================================
 // BASE DE DONNÉES DES 100 DÉFIS — 3 NIVEAUX
 // ============================================================
-const DEFIS_DB = [
-  // ── NIVEAU 1 : FACILE ── ids 1-33
-  {id:1,  niveau:1, diff:'facile', icon:'matin', titre:'Prier Fajr à l\'heure — 5 jours',       cible:5, unite:'jours', type:'auto', itemId:'fajr', ref:'Celui qui prie Fajr est sous la protection d\'Allah.', hadith:'Muslim 657'},
-  {id:2,  niveau:1, diff:'facile', icon:'matin', titre:'Prier Fajr à l\'heure — 7 jours',       cible:7, unite:'jours', type:'auto', itemId:'fajr', ref:'Fajr : les anges de la nuit et du jour se réunissent.', hadith:'Bukhari 648'},
-  {id:3,  niveau:1, diff:'facile', icon:'priere', titre:'5 prières dans les temps — 3 jours',    cible:3, unite:'jours', type:'manual', ref:'La prière est le pilier de la religion.', hadith:'Bayhaqi'},
-  {id:4,  niveau:1, diff:'facile', icon:'priere', titre:'5 prières dans les temps — 5 jours',    cible:5, unite:'jours', type:'manual', ref:'"La prière est le pilier de la religion — qui la délaisse détruit sa religion."', hadith:'Bayhaqi'},
-  {id:5,  niveau:1, diff:'facile', icon:'intention', titre:'Bismillah avant chaque acte — 5 jours', cible:5, unite:'jours', type:'manual', ref:'Commencer par Bismillah est une sunna dans chaque action.', hadith:'Abu Dawud 4840'},
-  {id:6,  niveau:1, diff:'facile', icon:'intention', titre:'Alhamdulillah après chaque repas — 5j', cible:5, unite:'jours', type:'manual', ref:'"Allah est satisfait de Son serviteur qui dit Alhamdulillah après avoir mangé."', hadith:'Muslim 2734'},
-  {id:7,  niveau:1, diff:'facile', icon:'dhikr', titre:'Dhikr du matin — 5 jours de suite',     cible:5, unite:'jours', type:'auto', itemId:'wird_matin', ref:'Le dhikr du matin protège jusqu\'au soir.', hadith:'Abu Dawud 5088'},
-  {id:8,  niveau:1, diff:'facile', icon:'nuit', titre:'Dhikr du soir — 5 jours de suite',      cible:5, unite:'jours', type:'auto', itemId:'wird_soir', ref:'Le dhikr du soir est une armure pour la nuit.', hadith:'Tirmidhi 3391'},
-  {id:9,  niveau:1, diff:'facile', icon:'intention', titre:'Dhikr matin ET soir — 3 jours',         cible:3, unite:'jours', type:'manual', ref:'Réunir les deux dhikrs est le signe d\'un cœur vigilant.', hadith:''},
-  {id:10, niveau:1, diff:'facile', icon:'lecture', titre:'Al-Fatiha méditée — 7 jours',            cible:7, unite:'jours', type:'manual', ref:'Al-Fatiha est la mère du Coran — méditez ses sens.', hadith:'Bukhari 5006'},
-  {id:11, niveau:1, diff:'facile', icon:'lecture', titre:'3 versets du Coran par jour — 5 jours', cible:5, unite:'jours', type:'manual', ref:'"Récitez le Coran — il sera un intercesseur le Jour du Jugement."', hadith:'Muslim 804'},
-  {id:12, niveau:1, diff:'facile', icon:'priere', titre:'Prier avec concentration — 3 jours',    cible:3, unite:'jours', type:'manual', ref:'Le khoushou\' est l\'âme de la prière.', hadith:''},
-  {id:13, niveau:1, diff:'facile', icon:'silence', titre:'Pas de téléphone avant Fajr — 5 jours', cible:5, unite:'jours', type:'manual', ref:'Commencer la journée par Allah est la meilleure des habitudes.', hadith:''},
-  {id:14, niveau:1, diff:'facile', icon:'croissance', titre:'Ablutions lentes avec intention — 5j',  cible:5, unite:'jours', type:'manual', ref:'"Les péchés tombent avec chaque goutte d\'eau des ablutions."', hadith:'Muslim 244'},
-  {id:15, niveau:1, diff:'facile', icon:'croissance', titre:'2 noms d\'Allah mémorisés par jour — 5j', cible:5, unite:'jours', type:'manual', ref:'Allah a 99 noms — celui qui les comprend entre au paradis.', hadith:'Bukhari 2736'},
-  {id:16, niveau:1, diff:'facile', icon:'lien', titre:'Sourire à chaque personne — 3 jours',   cible:3, unite:'jours', type:'manual', ref:'"Ton sourire face à ton frère est une aumône."', hadith:'Tirmidhi 1956'},
-  {id:17, niveau:1, diff:'facile', icon:'lien', titre:'Dire le salam en premier — 5 jours',    cible:5, unite:'jours', type:'manual', ref:'"Vous n\'entrerez au paradis que lorsque vous vous aimerez — répandez le salam."', hadith:'Muslim 54'},
-  {id:18, niveau:1, diff:'facile', icon:'douaa', titre:'1 douaa sincère par jour — 7 jours',    cible:7, unite:'jours', type:'manual', ref:'"La douaa est le culte lui-même."', hadith:'Tirmidhi 2969'},
-  {id:19, niveau:1, diff:'facile', icon:'intention', titre:'1 acte de sadaqa — 5 jours',             cible:5, unite:'jours', type:'manual', ref:'"La sadaqa éteint le péché comme l\'eau éteint le feu."', hadith:'Tirmidhi 2616'},
-  {id:20, niveau:1, diff:'facile', icon:'silence', titre:'Éviter un mot inutile — 5 jours',        cible:5, unite:'jours', type:'manual', ref:'"Que celui qui croit en Allah garde le silence ou dise du bien."', hadith:'Bukhari 6136'},
-  {id:21, niveau:1, diff:'facile', icon:'matin', titre:'Se lever 10 min avant Fajr — 3 jours',  cible:3, unite:'jours', type:'manual', ref:'Les derniers instants de la nuit sont parmi les plus bénis.', hadith:''},
-  {id:22, niveau:1, diff:'facile', icon:'silence', titre:'Pas de réseaux sociaux après Isha — 5j', cible:5, unite:'jours', type:'manual', ref:'La nuit est faite pour le repos et la préparation au lendemain.', hadith:''},
-  {id:23, niveau:1, diff:'facile', icon:'croissance', titre:'1 invocation avant de dormir — 7 jours', cible:7, unite:'jours', type:'manual', ref:'La douaa avant le sommeil est sunna du Prophète ﷺ.', hadith:'Bukhari 6313'},
-  {id:24, niveau:1, diff:'facile', icon:'lien', titre:'Aider quelqu\'un sans qu\'il demande — 3j', cible:3, unite:'jours', type:'manual', ref:'Allah aide le serviteur tant que le serviteur aide son frère.', hadith:'Muslim 2699'},
-  {id:25, niveau:1, diff:'facile', icon:'dhikr', titre:'SubhanAllah x33 après Fajr — 5 jours',  cible:5, unite:'jours', type:'manual', ref:'Le tasbih après la prière efface les péchés comme l\'écume de la mer.', hadith:'Muslim 597'},
-  {id:26, niveau:1, diff:'facile', icon:'intention', titre:'Lire 1 page de Coran par jour — 5 jours', cible:5, unite:'jours', type:'manual', ref:'Chaque lettre récitée vaut dix bonnes actions.', hadith:'Tirmidhi 2910'},
-  {id:27, niveau:1, diff:'facile', icon:'lecture', titre:'Mémoriser 1 douaa de voyage',             cible:1, unite:'douaa', type:'manual', ref:'Le voyageur est exaucé dans sa douaa.', hadith:'Abu Dawud 2042'},
-  {id:28, niveau:1, diff:'facile', icon:'croissance', titre:'Faire Astaghfirullah x100 — 3 jours',   cible:3, unite:'jours', type:'manual', ref:'"Je demande pardon à Allah plus de 70 fois par jour."', hadith:'Bukhari 6307'},
-  {id:29, niveau:1, diff:'facile', icon:'silence', titre:'Pas de mensonge — 3 jours',              cible:3, unite:'jours', type:'manual', ref:'"La vérité guide vers la piété — la piété guide vers le paradis."', hadith:'Bukhari 6094'},
-  {id:30, niveau:1, diff:'facile', icon:'silence', titre:'1 minute de tafakkur après Fajr — 5j',  cible:5, unite:'jours', type:'manual', ref:'Un instant de réflexion vaut mieux qu\'une nuit d\'adoration.', hadith:''},
-  {id:31, niveau:1, diff:'facile', icon:'lien', titre:'Appeler 1 proche cette semaine',         cible:1, unite:'appel', type:'manual', ref:'"Celui qui aime maintenir les liens — qu\'il maintienne les liens."', hadith:'Bukhari 5985'},
-  {id:32, niveau:1, diff:'facile', icon:'croissance', titre:'Dire Al-Hamdulillah 100x en un jour',    cible:1, unite:'jour', type:'manual', ref:'Aucun acte ne remplit la balance comme Al-Hamdulillah.', hadith:'Muslim 223'},
-  {id:33, niveau:1, diff:'facile', icon:'silence', titre:'Pas de médisance — 3 jours',            cible:3, unite:'jours', type:'manual', ref:'"La ghiba c\'est mentionner ton frère par ce qu\'il déteste."', hadith:'Muslim 2589'},
-
-  // ── NIVEAU 2 : MOYEN ── ids 34-66
-  {id:34, niveau:2, diff:'moyen', icon:'matin', titre:'2 rakaat Doha — 5 jours',               cible:5, unite:'jours', type:'manual', ref:'"2 rakaat Doha — et une aumône est due pour chaque articulation."', hadith:'Muslim 720'},
-  {id:35, niveau:2, diff:'moyen', icon:'matin', titre:'2 rakaat Doha — 7 jours',               cible:7, unite:'jours', type:'manual', ref:'La prière Doha est la prière des repentants.', hadith:'Ibn Majah 1322'},
-  {id:36, niveau:2, diff:'moyen', icon:'matin', titre:'Sunna Fajr sans exception — 7 jours',   cible:7, unite:'jours', type:'manual', ref:'"Les 2 rakaat de Fajr valent mieux que le monde et ce qu\'il contient."', hadith:'Muslim 725'},
-  {id:37, niveau:2, diff:'moyen', icon:'dhikr', titre:'100 istighfar par jour — 5 jours',      cible:5, unite:'jours', type:'manual', ref:'L\'istighfar ouvre les portes de la miséricorde et du rizq.', hadith:'Abu Dawud 1518'},
-  {id:38, niveau:2, diff:'moyen', icon:'lecture', titre:'Al-Kahf le vendredi — 2 semaines',       cible:2, unite:'vendredis', type:'manual', ref:'"Celui qui lit Al-Kahf le vendredi sera illuminé d\'une lumière entre les 2 vendredis."', hadith:'Hakim'},
-  {id:39, niveau:2, diff:'moyen', icon:'nuit', titre:'Jeûner le lundi ET le jeudi',            cible:2, unite:'jours', type:'manual', ref:'Deux jeûnes volontaires — la sunna du Prophète ﷺ.', hadith:'Muslim 1162'},
-  {id:40, niveau:2, diff:'moyen', icon:'priere', titre:'5 prières en groupe — 3 jours',         cible:3, unite:'jours', type:'manual', ref:'"La prière en groupe vaut 27 fois la prière seul."', hadith:'Bukhari 645'},
-  {id:41, niveau:2, diff:'moyen', icon:'nuit', titre:'2 rakaat Tahajjud — 3 nuits',           cible:3, unite:'nuits', type:'auto', itemId:'tahajjud', ref:'"Notre Seigneur descend chaque nuit — qui M\'invoque Je lui réponds."', hadith:'Bukhari 1145'},
-  {id:42, niveau:2, diff:'moyen', icon:'lecture', titre:'Ayat Al-Kursi après chaque prière — 5j', cible:5, unite:'jours', type:'manual', ref:'"Celui qui lit Ayat Al-Kursi après chaque prière entre au paradis."', hadith:'Nasai'},
-  {id:43, niveau:2, diff:'moyen', icon:'dhikr', titre:'Rawatib complètes — 5 jours',           cible:5, unite:'jours', type:'manual', ref:'Les rawatib sont la haie protectrice de tes prières obligatoires.', hadith:'Muslim 728'},
-  {id:44, niveau:2, diff:'moyen', icon:'lecture', titre:'Mémoriser 1 verset par jour — 5 jours', cible:5, unite:'versets', type:'manual', ref:'"Le meilleur d\'entre vous est celui qui apprend le Coran et l\'enseigne."', hadith:'Bukhari 5027'},
-  {id:45, niveau:2, diff:'moyen', icon:'lecture', titre:'Mémoriser sourate Al-Mulk cette semaine', cible:1, unite:'sourate', type:'manual', ref:'"Al-Mulk intercède pour son récitant jusqu\'à ce qu\'il soit pardonné."', hadith:'Abu Dawud 1400'},
-  {id:46, niveau:2, diff:'moyen', icon:'lecture', titre:'5 mots arabes par jour — 5 jours',      cible:5, unite:'jours', type:'manual', ref:'Comprendre le Coran dans sa langue est une porte vers la profondeur.', hadith:''},
-  {id:47, niveau:2, diff:'moyen', icon:'lecture', titre:'1 hadith médité par jour — 7 jours',    cible:7, unite:'hadiths', type:'manual', ref:'La science est une lumière — l\'ignorance une obscurité.', hadith:''},
-  {id:48, niveau:2, diff:'moyen', icon:'croissance', titre:'Sira du Prophète ﷺ — 20 min/j — 5j',   cible:5, unite:'jours', type:'manual', ref:'"Vous avez dans le Messager d\'Allah un excellent modèle."', hadith:'Coran 33:21'},
-  {id:49, niveau:2, diff:'moyen', icon:'lecture', titre:'1 règle de tajweed par jour — 5 jours', cible:5, unite:'règles', type:'manual', ref:'"Récitez le Coran en embellissant vos voix."', hadith:'Abu Dawud 1468'},
-  {id:50, niveau:2, diff:'moyen', icon:'lecture', titre:'1 page de tafsir par jour — 5 jours',   cible:5, unite:'jours', type:'manual', ref:'Le tafsir ouvre le sens du Livre d\'Allah.', hadith:''},
-  {id:51, niveau:2, diff:'moyen', icon:'intention', titre:'Sadaqa chaque jour — 5 jours',           cible:5, unite:'jours', type:'manual', ref:'"La sadaqa éteint le péché comme l\'eau éteint le feu."', hadith:'Tirmidhi 2616'},
-  {id:52, niveau:2, diff:'moyen', icon:'douaa', titre:'Douaa pour quelqu\'un d\'autre — 7j',   cible:7, unite:'jours', type:'manual', ref:'"La douaa d\'un musulman pour son frère en son absence est exaucée."', hadith:'Muslim 2733'},
-  {id:53, niveau:2, diff:'moyen', icon:'intention', titre:'3 actes de service anonymes cette semaine', cible:3, unite:'actes', type:'manual', ref:'"Que ta main gauche ignore ce que donne ta main droite."', hadith:'Coran 2:271'},
-  {id:54, niveau:2, diff:'moyen', icon:'lien', titre:'Appeler 3 proches cette semaine',        cible:3, unite:'appels', type:'manual', ref:'"Celui qui aime maintenir les liens de parenté — qu\'il maintienne les liens."', hadith:'Bukhari 5985'},
-  {id:55, niveau:2, diff:'moyen', icon:'silence', titre:'Aucun mensonge — 7 jours',              cible:7, unite:'jours', type:'manual', ref:'"La vérité guide vers la piété — la piété guide vers le paradis."', hadith:'Bukhari 6094'},
-  {id:56, niveau:2, diff:'moyen', icon:'silence', titre:'Éviter la médisance — 7 jours',          cible:7, unite:'jours', type:'manual', ref:'"La ghiba c\'est mentionner ton frère par ce qu\'il déteste."', hadith:'Muslim 2589'},
-  {id:57, niveau:2, diff:'moyen', icon:'lien', titre:'Partager un verset chaque jour — 5j',   cible:5, unite:'jours', type:'manual', ref:'"Transmettez de moi ne serait-ce qu\'un seul verset."', hadith:'Bukhari 3461'},
-  {id:58, niveau:2, diff:'moyen', icon:'lien', titre:'30 min famille sans téléphone — 5j', cible:5, unite:'jours', type:'manual', ref:'La famille est une amanah — lui consacrer du temps est une ibada.', hadith:''},
-  {id:59, niveau:2, diff:'moyen', icon:'matin', titre:'Prier Fajr en jamaah 3 fois cette semaine', cible:3, unite:'fois', type:'manual', ref:'Fajr en jamaah = récompense comme Qiyam toute la nuit.', hadith:'Muslim 656'},
-  {id:60, niveau:2, diff:'moyen', icon:'nuit', titre:'Prier Isha en jamaah 5 jours',           cible:5, unite:'jours', type:'manual', ref:'Isha en jamaah = récompense de la moitié de la nuit.', hadith:'Muslim 656'},
-  {id:61, niveau:2, diff:'moyen', icon:'lecture', titre:'Mémoriser les 4 quls cette semaine',     cible:4, unite:'sourates', type:'manual', ref:'Les 4 quls sont une protection complète — matin et soir.', hadith:''},
-  {id:62, niveau:2, diff:'moyen', icon:'douaa', titre:'Mémoriser les douaas du quotidien',      cible:1, unite:'semaine', type:'manual', ref:'Le dhikr des occasions est une sunna oubliée par beaucoup.', hadith:''},
-  {id:63, niveau:2, diff:'moyen', icon:'lecture', titre:'Apprendre les conditions de validité de la prière', cible:1, unite:'leçon', type:'manual', ref:'Prier sans connaître les conditions c\'est prier dans l\'ignorance.', hadith:''},
-  {id:64, niveau:2, diff:'moyen', icon:'intention', titre:'Apprendre les piliers de la zakat',      cible:1, unite:'leçon', type:'manual', ref:'"Acquittez la zakat — elle purifie vos biens."', hadith:'Coran 9:103'},
-  {id:65, niveau:2, diff:'moyen', icon:'silence', titre:'15 min de tafakkur par jour — 5 jours',  cible:5, unite:'jours', type:'manual', ref:'Un instant de réflexion vaut mieux qu\'une nuit d\'adoration.', hadith:''},
-  {id:66, niveau:2, diff:'moyen', icon:'croissance', titre:'Jeûner 3 jours blancs ce mois',          cible:3, unite:'jours', type:'manual', ref:'"Jeûner 3 jours par mois équivaut à jeûner l\'éternité."', hadith:'Bukhari 1979'},
-
-  // ── NIVEAU 3 : INTENSIF ── ids 67-100
-  {id:67, niveau:3, diff:'intensif', icon:'nuit', titre:'Tahajjud 7 nuits de suite',             cible:7, unite:'nuits', type:'auto', itemId:'tahajjud', ref:'"Le meilleur des prières après l\'obligatoire est la prière de la nuit."', hadith:'Muslim 1163'},
-  {id:68, niveau:3, diff:'intensif', icon:'intention', titre:'Fajr en jamaah chaque jour — 7 jours',  cible:7, unite:'jours', type:'manual', ref:'Fajr + Isha en jamaah = qiyam toute la nuit et tout le jour.', hadith:'Muslim 656'},
-  {id:69, niveau:3, diff:'intensif', icon:'lecture', titre:'Al-Kahf le vendredi — 4 semaines',      cible:4, unite:'vendredis', type:'manual', ref:'Une lumière entre deux vendredis pour qui récite Al-Kahf.', hadith:'Hakim'},
-  {id:70, niveau:3, diff:'intensif', icon:'lecture', titre:'Compléter un juzz cette semaine',        cible:1, unite:'juzz', type:'manual', ref:'"Allah ne regarde pas vos corps — mais vos cœurs et vos actes."', hadith:'Muslim 2564'},
-  {id:71, niveau:3, diff:'intensif', icon:'dhikr', titre:'100 istighfar par jour — 7 jours',      cible:7, unite:'jours', type:'manual', ref:'L\'istighfar est la clé de la miséricorde, du rizq et des portes fermées.', hadith:'Abu Dawud 1518'},
-  {id:72, niveau:3, diff:'intensif', icon:'nuit', titre:'Jeûner lundi + jeudi + jours blancs',    cible:5, unite:'jours', type:'manual', ref:'5 jeûnes volontaires dans la semaine — pour les forts en foi.', hadith:'Muslim 1162'},
-  {id:73, niveau:3, diff:'intensif', icon:'dhikr', titre:'1000 salawat sur le Prophète ﷺ par jour — 5j', cible:5, unite:'jours', type:'manual', ref:'"Celui qui prie sur moi une fois — Allah le bénit dix fois."', hadith:'Muslim 408'},
-  {id:74, niveau:3, diff:'intensif', icon:'lecture', titre:'Prières + sunnas rawatib complètes — 7j', cible:7, unite:'jours', type:'manual', ref:'Les rawatib comblent les manques dans les obligatoires.', hadith:'Muslim 728'},
-  {id:75, niveau:3, diff:'intensif', icon:'douaa', titre:'1 heure de douaa cette semaine',         cible:1, unite:'heure', type:'manual', ref:'La douaa est l\'essence de l\'adoration.', hadith:'Tirmidhi 3371'},
-  {id:76, niveau:3, diff:'intensif', icon:'lecture', titre:'Mémoriser sourate Al-Baqara (les 40 premiers versets)', cible:40, unite:'versets', type:'manual', ref:'Al-Baqara est une lumière — le démon ne rentre pas dans la maison où elle est récitée.', hadith:'Muslim 780'},
-  {id:77, niveau:3, diff:'intensif', icon:'croissance', titre:'Lecture de la Sira complète cette semaine', cible:1, unite:'semaine', type:'manual', ref:'Connaître le Prophète ﷺ est un devoir du cœur.', hadith:''},
-  {id:78, niveau:3, diff:'intensif', icon:'lecture', titre:'Étudier 1 chapitre de fiqh',              cible:1, unite:'chapitre', type:'manual', ref:'"A qui Allah veut du bien — il lui donne la compréhension de la religion."', hadith:'Bukhari 71'},
-  {id:79, niveau:3, diff:'intensif', icon:'intention', titre:'Sadaqa jariya — 1 acte durable',          cible:1, unite:'acte', type:'manual', ref:'"Quand le fils d\'Adam meurt, ses œuvres s\'arrêtent sauf 3 — dont la sadaqa jariya."', hadith:'Muslim 1631'},
-  {id:80, niveau:3, diff:'intensif', icon:'lien', titre:'Enseigner 1 chose à quelqu\'un cette semaine', cible:1, unite:'enseignement', type:'manual', ref:'"Transmettez de moi ne serait-ce qu\'un seul verset."', hadith:'Bukhari 3461'},
-  {id:81, niveau:3, diff:'intensif', icon:'lien', titre:'Réconcilier 2 personnes en conflit',      cible:1, unite:'réconciliation', type:'manual', ref:'"La réconciliation entre les gens vaut mieux que le jeûne et la prière."', hadith:'Abu Dawud 4919'},
-  {id:82, niveau:3, diff:'intensif', icon:'croissance', titre:'I\'tikaf 3 jours',                        cible:3, unite:'jours', type:'manual', ref:'L\'I\'tikaf coupe les liens du monde pour se consacrer à Allah.', hadith:'Bukhari 2026'},
-  {id:83, niveau:3, diff:'intensif', icon:'silence', titre:'1 heure de tafakkur par jour — 5 jours', cible:5, unite:'jours', type:'manual', ref:'La réflexion profonde est l\'acte des awliya.', hadith:''},
-  {id:84, niveau:3, diff:'intensif', icon:'dhikr', titre:'Compléter les 99 noms d\'Allah cette semaine', cible:99, unite:'noms', type:'manual', ref:'Allah a 99 noms — celui qui les comprend entre au paradis.', hadith:'Bukhari 2736'},
-  {id:85, niveau:3, diff:'intensif', icon:'intention', titre:'Pas de péché apparent — 7 jours',         cible:7, unite:'jours', type:'manual', ref:'Garde ta langue, ta vue et tes mains — et tu seras sauvé.', hadith:'Tirmidhi 2407'},
-  {id:86, niveau:3, diff:'intensif', icon:'lien', titre:'Da\'wa — parler de l\'islam à 3 personnes', cible:3, unite:'personnes', type:'manual', ref:'"Qui appelle vers la guidance obtient la récompense de ceux qui le suivent."', hadith:'Muslim 2674'},
-  {id:87, niveau:3, diff:'intensif', icon:'silence', titre:'Silence total d\'1h après Fajr — 5 jours', cible:5, unite:'jours', type:'manual', ref:'Le silence est un acte d\'adoration — il préserve le cœur.', hadith:''},
-  {id:88, niveau:3, diff:'intensif', icon:'matin', titre:'Se lever au dernier tiers de la nuit — 5j', cible:5, unite:'nuits', type:'manual', ref:'Allah descend au ciel de la nuit au dernier tiers.', hadith:'Bukhari 1145'},
-  {id:89, niveau:3, diff:'intensif', icon:'croissance', titre:'Jeûner 2 jours + Tahajjud cette semaine', cible:1, unite:'semaine', type:'manual', ref:'Le jeûne et la nuit sont les deux ailes de l\'oiseau de la foi.', hadith:''},
-  {id:90, niveau:3, diff:'intensif', icon:'lecture', titre:'Réciter Al-Kahf + Yasin cette semaine',   cible:1, unite:'semaine', type:'manual', ref:'Yasin est le cœur du Coran.', hadith:'Abu Dawud 3121'},
-  {id:91, niveau:3, diff:'intensif', icon:'dhikr', titre:'Compléter le wird complet 7 jours de suite', cible:7, unite:'jours', type:'manual', ref:'La régularité dans le wird est le chemin des awliya.', hadith:''},
-  {id:92, niveau:3, diff:'intensif', icon:'croissance', titre:'Mémoriser sourate Al-Waqi\'a cette semaine', cible:1, unite:'sourate', type:'manual', ref:'"Celui qui récite Al-Waqi\'a chaque nuit ne sera jamais touché par le besoin."', hadith:'Ibn Kathir'},
-  {id:93, niveau:3, diff:'intensif', icon:'intention', titre:'7 jours sans réseaux sociaux',              cible:7, unite:'jours', type:'manual', ref:'Le monde est une prison pour le croyant — libère-toi de ses distractions.', hadith:'Muslim 2956'},
-  {id:94, niveau:3, diff:'intensif', icon:'lecture', titre:'Consulter un savant cette semaine',         cible:1, unite:'consultation', type:'manual', ref:'"Demandez aux gens du rappel si vous ne savez pas."', hadith:'Coran 16:43'},
-  {id:95, niveau:3, diff:'intensif', icon:'douaa', titre:'40 douaas mémorisées et pratiquées',        cible:40, unite:'douaas', type:'manual', ref:'La douaa est l\'arme du croyant.', hadith:'Hakim 1/492'},
-  {id:96, niveau:3, diff:'intensif', icon:'nuit', titre:'Laylat Al-Qadr simulée — 5 nuits d\'Ibadat', cible:5, unite:'nuits', type:'manual', ref:'Laylat Al-Qadr vaut mieux que mille mois.', hadith:'Coran 97:3'},
-  {id:97, niveau:3, diff:'intensif', icon:'priere', titre:'Visiter la mosquée chaque jour — 7 jours',  cible:7, unite:'jours', type:'manual', ref:'"L\'homme le plus aimé d\'Allah est celui le plus assidu à la mosquée."', hadith:'Hakim'},
-  {id:98, niveau:3, diff:'intensif', icon:'croissance', titre:'Compléter le Coran (lecture) ce mois',      cible:1, unite:'mois', type:'manual', ref:'Réciter le Coran est la plus noble des adorations du cœur.', hadith:''},
-  {id:99, niveau:3, diff:'intensif', icon:'priere', titre:'Prier les 5 prières + tahajjud + doha — 7j', cible:7, unite:'jours', type:'manual', ref:'Celui qui accomplit 12 rakaat de sunna — Allah lui bâtit une maison au paradis.', hadith:'Muslim 728'},
-  {id:100,niveau:3, diff:'intensif', icon:'intention', titre:'Semaine de dévotion totale — tous les actes', cible:7, unite:'jours', type:'manual', ref:'"Dieu-Unique, sans associé — à Lui la royauté, à Lui la louange, Il est Puissant sur toute chose."', hadith:'Bukhari 3293'},
-];
+var DEFIS_DB = null;
+function loadDefiDB(cb) {
+  if (DEFIS_DB) { if (cb) cb(); return; }
+  fetch('./data/defis_db.json').then(function(r){return r.json();}).then(function(data){ DEFIS_DB=data; if(cb)cb(); }).catch(function(){ _scheduleOfflineRetry(); if(cb)cb(); });
+}
 
 // ============================================================
 // LOGIQUE DEFI DE LA SEMAINE
@@ -535,6 +433,7 @@ function _processDefiResult(s, success) {
   saveDefiState(s);
 }
 function getSuggestionDefi() {
+  if (!DEFIS_DB) return null;
   const s = getDefiState();
   _initNiveauActuel(s);
   var forceNiv1 = _isRevenantProtected();
@@ -551,6 +450,7 @@ function getSuggestionDefi() {
 }
 
 function initDefiSemaine() {
+  if (!DEFIS_DB) { loadDefiDB(function(){ renderLevel(currentLevel); }); return {}; }
   const s = getDefiState();
   const lundi = getLundiDate();
   // Premier lancement — assigner défi id:1 par défaut
@@ -633,6 +533,7 @@ function getDefiCourant() {
 
 // ── DRAWER SÉLECTEUR ─────────────────────────────────────────────────────────
 function openDefiSelector() {
+  if (!DEFIS_DB) { loadDefiDB(function(){ openDefiSelector(); }); return; }
   const s = getDefiState();
   // Verrouillage 24h — lecture seule
   if (s.current && s.current.chosenAt) {
@@ -1647,6 +1548,7 @@ function getCalcLvlPct(lvlId, s) {
   function w(id) { return weights[id] || 1; }
   function done(item) {
     if (item.type === 'wird') {
+      if (!WIRD_DATA) return false;
       try { const sess = WIRD_DATA[item.session]; return sess && sess.items.every(wi => !!wirdState[wi.id]); } catch(e) { return false; }
     }
     return item.type === 'counter' ? (s[item.id]||0) >= item.target : !!s[item.id];
@@ -2793,6 +2695,7 @@ function wirdGoBack() {
 }
 window.wirdGoBack = wirdGoBack;
 function renderWirdSmartCard(item, delay, origin, currentBlock) {
+  if (!WIRD_DATA) { loadWirdData(null); return '<div class="wird-smart-card loading" style="height:80px;display:flex;align-items:center;justify-content:center;color:var(--t3);font-size:13px;">Chargement\u2026</div>'; }
   const session = WIRD_DATA[item.session];
   const done  = session.items.filter(i => !!wirdState[i.id] || state[i.id] === true || (i.target ? (state[i.id] || 0) >= i.target : false)).length;
   const total = session.items.length;
@@ -4112,55 +4015,11 @@ function loadPrayerTimes() {
     );
   }
 }
-const WIRD_DATA = {
-  matin: {
-    title: 'Wird du Matin',
-    icon: '🌅',
-    subtitle: 'Après Fajr — avant le lever du soleil',
-    items: [
-      { id: 'w_fatiha', label: 'Al-Fatiha', sub: 'La mère du Coran — 7 versets', arabic: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ', audio: ['https://everyayah.com/data/Alafasy_128kbps/001001.mp3','https://everyayah.com/data/Alafasy_128kbps/001002.mp3','https://everyayah.com/data/Alafasy_128kbps/001003.mp3','https://everyayah.com/data/Alafasy_128kbps/001004.mp3','https://everyayah.com/data/Alafasy_128kbps/001005.mp3','https://everyayah.com/data/Alafasy_128kbps/001006.mp3','https://everyayah.com/data/Alafasy_128kbps/001007.mp3'], hadith: '', phonetic: 'Bismillahi r-rahmani r-rahim. Al-hamdu lillahi rabbi l-\'alamin...', translation: 'Al-Fatiha est une guérison contre toute maladie.', source: 'Dârimi · Bayhaqi' },
-      { id: 'w_ayat_kursi', label: 'Ayat al-Kursi', sub: 'Le verset du Trône — protection complète', arabic: 'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ', audio: 'https://everyayah.com/data/Alafasy_128kbps/002255.mp3', phonetic: 'Allahu la ilaha illa huwal hayyul qayyum...', translation: 'Celui qui la récite après chaque prière, rien ne l\'empêche d\'entrer au Paradis sauf la mort.', source: 'Nasa\'i · Sahih' },
-      { id: 'w_ikhlass_m', label: 'Al-Ikhlass × 3', sub: 'Équivaut au tiers du Coran', arabic: 'قُلْ هُوَ اللَّهُ أَحَدٌ', audio: ['https://everyayah.com/data/Alafasy_128kbps/112001.mp3','https://everyayah.com/data/Alafasy_128kbps/112002.mp3','https://everyayah.com/data/Alafasy_128kbps/112003.mp3','https://everyayah.com/data/Alafasy_128kbps/112004.mp3'], phonetic: 'Qul huwa Allahu ahad', translation: 'Réciter Al-Ikhlass trois fois équivaut à réciter le Coran en entier.', source: 'Bukhari 5013 · Sahih' },
-      { id: 'w_falaq_m', label: 'Al-Falaq × 3', sub: 'Refuge contre tout mal extérieur', arabic: 'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ', audio: ['https://everyayah.com/data/Alafasy_128kbps/113001.mp3','https://everyayah.com/data/Alafasy_128kbps/113002.mp3','https://everyayah.com/data/Alafasy_128kbps/113003.mp3','https://everyayah.com/data/Alafasy_128kbps/113004.mp3','https://everyayah.com/data/Alafasy_128kbps/113005.mp3'], phonetic: 'Qul a\'udhu bi rabbi l-falaq', translation: 'Refuge contre tout mal extérieur — sorcellerie, jalousie, obscurité.', source: 'Al-Falaq 113' },
-      { id: 'w_nas_m', label: 'An-Nas × 3', sub: 'Refuge contre le mal · hommes & djinns', arabic: 'قُلْ أَعُوذُ بِرَبِّ النَّاسِ', audio: ['https://everyayah.com/data/Alafasy_128kbps/114001.mp3','https://everyayah.com/data/Alafasy_128kbps/114002.mp3','https://everyayah.com/data/Alafasy_128kbps/114003.mp3','https://everyayah.com/data/Alafasy_128kbps/114004.mp3','https://everyayah.com/data/Alafasy_128kbps/114005.mp3','https://everyayah.com/data/Alafasy_128kbps/114006.mp3'], phonetic: 'Qul a\'udhu bi rabbi n-nas', translation: 'Refuge contre le mal des hommes et des djinns — le murmure qui s\'insinue dans les cœurs.', source: 'An-Nas 114' },
-      { id: 'w_sayyid_istighfar', label: 'Sayyid al-Istighfâr', sub: 'Le maître de l\'istighfâr — 1 fois', arabic: 'اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ', audio: null, phonetic: 'Allahumma anta Rabbi la ilaha illa anta, khalaqtani wa ana abduka, wa ana ala ahdika wa wadika ma-stata\'tu, a\'udhu bika min sharri ma sana\'tu, abu\'u laka bi-ni\'matika alayya wa abu\'u bi-dhanbi faghfir li, fa-innahu la yaghfiru-dh-dhunuba illa anta', translation: 'Ô Allah, Tu es mon Seigneur, il n\'y a de dieu que Toi. Tu m\'as créé et je suis Ton serviteur. Je tiens mon pacte envers Toi autant que je le peux. Je me réfugie en Toi contre le mal de ce que j\'ai commis. J\'avoue Tes bienfaits sur moi et j\'avoue mon péché — pardonne-moi, car nul ne pardonne les péchés sauf Toi.', source: 'Bukhari 6306 · Sahih' },
-      { id: 'w_sabah1', label: 'Douaa du matin', sub: 'Nous voici au matin — 1 fois', arabic: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ', audio: null, phonetic: 'Asbahna wa asbahal mulku lillahi, wal hamdu lillahi, la ilaha illallahu wahdahu la sharika lah', translation: 'Nous voici au matin et le royaume appartient à Allah. Louange à Allah, il n\'y a de dieu qu\'Allah Seul, sans associé. À Lui la souveraineté et la louange, et Il est Puissant sur toute chose.', source: 'Muslim 2723 · Sahih' },
-      { id: 'w_bika_asbahna', label: 'Par Toi nous voici au matin', sub: '1 fois', arabic: 'اللَّهُمَّ بِكَ أَصْبَحْنَا وَبِكَ أَمْسَيْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ النُّشُورُ', audio: null, phonetic: 'Allahumma bika asbahna wa bika amsayna wa bika nahya wa bika namutu wa ilayka-n-nushur', translation: 'Ô Allah, c\'est par Toi que nous entrons au matin, par Toi que nous entrons au soir, par Toi nous vivons, par Toi nous mourons, et vers Toi est la résurrection.', source: 'Abu Dawud 5068 · Tirmidhi 3391 · Sahih' },
-      { id: 'w_afiyah_badan', label: 'Préservation (ʿâfiya)', sub: 'Corps, ouïe, vue — 3 fois', arabic: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَٰهَ إِلَّا أَنْتَ', audio: null, phonetic: 'Allahumma afini fi badani, Allahumma afini fi sam\'i, Allahumma afini fi basari, la ilaha illa anta', translation: 'Ô Allah, préserve mon corps. Ô Allah, préserve mon ouïe. Ô Allah, préserve ma vue. Il n\'y a de dieu que Toi.', source: 'Abu Dawud 5090 · Hasan' },
-      { id: 'w_bismillah_la_yadurr', label: 'Rien ne nuit avec Son nom', sub: '3 fois', arabic: 'بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ', audio: null, phonetic: 'Bismillahi-lladhi la yadurru ma\'asmihi shay\'un fil-ardi wa la fis-sama\'i wa huwa-s-Sami\'u-l-\'Alim', translation: 'Au nom d\'Allah avec Whose nom rien ne peut nuire sur terre ni dans le ciel, et Il est le Tout-Entendant, le Tout-Sachant.', source: 'Abu Dawud 5088 · Tirmidhi 3388 · Hasan Sahih' },
-      { id: 'w_radhitu', label: 'J\'agrée Allah comme Seigneur', sub: '3 fois', arabic: 'رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا', audio: null, phonetic: 'Radhitu billahi Rabban, wa bil-islami dinan, wa bi-Muhammadin sallallahu alayhi wa sallama nabiyyan', translation: 'J\'agrée Allah comme Seigneur, l\'Islam comme religion et Muhammad ﷺ comme Prophète.', source: 'Ibn Majah 3870 · Tirmidhi 3389 · Hasan' },
-      { id: 'w_ilman_nafian', label: 'Science utile & rizq pur', sub: '1 fois (matin)', arabic: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا', audio: null, phonetic: 'Allahumma inni as\'aluka ilman nafi\'an, wa rizqan tayyiban, wa amalan mutaqabbalan', translation: 'Ô Allah, je Te demande un savoir utile, une subsistance pure et une œuvre acceptée.', source: 'Ibn Majah 925 · Sahih' },
-      { id: 'w_tasbih_100', label: 'Tasbîh', sub: 'SubhanAllah wa bi-hamdihi — 100 fois', arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ', audio: null, phonetic: 'Subhana-llahi wa bi-hamdihi', translation: 'Celui qui dit SubhanAllah wa bi-hamdihi 100 fois le matin et le soir verra ses péchés effacés même s\'ils sont comme l\'écume de la mer.', source: 'Muslim 2692', type: 'counter', target: 100 },
-      { id: 'w_tahlil_100', label: 'Tahlîl', sub: 'La ilaha illallah… — 100 fois', arabic: 'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ', audio: null, phonetic: 'La ilaha illa-llahu wahdahu la sharika lah, lahu-l-mulku wa lahu-l-hamd, wa huwa ala kulli shay\'in qadir', translation: 'Il n\'y a de dieu qu\'Allah Seul, sans associé. À Lui la souveraineté et la louange, et Il est Puissant sur toute chose.', source: 'Bukhari 3293 · Muslim 2691 · Sahih', type: 'counter', target: 100 },
-      { id: 'w_istighfar_m', label: 'Istighfar du matin', sub: 'Astaghfirullah × 3', arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ', audio: null, phonetic: 'Astaghfirullah wa atubu ilayh', translation: 'Astaghfirullah wa atubu ilayh — Je demande pardon à Allah et je me repens à Lui.', source: 'Bukhari 6307', type: 'counter', target: 3 },
-      { id: 'w_salawat_m', label: 'Salawat', sub: 'Allahumma salli ala Muhammad × 10', arabic: 'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ', audio: null, phonetic: 'Allahumma salli ala Muhammadin wa ala ali Muhammad', translation: 'Celui qui invoque la bénédiction sur moi une fois, Allah lui accorde dix bénédictions.', source: 'Muslim 408 · Sahih', type: 'counter', target: 10 },
-    ]
-  },
-  soir: {
-    title: 'Wird du Soir',
-    icon: '🌙',
-    subtitle: 'Après Asr ou Maghrib',
-    items: [
-      { id: 'w_ayat_kursi_s', label: 'Ayat al-Kursi', sub: 'Le verset du Trône — protection complète', arabic: 'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ', audio: 'https://everyayah.com/data/Alafasy_128kbps/002255.mp3', phonetic: 'Allahu la ilaha illa huwal hayyul qayyum...', translation: 'Celui qui la récite après chaque prière, rien ne l\'empêche d\'entrer au Paradis sauf la mort.', source: 'Nasa\'i · Sahih' },
-      { id: 'w_ikhlass_s', label: 'Al-Ikhlass × 3', sub: 'Équivaut au tiers du Coran', arabic: 'قُلْ هُوَ اللَّهُ أَحَدٌ', audio: ['https://everyayah.com/data/Alafasy_128kbps/112001.mp3','https://everyayah.com/data/Alafasy_128kbps/112002.mp3','https://everyayah.com/data/Alafasy_128kbps/112003.mp3','https://everyayah.com/data/Alafasy_128kbps/112004.mp3'], phonetic: 'Qul huwa Allahu ahad', translation: 'Réciter Al-Ikhlass trois fois équivaut à réciter le Coran en entier.', source: 'Bukhari 5013 · Sahih' },
-      { id: 'w_falaq_s', label: 'Al-Falaq × 3', sub: 'Refuge contre tout mal extérieur', arabic: 'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ', audio: ['https://everyayah.com/data/Alafasy_128kbps/113001.mp3','https://everyayah.com/data/Alafasy_128kbps/113002.mp3','https://everyayah.com/data/Alafasy_128kbps/113003.mp3','https://everyayah.com/data/Alafasy_128kbps/113004.mp3','https://everyayah.com/data/Alafasy_128kbps/113005.mp3'], phonetic: 'Qul a\'udhu bi rabbi l-falaq', translation: 'Refuge contre tout mal extérieur — sorcellerie, jalousie, obscurité.', source: 'Al-Falaq 113' },
-      { id: 'w_nas_s', label: 'An-Nas × 3', sub: 'Refuge contre le mal · hommes & djinns', arabic: 'قُلْ أَعُوذُ بِرَبِّ النَّاسِ', audio: ['https://everyayah.com/data/Alafasy_128kbps/114001.mp3','https://everyayah.com/data/Alafasy_128kbps/114002.mp3','https://everyayah.com/data/Alafasy_128kbps/114003.mp3','https://everyayah.com/data/Alafasy_128kbps/114004.mp3','https://everyayah.com/data/Alafasy_128kbps/114005.mp3','https://everyayah.com/data/Alafasy_128kbps/114006.mp3'], phonetic: 'Qul a\'udhu bi rabbi n-nas', translation: 'Refuge contre le mal des hommes et des djinns — le murmure qui s\'insinue dans les cœurs.', source: 'An-Nas 114' },
-      { id: 'w_baqara285', label: 'Al-Baqara 285-286', sub: 'Suffira contre tout mal', arabic: 'آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ', audio: ['https://everyayah.com/data/Alafasy_128kbps/002285.mp3','https://everyayah.com/data/Alafasy_128kbps/002286.mp3'], source: 'Al-Baqara 2:285-286 · Bukhari 5009', phonetic: 'Amana r-rasulu bima unzila ilayh...' },
-      { id: 'w_sayyid_istighfar_s', label: 'Sayyid al-Istighfâr', sub: 'Le maître de l\'istighfâr — 1 fois', arabic: 'اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ', audio: null, phonetic: 'Allahumma anta Rabbi la ilaha illa anta, khalaqtani wa ana abduka, wa ana ala ahdika wa wadika ma-stata\'tu, a\'udhu bika min sharri ma sana\'tu, abu\'u laka bi-ni\'matika alayya wa abu\'u bi-dhanbi faghfir li, fa-innahu la yaghfiru-dh-dhunuba illa anta', translation: 'Ô Allah, Tu es mon Seigneur, il n\'y a de dieu que Toi. Tu m\'as créé et je suis Ton serviteur. Je tiens mon pacte envers Toi autant que je le peux. Je me réfugie en Toi contre le mal de ce que j\'ai commis. J\'avoue Tes bienfaits sur moi et j\'avoue mon péché — pardonne-moi, car nul ne pardonne les péchés sauf Toi.', source: 'Bukhari 6306 · Sahih' },
-      { id: 'w_masa1', label: 'Douaa du soir', sub: 'Nous voici au soir — 1 fois', arabic: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ', audio: null, phonetic: 'Amsayna wa amsal mulku lillahi, wal hamdu lillahi, la ilaha illallahu wahdahu la sharika lah', hadith: '', translation: 'Nous voici au soir et le royaume appartient à Allah. Louange à Allah, il n\'y a de dieu qu\'Allah Seul, sans associé. À Lui la souveraineté et la louange, et Il est Puissant sur toute chose.', source: 'Muslim 2723 · Sahih' },
-      { id: 'w_bika_amsayna', label: 'Par Toi nous voici au soir', sub: '1 fois', arabic: 'اللَّهُمَّ بِكَ أَمْسَيْنَا وَبِكَ أَصْبَحْنَا وَبِكَ نَحْيَا وَبِكَ نَمُوتُ وَإِلَيْكَ الْمَصِيرُ', audio: null, source: 'Abu Dawud 5068 · Tirmidhi 3391 (sahih)', phonetic: 'Allahumma bika amsayna wa bika asbahna wa bika nahya wa bika namutu wa ilayka-l-masir' },
-      { id: 'w_afiya_badan_s', label: 'Préservation (ʿâfiya)', sub: 'Corps, ouïe, vue — 3 fois', arabic: 'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَٰهَ إِلَّا أَنْتَ', audio: null, phonetic: 'Allahumma afini fi badani, Allahumma afini fi sam\'i, Allahumma afini fi basari, la ilaha illa anta', translation: 'Ô Allah, préserve mon corps. Ô Allah, préserve mon ouïe. Ô Allah, préserve ma vue. Il n\'y a de dieu que Toi.', source: 'Abu Dawud 5090 · Hasan' },
-      { id: 'w_bismillah_s', label: 'Rien ne nuit avec Son nom', sub: '3 fois', arabic: 'بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ', audio: null, phonetic: 'Bismillahi-lladhi la yadurru ma\'asmihi shay\'un fil-ardi wa la fis-sama\'i wa huwa-s-Sami\'u-l-\'Alim', translation: 'Au nom d\'Allah avec Whose nom rien ne peut nuire sur terre ni dans le ciel, et Il est le Tout-Entendant, le Tout-Sachant.', source: 'Abu Dawud 5088 · Tirmidhi 3388 · Hasan Sahih' },
-      { id: 'w_radhitu_s', label: 'J\'agrée Allah comme Seigneur', sub: '3 fois', arabic: 'رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا', audio: null, phonetic: 'Radhitu billahi Rabban, wa bil-islami dinan, wa bi-Muhammadin sallallahu alayhi wa sallama nabiyyan', translation: 'J\'agrée Allah comme Seigneur, l\'Islam comme religion et Muhammad ﷺ comme Prophète.', source: 'Ibn Majah 3870 · Tirmidhi 3389 · Hasan' },
-      { id: 'w_aouzu', label: 'ʿAfwa wa ʿâfiya', sub: 'Pardon et préservation — 3 fois', arabic: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ', audio: null, phonetic: 'Allahumma inni as\'aluka l-\'afwa wal-\'afiyata fid-dunya wal-akhira', translation: 'Ô Allah, je Te demande le pardon et la santé en ce monde et dans l\'au-delà.', source: 'Abu Dawud 5074 · Hasan' },
-      { id: 'w_tasbih_100_s', label: 'Tasbîh', sub: 'SubhanAllah wa bi-hamdihi — 100 fois', arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ', audio: null, phonetic: 'Subhana-llahi wa bi-hamdihi', translation: 'Celui qui dit SubhanAllah wa bi-hamdihi 100 fois le matin et le soir verra ses péchés effacés même s\'ils sont comme l\'écume de la mer.', source: 'Muslim 2692', type: 'counter', target: 100 },
-      { id: 'w_tahlil_100_s', label: 'Tahlîl', sub: 'La ilaha illallah… — 100 fois', arabic: 'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ', audio: null, phonetic: 'La ilaha illa-llahu wahdahu la sharika lah, lahu-l-mulku wa lahu-l-hamd, wa huwa ala kulli shay\'in qadir', translation: 'Il n\'y a de dieu qu\'Allah Seul, sans associé. À Lui la souveraineté et la louange, et Il est Puissant sur toute chose.', source: 'Bukhari 3293 · Muslim 2691 · Sahih', type: 'counter', target: 100 },
-      { id: 'w_salawat_s', label: 'Salawat', sub: 'Allahumma salli ala Muhammad × 10', arabic: 'اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ', audio: null, phonetic: 'Allahumma salli ala Muhammadin wa ala ali Muhammad', translation: 'Celui qui invoque la bénédiction sur moi une fois, Allah lui accorde dix bénédictions.', source: 'Muslim 408 · Sahih', type: 'counter', target: 10 },
-      { id: 'w_mulk', label: 'Sourate Al-Mulk', sub: 'Protection dans la tombe', arabic: 'تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ', audio: ['https://everyayah.com/data/Alafasy_128kbps/067001.mp3','https://everyayah.com/data/Alafasy_128kbps/067002.mp3','https://everyayah.com/data/Alafasy_128kbps/067003.mp3','https://everyayah.com/data/Alafasy_128kbps/067004.mp3','https://everyayah.com/data/Alafasy_128kbps/067005.mp3','https://everyayah.com/data/Alafasy_128kbps/067006.mp3','https://everyayah.com/data/Alafasy_128kbps/067007.mp3','https://everyayah.com/data/Alafasy_128kbps/067008.mp3','https://everyayah.com/data/Alafasy_128kbps/067009.mp3','https://everyayah.com/data/Alafasy_128kbps/067010.mp3','https://everyayah.com/data/Alafasy_128kbps/067011.mp3','https://everyayah.com/data/Alafasy_128kbps/067012.mp3','https://everyayah.com/data/Alafasy_128kbps/067013.mp3','https://everyayah.com/data/Alafasy_128kbps/067014.mp3','https://everyayah.com/data/Alafasy_128kbps/067015.mp3','https://everyayah.com/data/Alafasy_128kbps/067016.mp3','https://everyayah.com/data/Alafasy_128kbps/067017.mp3','https://everyayah.com/data/Alafasy_128kbps/067018.mp3','https://everyayah.com/data/Alafasy_128kbps/067019.mp3','https://everyayah.com/data/Alafasy_128kbps/067020.mp3','https://everyayah.com/data/Alafasy_128kbps/067021.mp3','https://everyayah.com/data/Alafasy_128kbps/067022.mp3','https://everyayah.com/data/Alafasy_128kbps/067023.mp3','https://everyayah.com/data/Alafasy_128kbps/067024.mp3','https://everyayah.com/data/Alafasy_128kbps/067025.mp3','https://everyayah.com/data/Alafasy_128kbps/067026.mp3','https://everyayah.com/data/Alafasy_128kbps/067027.mp3','https://everyayah.com/data/Alafasy_128kbps/067028.mp3','https://everyayah.com/data/Alafasy_128kbps/067029.mp3','https://everyayah.com/data/Alafasy_128kbps/067030.mp3'], source: 'Tirmidhi 2891', phonetic: 'Tabaraka lladhi biyadihi l-mulk' },
-      { id: 'w_kafirun', label: 'Al-Kafirun', sub: 'Avant de dormir — 1 fois', arabic: 'قُلْ يَا أَيُّهَا الْكَافِرُونَ', audio: ['https://everyayah.com/data/Alafasy_128kbps/109001.mp3','https://everyayah.com/data/Alafasy_128kbps/109002.mp3','https://everyayah.com/data/Alafasy_128kbps/109003.mp3','https://everyayah.com/data/Alafasy_128kbps/109004.mp3','https://everyayah.com/data/Alafasy_128kbps/109005.mp3','https://everyayah.com/data/Alafasy_128kbps/109006.mp3'], source: 'Abu Dawud 5055', phonetic: 'Qul ya ayyuha l-kafirun' },
-    ]
-  }
-};
+var WIRD_DATA = null;
+function loadWirdData(cb) {
+  if (WIRD_DATA) { if (cb) cb(WIRD_DATA); return; }
+  fetch('./data/wird_data.json').then(function(r){return r.json();}).then(function(data){ WIRD_DATA=data; if(cb)cb(data); renderLevel(currentLevel); }).catch(function(){ _scheduleOfflineRetry(); if(cb)cb(null); });
+}
 let wirdState; try { wirdState = JSON.parse(safeGetItem('niyyah_wird_' + (todayKey()))); } catch(e) { if (typeof Sentry !== 'undefined') Sentry.captureException(new Error('Parse error: niyyah_wird_today')); } wirdState = wirdState || {};
 const ITEM_WEIGHTS = {
   fajr: 3, dhuhr: 3, asr: 3, maghrib: 3, isha: 3, jumua: 3,
@@ -4175,6 +4034,7 @@ const ITEM_WEIGHTS = {
 function getWeight(id) { return ITEM_WEIGHTS[id] || 1; }
 function isItemDone(item, s) {
   if (item.type === 'wird') {
+    if (!WIRD_DATA) return false;
     const session = WIRD_DATA[item.session];
     return session && session.items.every(wi => !!wirdState[wi.id]);
   }
@@ -4248,6 +4108,7 @@ function showWirdCompleteOverlay() {
 }
 window.showWirdCompleteOverlay = showWirdCompleteOverlay;
 function _wirdCheckAllDone(session) {
+  if (!WIRD_DATA) return;
   var _s = WIRD_DATA[session];
   if (!_s) return;
   var _dup = { w_ayat_kursi:'ayat_kursi', w_ayat_kursi_s:'ayat_kursi', w_ikhlass_m:'muawwidhat', w_falaq_m:'muawwidhat', w_nas_m:'muawwidhat', w_ikhlass_s:'muawwidhat', w_falaq_s:'muawwidhat', w_nas_s:'muawwidhat', w_istighfar_m:'istighfar' };
@@ -4291,6 +4152,11 @@ function _wirdRefreshCard(session) {
 function renderWird() {
   const content = document.getElementById('wirdContent');
   if (!content) return;
+  if (!WIRD_DATA) {
+    content.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--t3);font-size:13px;">Chargement\u2026</div>';
+    loadWirdData(function() { if (WIRD_DATA) renderWird(); });
+    return;
+  }
   var _wirdArabicSession = {matin:'أَوْرَاد الصَّبَاح',soir:'أَوْرَاد الْمَسَاء'};
   let html = '<button class="wird-back-btn" onclick="wirdGoBack()" aria-label="Retour">\u2039</button>';
   if (!_currentWirdSession) { html += '<div class="section-header"><div class="section-arabic">\u0623\u064E\u0648\u0652\u0631\u0627\u062F</div><div class="section-name">' + t('wird_daily') + '</div><div class="section-line"></div></div>'; }
@@ -4340,6 +4206,7 @@ function renderWird() {
   content.innerHTML = html;
 }
 function resetWirdSession(session) {
+  if (!WIRD_DATA || !WIRD_DATA[session]) return;
   WIRD_DATA[session].items.forEach(i => { wirdState[i.id] = false; });
   saveWirdState();
   renderWird();
@@ -16923,6 +16790,7 @@ function updateSanctuaireMoment() {
   }
   function _isDone(item) {
     if (item.type === 'wird') {
+      if (!WIRD_DATA) return !!state[item.id];
       try {
         var _wSess = WIRD_DATA[item.session];
         if (_wSess && _wSess.items.every(function(wi) { return !!wirdState[wi.id]; })) return true;
@@ -20221,6 +20089,7 @@ function openVueRituel(prayer) {
   var _isItemDone = function(it) {
     if (it.type === 'wird') {
       if (state[it.id] === true) return true;
+      if (!WIRD_DATA) return false;
       try { var sess = WIRD_DATA[it.session]; return !!(sess && sess.items.every(function(wi) { return !!wirdState[wi.id] || (wi.target ? (state[wi.id] === true || (state[wi.id] || 0) >= wi.target) : false); })); } catch(e) { return false; }
     }
     if (it.type === 'counter' || it.target) { return state[it.id] === true || (state[it.id] || 0) >= (it.target || 1); }
