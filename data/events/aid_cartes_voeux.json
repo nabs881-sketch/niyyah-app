@@ -172,7 +172,7 @@
     "comportement_champ_prenom": {
       "champ_rempli": "Utiliser template.message (avec {prenom} remplacé)",
       "champ_vide": "Utiliser template.message_generique (version générique)",
-      "signature_auto": "Toujours ajouter en bas: '— [prénom utilisateur from onboarding]' si existe"
+      "signature_auto": "Toujours ajouter en bas: '— [prénom utilisateur issu de l'onboarding]' si existe"
     }
   },
   "bouton_dans_section_aid": {
