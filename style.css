@@ -8376,7 +8376,7 @@ body.onboarding-active #nav-bar-v2 {
 }
 .fil-acc .rituel-item,
 #vue-rituel .rituel-item {
-  transition: opacity 0.4s ease;
+  transition: opacity 0.18s ease, border-color 0.25s, transform 0.15s;
 }
 .fil-acc .rituel-item.done,
 #vue-rituel .rituel-item.done {
@@ -8653,6 +8653,7 @@ body.onboarding-active #nav-bar-v2 {
   border-radius: 14px;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(200,168,75,0.04), rgba(200,168,75,0.01));
+  will-change: transform;
 }
 .fil-acc-header {
   display: flex;
@@ -9024,7 +9025,6 @@ body.onboarding-active #nav-bar-v2 {
   border: 1px solid rgba(200,168,74,0.10);
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.22);
-  transition: border-color 0.25s, transform 0.15s;
 }
 .rituel-item:active, .fil-acc .rituel-item:active { transform: scale(0.992); }
 .rituel-item:hover, .fil-acc .rituel-item:hover { border-color: rgba(200,168,74,0.26); }
