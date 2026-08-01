@@ -1346,7 +1346,7 @@ async function _sendPrayerNotifications(env) {
             title:   `Niyyah ✦ — ${meta.fr}`,
             body:    meta.body,
             tag:     `prayer-${prayer}-${today}`,
-            url:     './',
+            url:     './#prieres',
             action:  'open',
           }, env);
 

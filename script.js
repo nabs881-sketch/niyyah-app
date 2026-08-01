@@ -19755,6 +19755,11 @@ try {
   var _na = new URLSearchParams(location.search).get('notif_action');
   if (_na) setTimeout(function(){ handleNotifAction(_na); }, 800);
 } catch(e) {}
+try {
+  if (window.location.hash === '#prieres') {
+    setTimeout(function(){ if (typeof v2GoPriere === 'function') v2GoPriere(); }, 800);
+  }
+} catch(e) {}
 window.regardeCapture         = regardeCapture;
 window.regardeClose           = regardeClose;
 window.regardeCancelThinking  = regardeCancelThinking;
