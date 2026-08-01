@@ -9598,6 +9598,7 @@ function shareNiyyah() {
   }
 }
 window.shareNiyyah = shareNiyyah;
+var _BETA_MSG = 'Version test \u2014 la version compl\u00e8te arrive dans 6 mois. Tu pourras alors passer Premium. Un souci, un bug\u00a0? Utilise le bouton\u00a0<b>Signaler un probl\u00e8me</b> dans Param\u00e8tres.';
 function showQuotaLimit(kind){
   var _prem = isPremium();
   var title, sub, hint, upgradeBtn;
@@ -9608,27 +9609,34 @@ function showQuotaLimit(kind){
       hint = '';
       upgradeBtn = '';
     } else {
-      title = 'Ton Regard du jour';
-      sub = 'Tu as re\u00e7u ton Regard d\u2019aujourd\u2019hui.<br>Reviens demain in cha Allah \uD83C\uDF19';
-      hint = 'Avec Niyyah+ : jusqu\u2019\u00e0 3 Regards par jour.';
-      upgradeBtn = '<button class="ql-premium" onclick="closeQuotaLimit();openFreemium(\'regard\');">D\u00e9bloquer Niyyah+ \u2726</button>';
+      title = 'Ton Regard gratuit';
+      sub = _BETA_MSG;
+      hint = '';
+      upgradeBtn = '';
+    }
+  } else if (kind === 'bilan') {
+    if (_prem) {
+      title = 'Lettre de la semaine \u2726';
+      sub = 'Ta lettre a d\u00e9j\u00e0 \u00e9t\u00e9 g\u00e9n\u00e9r\u00e9e cette semaine.<br>Reviens lundi in cha Allah \uD83C\uDF19';
+      hint = '';
+      upgradeBtn = '';
+    } else {
+      title = 'Bilan gratuit';
+      sub = _BETA_MSG;
+      hint = '';
+      upgradeBtn = '';
     }
   } else {
-    var q = []; try { q = JSON.parse(safeGetItem('niyyah_scanner_quota') || '[]'); } catch(e) {}
-    var weekAgo = new Date(Date.now() - 7*86400000).toISOString();
-    q = q.filter(function(t){ return t > weekAgo; }).sort();
-    var oldest = q.length ? new Date(q[0]).getTime() : Date.now();
-    var days = Math.max(1, Math.ceil((oldest + 7*86400000 - Date.now()) / 86400000));
     if (_prem) {
       title = 'Scans du jour \u2726';
       sub = 'Tu as fait tes scans d\u2019intention du jour.<br>Reviens demain in cha Allah \uD83C\uDF19';
       hint = '';
       upgradeBtn = '';
     } else {
-      title = 'Tes scans de la semaine';
-      sub = 'Tu as utilis\u00e9 tes 3 scans d\u2019intention.<br>Prochain dans ' + days + ' jour' + (days>1?'s':'') + '.';
-      hint = 'Avec Niyyah+ : 3 scans par jour.';
-      upgradeBtn = '<button class="ql-premium" onclick="closeQuotaLimit();openFreemium(\'scanner\');">D\u00e9bloquer Niyyah+ \u2726</button>';
+      title = 'Ton scan gratuit';
+      sub = _BETA_MSG;
+      hint = '';
+      upgradeBtn = '';
     }
   }
   var prev = document.getElementById('quota-limit-overlay'); if (prev) prev.remove();
@@ -9740,10 +9748,10 @@ function _incTrialCount(key) {
 var _SCANNER_TEST_EXPIRY = 1785455999000;
 function _isScannerTestMode() { return Date.now() < _SCANNER_TEST_EXPIRY; }
 function canUseRegarde() {
-  return _isScannerTestMode() || isPremium() || _getTrialCount('niyyah_trial_regard') < 2;
+  return _isScannerTestMode() || isPremium() || _getTrialCount('niyyah_trial_regard') < 1;
 }
 function canUseScanner() {
-  return _isScannerTestMode() || isPremium() || _getTrialCount('niyyah_trial_scanner') < 2;
+  return _isScannerTestMode() || isPremium() || _getTrialCount('niyyah_trial_scanner') < 1;
 }
 function canUseBilan() {
   return isPremium() || _getTrialCount('niyyah_trial_bilan') < 1;
@@ -18874,10 +18882,9 @@ function regardeCapture() {
           var _upg = err && err.upgrade_hint;
           if (_upg) {
             content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;">'
-              + '<div style="font-size:16px;font-style:italic;color:rgba(200,168,75,0.85);margin-bottom:16px;">Tu as utilis\u00e9 ton Regard gratuit.</div>'
-              + '<div style="font-size:14px;color:rgba(200,168,75,0.5);margin-bottom:24px;">Passe \u00e0 Niyyah+ pour scanner sans limite.</div>'
-              + '<button onclick="regardeClose();openFreemium(\'regard\');" style="padding:10px 24px;border-radius:12px;border:none;background:linear-gradient(135deg,#D4AF37,#B8940A);color:#1a1a0e;font-family:\'Georgia\',serif;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:12px;">D\u00e9couvrir Niyyah+ \u2726</button>'
-              + '<br><button onclick="regardeClose();" style="padding:8px 20px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:rgba(200,168,75,0.6);font-size:13px;cursor:pointer;">Fermer</button>'
+              + '<div style="font-size:16px;font-style:italic;color:rgba(200,168,75,0.85);margin-bottom:16px;">Ton Regard gratuit</div>'
+              + '<div style="font-size:14px;color:rgba(200,168,75,0.7);line-height:1.7;margin-bottom:24px;">' + _BETA_MSG + '</div>'
+              + '<button onclick="regardeClose();" style="padding:10px 24px;border-radius:12px;border:1px solid rgba(200,168,75,0.3);background:transparent;color:rgba(200,168,75,0.7);font-family:\'Georgia\',serif;font-size:14px;cursor:pointer;">Fermer</button>'
               + '</div>';
           } else {
             content.innerHTML = '<div style="text-align:center;padding:20%;font-family:\'Georgia\',serif;font-size:15px;font-style:italic;color:rgba(200,168,75,0.6);">'
