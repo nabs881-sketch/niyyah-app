@@ -13380,6 +13380,9 @@ function _tawhidGo(dir) {
 
 function _openTawhidJour() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
+  if (typeof SIRA !== 'undefined' && SIRA.checkAndShowCelebration) {
+    if (SIRA.checkAndShowCelebration('_openTawhidJour();')) return;
+  }
   window._knowledgeFromFil = true;
   window._tawhidFromFil = true;
   window._tawhidFromPratique = false;
@@ -13428,6 +13431,9 @@ var _swipeCloseStartX = 0;
 
 function _openQuizJour() {
   if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
+  if (typeof SIRA !== 'undefined' && SIRA.checkAndShowCelebration) {
+    if (SIRA.checkAndShowCelebration('_openQuizJour();')) return;
+  }
   window._quizFromFil = true;
   window._quizFromPratique = !!(window._quizFromPratique);
   if (!_quizDBLoaded) { _loadQuizDB(function() { _openQuizJour(); }); return; }
@@ -21524,14 +21530,52 @@ const SIRA = {
     return this.data;
   },
   getCurrentRdvNum() {
-    var start = safeGetItem('niyyah_sira_start');
-    if (!start) {
-      start = String(Date.now());
-      safeSetItem('niyyah_sira_start', start);
-    }
-    var daysSince = Math.floor((Date.now() - parseInt(start, 10)) / 86400000);
+    var TODAY = new Date().toISOString().slice(0, 10);
+    var lastDate = safeGetItem('niyyah_sira_last_date');
+    var num = parseInt(safeGetItem('niyyah_sira_rdv_num') || '0', 10);
     var max = (this.data && this.data.rdv) ? this.data.rdv.length : 365;
-    return (daysSince % max) + 1;
+
+    if (!lastDate || num === 0) {
+      // Premier lancement ou migration depuis l'ancien stockage (niyyah_sira_start)
+      var oldStart = safeGetItem('niyyah_sira_start');
+      if (oldStart) {
+        var daysSince = Math.floor((Date.now() - parseInt(oldStart, 10)) / 86400000);
+        num = (daysSince % max) + 1;
+      } else {
+        num = 1;
+      }
+      safeSetItem('niyyah_sira_rdv_num', String(num));
+      safeSetItem('niyyah_sira_last_date', TODAY);
+    } else if (lastDate !== TODAY) {
+      // Nouvelle journée active → avancer d'exactement 1 cran
+      var prevNum = num;
+      num = (num % max) + 1;
+      safeSetItem('niyyah_sira_rdv_num', String(num));
+      safeSetItem('niyyah_sira_last_date', TODAY);
+      if (prevNum === max) {
+        safeSetItem('niyyah_sira_cycle_complete', '1');
+      }
+    }
+    return num;
+  },
+  checkAndShowCelebration(resumeCall) {
+    if (!safeGetItem('niyyah_sira_cycle_complete')) return false;
+    safeSetItem('niyyah_sira_cycle_complete', '');
+    var existing = document.getElementById('sira-celebration-overlay');
+    if (existing) existing.remove();
+    var ov = document.createElement('div');
+    ov.id = 'sira-celebration-overlay';
+    ov.style.cssText = 'position:fixed;inset:0;z-index:10001;background:#0d0a06;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px;text-align:center;';
+    var btnOnclick = 'document.getElementById(\'sira-celebration-overlay\').remove();' + (resumeCall || '');
+    ov.innerHTML = '<div style="font-size:72px;color:#C8A84A;margin-bottom:24px;">\uFDFA</div>'
+      + '<div style="font-family:Georgia,serif;font-size:28px;font-style:italic;color:#FAF7EE;line-height:1.4;margin-bottom:12px;">365 rendez-vous<br>tiss\u00e9s</div>'
+      + '<div class="sira-ornament" style="margin:16px auto;"></div>'
+      + '<p style="font-family:Georgia,serif;font-size:16px;line-height:1.75;color:rgba(240,234,214,0.72);max-width:300px;margin:0 auto 40px;">'
+      + 'Tu as march\u00e9 avec le Messager&nbsp;\uFDFA pendant un an entier.<br><br>'
+      + 'Ce n\u2019est pas une fin \u2014 c\u2019est le d\u00e9but de l\u2019amour.</p>'
+      + '<button onclick="' + btnOnclick + '" style="padding:14px 32px;border-radius:24px;border:none;background:#C8A84A;color:#2C2E32;font-family:Georgia,serif;font-style:italic;font-size:16px;cursor:pointer;touch-action:manipulation;">Bismillah \u2014 nouveau cycle</button>';
+    document.body.appendChild(ov);
+    return true;
   },
   getRdv(num) {
     if (!this.data || !this.data.rdv) return null;
@@ -21570,6 +21614,7 @@ const SIRA = {
   _closeBtn: '<button onclick="document.getElementById(\'sira-overlay\').remove();_restoreScroll();a11yOnOverlayClose();" style="position:fixed;top:16px;right:16px;z-index:10000;background:none;border:none;color:#C8A84A;font-size:32px;width:32px;height:32px;cursor:pointer;line-height:1;">\u2715</button>',
   async openDetail() {
     if (!isKnowledgeUnlocked()) { _showPaywallConnaissance(); return; }
+    if (this.checkAndShowCelebration('SIRA.openDetail();')) return;
     _saveScroll();
     a11yOnOverlayOpen();
     var ov = this._ensureOverlay();
@@ -21660,6 +21705,7 @@ const SIRA = {
     }
   },
   openRdv() {
+    if (this.checkAndShowCelebration('SIRA.openRdv();')) return;
     this.openNav(this.getCurrentRdvNum());
   },
   renderHome() {
