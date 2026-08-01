@@ -889,7 +889,10 @@ async function _callVerify(env, userMsg) {
 async function handleVerify(request, env) {
   try {
     const body = await request.json();
-    const { texte, sources, section, entry_id } = body;
+    const { texte, sources, section, entry_id, uid } = body;
+    if (uid !== 'fd5c2c56-0418-4de1-8bc8-bacaf3e2064e') {
+      return jsonResponseV2({ error: 'Forbidden' }, 403);
+    }
     if (!texte) return jsonResponseV2({ error: 'texte requis' }, 400);
 
     const userMsg = `SECTION: ${section || 'inconnue'}
