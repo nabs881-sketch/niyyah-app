@@ -14691,6 +14691,12 @@ function v2OpenSettings() {
 
       <div style="text-align:center;padding:8px;font-size:12px;color:rgba(240,234,214,0.55);font-family:'Georgia',serif;letter-spacing:0.2em;margin-bottom:12px;">NIYYAH V2.0 · بِسْمِ اللَّهِ</div>
 
+      <div style="margin-bottom:12px;">
+        <button onclick="(function(){var s=document.querySelector('script[src*=\\'script.min.js\\']');var ver=s?((s.src.match(/v=(\\d+)/)||[])[1]||'?'):'?';var status=isPremium()?'premium':(_daysSinceInstall()<30?'essai ('+Math.floor(_daysSinceInstall())+'j)':'free');var body='Version\u00a0: '+ver+'\\nStatut\u00a0: '+status+'\\n\\n\u2014\u2014\u2014\\n\\n[D\u00e9cris ton probl\u00e8me ou ta suggestion ici]';window.location.href='mailto:BRYNAB2002@yahoo.fr?subject='+encodeURIComponent('Niyyah \u2014 Retour utilisateur')+'&body='+encodeURIComponent(body);})()"
+          style="width:100%;padding:12px;border-radius:12px;border:1px solid rgba(200,168,75,0.25);background:rgba(200,168,75,0.04);color:rgba(200,168,75,0.8);font-family:'Georgia',serif;font-size:13px;cursor:pointer;touch-action:manipulation;">
+          ✉ Signaler un probl\u00e8me / Suggestion
+        </button>
+      </div>
 
       <button onclick="document.getElementById('v2-settings-sheet').remove();" aria-label="Fermer les param\u00e8tres"
         style="width:100%;padding:13px;border-radius:100px;border:1px solid rgba(255,255,255,0.07);background:none;color:rgba(240,234,214,0.55);font-family:'Georgia',serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;">
