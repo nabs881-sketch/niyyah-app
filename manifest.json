@@ -37,6 +37,11 @@
     }
   ],
   "categories": ["lifestyle", "education"],
+  "related_applications": [{
+    "platform": "play",
+    "id": "com.niyyahdaily.app"
+  }],
+  "prefer_related_applications": false,
   "screenshots": [
     {
       "src": "images/screenshot-1.png",
