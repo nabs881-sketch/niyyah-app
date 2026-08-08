@@ -2,7 +2,7 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "io.github.nabs881_sketch.twa",
+    "package_name": "com.niyyahdaily.app",
     "sha256_cert_fingerprints": ["5A:57:DA:CD:ED:0E:E0:89:E8:22:C3:B7:A5:35:01:03:9E:FF:33:A0:9F:4C:3D:8A:91:F8:CB:0A:1D:56:D9:33"]
   }
 }]
