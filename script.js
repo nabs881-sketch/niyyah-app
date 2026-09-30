@@ -17318,6 +17318,8 @@ function v2Init() {
       setTimeout(function() { if (_splash.parentNode) _splash.remove(); }, 400);
     });
   }
+  // Sécurité : retirer le splash après 8 s même si le JS a planté
+  setTimeout(function() { var s = document.getElementById('app-splash'); if (s) { s.style.opacity = '0'; setTimeout(function() { if (s.parentNode) s.remove(); }, 400); } }, 8000);
   setTimeout(() => { v2ApplyI18n(); }, 100);
 
   // Sync V1 intention → V2 chip on boot
